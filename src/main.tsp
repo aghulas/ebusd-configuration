@@ -71,3 +71,8 @@ import "./vaillant/scan.tsp";
 import "./wolf/08..hc.tsp";
 import "./wolf/50..mc.tsp";
 import "./wolf/broadcast.tsp";
+import "./weishaupt/08..hc.tsp";
+import "./weishaupt/50..em1.tsp";
+import "./weishaupt/51..em2.tsp";
+import "./weishaupt/broadcast.tsp";
+
