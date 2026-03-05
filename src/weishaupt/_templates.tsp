@@ -58,3 +58,19 @@ model ReadonlyRegister<T> {
 /** temperature */
 @unit("K")
 scalar temp1k extends D1C;
+
+enum Values_onoff {
+    off: 0,
+    on: 1,
+  }
+
+enum Opdataheat {
+  HotWater:0x20,
+  Heating:0x60
+}
+
+enum PState {
+  Program:0x02,
+  ProgramSuspended:0x0A,
+  ProgramExtended:0x12
+}
