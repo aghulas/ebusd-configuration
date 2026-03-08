@@ -2,6 +2,7 @@ import "@ebusd/ebus-typespec";
 import "./_templates.tsp";
 import "../opdata_inc.tsp";
 import "./reg_inc.tsp";
+import "./WH11928.tsp";
 
 using Ebus;
 using Ebus.Num;
@@ -40,4 +41,6 @@ namespace hc {
 
   /** Version Minor */
   model VersionMinor is register.VersionMinor;
+
+  model Idle_r0 is memory.IDLE_R0;
 }
