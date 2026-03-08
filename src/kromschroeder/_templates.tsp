@@ -43,10 +43,22 @@ scalar speed extends UIN;
 model regr {
 }
 
+/** default *r for memory */
+@base(0x50, 0x00) // todo 0x00 should rather be crc8 of following bytes, see https://github.com/john30/ebusd/issues/167
+model memr {
+}
+
 /** default *w for register */
 @write(true)
 @base(0x50, 0x23)
 model regw {}
+
+/** default *r for memory */
+@write(true)
+@base(0x50, 0x01) // todo 0x00 should rather be crc8 of following bytes, see https://github.com/john30/ebusd/issues/167
+model memw {
+}
+
 /** default passive *r for register */
 @base(0x09, 0x02)
 @passive
@@ -63,9 +75,20 @@ model sregw {}
 model Register<T> {
   value: T;
 }
+
+@inherit(memr, memw) //todo first byte of ext always 0x0 on write
+model Memory<T> {
+  value: T;
+}
+
 /** read only register */
-@inherit(sregr)
+@inherit(regr)
 model ReadonlyRegister<T> {
+  value: T;
+}
+
+@inherit(memr)
+model ReadonlyMemory<T> {
   value: T;
 }
 
