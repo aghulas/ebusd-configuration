@@ -6,7 +6,7 @@ using Ebus.Dtm;
 using Ebus.Str;
 namespace Weishaupt;
 
-namespace mc {
+namespace hcmode {
   /** default *uw */
   @write
   @passive
@@ -111,6 +111,3 @@ namespace mc {
   }
 
 }
-
-
- 
