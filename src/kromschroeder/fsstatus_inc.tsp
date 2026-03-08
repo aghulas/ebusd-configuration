@@ -6,14 +6,14 @@ using Ebus.Dtm;
 using Ebus.Str;
 namespace Weishaupt;
 
-namespace mc {
+namespace fsstatus {
   /** default *uw */
   @write
   @passive
-  model uw2 {}
+  model uw {}
 
   /** Actual Values  */
-  @inherit(uw2)
+  @inherit(uw)
   @ext(MF, 0x10)
   model FsStatus {
     /** Room Temperature */
@@ -68,4 +68,3 @@ namespace mc {
 
   }
 }
-
