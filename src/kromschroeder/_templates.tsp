@@ -78,6 +78,7 @@ model Register<T> {
 
 @inherit(memr, memw) //todo first byte of ext always 0x0 on write
 model Memory<T> {
+  @maxLength(1) ign: IGN;
   value: T;
 }
 

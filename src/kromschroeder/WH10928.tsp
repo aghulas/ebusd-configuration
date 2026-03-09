@@ -17,6 +17,8 @@ namespace memory {
     /** RAM 0x0000 IDLE_R0 */
     @ext(0x5c, 0x01, 0x00)
     model IDLE_R0 is Memory<UCH>;
+//    @ext(0xec, 0x11, 0x00)
+//    model IDLE_R0 is Memory<UIN>;
 
     /** RAM 0x0001 IDLE_R1 */
     @ext(0x5d, 0x01, 0x01)
@@ -25,6 +27,8 @@ namespace memory {
     /** RAM 0x0002 IDLE_R2 */
     @ext(0x5e, 0x01, 0x02)
     model IDLE_R2 is Memory<UCH>;
+//    @ext(0xee, 0x11, 0x02)
+//    model IDLE_R2 is Memory<UIN>;
 
     /** RAM 0x0003 IDLE_R3 */
     @ext(0x5f, 0x01, 0x03)
@@ -33,6 +37,8 @@ namespace memory {
     /** RAM 0x0004 IDLE_R4 */
     @ext(0x58, 0x01, 0x04)
     model IDLE_R4 is Memory<UCH>;
+//    @ext(0xe8, 0x11, 0x04)
+//    model IDLE_R4 is Memory<UIN>;
 
     /** RAM 0x0005 IDLE_R5 */
     @ext(0x59, 0x01, 0x05)
@@ -41,6 +47,8 @@ namespace memory {
     /** RAM 0x0006 IDLE_R6 */
     @ext(0x5a, 0x01, 0x06)
     model IDLE_R6 is Memory<UCH>;
+//    @ext(0xea, 0x11, 0x06)
+//    model IDLE_R6 is Memory<UIN>;
 
     /** RAM 0x0007 IDLE_R7 */
     @ext(0x5b, 0x01, 0x07)
@@ -49,6 +57,8 @@ namespace memory {
     /** RAM 0x000A BYTEDIAGNOSE */
     @ext(0x56, 0x01, 0x0A)
     model BYTEDIAGNOSE is Memory<UCH>;
+//    @ext(0xe6, 0x11, 0x0A)
+//    model BYTEDIAGNOSE is Memory<UIN>;
 
     /** RAM 0x0017 select_FS_x */
     @ext(0x4b, 0x01, 0x17)
@@ -66,6 +76,8 @@ namespace memory {
     /** RAM 0x001A TIRP_R2 */
     @ext(0x46, 0x01, 0x1A)
     model TIRP_R2 is Memory<UCH>;
+//    @ext(0xf6, 0x11, 0x1A)
+//    model TIRP_R2 is Memory<UIN>;
 
     /** RAM 0x001B TIRP_R3 */
     @ext(0x47, 0x01, 0x1B)
@@ -74,6 +86,8 @@ namespace memory {
     /** RAM 0x001C TIRP_R4 */
     @ext(0x40, 0x01, 0x1C)
     model TIRP_R4 is Memory<UCH>;
+//    @ext(0xf0, 0x11, 0x1C)
+//    model TIRP_R4 is Memory<UIN>;
 
     /** RAM 0x001D TIRP_R5 */
     @ext(0x41, 0x01, 0x1D)
@@ -82,6 +96,8 @@ namespace memory {
     /** RAM 0x001E TIRP_R6 */
     @ext(0x42, 0x01, 0x1E)
     model TIRP_R6 is Memory<UCH>;
+//    @ext(0xf2, 0x11, 0x1E)
+//    model TIRP_R6 is Memory<UIN>;
 
     @ext(0x7c, 0x01, 0x20)
     /** RAM 0x0020 BYTE_20 */
@@ -225,6 +241,8 @@ namespace memory {
     /** RAM 0x002A T_CALT_0108 */
     @ext(0x76, 0x01, 0x2A)
     model T_CALT_0108 is Memory<UCH>;
+//    @ext(0xc6, 0x11, 0x2A)
+//    model T_CALT_0108 is Memory<UIN>;
 
     @ext(0x77, 0x01, 0x2B)
     /** RAM 0x002B AB_0000 */
@@ -297,6 +315,8 @@ namespace memory {
     /** RAM 0x0030 TCVSP */
     @ext(0x6c, 0x01, 0x30)
     model TCVSP is Memory<UCH>;
+//    @ext(0xdc, 0x11, 0x30)
+//    model TCVSP is Memory<UIN>;
 
     /** RAM 0x0031 TCHZZ */
     @ext(0x6d, 0x01, 0x31)
@@ -310,6 +330,8 @@ namespace memory {
     /** RAM 0x0032 TCNSP */
     @ext(0x6e, 0x01, 0x32)
     model TCNSP is Memory<UCH>;
+//    @ext(0xde, 0x11, 0x32)
+//    model TCNSP is Memory<UIN>;
 
     /** RAM 0x0033 TCFLASTAB */
     @ext(0x6f, 0x01, 0x33)
@@ -318,6 +340,8 @@ namespace memory {
     /** RAM 0x0034 NG_VSP */
     @ext(0x68, 0x01, 0x34)
     model NG_VSP is Memory<UCH>;
+//    @ext(0xd8, 0x11, 0x34)
+//    model NG_VSP is Memory<UIN>;
 
     /** RAM 0x0035 NG_NSP */
     @ext(0x69, 0x01, 0x35)
@@ -326,6 +350,8 @@ namespace memory {
     /** RAM 0x0036 NG_GR_MIN */
     @ext(0x6a, 0x01, 0x36)
     model NG_GR_MIN is Memory<UCH>;
+//    @ext(0xda, 0x11, 0x36)
+//    model NG_GR_MIN is Memory<UIN>;
 
     /** RAM 0x0037 NG_GR_MAX */
     @ext(0x6b, 0x01, 0x37)
@@ -334,6 +360,8 @@ namespace memory {
     /** RAM 0x0038 NG_MAX_LIMIT */
     @ext(0x64, 0x01, 0x38)
     model NG_MAX_LIMIT is Memory<UCH>;
+//    @ext(0xd4, 0x11, 0x38)
+//    model NG_MAX_LIMIT is Memory<UIN>;
 
     /** RAM 0x0039 MXSTB_K */
     @ext(0x65, 0x01, 0x39)
@@ -342,6 +370,8 @@ namespace memory {
     /** RAM 0x003A MXSTW_K */
     @ext(0x66, 0x01, 0x3A)
     model MXSTW_K is Memory<UCH>;
+//    @ext(0xd6, 0x11, 0x3A)
+//    model MXSTW_K is Memory<UIN>;
 
     /** RAM 0x003B ION_ON */
     @ext(0x67, 0x01, 0x3B)
@@ -350,6 +380,8 @@ namespace memory {
     /** RAM 0x003C ION_OFF */
     @ext(0x60, 0x01, 0x3C)
     model ION_OFF is Memory<UCH>;
+//    @ext(0xd0, 0x11, 0x3C)
+//    model ION_OFF is Memory<UIN>;
 
     /** RAM 0x003D LIM_ION_FLASTAB */
     @ext(0x61, 0x01, 0x3D)
@@ -358,6 +390,8 @@ namespace memory {
     /** RAM 0x003E TC_PRUEF_V1 */
     @ext(0x62, 0x01, 0x3E)
     model TC_PRUEF_V1 is Memory<UCH>;
+//    @ext(0xd2, 0x11, 0x3E)
+//    model TC_PRUEF_V1 is Memory<UIN>;
 
     /** RAM 0x003F TC_PRUEF_V2 */
     @ext(0x63, 0x01, 0x3F)
@@ -366,6 +400,8 @@ namespace memory {
     /** RAM 0x0040 P_LPG */
     @ext(0x1c, 0x01, 0x40)
     model P_LPG is Memory<UCH>;
+//    @ext(0xac, 0x11, 0x40)
+//    model P_LPG is Memory<UIN>;
 
     /** RAM 0x0041 KASK_P_ANHEB */
     @ext(0x1d, 0x01, 0x41)
@@ -374,6 +410,8 @@ namespace memory {
     /** RAM 0x0042 KLAPPE_P_ANHEB */
     @ext(0x1e, 0x01, 0x42)
     model KLAPPE_P_ANHEB is Memory<UCH>;
+//    @ext(0xae, 0x11, 0x42)
+//    model KLAPPE_P_ANHEB is Memory<UIN>;
 
     /** RAM 0x0043 MAXGFASTART */
     @ext(0x1f, 0x01, 0x43)
@@ -382,6 +420,8 @@ namespace memory {
     /** RAM 0x0044 NG_BR_MIN */
     @ext(0x18, 0x01, 0x44)
     model NG_BR_MIN is Memory<UCH>;
+//    @ext(0xa8, 0x11, 0x44)
+//    model NG_BR_MIN is Memory<UIN>;
 
     /** RAM 0x0045 EE_CONST_CRC */
     @ext(0x19, 0x01, 0x45)
@@ -390,6 +430,8 @@ namespace memory {
     /** RAM 0x0046 T_CNT_0001 */
     @ext(0x1a, 0x01, 0x46)
     model T_CNT_0001 is Memory<UCH>;
+//    @ext(0xaa, 0x11, 0x46)
+//    model T_CNT_0001 is Memory<UIN>;
 
     /** RAM 0x0047 T_CNT_0002 */
     @ext(0x1b, 0x01, 0x47)
@@ -398,6 +440,8 @@ namespace memory {
     /** RAM 0x0048 T_CNT_0003 */
     @ext(0x14, 0x01, 0x48)
     model T_CNT_0003 is Memory<UCH>;
+//    @ext(0xa4, 0x11, 0x48)
+//    model T_CNT_0003 is Memory<UIN>;
 
     /** RAM 0x0049 T_CNT_0004 */
     @ext(0x15, 0x01, 0x49)
@@ -406,6 +450,8 @@ namespace memory {
     /** RAM 0x004A T_CNT_0005 */
     @ext(0x16, 0x01, 0x4A)
     model T_CNT_0005 is Memory<UCH>;
+//    @ext(0xa6, 0x11, 0x4A)
+//    model T_CNT_0005 is Memory<UIN>;
 
     /** RAM 0x004B T_CNT_0006 */
     @ext(0x17, 0x01, 0x4B)
@@ -414,6 +460,8 @@ namespace memory {
     /** RAM 0x004C T_CNT_0007 */
     @ext(0x10, 0x01, 0x4C)
     model T_CNT_0007 is Memory<UCH>;
+//    @ext(0xa0, 0x11, 0x4C)
+//    model T_CNT_0007 is Memory<UIN>;
 
     /** RAM 0x004D T_CNT_0008 */
     @ext(0x11, 0x01, 0x4D)
@@ -422,6 +470,8 @@ namespace memory {
     /** RAM 0x004E T_CNT_0009 */
     @ext(0x12, 0x01, 0x4E)
     model T_CNT_0009 is Memory<UCH>;
+//    @ext(0xa2, 0x11, 0x4E)
+//    model T_CNT_0009 is Memory<UIN>;
 
     /** RAM 0x004F EPIONNULL */
     @ext(0x13, 0x01, 0x4F)
@@ -430,6 +480,8 @@ namespace memory {
     /** RAM 0x0050 S5_DAT_CRC */
     @ext(0x0c, 0x01, 0x50)
     model S5_DAT_CRC is Memory<UCH>;
+//    @ext(0xbc, 0x11, 0x50)
+//    model S5_DAT_CRC is Memory<UIN>;
 
     /** RAM 0x0051 MB_2_ALT */
     @ext(0x0d, 0x01, 0x51)
@@ -438,6 +490,8 @@ namespace memory {
     /** RAM 0x0052 BE1_50HZ_CNT */
     @ext(0x0e, 0x01, 0x52)
     model BE1_50HZ_CNT is Memory<UCH>;
+//    @ext(0xbe, 0x11, 0x52)
+//    model BE1_50HZ_CNT is Memory<UIN>;
 
     /** RAM 0x0053 BE2_50HZ_CNT */
     @ext(0x0f, 0x01, 0x53)
@@ -446,6 +500,8 @@ namespace memory {
     /** RAM 0x0054 BE3_50HZ_CNT */
     @ext(0x08, 0x01, 0x54)
     model BE3_50HZ_CNT is Memory<UCH>;
+//    @ext(0xb8, 0x11, 0x54)
+//    model BE3_50HZ_CNT is Memory<UIN>;
 
     /** RAM 0x0055 BE4_50HZ_CNT */
     @ext(0x09, 0x01, 0x55)
@@ -454,6 +510,8 @@ namespace memory {
     /** RAM 0x0056 BE5_50HZ_CNT */
     @ext(0x0a, 0x01, 0x56)
     model BE5_50HZ_CNT is Memory<UCH>;
+//    @ext(0xba, 0x11, 0x56)
+//    model BE5_50HZ_CNT is Memory<UIN>;
 
     /** RAM 0x0057 BE6_50HZ_CNT */
     @ext(0x0b, 0x01, 0x57)
@@ -462,6 +520,8 @@ namespace memory {
     /** RAM 0x0058 BE7_50HZ_CNT */
     @ext(0x04, 0x01, 0x58)
     model BE7_50HZ_CNT is Memory<UCH>;
+//    @ext(0xb4, 0x11, 0x58)
+//    model BE7_50HZ_CNT is Memory<UIN>;
 
     /** RAM 0x0059 BE8_50HZ_CNT */
     @ext(0x05, 0x01, 0x59)
@@ -475,6 +535,8 @@ namespace memory {
     /** RAM 0x005A RES_CYCL_CNT */
     @ext(0x06, 0x01, 0x5A)
     model RES_CYCL_CNT is Memory<UCH>;
+//    @ext(0xb6, 0x11, 0x5A)
+//    model RES_CYCL_CNT is Memory<UIN>;
 
     /** RAM 0x005B RES_CNT */
     @ext(0x07, 0x01, 0x5B)
@@ -483,6 +545,8 @@ namespace memory {
     /** RAM 0x005C RES_CNT_INV */
     @ext(0x00, 0x01, 0x5C)
     model RES_CNT_INV is Memory<UCH>;
+//    @ext(0xb0, 0x11, 0x5C)
+//    model RES_CNT_INV is Memory<UIN>;
 
     /** RAM 0x005D TVISTAD */
     @ext(0x01, 0x01, 0x5D)
@@ -491,6 +555,8 @@ namespace memory {
     /** RAM 0x005E T_ESTB2 */
     @ext(0x02, 0x01, 0x5E)
     model T_ESTB2 is Memory<UCH>;
+//    @ext(0xb2, 0x11, 0x5E)
+//    model T_ESTB2 is Memory<UIN>;
 
     /** RAM 0x005F Z_ION */
     @ext(0x03, 0x01, 0x5F)
@@ -499,6 +565,8 @@ namespace memory {
     /** RAM 0x0060 AB_0000_ALT */
     @ext(0x3c, 0x01, 0x60)
     model AB_0000_ALT is Memory<UCH>;
+//    @ext(0x8c, 0x11, 0x60)
+//    model AB_0000_ALT is Memory<UIN>;
 
     /** RAM 0x0061 TH1_2 */
     @ext(0x3d, 0x01, 0x61)
@@ -507,6 +575,8 @@ namespace memory {
     /** RAM 0x0062 TRLIST */
     @ext(0x3e, 0x01, 0x62)
     model TRLIST is Memory<UCH>;
+//    @ext(0x8e, 0x11, 0x62)
+//    model TRLIST is Memory<UIN>;
 
     /** RAM 0x0063 TABGAS */
     @ext(0x3f, 0x01, 0x63)
@@ -515,6 +585,8 @@ namespace memory {
     /** RAM 0x0064 CNTBOOSTER */
     @ext(0x38, 0x01, 0x64)
     model CNTBOOSTER is Memory<UCH>;
+//    @ext(0x88, 0x11, 0x64)
+//    model CNTBOOSTER is Memory<UIN>;
 
     /** RAM 0x0065 F_CODE */
     @ext(0x39, 0x01, 0x65)
@@ -523,6 +595,8 @@ namespace memory {
     /** RAM 0x0066 ANAIN4 */
     @ext(0x3a, 0x01, 0x66)
     model ANAIN4 is Memory<UCH>;
+//    @ext(0x8a, 0x11, 0x66)
+//    model ANAIN4 is Memory<UIN>;
 
     /** RAM 0x0067 SMON_TIMEOUT */
     @ext(0x3b, 0x01, 0x67)
@@ -531,6 +605,8 @@ namespace memory {
     /** RAM 0x0068 TVIST */
     @ext(0x34, 0x01, 0x68)
     model TVIST is Memory<UCH>;
+//    @ext(0x84, 0x11, 0x68)
+//    model TVIST is Memory<UIN>;
 
     /** RAM 0x0069 V24_CCMD */
     @ext(0x35, 0x01, 0x69)
@@ -539,6 +615,8 @@ namespace memory {
     /** RAM 0x006A TWWIST */
     @ext(0x36, 0x01, 0x6A)
     model TWWIST is Memory<UCH>;
+//    @ext(0x86, 0x11, 0x6A)
+//    model TWWIST is Memory<UIN>;
 
     /** RAM 0x006B V24_IADR */
     @ext(0x37, 0x01, 0x6B)
@@ -547,6 +625,8 @@ namespace memory {
     /** RAM 0x006C TAUSSEN */
     @ext(0x30, 0x01, 0x6C)
     model TAUSSEN is Memory<UCH>;
+//    @ext(0x80, 0x11, 0x6C)
+//    model TAUSSEN is Memory<UIN>;
 
     /** RAM 0x006D V24_RXCNT1MS */
     @ext(0x31, 0x01, 0x6D)
@@ -555,6 +635,8 @@ namespace memory {
     /** RAM 0x006E TVSOLL */
     @ext(0x32, 0x01, 0x6E)
     model TVSOLL is Memory<UCH>;
+//    @ext(0x82, 0x11, 0x6E)
+//    model TVSOLL is Memory<UIN>;
 
     /** RAM 0x006F TWWSOLL_HS */
     @ext(0x33, 0x01, 0x6F)
@@ -563,6 +645,8 @@ namespace memory {
     /** RAM 0x0070 KESZUST */
     @ext(0x2c, 0x01, 0x70)
     model KESZUST is Memory<UCH>;
+//    @ext(0x9c, 0x11, 0x70)
+//    model KESZUST is Memory<UIN>;
 
     /** RAM 0x0071 TAUSS_HS */
     @ext(0x2d, 0x01, 0x71)
@@ -571,6 +655,8 @@ namespace memory {
     /** RAM 0x0072 HZZUSTBM */
     @ext(0x2e, 0x01, 0x72)
     model HZZUSTBM is Memory<UCH>;
+//    @ext(0x9e, 0x11, 0x72)
+//    model HZZUSTBM is Memory<UIN>;
 
     /** RAM 0x0073 V24_TXCNT */
     @ext(0x2f, 0x01, 0x73)
@@ -579,6 +665,8 @@ namespace memory {
     /** RAM 0x0074 WWZUSTBM */
     @ext(0x28, 0x01, 0x74)
     model WWZUSTBM is Memory<UCH>;
+//    @ext(0x98, 0x11, 0x74)
+//    model WWZUSTBM is Memory<UIN>;
 
     /** RAM 0x0075 WWZUSTKM */
     @ext(0x29, 0x01, 0x75)
@@ -587,6 +675,8 @@ namespace memory {
     /** RAM 0x0076 V24_ODAT */
     @ext(0x2a, 0x01, 0x76)
     model V24_ODAT is Memory<UCH>;
+//    @ext(0x9a, 0x11, 0x76)
+//    model V24_ODAT is Memory<UIN>;
 
     /** RAM 0x0077 NGIST */
     @ext(0x2b, 0x01, 0x77)
@@ -595,6 +685,8 @@ namespace memory {
     /** RAM 0x0078 NGSOLL */
     @ext(0x24, 0x01, 0x78)
     model NGSOLL is Memory<UCH>;
+//    @ext(0x94, 0x11, 0x78)
+//    model NGSOLL is Memory<UIN>;
 
     /** RAM 0x0079 ICL100MSEC */
     @ext(0x25, 0x01, 0x79)
@@ -603,6 +695,8 @@ namespace memory {
     /** RAM 0x007A ICL20SEC */
     @ext(0x26, 0x01, 0x7A)
     model ICL20SEC is Memory<UCH>;
+//    @ext(0x96, 0x11, 0x7A)
+//    model ICL20SEC is Memory<UIN>;
 
     /** RAM 0x007B ICL1HRS */
     @ext(0x27, 0x01, 0x7B)
@@ -611,6 +705,8 @@ namespace memory {
     /** RAM 0x007C CNTGDWOSZ */
     @ext(0x20, 0x01, 0x7C)
     model CNTGDWOSZ is Memory<UCH>;
+//    @ext(0x90, 0x11, 0x7C)
+//    model CNTGDWOSZ is Memory<UIN>;
 
     /** RAM 0x007D S5_ERR_CODE */
     @ext(0x21, 0x01, 0x7D)
@@ -619,10 +715,14 @@ namespace memory {
     /** RAM 0x007E YPWM */
     @ext(0x22, 0x01, 0x7E)
     model YPWM is Memory<UCH>;
+//    @ext(0x92, 0x11, 0x7E)
+//    model YPWM is Memory<UIN>;
 
     /** RAM 0x0080 STACK */
     @ext(0xdc, 0x01, 0x80)
     model STACK is Memory<UCH>;
+//    @ext(0x6c, 0x11, 0x80)
+//    model STACK is Memory<UIN>;
 
     /** RAM 0x00AB IRAEPKANF */
     @ext(0xf7, 0x01, 0xAB)
@@ -636,6 +736,8 @@ namespace memory {
     /** RAM 0x00AC MINTVSOLL */
     @ext(0xf0, 0x01, 0xAC)
     model MINTVSOLL is Memory<UCH>;
+//    @ext(0x40, 0x11, 0xAC)
+//    model MINTVSOLL is Memory<UIN>;
 
     /** RAM 0x00AD HZ_HYS */
     @ext(0xf1, 0x01, 0xAD)
@@ -644,6 +746,8 @@ namespace memory {
     /** RAM 0x00AE TBRMINOFF */
     @ext(0xf2, 0x01, 0xAE)
     model TBRMINOFF is Memory<UCH>;
+//    @ext(0x42, 0x11, 0xAE)
+//    model TBRMINOFF is Memory<UIN>;
 
     /** RAM 0x00AF TC_SOFTSTART */
     @ext(0xf3, 0x01, 0xAF)
@@ -652,6 +756,8 @@ namespace memory {
     /** RAM 0x00B0 HZ_KP */
     @ext(0xec, 0x01, 0xB0)
     model HZ_KP is Memory<UCH>;
+//    @ext(0x5c, 0x11, 0xB0)
+//    model HZ_KP is Memory<UIN>;
 
     /** RAM 0x00B1 HZ_KTND */
     @ext(0xed, 0x01, 0xB1)
@@ -660,6 +766,8 @@ namespace memory {
     /** RAM 0x00B2 SONDERNIVEAU */
     @ext(0xee, 0x01, 0xB2)
     model SONDERNIVEAU is Memory<UCH>;
+//    @ext(0x5e, 0x11, 0xB2)
+//    model SONDERNIVEAU is Memory<UIN>;
 
     /** RAM 0x00B3 TAUSS_KORREKTUR */
     @ext(0xef, 0x01, 0xB3)
@@ -668,6 +776,8 @@ namespace memory {
     /** RAM 0x00B4 WARTUNGSINTERVALL */
     @ext(0xe8, 0x01, 0xB4)
     model WARTUNGSINTERVALL is Memory<UCH>;
+//    @ext(0x58, 0x11, 0xB4)
+//    model WARTUNGSINTERVALL is Memory<UIN>;
 
     /** RAM 0x00B5 MX_DREHZ_KESSEL */
     @ext(0xe9, 0x01, 0xB5)
@@ -676,6 +786,8 @@ namespace memory {
     /** RAM 0x00B6 NG_ZUEND */
     @ext(0xea, 0x01, 0xB6)
     model NG_ZUEND is Memory<UCH>;
+//    @ext(0x5a, 0x11, 0xB6)
+//    model NG_ZUEND is Memory<UIN>;
 
     /** RAM 0x00B7 KESSEL_VARIANTE */
     @ext(0xeb, 0x01, 0xB7)
@@ -684,6 +796,8 @@ namespace memory {
     /** RAM 0x00B8 MXGRADTVIST */
     @ext(0xe4, 0x01, 0xB8)
     model MXGRADTVIST is Memory<UCH>;
+//    @ext(0x54, 0x11, 0xB8)
+//    model MXGRADTVIST is Memory<UIN>;
 
     /** RAM 0x00B9 MXTABGAS */
     @ext(0xe5, 0x01, 0xB9)
@@ -692,6 +806,8 @@ namespace memory {
     /** RAM 0x00BA TOL_TIME */
     @ext(0xe6, 0x01, 0xBA)
     model TOL_TIME is Memory<UCH>;
+//    @ext(0x56, 0x11, 0xBA)
+//    model TOL_TIME is Memory<UIN>;
 
     /** RAM 0x00BB NG_DGESCHW */
     @ext(0xe7, 0x01, 0xBB)
@@ -700,6 +816,8 @@ namespace memory {
     /** RAM 0x00BC NG_INCR_DECR */
     @ext(0xe0, 0x01, 0xBC)
     model NG_INCR_DECR is Memory<UCH>;
+//    @ext(0x50, 0x11, 0xBC)
+//    model NG_INCR_DECR is Memory<UIN>;
 
     /** RAM 0x00BD NG_HZ_MIN */
     @ext(0xe1, 0x01, 0xBD)
@@ -708,6 +826,8 @@ namespace memory {
     /** RAM 0x00BE NG_HZ_FREI */
     @ext(0xe2, 0x01, 0xBE)
     model NG_HZ_FREI is Memory<UCH>;
+//    @ext(0x52, 0x11, 0xBE)
+//    model NG_HZ_FREI is Memory<UIN>;
 
     /** RAM 0x00BF NG_HZ_MAX */
     @ext(0xe3, 0x01, 0xBF)
@@ -716,6 +836,8 @@ namespace memory {
     /** RAM 0x00C0 PUHZ_VSP */
     @ext(0x9c, 0x01, 0xC0)
     model PUHZ_VSP is Memory<UCH>;
+//    @ext(0x2c, 0x11, 0xC0)
+//    model PUHZ_VSP is Memory<UIN>;
 
     /** RAM 0x00C1 PUHZ_MIN */
     @ext(0x9d, 0x01, 0xC1)
@@ -724,6 +846,8 @@ namespace memory {
     /** RAM 0x00C2 PUHZ_MAX */
     @ext(0x9e, 0x01, 0xC2)
     model PUHZ_MAX is Memory<UCH>;
+//    @ext(0x2e, 0x11, 0xC2)
+//    model PUHZ_MAX is Memory<UIN>;
 
     /** RAM 0x00C3 PUHZ_DT_REG */
     @ext(0x9f, 0x01, 0xC3)
@@ -732,6 +856,8 @@ namespace memory {
     /** RAM 0x00C4 PU_TAKT */
     @ext(0x98, 0x01, 0xC4)
     model PU_TAKT is Memory<UCH>;
+//    @ext(0x28, 0x11, 0xC4)
+//    model PU_TAKT is Memory<UIN>;
 
     /** RAM 0x00C5 DT_VLRL_SOLL */
     @ext(0x99, 0x01, 0xC5)
@@ -740,6 +866,8 @@ namespace memory {
     /** RAM 0x00C6 DT_VLRL_MAX */
     @ext(0x9a, 0x01, 0xC6)
     model DT_VLRL_MAX is Memory<UCH>;
+//    @ext(0x2a, 0x11, 0xC6)
+//    model DT_VLRL_MAX is Memory<UIN>;
 
     /** RAM 0x00C7 DT_VL_ESTB2_MAX */
     @ext(0x9b, 0x01, 0xC7)
@@ -748,6 +876,8 @@ namespace memory {
     /** RAM 0x00C8 PNL_HZ */
     @ext(0x94, 0x01, 0xC8)
     model PNL_HZ is Memory<UCH>;
+//    @ext(0x24, 0x11, 0xC8)
+//    model PNL_HZ is Memory<UIN>;
 
     /** RAM 0x00C9 MAXWWSOLL */
     @ext(0x95, 0x01, 0xC9)
@@ -756,6 +886,8 @@ namespace memory {
     /** RAM 0x00CA MINWWSOLL */
     @ext(0x96, 0x01, 0xCA)
     model MINWWSOLL is Memory<UCH>;
+//    @ext(0x26, 0x11, 0xCA)
+//    model MINWWSOLL is Memory<UIN>;
 
     /** RAM 0x00CB WW_HYS */
     @ext(0x97, 0x01, 0xCB)
@@ -764,6 +896,8 @@ namespace memory {
     /** RAM 0x00CC TWWPLUS */
     @ext(0x90, 0x01, 0xCC)
     model TWWPLUS is Memory<UCH>;
+//    @ext(0x20, 0x11, 0xCC)
+//    model TWWPLUS is Memory<UIN>;
 
     /** RAM 0x00CD NG_WW_MIN */
     @ext(0x91, 0x01, 0xCD)
@@ -772,6 +906,8 @@ namespace memory {
     /** RAM 0x00CE NG_WW_FREI */
     @ext(0x92, 0x01, 0xCE)
     model NG_WW_FREI is Memory<UCH>;
+//    @ext(0x22, 0x11, 0xCE)
+//    model NG_WW_FREI is Memory<UIN>;
 
     /** RAM 0x00CF NG_WW_MAX */
     @ext(0x93, 0x01, 0xCF)
@@ -780,6 +916,8 @@ namespace memory {
     /** RAM 0x00D0 PUHZ_WW */
     @ext(0x8c, 0x01, 0xD0)
     model PUHZ_WW is Memory<UCH>;
+//    @ext(0x3c, 0x11, 0xD0)
+//    model PUHZ_WW is Memory<UIN>;
 
     /** RAM 0x00D1 PNL_WW */
     @ext(0x8d, 0x01, 0xD1)
@@ -788,6 +926,8 @@ namespace memory {
     /** RAM 0x00D2 TFRS_A */
     @ext(0x8e, 0x01, 0xD2)
     model TFRS_A is Memory<UCH>;
+//    @ext(0x3e, 0x11, 0xD2)
+//    model TFRS_A is Memory<UIN>;
 
     /** RAM 0x00D3 NG_KP */
     @ext(0x8f, 0x01, 0xD3)
@@ -796,6 +936,8 @@ namespace memory {
     /** RAM 0x00D4 NG_KTN */
     @ext(0x88, 0x01, 0xD4)
     model NG_KTN is Memory<UCH>;
+//    @ext(0x38, 0x11, 0xD4)
+//    model NG_KTN is Memory<UIN>;
 
     /** RAM 0x00D5 NG_REG_ANPASS */
     @ext(0x89, 0x01, 0xD5)
@@ -804,6 +946,8 @@ namespace memory {
     /** RAM 0x00D6 SEL_IN_1_2 */
     @ext(0x8a, 0x01, 0xD6)
     model SEL_IN_1_2 is Memory<UCH>;
+//    @ext(0x3a, 0x11, 0xD6)
+//    model SEL_IN_1_2 is Memory<UIN>;
 
     /** RAM 0x00D7 SEL_IN_3_4 */
     @ext(0x8b, 0x01, 0xD7)
@@ -812,6 +956,8 @@ namespace memory {
     /** RAM 0x00D8 SEL_PR_1_2 */
     @ext(0x84, 0x01, 0xD8)
     model SEL_PR_1_2 is Memory<UCH>;
+//    @ext(0x34, 0x11, 0xD8)
+//    model SEL_PR_1_2 is Memory<UIN>;
 
     /** RAM 0x00D9 SEL_PR_3_4 */
     @ext(0x85, 0x01, 0xD9)
@@ -820,6 +966,8 @@ namespace memory {
     /** RAM 0x00DA KLAPPENLAUFZEIT */
     @ext(0x86, 0x01, 0xDA)
     model KLAPPENLAUFZEIT is Memory<UCH>;
+//    @ext(0x36, 0x11, 0xDA)
+//    model KLAPPENLAUFZEIT is Memory<UIN>;
 
     /** RAM 0x00DB PARA_DT_WEICHE_VL */
     @ext(0x87, 0x01, 0xDB)
@@ -828,6 +976,8 @@ namespace memory {
     /** RAM 0x00DC V24_KM_ADR */
     @ext(0x80, 0x01, 0xDC)
     model V24_KM_ADR is Memory<UCH>;
+//    @ext(0x30, 0x11, 0xDC)
+//    model V24_KM_ADR is Memory<UIN>;
 
     /** RAM 0x00DD KESS_OPT */
     @ext(0x81, 0x01, 0xDD)
@@ -836,6 +986,8 @@ namespace memory {
     /** RAM 0x00DE KESS_OPT_2 */
     @ext(0x82, 0x01, 0xDE)
     model KESS_OPT_2 is Memory<UCH>;
+//    @ext(0x32, 0x11, 0xDE)
+//    model KESS_OPT_2 is Memory<UIN>;
 
     /** RAM 0x00DF KESS_BITS */
     @ext(0x83, 0x01, 0xDF)
@@ -844,6 +996,8 @@ namespace memory {
     /** RAM 0x00E0 REF_KORR */
     @ext(0xbc, 0x01, 0xE0)
     model REF_KORR is Memory<UCH>;
+//    @ext(0x0c, 0x11, 0xE0)
+//    model REF_KORR is Memory<UIN>;
 
     /** RAM 0x00E1 KES_DAT_CRC */
     @ext(0xbd, 0x01, 0xE1)
@@ -852,6 +1006,8 @@ namespace memory {
     /** RAM 0x00E2 AIN_FS_ERR_MASK */
     @ext(0xbe, 0x01, 0xE2)
     model AIN_FS_ERR_MASK is Memory<UCH>;
+//    @ext(0x0e, 0x11, 0xE2)
+//    model AIN_FS_ERR_MASK is Memory<UIN>;
 
     /** RAM 0x00E3 ERR_MERK_ALT */
     @ext(0xbf, 0x01, 0xE3)
@@ -860,6 +1016,8 @@ namespace memory {
     /** RAM 0x00E4 F_CODE_ALT */
     @ext(0xb8, 0x01, 0xE4)
     model F_CODE_ALT is Memory<UCH>;
+//    @ext(0x08, 0x11, 0xE4)
+//    model F_CODE_ALT is Memory<UIN>;
 
     /** RAM 0x00E5 ROM_DPH */
     @ext(0xb9, 0x01, 0xE5)
@@ -868,6 +1026,8 @@ namespace memory {
     /** RAM 0x00E6 ROM_DPL */
     @ext(0xba, 0x01, 0xE6)
     model ROM_DPL is Memory<UCH>;
+//    @ext(0x0a, 0x11, 0xE6)
+//    model ROM_DPL is Memory<UIN>;
 
     /** RAM 0x00E7 ROM_H */
     @ext(0xbb, 0x01, 0xE7)
@@ -876,6 +1036,8 @@ namespace memory {
     /** RAM 0x00E8 ROM_L */
     @ext(0xb4, 0x01, 0xE8)
     model ROM_L is Memory<UCH>;
+//    @ext(0x04, 0x11, 0xE8)
+//    model ROM_L is Memory<UIN>;
 
     /** RAM 0x00E9 V24_SCOM_ADR */
     @ext(0xb5, 0x01, 0xE9)
@@ -884,10 +1046,14 @@ namespace memory {
     /** RAM 0x00EA S5STEP */
     @ext(0xb6, 0x01, 0xEA)
     model S5STEP is Memory<UCH>;
+//    @ext(0x06, 0x11, 0xEA)
+//    model S5STEP is Memory<UIN>;
 
     /** RAM 0x00EC NGXW1 */
     @ext(0xb0, 0x01, 0xEC)
     model NGXW1 is Memory<UCH>;
+//    @ext(0x00, 0x11, 0xEC)
+//    model NGXW1 is Memory<UIN>;
 
     /** RAM 0x00ED PUHZPWM */
     @ext(0xb1, 0x01, 0xED)
@@ -896,6 +1062,8 @@ namespace memory {
     /** RAM 0x00EE K_ZUST_BITS */
     @ext(0xb2, 0x01, 0xEE)
     model K_ZUST_BITS is Memory<UCH>;
+//    @ext(0x02, 0x11, 0xEE)
+//    model K_ZUST_BITS is Memory<UIN>;
 
     /** RAM 0x00EF K_ZUST_BITS_2 */
     @ext(0xb3, 0x01, 0xEF)
@@ -904,6 +1072,8 @@ namespace memory {
     /** RAM 0x00F0 V24_HIADR */
     @ext(0xac, 0x01, 0xF0)
     model V24_HIADR is Memory<UCH>;
+//    @ext(0x1c, 0x11, 0xF0)
+//    model V24_HIADR is Memory<UIN>;
 
     /** RAM 0x00F1 ICL20SEC_ALT */
     @ext(0xad, 0x01, 0xF1)
@@ -912,6 +1082,8 @@ namespace memory {
     /** RAM 0x00F2 ICL1HRS_ALT */
     @ext(0xae, 0x01, 0xF2)
     model ICL1HRS_ALT is Memory<UCH>;
+//    @ext(0x1e, 0x11, 0xF2)
+//    model ICL1HRS_ALT is Memory<UIN>;
 
     /** RAM 0x00F3 RES_CNT_ALT */
     @ext(0xaf, 0x01, 0xF3)
@@ -920,10 +1092,14 @@ namespace memory {
     /** RAM 0x00F4 NGIST_2 */
     @ext(0xa8, 0x01, 0xF4)
     model NGIST_2 is Memory<UCH>;
+//    @ext(0x18, 0x11, 0xF4)
+//    model NGIST_2 is Memory<UIN>;
 
     /** RAM 0x00F6 NM_EBUS_STATUS */
     @ext(0xaa, 0x01, 0xF6)
     model NM_EBUS_STATUS is Memory<UCH>;
+//    @ext(0x1a, 0x11, 0xF6)
+//    model NM_EBUS_STATUS is Memory<UIN>;
 
     /** RAM 0x00F7 NM_ZUSTAND */
     @ext(0xab, 0x01, 0xF7)
@@ -932,6 +1108,8 @@ namespace memory {
     /** RAM 0x00F8 BCC_STATUS */
     @ext(0xa4, 0x01, 0xF8)
     model BCC_STATUS is Memory<UCH>;
+//    @ext(0x14, 0x11, 0xF8)
+//    model BCC_STATUS is Memory<UIN>;
 
     /** RAM 0x00F9 S7_BITS */
     @ext(0xa5, 0x01, 0xF9)
@@ -945,25 +1123,35 @@ namespace memory {
     /** SFR 0x0080 P0_ALTSEL0 */
     @ext(0xac, 0x04, 0x80)
     model P0_ALTSEL0 is Memory<UCH>;
+//    @ext(0x1c, 0x14, 0x80)
+//    model P0_ALTSEL0 is Memory<UIN>;
 
     // Alias of P0_ALTSEL0
     // /** SFR 0x0080 P0_DATA */
     // @ext(0xac, 0x04, 0x80)
     // model P0_DATA is Memory<UCH>;
+//    // @ext(0x1c, 0x14, 0x80)
+//    // model P0_DATA is Memory<UIN>;
 
     // Alias of P0_ALTSEL0
     // /** SFR 0x0080 P0_OD */
     // @ext(0xac, 0x04, 0x80)
     // model P0_OD is Memory<UCH>;
+//    // @ext(0x1c, 0x14, 0x80)
+//    // model P0_OD is Memory<UIN>;
 
     // Alias of P0_ALTSEL0
     // /** SFR 0x0080 P0_PUDSEL */
     // @ext(0xac, 0x04, 0x80)
     // model P0_PUDSEL is Memory<UCH>;
+//    // @ext(0x1c, 0x14, 0x80)
+//    // model P0_PUDSEL is Memory<UIN>;
 
     /** SFR 0x0082 DPL */
     @ext(0xae, 0x04, 0x82)
     model DPL is Memory<UCH>;
+//    @ext(0x1e, 0x14, 0x82)
+//    model DPL is Memory<UIN>;
 
     /** SFR 0x0083 DPH */
     @ext(0xaf, 0x04, 0x83)
@@ -972,16 +1160,22 @@ namespace memory {
     /** SFR 0x0086 P0_ALTSEL1 */
     @ext(0xaa, 0x04, 0x86)
     model P0_ALTSEL1 is Memory<UCH>;
+//    @ext(0x1a, 0x14, 0x86)
+//    model P0_ALTSEL1 is Memory<UIN>;
 
     // Alias of P0_ALTSEL1
     // /** SFR 0x0086 P0_DIR */
     // @ext(0xaa, 0x04, 0x86)
     // model P0_DIR is Memory<UCH>;
+//    // @ext(0x1a, 0x14, 0x86)
+//    // model P0_DIR is Memory<UIN>;
 
     // Alias of P0_ALTSEL1
     // /** SFR 0x0086 P0_PUDEN */
     // @ext(0xaa, 0x04, 0x86)
     // model P0_PUDEN is Memory<UCH>;
+//    // @ext(0x1a, 0x14, 0x86)
+//    // model P0_PUDEN is Memory<UIN>;
 
     /** SFR 0x0087 PCON */
     @ext(0xab, 0x04, 0x87)
@@ -990,6 +1184,8 @@ namespace memory {
     /** SFR 0x0088 TCON */
     @ext(0xa4, 0x04, 0x88)
     model TCON is Memory<UCH>;
+//    @ext(0x14, 0x14, 0x88)
+//    model TCON is Memory<UIN>;
 
     /** SFR 0x0089 TMOD */
     @ext(0xa5, 0x04, 0x89)
@@ -998,6 +1194,8 @@ namespace memory {
     /** SFR 0x008A TL0 */
     @ext(0xa6, 0x04, 0x8A)
     model TL0 is Memory<UCH>;
+//    @ext(0x16, 0x14, 0x8A)
+//    model TL0 is Memory<UIN>;
 
     /** SFR 0x008B ION_TIMER_LOW */
     @ext(0xa7, 0x04, 0x8B)
@@ -1011,6 +1209,8 @@ namespace memory {
     /** SFR 0x008C TH0 */
     @ext(0xa0, 0x04, 0x8C)
     model TH0 is Memory<UCH>;
+//    @ext(0x10, 0x14, 0x8C)
+//    model TH0 is Memory<UIN>;
 
     /** SFR 0x008D ION_TIMER_HIGH */
     @ext(0xa1, 0x04, 0x8D)
@@ -1028,31 +1228,43 @@ namespace memory {
     /** SFR 0x0090 DO_PORT */
     @ext(0xbc, 0x04, 0x90)
     model DO_PORT is Memory<UCH>;
+//    @ext(0x0c, 0x14, 0x90)
+//    model DO_PORT is Memory<UIN>;
 
     // Alias of DO_PORT
     // /** SFR 0x0090 P1ANA */
     // @ext(0xbc, 0x04, 0x90)
     // model P1ANA is Memory<UCH>;
+//    // @ext(0x0c, 0x14, 0x90)
+//    // model P1ANA is Memory<UIN>;
 
     // Alias of DO_PORT
     // /** SFR 0x0090 P1_ALTSEL0 */
     // @ext(0xbc, 0x04, 0x90)
     // model P1_ALTSEL0 is Memory<UCH>;
+//    // @ext(0x0c, 0x14, 0x90)
+//    // model P1_ALTSEL0 is Memory<UIN>;
 
     // Alias of DO_PORT
     // /** SFR 0x0090 P1_DATA */
     // @ext(0xbc, 0x04, 0x90)
     // model P1_DATA is Memory<UCH>;
+//    // @ext(0x0c, 0x14, 0x90)
+//    // model P1_DATA is Memory<UIN>;
 
     // Alias of DO_PORT
     // /** SFR 0x0090 P1_OD */
     // @ext(0xbc, 0x04, 0x90)
     // model P1_OD is Memory<UCH>;
+//    // @ext(0x0c, 0x14, 0x90)
+//    // model P1_OD is Memory<UIN>;
 
     // Alias of DO_PORT
     // /** SFR 0x0090 P1_PUDSEL */
     // @ext(0xbc, 0x04, 0x90)
     // model P1_PUDSEL is Memory<UCH>;
+//    // @ext(0x0c, 0x14, 0x90)
+//    // model P1_PUDSEL is Memory<UIN>;
 
     /** SFR 0x0091 P1_ALTSEL1 */
     @ext(0xbd, 0x04, 0x91)
@@ -1076,26 +1288,36 @@ namespace memory {
     /** SFR 0x0092 DPSEL */
     @ext(0xbe, 0x04, 0x92)
     model DPSEL is Memory<UCH>;
+//    @ext(0x0e, 0x14, 0x92)
+//    model DPSEL is Memory<UIN>;
 
     // Alias of DPSEL
     // /** SFR 0x0092 P5_ALTSEL0 */
     // @ext(0xbe, 0x04, 0x92)
     // model P5_ALTSEL0 is Memory<UCH>;
+//    // @ext(0x0e, 0x14, 0x92)
+//    // model P5_ALTSEL0 is Memory<UIN>;
 
     // Alias of DPSEL
     // /** SFR 0x0092 P5_DATA */
     // @ext(0xbe, 0x04, 0x92)
     // model P5_DATA is Memory<UCH>;
+//    // @ext(0x0e, 0x14, 0x92)
+//    // model P5_DATA is Memory<UIN>;
 
     // Alias of DPSEL
     // /** SFR 0x0092 P5_OD */
     // @ext(0xbe, 0x04, 0x92)
     // model P5_OD is Memory<UCH>;
+//    // @ext(0x0e, 0x14, 0x92)
+//    // model P5_OD is Memory<UIN>;
 
     // Alias of DPSEL
     // /** SFR 0x0092 P5_PUDSEL */
     // @ext(0xbe, 0x04, 0x92)
     // model P5_PUDSEL is Memory<UCH>;
+//    // @ext(0x0e, 0x14, 0x92)
+//    // model P5_PUDSEL is Memory<UIN>;
 
     /** SFR 0x0093 P5_ALTSEL1 */
     @ext(0xbf, 0x04, 0x93)
@@ -1114,6 +1336,8 @@ namespace memory {
     /** SFR 0x0098 SCON */
     @ext(0xb4, 0x04, 0x98)
     model SCON is Memory<UCH>;
+//    @ext(0x04, 0x14, 0x98)
+//    model SCON is Memory<UIN>;
 
     /** SFR 0x0099 SBUF */
     @ext(0xb5, 0x04, 0x99)
@@ -1122,31 +1346,43 @@ namespace memory {
     /** SFR 0x009A CCL_GEBL */
     @ext(0xb6, 0x04, 0x9A)
     model CCL_GEBL is Memory<UCH>;
+//    @ext(0x06, 0x14, 0x9A)
+//    model CCL_GEBL is Memory<UIN>;
 
     // Alias of CCL_GEBL
     // /** SFR 0x009A CCU6_CC63RL */
     // @ext(0xb6, 0x04, 0x9A)
     // model CCU6_CC63RL is Memory<UCH>;
+//    // @ext(0x06, 0x14, 0x9A)
+//    // model CCU6_CC63RL is Memory<UIN>;
 
     // Alias of CCL_GEBL
     // /** SFR 0x009A CCU6_CC63SRL */
     // @ext(0xb6, 0x04, 0x9A)
     // model CCU6_CC63SRL is Memory<UCH>;
+//    // @ext(0x06, 0x14, 0x9A)
+//    // model CCU6_CC63SRL is Memory<UIN>;
 
     // Alias of CCL_GEBL
     // /** SFR 0x009A CCU6_MCMOUTL */
     // @ext(0xb6, 0x04, 0x9A)
     // model CCU6_MCMOUTL is Memory<UCH>;
+//    // @ext(0x06, 0x14, 0x9A)
+//    // model CCU6_MCMOUTL is Memory<UIN>;
 
     // Alias of CCL_GEBL
     // /** SFR 0x009A CCU6_T12MSELL */
     // @ext(0xb6, 0x04, 0x9A)
     // model CCU6_T12MSELL is Memory<UCH>;
+//    // @ext(0x06, 0x14, 0x9A)
+//    // model CCU6_T12MSELL is Memory<UIN>;
 
     // Alias of CCL_GEBL
     // /** SFR 0x009A CD_CORDXL */
     // @ext(0xb6, 0x04, 0x9A)
     // model CD_CORDXL is Memory<UCH>;
+//    // @ext(0x06, 0x14, 0x9A)
+//    // model CD_CORDXL is Memory<UIN>;
 
     /** SFR 0x009B CCH_GEBL */
     @ext(0xb7, 0x04, 0x9B)
@@ -1180,26 +1416,36 @@ namespace memory {
     /** SFR 0x009C CCU6_IENL */
     @ext(0xb0, 0x04, 0x9C)
     model CCU6_IENL is Memory<UCH>;
+//    @ext(0x00, 0x14, 0x9C)
+//    model CCU6_IENL is Memory<UIN>;
 
     // Alias of CCU6_IENL
     // /** SFR 0x009C CCU6_ISL */
     // @ext(0xb0, 0x04, 0x9C)
     // model CCU6_ISL is Memory<UCH>;
+//    // @ext(0x00, 0x14, 0x9C)
+//    // model CCU6_ISL is Memory<UIN>;
 
     // Alias of CCU6_IENL
     // /** SFR 0x009C CCU6_T12PRL */
     // @ext(0xb0, 0x04, 0x9C)
     // model CCU6_T12PRL is Memory<UCH>;
+//    // @ext(0x00, 0x14, 0x9C)
+//    // model CCU6_T12PRL is Memory<UIN>;
 
     // Alias of CCU6_IENL
     // /** SFR 0x009C CCU6_TCTR4L */
     // @ext(0xb0, 0x04, 0x9C)
     // model CCU6_TCTR4L is Memory<UCH>;
+//    // @ext(0x00, 0x14, 0x9C)
+//    // model CCU6_TCTR4L is Memory<UIN>;
 
     // Alias of CCU6_IENL
     // /** SFR 0x009C CD_CORDYL */
     // @ext(0xb0, 0x04, 0x9C)
     // model CD_CORDYL is Memory<UCH>;
+//    // @ext(0x00, 0x14, 0x9C)
+//    // model CD_CORDYL is Memory<UIN>;
 
     /** SFR 0x009D CCU6_IENH */
     @ext(0xb1, 0x04, 0x9D)
@@ -1228,26 +1474,36 @@ namespace memory {
     /** SFR 0x009E CCU6_INPL */
     @ext(0xb2, 0x04, 0x9E)
     model CCU6_INPL is Memory<UCH>;
+//    @ext(0x02, 0x14, 0x9E)
+//    model CCU6_INPL is Memory<UIN>;
 
     // Alias of CCU6_INPL
     // /** SFR 0x009E CCU6_MCMOUTSL */
     // @ext(0xb2, 0x04, 0x9E)
     // model CCU6_MCMOUTSL is Memory<UCH>;
+//    // @ext(0x02, 0x14, 0x9E)
+//    // model CCU6_MCMOUTSL is Memory<UIN>;
 
     // Alias of CCU6_INPL
     // /** SFR 0x009E CCU6_PISEL0L */
     // @ext(0xb2, 0x04, 0x9E)
     // model CCU6_PISEL0L is Memory<UCH>;
+//    // @ext(0x02, 0x14, 0x9E)
+//    // model CCU6_PISEL0L is Memory<UIN>;
 
     // Alias of CCU6_INPL
     // /** SFR 0x009E CCU6_T13PRL */
     // @ext(0xb2, 0x04, 0x9E)
     // model CCU6_T13PRL is Memory<UCH>;
+//    // @ext(0x02, 0x14, 0x9E)
+//    // model CCU6_T13PRL is Memory<UIN>;
 
     // Alias of CCU6_INPL
     // /** SFR 0x009E CD_CORDZL */
     // @ext(0xb2, 0x04, 0x9E)
     // model CD_CORDZL is Memory<UCH>;
+//    // @ext(0x02, 0x14, 0x9E)
+//    // model CD_CORDZL is Memory<UIN>;
 
     /** SFR 0x009F CCU6_INPH */
     @ext(0xb3, 0x04, 0x9F)
@@ -1276,16 +1532,22 @@ namespace memory {
     /** SFR 0x00A0 CD_STATC */
     @ext(0x8c, 0x04, 0xA0)
     model CD_STATC is Memory<UCH>;
+//    @ext(0x3c, 0x14, 0xA0)
+//    model CD_STATC is Memory<UIN>;
 
     // Alias of CD_STATC
     // /** SFR 0x00A0 P2_DATA */
     // @ext(0x8c, 0x04, 0xA0)
     // model P2_DATA is Memory<UCH>;
+//    // @ext(0x3c, 0x14, 0xA0)
+//    // model P2_DATA is Memory<UIN>;
 
     // Alias of CD_STATC
     // /** SFR 0x00A0 P2_PUDSEL */
     // @ext(0x8c, 0x04, 0xA0)
     // model P2_PUDSEL is Memory<UCH>;
+//    // @ext(0x3c, 0x14, 0xA0)
+//    // model P2_PUDSEL is Memory<UIN>;
 
     /** SFR 0x00A1 CD_CON */
     @ext(0x8d, 0x04, 0xA1)
@@ -1308,21 +1570,29 @@ namespace memory {
     /** SFR 0x00A4 CCU6_ISRL */
     @ext(0x88, 0x04, 0xA4)
     model CCU6_ISRL is Memory<UCH>;
+//    @ext(0x38, 0x14, 0xA4)
+//    model CCU6_ISRL is Memory<UIN>;
 
     // Alias of CCU6_ISRL
     // /** SFR 0x00A4 CCU6_ISSL */
     // @ext(0x88, 0x04, 0xA4)
     // model CCU6_ISSL is Memory<UCH>;
+//    // @ext(0x38, 0x14, 0xA4)
+//    // model CCU6_ISSL is Memory<UIN>;
 
     // Alias of CCU6_ISRL
     // /** SFR 0x00A4 CCU6_PISEL2 */
     // @ext(0x88, 0x04, 0xA4)
     // model CCU6_PISEL2 is Memory<UCH>;
+//    // @ext(0x38, 0x14, 0xA4)
+//    // model CCU6_PISEL2 is Memory<UIN>;
 
     // Alias of CCU6_ISRL
     // /** SFR 0x00A4 CCU6_T12DTCL */
     // @ext(0x88, 0x04, 0xA4)
     // model CCU6_T12DTCL is Memory<UCH>;
+//    // @ext(0x38, 0x14, 0xA4)
+//    // model CCU6_T12DTCL is Memory<UIN>;
 
     /** SFR 0x00A5 CCU6_ISRH */
     @ext(0x89, 0x04, 0xA5)
@@ -1341,16 +1611,22 @@ namespace memory {
     /** SFR 0x00A6 CCU6_CMPMODIFL */
     @ext(0x8a, 0x04, 0xA6)
     model CCU6_CMPMODIFL is Memory<UCH>;
+//    @ext(0x3a, 0x14, 0xA6)
+//    model CCU6_CMPMODIFL is Memory<UIN>;
 
     // Alias of CCU6_CMPMODIFL
     // /** SFR 0x00A6 CCU6_PSLR */
     // @ext(0x8a, 0x04, 0xA6)
     // model CCU6_PSLR is Memory<UCH>;
+//    // @ext(0x3a, 0x14, 0xA6)
+//    // model CCU6_PSLR is Memory<UIN>;
 
     // Alias of CCU6_CMPMODIFL
     // /** SFR 0x00A6 CCU6_TCTR0L */
     // @ext(0x8a, 0x04, 0xA6)
     // model CCU6_TCTR0L is Memory<UCH>;
+//    // @ext(0x3a, 0x14, 0xA6)
+//    // model CCU6_TCTR0L is Memory<UIN>;
 
     /** SFR 0x00A7 CCU6_CMPMODIFH */
     @ext(0x8b, 0x04, 0xA7)
@@ -1369,6 +1645,8 @@ namespace memory {
     /** SFR 0x00A8 IEN0 */
     @ext(0x84, 0x04, 0xA8)
     model IEN0 is Memory<UCH>;
+//    @ext(0x34, 0x14, 0xA8)
+//    model IEN0 is Memory<UIN>;
 
     /** SFR 0x00A9 IP0 */
     @ext(0x85, 0x04, 0xA9)
@@ -1382,16 +1660,22 @@ namespace memory {
     /** SFR 0x00AA SRELL */
     @ext(0x86, 0x04, 0xAA)
     model SRELL is Memory<UCH>;
+//    @ext(0x36, 0x14, 0xAA)
+//    model SRELL is Memory<UIN>;
 
     // Alias of SRELL
     // /** SFR 0x00AA SSC_CONL_O */
     // @ext(0x86, 0x04, 0xAA)
     // model SSC_CONL_O is Memory<UCH>;
+//    // @ext(0x36, 0x14, 0xAA)
+//    // model SSC_CONL_O is Memory<UIN>;
 
     // Alias of SRELL
     // /** SFR 0x00AA SSC_CONL_P */
     // @ext(0x86, 0x04, 0xAA)
     // model SSC_CONL_P is Memory<UCH>;
+//    // @ext(0x36, 0x14, 0xAA)
+//    // model SSC_CONL_P is Memory<UIN>;
 
     /** SFR 0x00AB SSC_CONH_O */
     @ext(0x87, 0x04, 0xAB)
@@ -1405,6 +1689,8 @@ namespace memory {
     /** SFR 0x00AC SSC_TBL */
     @ext(0x80, 0x04, 0xAC)
     model SSC_TBL is Memory<UCH>;
+//    @ext(0x30, 0x14, 0xAC)
+//    model SSC_TBL is Memory<UIN>;
 
     /** SFR 0x00AD SSC_RBL */
     @ext(0x81, 0x04, 0xAD)
@@ -1413,6 +1699,8 @@ namespace memory {
     /** SFR 0x00AE SSC_BRL */
     @ext(0x82, 0x04, 0xAE)
     model SSC_BRL is Memory<UCH>;
+//    @ext(0x32, 0x14, 0xAE)
+//    model SSC_BRL is Memory<UIN>;
 
     /** SFR 0x00AF SSC_BRH */
     @ext(0x83, 0x04, 0xAF)
@@ -1421,26 +1709,36 @@ namespace memory {
     /** SFR 0x00B0 DE_F_PORT */
     @ext(0x9c, 0x04, 0xB0)
     model DE_F_PORT is Memory<UCH>;
+//    @ext(0x2c, 0x14, 0xB0)
+//    model DE_F_PORT is Memory<UIN>;
 
     // Alias of DE_F_PORT
     // /** SFR 0x00B0 P3_ALTSEL0 */
     // @ext(0x9c, 0x04, 0xB0)
     // model P3_ALTSEL0 is Memory<UCH>;
+//    // @ext(0x2c, 0x14, 0xB0)
+//    // model P3_ALTSEL0 is Memory<UIN>;
 
     // Alias of DE_F_PORT
     // /** SFR 0x00B0 P3_DATA */
     // @ext(0x9c, 0x04, 0xB0)
     // model P3_DATA is Memory<UCH>;
+//    // @ext(0x2c, 0x14, 0xB0)
+//    // model P3_DATA is Memory<UIN>;
 
     // Alias of DE_F_PORT
     // /** SFR 0x00B0 P3_OD */
     // @ext(0x9c, 0x04, 0xB0)
     // model P3_OD is Memory<UCH>;
+//    // @ext(0x2c, 0x14, 0xB0)
+//    // model P3_OD is Memory<UIN>;
 
     // Alias of DE_F_PORT
     // /** SFR 0x00B0 P3_PUDSEL */
     // @ext(0x9c, 0x04, 0xB0)
     // model P3_PUDSEL is Memory<UCH>;
+//    // @ext(0x2c, 0x14, 0xB0)
+//    // model P3_PUDSEL is Memory<UIN>;
 
     /** SFR 0x00B1 P3_ALTSEL1 */
     @ext(0x9d, 0x04, 0xB1)
@@ -1464,6 +1762,8 @@ namespace memory {
     /** SFR 0x00B2 PORT_PAGE */
     @ext(0x9e, 0x04, 0xB2)
     model PORT_PAGE is Memory<UCH>;
+//    @ext(0x2e, 0x14, 0xB2)
+//    model PORT_PAGE is Memory<UIN>;
 
     /** SFR 0x00B3 MODPISEL */
     @ext(0x9f, 0x04, 0xB3)
@@ -1477,16 +1777,22 @@ namespace memory {
     /** SFR 0x00B4 IRCON0 */
     @ext(0x98, 0x04, 0xB4)
     model IRCON0 is Memory<UCH>;
+//    @ext(0x28, 0x14, 0xB4)
+//    model IRCON0 is Memory<UIN>;
 
     // Alias of IRCON0
     // /** SFR 0x00B4 IRCON3 */
     // @ext(0x98, 0x04, 0xB4)
     // model IRCON3 is Memory<UCH>;
+//    // @ext(0x28, 0x14, 0xB4)
+//    // model IRCON3 is Memory<UIN>;
 
     // Alias of IRCON0
     // /** SFR 0x00B4 PMCON0 */
     // @ext(0x98, 0x04, 0xB4)
     // model PMCON0 is Memory<UCH>;
+//    // @ext(0x28, 0x14, 0xB4)
+//    // model PMCON0 is Memory<UIN>;
 
     /** SFR 0x00B5 IRCON1 */
     @ext(0x99, 0x04, 0xB5)
@@ -1505,11 +1811,15 @@ namespace memory {
     /** SFR 0x00B6 IRCON2 */
     @ext(0x9a, 0x04, 0xB6)
     model IRCON2 is Memory<UCH>;
+//    @ext(0x2a, 0x14, 0xB6)
+//    model IRCON2 is Memory<UIN>;
 
     // Alias of IRCON2
     // /** SFR 0x00B6 OSC_CON */
     // @ext(0x9a, 0x04, 0xB6)
     // model OSC_CON is Memory<UCH>;
+//    // @ext(0x2a, 0x14, 0xB6)
+//    // model OSC_CON is Memory<UIN>;
 
     /** SFR 0x00B7 EXICON0 */
     @ext(0x9b, 0x04, 0xB7)
@@ -1532,21 +1842,29 @@ namespace memory {
     /** SFR 0x00BA CMCON */
     @ext(0x96, 0x04, 0xBA)
     model CMCON is Memory<UCH>;
+//    @ext(0x26, 0x14, 0xBA)
+//    model CMCON is Memory<UIN>;
 
     // Alias of CMCON
     // /** SFR 0x00BA EXICON1 */
     // @ext(0x96, 0x04, 0xBA)
     // model EXICON1 is Memory<UCH>;
+//    // @ext(0x26, 0x14, 0xBA)
+//    // model EXICON1 is Memory<UIN>;
 
     // Alias of CMCON
     // /** SFR 0x00BA MODPISEL2 */
     // @ext(0x96, 0x04, 0xBA)
     // model MODPISEL2 is Memory<UCH>;
+//    // @ext(0x26, 0x14, 0xBA)
+//    // model MODPISEL2 is Memory<UIN>;
 
     // Alias of CMCON
     // /** SFR 0x00BA SRELH */
     // @ext(0x96, 0x04, 0xBA)
     // model SRELH is Memory<UCH>;
+//    // @ext(0x26, 0x14, 0xBA)
+//    // model SRELH is Memory<UIN>;
 
     /** SFR 0x00BB NMICON */
     @ext(0x97, 0x04, 0xBB)
@@ -1570,16 +1888,22 @@ namespace memory {
     /** SFR 0x00BC FEAL */
     @ext(0x90, 0x04, 0xBC)
     model FEAL is Memory<UCH>;
+//    @ext(0x20, 0x14, 0xBC)
+//    model FEAL is Memory<UIN>;
 
     // Alias of FEAL
     // /** SFR 0x00BC NMISR */
     // @ext(0x90, 0x04, 0xBC)
     // model NMISR is Memory<UCH>;
+//    // @ext(0x20, 0x14, 0xBC)
+//    // model NMISR is Memory<UIN>;
 
     // Alias of FEAL
     // /** SFR 0x00BC WDTREL */
     // @ext(0x90, 0x04, 0xBC)
     // model WDTREL is Memory<UCH>;
+//    // @ext(0x20, 0x14, 0xBC)
+//    // model WDTREL is Memory<UIN>;
 
     /** SFR 0x00BD BCON */
     @ext(0x91, 0x04, 0xBD)
@@ -1603,11 +1927,15 @@ namespace memory {
     /** SFR 0x00BE COCON */
     @ext(0x92, 0x04, 0xBE)
     model COCON is Memory<UCH>;
+//    @ext(0x22, 0x14, 0xBE)
+//    model COCON is Memory<UIN>;
 
     // Alias of COCON
     // /** SFR 0x00BE WDTL */
     // @ext(0x92, 0x04, 0xBE)
     // model WDTL is Memory<UCH>;
+//    // @ext(0x22, 0x14, 0xBE)
+//    // model WDTL is Memory<UIN>;
 
     /** SFR 0x00BF SCU_PAGE */
     @ext(0x93, 0x04, 0xBF)
@@ -1621,16 +1949,22 @@ namespace memory {
     /** SFR 0x00C0 IRCON */
     @ext(0xec, 0x04, 0xC0)
     model IRCON is Memory<UCH>;
+//    @ext(0x5c, 0x14, 0xC0)
+//    model IRCON is Memory<UIN>;
 
     // Alias of IRCON
     // /** SFR 0x00C0 T21_T2CON */
     // @ext(0xec, 0x04, 0xC0)
     // model T21_T2CON is Memory<UCH>;
+//    // @ext(0x5c, 0x14, 0xC0)
+//    // model T21_T2CON is Memory<UIN>;
 
     // Alias of IRCON
     // /** SFR 0x00C0 T2_T2CON */
     // @ext(0xec, 0x04, 0xC0)
     // model T2_T2CON is Memory<UCH>;
+//    // @ext(0x5c, 0x14, 0xC0)
+//    // model T2_T2CON is Memory<UIN>;
 
     /** SFR 0x00C1 CCEN */
     @ext(0xed, 0x04, 0xC1)
@@ -1649,21 +1983,29 @@ namespace memory {
     /** SFR 0x00C2 CCL1 */
     @ext(0xee, 0x04, 0xC2)
     model CCL1 is Memory<UCH>;
+//    @ext(0x5e, 0x14, 0xC2)
+//    model CCL1 is Memory<UIN>;
 
     // Alias of CCL1
     // /** SFR 0x00C2 SYS_TIMER_RELOAD_LOW */
     // @ext(0xee, 0x04, 0xC2)
     // model SYS_TIMER_RELOAD_LOW is Memory<UCH>;
+//    // @ext(0x5e, 0x14, 0xC2)
+//    // model SYS_TIMER_RELOAD_LOW is Memory<UIN>;
 
     // Alias of CCL1
     // /** SFR 0x00C2 T21_RC2L */
     // @ext(0xee, 0x04, 0xC2)
     // model T21_RC2L is Memory<UCH>;
+//    // @ext(0x5e, 0x14, 0xC2)
+//    // model T21_RC2L is Memory<UIN>;
 
     // Alias of CCL1
     // /** SFR 0x00C2 T2_RC2L */
     // @ext(0xee, 0x04, 0xC2)
     // model T2_RC2L is Memory<UCH>;
+//    // @ext(0x5e, 0x14, 0xC2)
+//    // model T2_RC2L is Memory<UIN>;
 
     /** SFR 0x00C3 CCH1 */
     @ext(0xef, 0x04, 0xC3)
@@ -1687,21 +2029,29 @@ namespace memory {
     /** SFR 0x00C4 CCL2 */
     @ext(0xe8, 0x04, 0xC4)
     model CCL2 is Memory<UCH>;
+//    @ext(0x58, 0x14, 0xC4)
+//    model CCL2 is Memory<UIN>;
 
     // Alias of CCL2
     // /** SFR 0x00C4 T21_T2L */
     // @ext(0xe8, 0x04, 0xC4)
     // model T21_T2L is Memory<UCH>;
+//    // @ext(0x58, 0x14, 0xC4)
+//    // model T21_T2L is Memory<UIN>;
 
     // Alias of CCL2
     // /** SFR 0x00C4 T2_T2L */
     // @ext(0xe8, 0x04, 0xC4)
     // model T2_T2L is Memory<UCH>;
+//    // @ext(0x58, 0x14, 0xC4)
+//    // model T2_T2L is Memory<UIN>;
 
     // Alias of CCL2
     // /** SFR 0x00C4 TL2 */
     // @ext(0xe8, 0x04, 0xC4)
     // model TL2 is Memory<UCH>;
+//    // @ext(0x58, 0x14, 0xC4)
+//    // model TL2 is Memory<UIN>;
 
     /** SFR 0x00C5 CCH2 */
     @ext(0xe9, 0x04, 0xC5)
@@ -1725,6 +2075,8 @@ namespace memory {
     /** SFR 0x00C6 CCL3 */
     @ext(0xea, 0x04, 0xC6)
     model CCL3 is Memory<UCH>;
+//    @ext(0x5a, 0x14, 0xC6)
+//    model CCL3 is Memory<UIN>;
 
     /** SFR 0x00C7 CCH3 */
     @ext(0xeb, 0x04, 0xC7)
@@ -1733,31 +2085,43 @@ namespace memory {
     /** SFR 0x00C8 P4_ALTSEL0 */
     @ext(0xe4, 0x04, 0xC8)
     model P4_ALTSEL0 is Memory<UCH>;
+//    @ext(0x54, 0x14, 0xC8)
+//    model P4_ALTSEL0 is Memory<UIN>;
 
     // Alias of P4_ALTSEL0
     // /** SFR 0x00C8 P4_DATA */
     // @ext(0xe4, 0x04, 0xC8)
     // model P4_DATA is Memory<UCH>;
+//    // @ext(0x54, 0x14, 0xC8)
+//    // model P4_DATA is Memory<UIN>;
 
     // Alias of P4_ALTSEL0
     // /** SFR 0x00C8 P4_OD */
     // @ext(0xe4, 0x04, 0xC8)
     // model P4_OD is Memory<UCH>;
+//    // @ext(0x54, 0x14, 0xC8)
+//    // model P4_OD is Memory<UIN>;
 
     // Alias of P4_ALTSEL0
     // /** SFR 0x00C8 P4_PUDSEL */
     // @ext(0xe4, 0x04, 0xC8)
     // model P4_PUDSEL is Memory<UCH>;
+//    // @ext(0x54, 0x14, 0xC8)
+//    // model P4_PUDSEL is Memory<UIN>;
 
     // Alias of P4_ALTSEL0
     // /** SFR 0x00C8 T2CON */
     // @ext(0xe4, 0x04, 0xC8)
     // model T2CON is Memory<UCH>;
+//    // @ext(0x54, 0x14, 0xC8)
+//    // model T2CON is Memory<UIN>;
 
     // Alias of P4_ALTSEL0
     // /** SFR 0x00C8 UART1_SCON */
     // @ext(0xe4, 0x04, 0xC8)
     // model UART1_SCON is Memory<UCH>;
+//    // @ext(0x54, 0x14, 0xC8)
+//    // model UART1_SCON is Memory<UIN>;
 
     /** SFR 0x00C9 P4_ALTSEL1 */
     @ext(0xe5, 0x04, 0xC9)
@@ -1781,51 +2145,71 @@ namespace memory {
     /** SFR 0x00CA ADC_CHCTR0 */
     @ext(0xe6, 0x04, 0xCA)
     model ADC_CHCTR0 is Memory<UCH>;
+//    @ext(0x56, 0x14, 0xCA)
+//    model ADC_CHCTR0 is Memory<UIN>;
 
     // Alias of ADC_CHCTR0
     // /** SFR 0x00CA ADC_CHINFR */
     // @ext(0xe6, 0x04, 0xCA)
     // model ADC_CHINFR is Memory<UCH>;
+//    // @ext(0x56, 0x14, 0xCA)
+//    // model ADC_CHINFR is Memory<UIN>;
 
     // Alias of ADC_CHCTR0
     // /** SFR 0x00CA ADC_CRCR1 */
     // @ext(0xe6, 0x04, 0xCA)
     // model ADC_CRCR1 is Memory<UCH>;
+//    // @ext(0x56, 0x14, 0xCA)
+//    // model ADC_CRCR1 is Memory<UIN>;
 
     // Alias of ADC_CHCTR0
     // /** SFR 0x00CA ADC_GLOBCTR */
     // @ext(0xe6, 0x04, 0xCA)
     // model ADC_GLOBCTR is Memory<UCH>;
+//    // @ext(0x56, 0x14, 0xCA)
+//    // model ADC_GLOBCTR is Memory<UIN>;
 
     // Alias of ADC_CHCTR0
     // /** SFR 0x00CA ADC_RCR0 */
     // @ext(0xe6, 0x04, 0xCA)
     // model ADC_RCR0 is Memory<UCH>;
+//    // @ext(0x56, 0x14, 0xCA)
+//    // model ADC_RCR0 is Memory<UIN>;
 
     // Alias of ADC_CHCTR0
     // /** SFR 0x00CA ADC_RESR0L */
     // @ext(0xe6, 0x04, 0xCA)
     // model ADC_RESR0L is Memory<UCH>;
+//    // @ext(0x56, 0x14, 0xCA)
+//    // model ADC_RESR0L is Memory<UIN>;
 
     // Alias of ADC_CHCTR0
     // /** SFR 0x00CA ADC_RESRA0L */
     // @ext(0xe6, 0x04, 0xCA)
     // model ADC_RESRA0L is Memory<UCH>;
+//    // @ext(0x56, 0x14, 0xCA)
+//    // model ADC_RESRA0L is Memory<UIN>;
 
     // Alias of ADC_CHCTR0
     // /** SFR 0x00CA CRCL */
     // @ext(0xe6, 0x04, 0xCA)
     // model CRCL is Memory<UCH>;
+//    // @ext(0x56, 0x14, 0xCA)
+//    // model CRCL is Memory<UIN>;
 
     // Alias of ADC_CHCTR0
     // /** SFR 0x00CA RCAP2L */
     // @ext(0xe6, 0x04, 0xCA)
     // model RCAP2L is Memory<UCH>;
+//    // @ext(0x56, 0x14, 0xCA)
+//    // model RCAP2L is Memory<UIN>;
 
     // Alias of ADC_CHCTR0
     // /** SFR 0x00CA UART1_BCON */
     // @ext(0xe6, 0x04, 0xCA)
     // model UART1_BCON is Memory<UCH>;
+//    // @ext(0x56, 0x14, 0xCA)
+//    // model UART1_BCON is Memory<UIN>;
 
     /** SFR 0x00CB ADC_CHCTR1 */
     @ext(0xe7, 0x04, 0xCB)
@@ -1879,41 +2263,57 @@ namespace memory {
     /** SFR 0x00CC ADC_CHCTR2 */
     @ext(0xe0, 0x04, 0xCC)
     model ADC_CHCTR2 is Memory<UCH>;
+//    @ext(0x50, 0x14, 0xCC)
+//    model ADC_CHCTR2 is Memory<UIN>;
 
     // Alias of ADC_CHCTR2
     // /** SFR 0x00CC ADC_CHINSR */
     // @ext(0xe0, 0x04, 0xCC)
     // model ADC_CHINSR is Memory<UCH>;
+//    // @ext(0x50, 0x14, 0xCC)
+//    // model ADC_CHINSR is Memory<UIN>;
 
     // Alias of ADC_CHCTR2
     // /** SFR 0x00CC ADC_CRMR1 */
     // @ext(0xe0, 0x04, 0xCC)
     // model ADC_CRMR1 is Memory<UCH>;
+//    // @ext(0x50, 0x14, 0xCC)
+//    // model ADC_CRMR1 is Memory<UIN>;
 
     // Alias of ADC_CHCTR2
     // /** SFR 0x00CC ADC_PRAR */
     // @ext(0xe0, 0x04, 0xCC)
     // model ADC_PRAR is Memory<UCH>;
+//    // @ext(0x50, 0x14, 0xCC)
+//    // model ADC_PRAR is Memory<UIN>;
 
     // Alias of ADC_CHCTR2
     // /** SFR 0x00CC ADC_RCR2 */
     // @ext(0xe0, 0x04, 0xCC)
     // model ADC_RCR2 is Memory<UCH>;
+//    // @ext(0x50, 0x14, 0xCC)
+//    // model ADC_RCR2 is Memory<UIN>;
 
     // Alias of ADC_CHCTR2
     // /** SFR 0x00CC ADC_RESR1L */
     // @ext(0xe0, 0x04, 0xCC)
     // model ADC_RESR1L is Memory<UCH>;
+//    // @ext(0x50, 0x14, 0xCC)
+//    // model ADC_RESR1L is Memory<UIN>;
 
     // Alias of ADC_CHCTR2
     // /** SFR 0x00CC ADC_RESRA1L */
     // @ext(0xe0, 0x04, 0xCC)
     // model ADC_RESRA1L is Memory<UCH>;
+//    // @ext(0x50, 0x14, 0xCC)
+//    // model ADC_RESRA1L is Memory<UIN>;
 
     // Alias of ADC_CHCTR2
     // /** SFR 0x00CC UART1_FDCON */
     // @ext(0xe0, 0x04, 0xCC)
     // model UART1_FDCON is Memory<UCH>;
+//    // @ext(0x50, 0x14, 0xCC)
+//    // model UART1_FDCON is Memory<UIN>;
 
     /** SFR 0x00CD ADC_CHCTR3 */
     @ext(0xe1, 0x04, 0xCD)
@@ -1957,41 +2357,57 @@ namespace memory {
     /** SFR 0x00CE ADC_CHCTR4 */
     @ext(0xe2, 0x04, 0xCE)
     model ADC_CHCTR4 is Memory<UCH>;
+//    @ext(0x52, 0x14, 0xCE)
+//    model ADC_CHCTR4 is Memory<UIN>;
 
     // Alias of ADC_CHCTR4
     // /** SFR 0x00CE ADC_EVINFR */
     // @ext(0xe2, 0x04, 0xCE)
     // model ADC_EVINFR is Memory<UCH>;
+//    // @ext(0x52, 0x14, 0xCE)
+//    // model ADC_EVINFR is Memory<UIN>;
 
     // Alias of ADC_CHCTR4
     // /** SFR 0x00CE ADC_INPCR0 */
     // @ext(0xe2, 0x04, 0xCE)
     // model ADC_INPCR0 is Memory<UCH>;
+//    // @ext(0x52, 0x14, 0xCE)
+//    // model ADC_INPCR0 is Memory<UIN>;
 
     // Alias of ADC_CHCTR4
     // /** SFR 0x00CE ADC_QSR0 */
     // @ext(0xe2, 0x04, 0xCE)
     // model ADC_QSR0 is Memory<UCH>;
+//    // @ext(0x52, 0x14, 0xCE)
+//    // model ADC_QSR0 is Memory<UIN>;
 
     // Alias of ADC_CHCTR4
     // /** SFR 0x00CE ADC_RESR2L */
     // @ext(0xe2, 0x04, 0xCE)
     // model ADC_RESR2L is Memory<UCH>;
+//    // @ext(0x52, 0x14, 0xCE)
+//    // model ADC_RESR2L is Memory<UIN>;
 
     // Alias of ADC_CHCTR4
     // /** SFR 0x00CE ADC_RESRA2L */
     // @ext(0xe2, 0x04, 0xCE)
     // model ADC_RESRA2L is Memory<UCH>;
+//    // @ext(0x52, 0x14, 0xCE)
+//    // model ADC_RESRA2L is Memory<UIN>;
 
     // Alias of ADC_CHCTR4
     // /** SFR 0x00CE ADC_VFCR */
     // @ext(0xe2, 0x04, 0xCE)
     // model ADC_VFCR is Memory<UCH>;
+//    // @ext(0x52, 0x14, 0xCE)
+//    // model ADC_VFCR is Memory<UIN>;
 
     // Alias of ADC_CHCTR4
     // /** SFR 0x00CE UART1_FDRES */
     // @ext(0xe2, 0x04, 0xCE)
     // model UART1_FDRES is Memory<UCH>;
+//    // @ext(0x52, 0x14, 0xCE)
+//    // model UART1_FDRES is Memory<UIN>;
 
     /** SFR 0x00CF ADC_CHCTR5 */
     @ext(0xe3, 0x04, 0xCF)
@@ -2025,6 +2441,8 @@ namespace memory {
     /** SFR 0x00D0 PSW */
     @ext(0xfc, 0x04, 0xD0)
     model PSW is Memory<UCH>;
+//    @ext(0x4c, 0x14, 0xD0)
+//    model PSW is Memory<UIN>;
 
     /** SFR 0x00D1 ADC_PAGE */
     @ext(0xfd, 0x04, 0xD1)
@@ -2033,31 +2451,43 @@ namespace memory {
     /** SFR 0x00D2 ADC_CHCTR6 */
     @ext(0xfe, 0x04, 0xD2)
     model ADC_CHCTR6 is Memory<UCH>;
+//    @ext(0x4e, 0x14, 0xD2)
+//    model ADC_CHCTR6 is Memory<UIN>;
 
     // Alias of ADC_CHCTR6
     // /** SFR 0x00D2 ADC_EVINSR */
     // @ext(0xfe, 0x04, 0xD2)
     // model ADC_EVINSR is Memory<UCH>;
+//    // @ext(0x4e, 0x14, 0xD2)
+//    // model ADC_EVINSR is Memory<UIN>;
 
     // Alias of ADC_CHCTR6
     // /** SFR 0x00D2 ADC_QBUR0 */
     // @ext(0xfe, 0x04, 0xD2)
     // model ADC_QBUR0 is Memory<UCH>;
+//    // @ext(0x4e, 0x14, 0xD2)
+//    // model ADC_QBUR0 is Memory<UIN>;
 
     // Alias of ADC_CHCTR6
     // /** SFR 0x00D2 ADC_QINR0 */
     // @ext(0xfe, 0x04, 0xD2)
     // model ADC_QINR0 is Memory<UCH>;
+//    // @ext(0x4e, 0x14, 0xD2)
+//    // model ADC_QINR0 is Memory<UIN>;
 
     // Alias of ADC_CHCTR6
     // /** SFR 0x00D2 ADC_RESR3L */
     // @ext(0xfe, 0x04, 0xD2)
     // model ADC_RESR3L is Memory<UCH>;
+//    // @ext(0x4e, 0x14, 0xD2)
+//    // model ADC_RESR3L is Memory<UIN>;
 
     // Alias of ADC_CHCTR6
     // /** SFR 0x00D2 ADC_RESRA3L */
     // @ext(0xfe, 0x04, 0xD2)
     // model ADC_RESRA3L is Memory<UCH>;
+//    // @ext(0x4e, 0x14, 0xD2)
+//    // model ADC_RESRA3L is Memory<UIN>;
 
     /** SFR 0x00D3 ADC_CHCTR7 */
     @ext(0xff, 0x04, 0xD3)
@@ -2081,6 +2511,8 @@ namespace memory {
     /** SFR 0x00D8 ADCON0 */
     @ext(0xf4, 0x04, 0xD8)
     model ADCON0 is Memory<UCH>;
+//    @ext(0x44, 0x14, 0xD8)
+//    model ADCON0 is Memory<UIN>;
 
     /** SFR 0x00D9 ADDATH */
     @ext(0xf5, 0x04, 0xD9)
@@ -2089,18 +2521,26 @@ namespace memory {
     /** SFR 0x00DA ADDATL */
     @ext(0xf6, 0x04, 0xDA)
     model ADDATL is Memory<UCH>;
+//    @ext(0x46, 0x14, 0xDA)
+//    model ADDATL is Memory<UIN>;
 
     /** SFR 0x00DC ADCON1 */
     @ext(0xf0, 0x04, 0xDC)
     model ADCON1 is Memory<UCH>;
+//    @ext(0x40, 0x14, 0xDC)
+//    model ADCON1 is Memory<UIN>;
 
     /** SFR 0x00E0 ACC */
     @ext(0xcc, 0x04, 0xE0)
     model ACC is Memory<UCH>;
+//    @ext(0x7c, 0x14, 0xE0)
+//    model ACC is Memory<UIN>;
 
     /** SFR 0x00E8 IEN1 */
     @ext(0xc4, 0x04, 0xE8)
     model IEN1 is Memory<UCH>;
+//    @ext(0x74, 0x14, 0xE8)
+//    model IEN1 is Memory<UIN>;
 
     /** SFR 0x00E9 FDCON */
     @ext(0xc5, 0x04, 0xE9)
@@ -2119,6 +2559,8 @@ namespace memory {
     /** SFR 0x00EA FDSTEP */
     @ext(0xc6, 0x04, 0xEA)
     model FDSTEP is Memory<UCH>;
+//    @ext(0x76, 0x14, 0xEA)
+//    model FDSTEP is Memory<UIN>;
 
     /** SFR 0x00EB FDRES */
     @ext(0xc7, 0x04, 0xEB)
@@ -2132,6 +2574,8 @@ namespace memory {
     /** SFR 0x00EC MMWR2 */
     @ext(0xc0, 0x04, 0xEC)
     model MMWR2 is Memory<UCH>;
+//    @ext(0x70, 0x14, 0xEC)
+//    model MMWR2 is Memory<UIN>;
 
     /** SFR 0x00F1 MMCR */
     @ext(0xdd, 0x04, 0xF1)
@@ -2140,6 +2584,8 @@ namespace memory {
     /** SFR 0x00F2 MMSR */
     @ext(0xde, 0x04, 0xF2)
     model MMSR is Memory<UCH>;
+//    @ext(0x6e, 0x14, 0xF2)
+//    model MMSR is Memory<UIN>;
 
     /** SFR 0x00F3 MMBPCR */
     @ext(0xdf, 0x04, 0xF3)
@@ -2148,6 +2594,8 @@ namespace memory {
     /** SFR 0x00F4 MMICR */
     @ext(0xd8, 0x04, 0xF4)
     model MMICR is Memory<UCH>;
+//    @ext(0x68, 0x14, 0xF4)
+//    model MMICR is Memory<UIN>;
 
     /** SFR 0x00F5 MMDR */
     @ext(0xd9, 0x04, 0xF5)
@@ -2156,6 +2604,8 @@ namespace memory {
     /** SFR 0x00F6 HWBPSR */
     @ext(0xda, 0x04, 0xF6)
     model HWBPSR is Memory<UCH>;
+//    @ext(0x6a, 0x14, 0xF6)
+//    model HWBPSR is Memory<UIN>;
 
     /** SFR 0x00F7 HWBPDR */
     @ext(0xdb, 0x04, 0xF7)
@@ -2164,6 +2614,8 @@ namespace memory {
     /** SFR 0x00F8 IP1 */
     @ext(0xd4, 0x04, 0xF8)
     model IP1 is Memory<UCH>;
+//    @ext(0x64, 0x14, 0xF8)
+//    model IP1 is Memory<UIN>;
 
     /** SFR 0x00F9 IPH1 */
     @ext(0xd5, 0x04, 0xF9)
@@ -2172,21 +2624,29 @@ namespace memory {
     /** SFR 0x00FA CCU6_CC60RL */
     @ext(0xd6, 0x04, 0xFA)
     model CCU6_CC60RL is Memory<UCH>;
+//    @ext(0x66, 0x14, 0xFA)
+//    model CCU6_CC60RL is Memory<UIN>;
 
     // Alias of CCU6_CC60RL
     // /** SFR 0x00FA CCU6_CC60SRL */
     // @ext(0xd6, 0x04, 0xFA)
     // model CCU6_CC60SRL is Memory<UCH>;
+//    // @ext(0x66, 0x14, 0xFA)
+//    // model CCU6_CC60SRL is Memory<UIN>;
 
     // Alias of CCU6_CC60RL
     // /** SFR 0x00FA CCU6_T12L */
     // @ext(0xd6, 0x04, 0xFA)
     // model CCU6_T12L is Memory<UCH>;
+//    // @ext(0x66, 0x14, 0xFA)
+//    // model CCU6_T12L is Memory<UIN>;
 
     // Alias of CCU6_CC60RL
     // /** SFR 0x00FA CCU6_TCTR2L */
     // @ext(0xd6, 0x04, 0xFA)
     // model CCU6_TCTR2L is Memory<UCH>;
+//    // @ext(0x66, 0x14, 0xFA)
+//    // model CCU6_TCTR2L is Memory<UIN>;
 
     /** SFR 0x00FB CCU6_CC60RH */
     @ext(0xd7, 0x04, 0xFB)
@@ -2210,31 +2670,43 @@ namespace memory {
     /** SFR 0x00FC CCL_PUHZ */
     @ext(0xd0, 0x04, 0xFC)
     model CCL_PUHZ is Memory<UCH>;
+//    @ext(0x60, 0x14, 0xFC)
+//    model CCL_PUHZ is Memory<UIN>;
 
     // Alias of CCL_PUHZ
     // /** SFR 0x00FC CCU6_CC61RL */
     // @ext(0xd0, 0x04, 0xFC)
     // model CCU6_CC61RL is Memory<UCH>;
+//    // @ext(0x60, 0x14, 0xFC)
+//    // model CCU6_CC61RL is Memory<UIN>;
 
     // Alias of CCL_PUHZ
     // /** SFR 0x00FC CCU6_CC61SRL */
     // @ext(0xd0, 0x04, 0xFC)
     // model CCU6_CC61SRL is Memory<UCH>;
+//    // @ext(0x60, 0x14, 0xFC)
+//    // model CCU6_CC61SRL is Memory<UIN>;
 
     // Alias of CCL_PUHZ
     // /** SFR 0x00FC CCU6_MODCTRL */
     // @ext(0xd0, 0x04, 0xFC)
     // model CCU6_MODCTRL is Memory<UCH>;
+//    // @ext(0x60, 0x14, 0xFC)
+//    // model CCU6_MODCTRL is Memory<UIN>;
 
     // Alias of CCL_PUHZ
     // /** SFR 0x00FC CCU6_T13L */
     // @ext(0xd0, 0x04, 0xFC)
     // model CCU6_T13L is Memory<UCH>;
+//    // @ext(0x60, 0x14, 0xFC)
+//    // model CCU6_T13L is Memory<UIN>;
 
     // Alias of CCL_PUHZ
     // /** SFR 0x00FC VR0 */
     // @ext(0xd0, 0x04, 0xFC)
     // model VR0 is Memory<UCH>;
+//    // @ext(0x60, 0x14, 0xFC)
+//    // model VR0 is Memory<UIN>;
 
     /** SFR 0x00FD CCH_PUHZ */
     @ext(0xd1, 0x04, 0xFD)
@@ -2268,31 +2740,43 @@ namespace memory {
     /** SFR 0x00FE CCL_GPV */
     @ext(0xd2, 0x04, 0xFE)
     model CCL_GPV is Memory<UCH>;
+//    @ext(0x62, 0x14, 0xFE)
+//    model CCL_GPV is Memory<UIN>;
 
     // Alias of CCL_GPV
     // /** SFR 0x00FE CCU6_CC62RL */
     // @ext(0xd2, 0x04, 0xFE)
     // model CCU6_CC62RL is Memory<UCH>;
+//    // @ext(0x62, 0x14, 0xFE)
+//    // model CCU6_CC62RL is Memory<UIN>;
 
     // Alias of CCL_GPV
     // /** SFR 0x00FE CCU6_CC62SRL */
     // @ext(0xd2, 0x04, 0xFE)
     // model CCU6_CC62SRL is Memory<UCH>;
+//    // @ext(0x62, 0x14, 0xFE)
+//    // model CCU6_CC62SRL is Memory<UIN>;
 
     // Alias of CCL_GPV
     // /** SFR 0x00FE CCU6_CMPSTATL */
     // @ext(0xd2, 0x04, 0xFE)
     // model CCU6_CMPSTATL is Memory<UCH>;
+//    // @ext(0x62, 0x14, 0xFE)
+//    // model CCU6_CMPSTATL is Memory<UIN>;
 
     // Alias of CCL_GPV
     // /** SFR 0x00FE CCU6_TRPCTRL */
     // @ext(0xd2, 0x04, 0xFE)
     // model CCU6_TRPCTRL is Memory<UCH>;
+//    // @ext(0x62, 0x14, 0xFE)
+//    // model CCU6_TRPCTRL is Memory<UIN>;
 
     // Alias of CCL_GPV
     // /** SFR 0x00FE VR2 */
     // @ext(0xd2, 0x04, 0xFE)
     // model VR2 is Memory<UCH>;
+//    // @ext(0x62, 0x14, 0xFE)
+//    // model VR2 is Memory<UIN>;
 
     /** SFR 0x00FF CCH_GPV */
     @ext(0xd3, 0x04, 0xFF)
@@ -2326,156 +2810,218 @@ namespace memory {
     /** Konstanten 0x0000 ACK_07FF_BIT */
     @ext(0xb8, 0x02, 0x00)
     model ACK_07FF_BIT is Memory<UCH>;
+//    @ext(0x08, 0x12, 0x00)
+//    model ACK_07FF_BIT is Memory<UIN>;
 
     // Alias of ACK_07FF_BIT
     // /** Konstanten 0x0000 ACK_0800_BIT */
     // @ext(0xb8, 0x02, 0x00)
     // model ACK_0800_BIT is Memory<UCH>;
+//    // @ext(0x08, 0x12, 0x00)
+//    // model ACK_0800_BIT is Memory<UIN>;
 
     // Alias of ACK_07FF_BIT
     // /** Konstanten 0x0000 ACK_5002_BIT */
     // @ext(0xb8, 0x02, 0x00)
     // model ACK_5002_BIT is Memory<UCH>;
+//    // @ext(0x08, 0x12, 0x00)
+//    // model ACK_5002_BIT is Memory<UIN>;
 
     // Alias of ACK_07FF_BIT
     // /** Konstanten 0x0000 ACK_FF00_BIT */
     // @ext(0xb8, 0x02, 0x00)
     // model ACK_FF00_BIT is Memory<UCH>;
+//    // @ext(0x08, 0x12, 0x00)
+//    // model ACK_FF00_BIT is Memory<UIN>;
 
     // Alias of ACK_07FF_BIT
     // /** Konstanten 0x0000 ACK_REG_STOP_BIT */
     // @ext(0xb8, 0x02, 0x00)
     // model ACK_REG_STOP_BIT is Memory<UCH>;
+//    // @ext(0x08, 0x12, 0x00)
+//    // model ACK_REG_STOP_BIT is Memory<UIN>;
 
     // Alias of ACK_07FF_BIT
     // /** Konstanten 0x0000 ADC_SHORT */
     // @ext(0xb8, 0x02, 0x00)
     // model ADC_SHORT is Memory<UCH>;
+//    // @ext(0x08, 0x12, 0x00)
+//    // model ADC_SHORT is Memory<UIN>;
 
     // Alias of ACK_07FF_BIT
     // /** Konstanten 0x0000 AIO_900 */
     // @ext(0xb8, 0x02, 0x00)
     // model AIO_900 is Memory<UCH>;
+//    // @ext(0x08, 0x12, 0x00)
+//    // model AIO_900 is Memory<UIN>;
 
     // Alias of ACK_07FF_BIT
     // /** Konstanten 0x0000 BCCARD */
     // @ext(0xb8, 0x02, 0x00)
     // model BCCARD is Memory<UCH>;
+//    // @ext(0x08, 0x12, 0x00)
+//    // model BCCARD is Memory<UIN>;
 
     // Alias of ACK_07FF_BIT
     // /** Konstanten 0x0000 EBUS_S7 */
     // @ext(0xb8, 0x02, 0x00)
     // model EBUS_S7 is Memory<UCH>;
+//    // @ext(0x08, 0x12, 0x00)
+//    // model EBUS_S7 is Memory<UIN>;
 
     // Alias of ACK_07FF_BIT
     // /** Konstanten 0x0000 EBUS_SCHICHT_2 */
     // @ext(0xb8, 0x02, 0x00)
     // model EBUS_SCHICHT_2 is Memory<UCH>;
+//    // @ext(0x08, 0x12, 0x00)
+//    // model EBUS_SCHICHT_2 is Memory<UIN>;
 
     // Alias of ACK_07FF_BIT
     // /** Konstanten 0x0000 EEA_ANF */
     // @ext(0xb8, 0x02, 0x00)
     // model EEA_ANF is Memory<UCH>;
+//    // @ext(0x08, 0x12, 0x00)
+//    // model EEA_ANF is Memory<UIN>;
 
     // Alias of ACK_07FF_BIT
     // /** Konstanten 0x0000 EEP_FAST_INIT */
     // @ext(0xb8, 0x02, 0x00)
     // model EEP_FAST_INIT is Memory<UCH>;
+//    // @ext(0x08, 0x12, 0x00)
+//    // model EEP_FAST_INIT is Memory<UIN>;
 
     // Alias of ACK_07FF_BIT
     // /** Konstanten 0x0000 EE_I2C */
     // @ext(0xb8, 0x02, 0x00)
     // model EE_I2C is Memory<UCH>;
+//    // @ext(0x08, 0x12, 0x00)
+//    // model EE_I2C is Memory<UIN>;
 
     // Alias of ACK_07FF_BIT
     // /** Konstanten 0x0000 EE_PARAS */
     // @ext(0xb8, 0x02, 0x00)
     // model EE_PARAS is Memory<UCH>;
+//    // @ext(0x08, 0x12, 0x00)
+//    // model EE_PARAS is Memory<UIN>;
 
     // Alias of ACK_07FF_BIT
     // /** Konstanten 0x0000 FEHLER_DETAIL_EBENE */
     // @ext(0xb8, 0x02, 0x00)
     // model FEHLER_DETAIL_EBENE is Memory<UCH>;
+//    // @ext(0x08, 0x12, 0x00)
+//    // model FEHLER_DETAIL_EBENE is Memory<UIN>;
 
     // Alias of ACK_07FF_BIT
     // /** Konstanten 0x0000 HARD_52 */
     // @ext(0xb8, 0x02, 0x00)
     // model HARD_52 is Memory<UCH>;
+//    // @ext(0x08, 0x12, 0x00)
+//    // model HARD_52 is Memory<UIN>;
 
     // Alias of ACK_07FF_BIT
     // /** Konstanten 0x0000 INFONR */
     // @ext(0xb8, 0x02, 0x00)
     // model INFONR is Memory<UCH>;
+//    // @ext(0x08, 0x12, 0x00)
+//    // model INFONR is Memory<UIN>;
 
     // Alias of ACK_07FF_BIT
     // /** Konstanten 0x0000 ION */
     // @ext(0xb8, 0x02, 0x00)
     // model ION is Memory<UCH>;
+//    // @ext(0x08, 0x12, 0x00)
+//    // model ION is Memory<UIN>;
 
     // Alias of ACK_07FF_BIT
     // /** Konstanten 0x0000 MXSTB_A */
     // @ext(0xb8, 0x02, 0x00)
     // model MXSTB_A is Memory<UCH>;
+//    // @ext(0x08, 0x12, 0x00)
+//    // model MXSTB_A is Memory<UIN>;
 
     // Alias of ACK_07FF_BIT
     // /** Konstanten 0x0000 NM_KALTSTART_BIT */
     // @ext(0xb8, 0x02, 0x00)
     // model NM_KALTSTART_BIT is Memory<UCH>;
+//    // @ext(0x08, 0x12, 0x00)
+//    // model NM_KALTSTART_BIT is Memory<UIN>;
 
     // Alias of ACK_07FF_BIT
     // /** Konstanten 0x0000 OS_XC886 */
     // @ext(0xb8, 0x02, 0x00)
     // model OS_XC886 is Memory<UCH>;
+//    // @ext(0x08, 0x12, 0x00)
+//    // model OS_XC886 is Memory<UIN>;
 
     // Alias of ACK_07FF_BIT
     // /** Konstanten 0x0000 QQ_M1 */
     // @ext(0xb8, 0x02, 0x00)
     // model QQ_M1 is Memory<UCH>;
+//    // @ext(0x08, 0x12, 0x00)
+//    // model QQ_M1 is Memory<UIN>;
 
     // Alias of ACK_07FF_BIT
     // /** Konstanten 0x0000 RAMROM */
     // @ext(0xb8, 0x02, 0x00)
     // model RAMROM is Memory<UCH>;
+//    // @ext(0x08, 0x12, 0x00)
+//    // model RAMROM is Memory<UIN>;
 
     // Alias of ACK_07FF_BIT
     // /** Konstanten 0x0000 RX_XRAM_BUSY_BIT */
     // @ext(0xb8, 0x02, 0x00)
     // model RX_XRAM_BUSY_BIT is Memory<UCH>;
+//    // @ext(0x08, 0x12, 0x00)
+//    // model RX_XRAM_BUSY_BIT is Memory<UIN>;
 
     // Alias of ACK_07FF_BIT
     // /** Konstanten 0x0000 SFR_IO */
     // @ext(0xb8, 0x02, 0x00)
     // model SFR_IO is Memory<UCH>;
+//    // @ext(0x08, 0x12, 0x00)
+//    // model SFR_IO is Memory<UIN>;
 
     // Alias of ACK_07FF_BIT
     // /** Konstanten 0x0000 STOEREC */
     // @ext(0xb8, 0x02, 0x00)
     // model STOEREC is Memory<UCH>;
+//    // @ext(0x08, 0x12, 0x00)
+//    // model STOEREC is Memory<UIN>;
 
     // Alias of ACK_07FF_BIT
     // /** Konstanten 0x0000 TX_EIG_QQ */
     // @ext(0xb8, 0x02, 0x00)
     // model TX_EIG_QQ is Memory<UCH>;
+//    // @ext(0x08, 0x12, 0x00)
+//    // model TX_EIG_QQ is Memory<UIN>;
 
     // Alias of ACK_07FF_BIT
     // /** Konstanten 0x0000 TX_QQ_M11 */
     // @ext(0xb8, 0x02, 0x00)
     // model TX_QQ_M11 is Memory<UCH>;
+//    // @ext(0x08, 0x12, 0x00)
+//    // model TX_QQ_M11 is Memory<UIN>;
 
     // Alias of ACK_07FF_BIT
     // /** Konstanten 0x0000 USER */
     // @ext(0xb8, 0x02, 0x00)
     // model USER is Memory<UCH>;
+//    // @ext(0x08, 0x12, 0x00)
+//    // model USER is Memory<UIN>;
 
     // Alias of ACK_07FF_BIT
     // /** Konstanten 0x0000 VAR_900 */
     // @ext(0xb8, 0x02, 0x00)
     // model VAR_900 is Memory<UCH>;
+//    // @ext(0x08, 0x12, 0x00)
+//    // model VAR_900 is Memory<UIN>;
 
     // Alias of ACK_07FF_BIT
     // /** Konstanten 0x0000 ZST_QQ_EIG */
     // @ext(0xb8, 0x02, 0x00)
     // model ZST_QQ_EIG is Memory<UCH>;
+//    // @ext(0x08, 0x12, 0x00)
+//    // model ZST_QQ_EIG is Memory<UIN>;
 
     /** Konstanten 0x0001 ACK_0503_BIT */
     @ext(0xb9, 0x02, 0x01)
@@ -2569,81 +3115,113 @@ namespace memory {
     /** Konstanten 0x0002 ACK_0503 */
     @ext(0xba, 0x02, 0x02)
     model ACK_0503 is Memory<UCH>;
+//    @ext(0x0a, 0x12, 0x02)
+//    model ACK_0503 is Memory<UIN>;
 
     // Alias of ACK_0503
     // /** Konstanten 0x0002 ACK_0704 */
     // @ext(0xba, 0x02, 0x02)
     // model ACK_0704 is Memory<UCH>;
+//    // @ext(0x0a, 0x12, 0x02)
+//    // model ACK_0704 is Memory<UIN>;
 
     // Alias of ACK_0503
     // /** Konstanten 0x0002 ACK_FE01_BIT */
     // @ext(0xba, 0x02, 0x02)
     // model ACK_FE01_BIT is Memory<UCH>;
+//    // @ext(0x0a, 0x12, 0x02)
+//    // model ACK_FE01_BIT is Memory<UIN>;
 
     // Alias of ACK_0503
     // /** Konstanten 0x0002 ACK_FF02 */
     // @ext(0xba, 0x02, 0x02)
     // model ACK_FF02 is Memory<UCH>;
+//    // @ext(0x0a, 0x12, 0x02)
+//    // model ACK_FF02 is Memory<UIN>;
 
     // Alias of ACK_0503
     // /** Konstanten 0x0002 EEA_CONST_ANF */
     // @ext(0xba, 0x02, 0x02)
     // model EEA_CONST_ANF is Memory<UCH>;
+//    // @ext(0x0a, 0x12, 0x02)
+//    // model EEA_CONST_ANF is Memory<UIN>;
 
     // Alias of ACK_0503
     // /** Konstanten 0x0002 EE_RANGE_FAIL__INTBCC */
     // @ext(0xba, 0x02, 0x02)
     // model EE_RANGE_FAIL__INTBCC is Memory<UCH>;
+//    // @ext(0x0a, 0x12, 0x02)
+//    // model EE_RANGE_FAIL__INTBCC is Memory<UIN>;
 
     // Alias of ACK_0503
     // /** Konstanten 0x0002 ION_TEILER */
     // @ext(0xba, 0x02, 0x02)
     // model ION_TEILER is Memory<UCH>;
+//    // @ext(0x0a, 0x12, 0x02)
+//    // model ION_TEILER is Memory<UIN>;
 
     // Alias of ACK_0503
     // /** Konstanten 0x0002 L_EEA_CRC_BCC_INT */
     // @ext(0xba, 0x02, 0x02)
     // model L_EEA_CRC_BCC_INT is Memory<UCH>;
+//    // @ext(0x0a, 0x12, 0x02)
+//    // model L_EEA_CRC_BCC_INT is Memory<UIN>;
 
     // Alias of ACK_0503
     // /** Konstanten 0x0002 MB_2_INIT */
     // @ext(0xba, 0x02, 0x02)
     // model MB_2_INIT is Memory<UCH>;
+//    // @ext(0x0a, 0x12, 0x02)
+//    // model MB_2_INIT is Memory<UIN>;
 
     // Alias of ACK_0503
     // /** Konstanten 0x0002 NGPBS_XWATOM */
     // @ext(0xba, 0x02, 0x02)
     // model NGPBS_XWATOM is Memory<UCH>;
+//    // @ext(0x0a, 0x12, 0x02)
+//    // model NGPBS_XWATOM is Memory<UIN>;
 
     // Alias of ACK_0503
     // /** Konstanten 0x0002 NM_RESET_BIT */
     // @ext(0xba, 0x02, 0x02)
     // model NM_RESET_BIT is Memory<UCH>;
+//    // @ext(0x0a, 0x12, 0x02)
+//    // model NM_RESET_BIT is Memory<UIN>;
 
     // Alias of ACK_0503
     // /** Konstanten 0x0002 NM_S7_RESET_BIT */
     // @ext(0xba, 0x02, 0x02)
     // model NM_S7_RESET_BIT is Memory<UCH>;
+//    // @ext(0x0a, 0x12, 0x02)
+//    // model NM_S7_RESET_BIT is Memory<UIN>;
 
     // Alias of ACK_0503
     // /** Konstanten 0x0002 NTC2_TR_TST */
     // @ext(0xba, 0x02, 0x02)
     // model NTC2_TR_TST is Memory<UCH>;
+//    // @ext(0x0a, 0x12, 0x02)
+//    // model NTC2_TR_TST is Memory<UIN>;
 
     // Alias of ACK_0503
     // /** Konstanten 0x0002 TIDLE_R2 */
     // @ext(0xba, 0x02, 0x02)
     // model TIDLE_R2 is Memory<UCH>;
+//    // @ext(0x0a, 0x12, 0x02)
+//    // model TIDLE_R2 is Memory<UIN>;
 
     // Alias of ACK_0503
     // /** Konstanten 0x0002 ZST_QQ_M10 */
     // @ext(0xba, 0x02, 0x02)
     // model ZST_QQ_M10 is Memory<UCH>;
+//    // @ext(0x0a, 0x12, 0x02)
+//    // model ZST_QQ_M10 is Memory<UIN>;
 
     // Alias of ACK_0503
     // /** Konstanten 0x0002 ZST_QQ_M10_BIT */
     // @ext(0xba, 0x02, 0x02)
     // model ZST_QQ_M10_BIT is Memory<UCH>;
+//    // @ext(0x0a, 0x12, 0x02)
+//    // model ZST_QQ_M10_BIT is Memory<UIN>;
 
     /** Konstanten 0x0003 ADC_MXCODE */
     @ext(0xbb, 0x02, 0x03)
@@ -2707,66 +3285,92 @@ namespace memory {
     /** Konstanten 0x0004 ACK_FE01 */
     @ext(0xbc, 0x02, 0x04)
     model ACK_FE01 is Memory<UCH>;
+//    @ext(0x0c, 0x12, 0x04)
+//    model ACK_FE01 is Memory<UIN>;
 
     // Alias of ACK_FE01
     // /** Konstanten 0x0004 AIN_ERR_TAUSS */
     // @ext(0xbc, 0x02, 0x04)
     // model AIN_ERR_TAUSS is Memory<UCH>;
+//    // @ext(0x0c, 0x12, 0x04)
+//    // model AIN_ERR_TAUSS is Memory<UIN>;
 
     // Alias of ACK_FE01
     // /** Konstanten 0x0004 AI_TRL */
     // @ext(0xbc, 0x02, 0x04)
     // model AI_TRL is Memory<UCH>;
+//    // @ext(0x0c, 0x12, 0x04)
+//    // model AI_TRL is Memory<UIN>;
 
     // Alias of ACK_FE01
     // /** Konstanten 0x0004 BOOSTER_ORL_MASK */
     // @ext(0xbc, 0x02, 0x04)
     // model BOOSTER_ORL_MASK is Memory<UCH>;
+//    // @ext(0x0c, 0x12, 0x04)
+//    // model BOOSTER_ORL_MASK is Memory<UIN>;
 
     // Alias of ACK_FE01
     // /** Konstanten 0x0004 EE_RANGE_FAIL__BCC_STAT */
     // @ext(0xbc, 0x02, 0x04)
     // model EE_RANGE_FAIL__BCC_STAT is Memory<UCH>;
+//    // @ext(0x0c, 0x12, 0x04)
+//    // model EE_RANGE_FAIL__BCC_STAT is Memory<UIN>;
 
     // Alias of ACK_FE01
     // /** Konstanten 0x0004 EM_EE_REDUND__RED_FS */
     // @ext(0xbc, 0x02, 0x04)
     // model EM_EE_REDUND__RED_FS is Memory<UCH>;
+//    // @ext(0x0c, 0x12, 0x04)
+//    // model EM_EE_REDUND__RED_FS is Memory<UIN>;
 
     // Alias of ACK_FE01
     // /** Konstanten 0x0004 L_EEA_MAIN_CRC */
     // @ext(0xbc, 0x02, 0x04)
     // model L_EEA_MAIN_CRC is Memory<UCH>;
+//    // @ext(0x0c, 0x12, 0x04)
+//    // model L_EEA_MAIN_CRC is Memory<UIN>;
 
     // Alias of ACK_FE01
     // /** Konstanten 0x0004 NFSOUT */
     // @ext(0xbc, 0x02, 0x04)
     // model NFSOUT is Memory<UCH>;
+//    // @ext(0x0c, 0x12, 0x04)
+//    // model NFSOUT is Memory<UIN>;
 
     // Alias of ACK_FE01
     // /** Konstanten 0x0004 NM_NETZSTATUS_BIT */
     // @ext(0xbc, 0x02, 0x04)
     // model NM_NETZSTATUS_BIT is Memory<UCH>;
+//    // @ext(0x0c, 0x12, 0x04)
+//    // model NM_NETZSTATUS_BIT is Memory<UIN>;
 
     // Alias of ACK_FE01
     // /** Konstanten 0x0004 NTC1_SCHLUSS */
     // @ext(0xbc, 0x02, 0x04)
     // model NTC1_SCHLUSS is Memory<UCH>;
+//    // @ext(0x0c, 0x12, 0x04)
+//    // model NTC1_SCHLUSS is Memory<UIN>;
 
     // Alias of ACK_FE01
     // /** Konstanten 0x0004 NTC_TEMP_TOL */
     // @ext(0xbc, 0x02, 0x04)
     // model NTC_TEMP_TOL is Memory<UCH>;
+//    // @ext(0x0c, 0x12, 0x04)
+//    // model NTC_TEMP_TOL is Memory<UIN>;
 
     // Alias of ACK_FE01
     // /** Konstanten 0x0004 RES_CNT_OFF */
     // @ext(0xbc, 0x02, 0x04)
     // model RES_CNT_OFF is Memory<UCH>;
+//    // @ext(0x0c, 0x12, 0x04)
+//    // model RES_CNT_OFF is Memory<UIN>;
 
     // Alias of ACK_FE01
     // /** Konstanten 0x0004 TBOOST */
     // @ext(0xbc, 0x02, 0x04)
     // model TBOOST is Memory<UCH>;
+//    // @ext(0x0c, 0x12, 0x04)
+//    // model TBOOST is Memory<UIN>;
 
     /** Konstanten 0x0005 AI_ANAIN5 */
     @ext(0xbd, 0x02, 0x05)
@@ -2820,41 +3424,57 @@ namespace memory {
     /** Konstanten 0x0006 AI_ANAIN6 */
     @ext(0xbe, 0x02, 0x06)
     model AI_ANAIN6 is Memory<UCH>;
+//    @ext(0x0e, 0x12, 0x06)
+//    model AI_ANAIN6 is Memory<UIN>;
 
     // Alias of AI_ANAIN6
     // /** Konstanten 0x0006 AI_THZ */
     // @ext(0xbe, 0x02, 0x06)
     // model AI_THZ is Memory<UCH>;
+//    // @ext(0x0e, 0x12, 0x06)
+//    // model AI_THZ is Memory<UIN>;
 
     // Alias of AI_ANAIN6
     // /** Konstanten 0x0006 AI_TVL */
     // @ext(0xbe, 0x02, 0x06)
     // model AI_TVL is Memory<UCH>;
+//    // @ext(0x0e, 0x12, 0x06)
+//    // model AI_TVL is Memory<UIN>;
 
     // Alias of AI_ANAIN6
     // /** Konstanten 0x0006 EPIONTSTDUR */
     // @ext(0xbe, 0x02, 0x06)
     // model EPIONTSTDUR is Memory<UCH>;
+//    // @ext(0x0e, 0x12, 0x06)
+//    // model EPIONTSTDUR is Memory<UIN>;
 
     // Alias of AI_ANAIN6
     // /** Konstanten 0x0006 NM_NO_AUTOSYN */
     // @ext(0xbe, 0x02, 0x06)
     // model NM_NO_AUTOSYN is Memory<UCH>;
+//    // @ext(0x0e, 0x12, 0x06)
+//    // model NM_NO_AUTOSYN is Memory<UIN>;
 
     // Alias of AI_ANAIN6
     // /** Konstanten 0x0006 N_50HZ_IN */
     // @ext(0xbe, 0x02, 0x06)
     // model N_50HZ_IN is Memory<UCH>;
+//    // @ext(0x0e, 0x12, 0x06)
+//    // model N_50HZ_IN is Memory<UIN>;
 
     // Alias of AI_ANAIN6
     // /** Konstanten 0x0006 SPEICHER_TIEFE */
     // @ext(0xbe, 0x02, 0x06)
     // model SPEICHER_TIEFE is Memory<UCH>;
+//    // @ext(0x0e, 0x12, 0x06)
+//    // model SPEICHER_TIEFE is Memory<UIN>;
 
     // Alias of AI_ANAIN6
     // /** Konstanten 0x0006 V24_TECHOHW */
     // @ext(0xbe, 0x02, 0x06)
     // model V24_TECHOHW is Memory<UCH>;
+//    // @ext(0x0e, 0x12, 0x06)
+//    // model V24_TECHOHW is Memory<UIN>;
 
     /** Konstanten 0x0007 AI_ANAIN7 */
     @ext(0xbf, 0x02, 0x07)
@@ -2893,35 +3513,49 @@ namespace memory {
     /** Konstanten 0x0008 EM_EE_REDUND__RED_NFS */
     @ext(0xb0, 0x02, 0x08)
     model EM_EE_REDUND__RED_NFS is Memory<UCH>;
+//    @ext(0x00, 0x12, 0x08)
+//    model EM_EE_REDUND__RED_NFS is Memory<UIN>;
 
     // Alias of EM_EE_REDUND__RED_NFS
     // /** Konstanten 0x0008 L_PRUEF_DAT_CRC */
     // @ext(0xb0, 0x02, 0x08)
     // model L_PRUEF_DAT_CRC is Memory<UCH>;
+//    // @ext(0x00, 0x12, 0x08)
+//    // model L_PRUEF_DAT_CRC is Memory<UIN>;
 
     // Alias of EM_EE_REDUND__RED_NFS
     // /** Konstanten 0x0008 NTC1_BRUCH */
     // @ext(0xb0, 0x02, 0x08)
     // model NTC1_BRUCH is Memory<UCH>;
+//    // @ext(0x00, 0x12, 0x08)
+//    // model NTC1_BRUCH is Memory<UIN>;
 
     // Alias of EM_EE_REDUND__RED_NFS
     // /** Konstanten 0x0008 RECORD */
     // @ext(0xb0, 0x02, 0x08)
     // model RECORD is Memory<UCH>;
+//    // @ext(0x00, 0x12, 0x08)
+//    // model RECORD is Memory<UIN>;
 
     // Alias of EM_EE_REDUND__RED_NFS
     // /** Konstanten 0x0008 REGBNK_TASK_1 */
     // @ext(0xb0, 0x02, 0x08)
     // model REGBNK_TASK_1 is Memory<UCH>;
+//    // @ext(0x00, 0x12, 0x08)
+//    // model REGBNK_TASK_1 is Memory<UIN>;
 
     /** Konstanten 0x000A INIT_TCYCL_0503 */
     @ext(0xb2, 0x02, 0x0A)
     model INIT_TCYCL_0503 is Memory<UCH>;
+//    @ext(0x02, 0x12, 0x0A)
+//    model INIT_TCYCL_0503 is Memory<UIN>;
 
     // Alias of INIT_TCYCL_0503
     // /** Konstanten 0x000A L_ID_PARA_BCC */
     // @ext(0xb2, 0x02, 0x0A)
     // model L_ID_PARA_BCC is Memory<UCH>;
+//    // @ext(0x02, 0x12, 0x0A)
+//    // model L_ID_PARA_BCC is Memory<UIN>;
 
     /** Konstanten 0x000B INIT_TCYCL_0800 */
     @ext(0xb3, 0x02, 0x0B)
@@ -2999,31 +3633,43 @@ namespace memory {
     /** Konstanten 0x0010 AIN_ERR_BW1 */
     @ext(0xa8, 0x02, 0x10)
     model AIN_ERR_BW1 is Memory<UCH>;
+//    @ext(0x18, 0x12, 0x10)
+//    model AIN_ERR_BW1 is Memory<UIN>;
 
     // Alias of AIN_ERR_BW1
     // /** Konstanten 0x0010 EM_EE_REDUND__RED_DEF */
     // @ext(0xa8, 0x02, 0x10)
     // model EM_EE_REDUND__RED_DEF is Memory<UCH>;
+//    // @ext(0x18, 0x12, 0x10)
+//    // model EM_EE_REDUND__RED_DEF is Memory<UIN>;
 
     // Alias of AIN_ERR_BW1
     // /** Konstanten 0x0010 NTC2_SCHLUSS */
     // @ext(0xa8, 0x02, 0x10)
     // model NTC2_SCHLUSS is Memory<UCH>;
+//    // @ext(0x18, 0x12, 0x10)
+//    // model NTC2_SCHLUSS is Memory<UIN>;
 
     // Alias of AIN_ERR_BW1
     // /** Konstanten 0x0010 QQ_M2 */
     // @ext(0xa8, 0x02, 0x10)
     // model QQ_M2 is Memory<UCH>;
+//    // @ext(0x18, 0x12, 0x10)
+//    // model QQ_M2 is Memory<UIN>;
 
     // Alias of AIN_ERR_BW1
     // /** Konstanten 0x0010 REGBANK_TASK_2 */
     // @ext(0xa8, 0x02, 0x10)
     // model REGBANK_TASK_2 is Memory<UCH>;
+//    // @ext(0x18, 0x12, 0x10)
+//    // model REGBANK_TASK_2 is Memory<UIN>;
 
     // Alias of AIN_ERR_BW1
     // /** Konstanten 0x0010 REGBNK_TASK_2 */
     // @ext(0xa8, 0x02, 0x10)
     // model REGBNK_TASK_2 is Memory<UCH>;
+//    // @ext(0x18, 0x12, 0x10)
+//    // model REGBNK_TASK_2 is Memory<UIN>;
 
     /** Konstanten 0x0011 DE_MIN_CNT */
     @ext(0xa9, 0x02, 0x11)
@@ -3032,6 +3678,8 @@ namespace memory {
     /** Konstanten 0x0012 DDSPERRZAEHLER */
     @ext(0xaa, 0x02, 0x12)
     model DDSPERRZAEHLER is Memory<UCH>;
+//    @ext(0x1a, 0x12, 0x12)
+//    model DDSPERRZAEHLER is Memory<UIN>;
 
     /** Konstanten 0x0013 DDRX_OFFSET_S1 */
     @ext(0xab, 0x02, 0x13)
@@ -3040,34 +3688,48 @@ namespace memory {
     /** Konstanten 0x0014 AD_SCALE_2 */
     @ext(0xac, 0x02, 0x14)
     model AD_SCALE_2 is Memory<UCH>;
+//    @ext(0x1c, 0x12, 0x14)
+//    model AD_SCALE_2 is Memory<UIN>;
 
     // Alias of AD_SCALE_2
     // /** Konstanten 0x0014 DDTX_OFFSET_CNT */
     // @ext(0xac, 0x02, 0x14)
     // model DDTX_OFFSET_CNT is Memory<UCH>;
+//    // @ext(0x1c, 0x12, 0x14)
+//    // model DDTX_OFFSET_CNT is Memory<UIN>;
 
     // Alias of AD_SCALE_2
     // /** Konstanten 0x0014 DIG_TST */
     // @ext(0xac, 0x02, 0x14)
     // model DIG_TST is Memory<UCH>;
+//    // @ext(0x1c, 0x12, 0x14)
+//    // model DIG_TST is Memory<UIN>;
 
     // Alias of AD_SCALE_2
     // /** Konstanten 0x0014 L_EWIGEN_ZAEHLER */
     // @ext(0xac, 0x02, 0x14)
     // model L_EWIGEN_ZAEHLER is Memory<UCH>;
+//    // @ext(0x1c, 0x12, 0x14)
+//    // model L_EWIGEN_ZAEHLER is Memory<UIN>;
 
     /** Konstanten 0x0016 L_FS_PARA */
     @ext(0xae, 0x02, 0x16)
     model L_FS_PARA is Memory<UCH>;
+//    @ext(0x1e, 0x12, 0x16)
+//    model L_FS_PARA is Memory<UIN>;
 
     /** Konstanten 0x0018 EEA_CONST_CRC */
     @ext(0xa0, 0x02, 0x18)
     model EEA_CONST_CRC is Memory<UCH>;
+//    @ext(0x10, 0x12, 0x18)
+//    model EEA_CONST_CRC is Memory<UIN>;
 
     // Alias of EEA_CONST_CRC
     // /** Konstanten 0x0018 REGB_TIRP */
     // @ext(0xa0, 0x02, 0x18)
     // model REGB_TIRP is Memory<UCH>;
+//    // @ext(0x10, 0x12, 0x18)
+//    // model REGB_TIRP is Memory<UIN>;
 
     /** Konstanten 0x0019 EEA_RAM_ANF */
     @ext(0xa1, 0x02, 0x19)
@@ -3090,36 +3752,50 @@ namespace memory {
     /** Konstanten 0x001E NTCYCL_0503 */
     @ext(0xa6, 0x02, 0x1E)
     model NTCYCL_0503 is Memory<UCH>;
+//    @ext(0x16, 0x12, 0x1E)
+//    model NTCYCL_0503 is Memory<UIN>;
 
     // Alias of NTCYCL_0503
     // /** Konstanten 0x001E NTCYCL_0800 */
     // @ext(0xa6, 0x02, 0x1E)
     // model NTCYCL_0800 is Memory<UCH>;
+//    // @ext(0x16, 0x12, 0x1E)
+//    // model NTCYCL_0800 is Memory<UIN>;
 
     // Alias of NTCYCL_0503
     // /** Konstanten 0x001E NTCYCL_EIG_QQ */
     // @ext(0xa6, 0x02, 0x1E)
     // model NTCYCL_EIG_QQ is Memory<UCH>;
+//    // @ext(0x16, 0x12, 0x1E)
+//    // model NTCYCL_EIG_QQ is Memory<UIN>;
 
     // Alias of NTCYCL_0503
     // /** Konstanten 0x001E NTCYCL_MAX */
     // @ext(0xa6, 0x02, 0x1E)
     // model NTCYCL_MAX is Memory<UCH>;
+//    // @ext(0x16, 0x12, 0x1E)
+//    // model NTCYCL_MAX is Memory<UIN>;
 
     // Alias of NTCYCL_0503
     // /** Konstanten 0x001E NTCYCL_QQ_M10 */
     // @ext(0xa6, 0x02, 0x1E)
     // model NTCYCL_QQ_M10 is Memory<UCH>;
+//    // @ext(0x16, 0x12, 0x1E)
+//    // model NTCYCL_QQ_M10 is Memory<UIN>;
 
     // Alias of NTCYCL_0503
     // /** Konstanten 0x001E NTCYCL_QQ_M2 */
     // @ext(0xa6, 0x02, 0x1E)
     // model NTCYCL_QQ_M2 is Memory<UCH>;
+//    // @ext(0x16, 0x12, 0x1E)
+//    // model NTCYCL_QQ_M2 is Memory<UIN>;
 
     // Alias of NTCYCL_0503
     // /** Konstanten 0x001E NTC_MIN */
     // @ext(0xa6, 0x02, 0x1E)
     // model NTC_MIN is Memory<UCH>;
+//    // @ext(0x16, 0x12, 0x1E)
+//    // model NTC_MIN is Memory<UIN>;
 
     /** Konstanten 0x001F TFRS_A__SELF */
     @ext(0xa7, 0x02, 0x1F)
@@ -3128,16 +3804,22 @@ namespace memory {
     /** Konstanten 0x0020 EM_EE_REDUND__RED_INTBCC */
     @ext(0x98, 0x02, 0x20)
     model EM_EE_REDUND__RED_INTBCC is Memory<UCH>;
+//    @ext(0x28, 0x12, 0x20)
+//    model EM_EE_REDUND__RED_INTBCC is Memory<UIN>;
 
     // Alias of EM_EE_REDUND__RED_INTBCC
     // /** Konstanten 0x0020 GEC_LDW_RUHE */
     // @ext(0x98, 0x02, 0x20)
     // model GEC_LDW_RUHE is Memory<UCH>;
+//    // @ext(0x28, 0x12, 0x20)
+//    // model GEC_LDW_RUHE is Memory<UIN>;
 
     // Alias of EM_EE_REDUND__RED_INTBCC
     // /** Konstanten 0x0020 NTC2_BRUCH */
     // @ext(0x98, 0x02, 0x20)
     // model NTC2_BRUCH is Memory<UCH>;
+//    // @ext(0x28, 0x12, 0x20)
+//    // model NTC2_BRUCH is Memory<UIN>;
 
     /** Konstanten 0x0021 GENPOLY8SIG */
     @ext(0x99, 0x02, 0x21)
@@ -3146,6 +3828,8 @@ namespace memory {
     /** Konstanten 0x0024 GEC_PUHZ_SW */
     @ext(0x9c, 0x02, 0x24)
     model GEC_PUHZ_SW is Memory<UCH>;
+//    @ext(0x2c, 0x12, 0x24)
+//    model GEC_PUHZ_SW is Memory<UIN>;
 
     /** Konstanten 0x0027 L_S5_DAT_CRC */
     @ext(0x9f, 0x02, 0x27)
@@ -3154,11 +3838,15 @@ namespace memory {
     /** Konstanten 0x0028 DL_BOOSTERPLUS */
     @ext(0x90, 0x02, 0x28)
     model DL_BOOSTERPLUS is Memory<UCH>;
+//    @ext(0x20, 0x12, 0x28)
+//    model DL_BOOSTERPLUS is Memory<UIN>;
 
     // Alias of DL_BOOSTERPLUS
     // /** Konstanten 0x0028 P_KOTHTWWSOLL_MIN */
     // @ext(0x90, 0x02, 0x28)
     // model P_KOTHTWWSOLL_MIN is Memory<UCH>;
+//    // @ext(0x20, 0x12, 0x28)
+//    // model P_KOTHTWWSOLL_MIN is Memory<UIN>;
 
     /** Konstanten 0x0029 MIN_TAUTOSYN */
     @ext(0x91, 0x02, 0x29)
@@ -3181,6 +3869,8 @@ namespace memory {
     /** Konstanten 0x002C GEC_N_NOK_RUHE */
     @ext(0x94, 0x02, 0x2C)
     model GEC_N_NOK_RUHE is Memory<UCH>;
+//    @ext(0x24, 0x12, 0x2C)
+//    model GEC_N_NOK_RUHE is Memory<UIN>;
 
     /** Konstanten 0x002D GEC_LDW_ARB */
     @ext(0x95, 0x02, 0x2D)
@@ -3189,6 +3879,8 @@ namespace memory {
     /** Konstanten 0x002E QAC_MIN */
     @ext(0x96, 0x02, 0x2E)
     model QAC_MIN is Memory<UCH>;
+//    @ext(0x26, 0x12, 0x2E)
+//    model QAC_MIN is Memory<UIN>;
 
     /** Konstanten 0x002F QAC_SHORT */
     @ext(0x97, 0x02, 0x2F)
@@ -3197,20 +3889,28 @@ namespace memory {
     /** Konstanten 0x0030 AD_SCALE_3 */
     @ext(0x88, 0x02, 0x30)
     model AD_SCALE_3 is Memory<UCH>;
+//    @ext(0x38, 0x12, 0x30)
+//    model AD_SCALE_3 is Memory<UIN>;
 
     // Alias of AD_SCALE_3
     // /** Konstanten 0x0030 L_FHIST */
     // @ext(0x88, 0x02, 0x30)
     // model L_FHIST is Memory<UCH>;
+//    // @ext(0x38, 0x12, 0x30)
+//    // model L_FHIST is Memory<UIN>;
 
     /** Konstanten 0x0032 KPMULFACT */
     @ext(0x8a, 0x02, 0x32)
     model KPMULFACT is Memory<UCH>;
+//    @ext(0x3a, 0x12, 0x32)
+//    model KPMULFACT is Memory<UIN>;
 
     // Alias of KPMULFACT
     // /** Konstanten 0x0032 RES_MAX_TIME */
     // @ext(0x8a, 0x02, 0x32)
     // model RES_MAX_TIME is Memory<UCH>;
+//    // @ext(0x3a, 0x12, 0x32)
+//    // model RES_MAX_TIME is Memory<UIN>;
 
     /** Konstanten 0x0035 GEC_AIN_REF */
     @ext(0x8d, 0x02, 0x35)
@@ -3219,15 +3919,21 @@ namespace memory {
     /** Konstanten 0x0036 L_EEAEPKDAT */
     @ext(0x8e, 0x02, 0x36)
     model L_EEAEPKDAT is Memory<UCH>;
+//    @ext(0x3e, 0x12, 0x36)
+//    model L_EEAEPKDAT is Memory<UIN>;
 
     // Alias of L_EEAEPKDAT
     // /** Konstanten 0x0036 L_KES_DAT_CRC */
     // @ext(0x8e, 0x02, 0x36)
     // model L_KES_DAT_CRC is Memory<UCH>;
+//    // @ext(0x3e, 0x12, 0x36)
+//    // model L_KES_DAT_CRC is Memory<UIN>;
 
     /** Konstanten 0x0038 FCODE_NOT */
     @ext(0x80, 0x02, 0x38)
     model FCODE_NOT is Memory<UCH>;
+//    @ext(0x30, 0x12, 0x38)
+//    model FCODE_NOT is Memory<UIN>;
 
     /** Konstanten 0x0039 FCODE_MAX */
     @ext(0x81, 0x02, 0x39)
@@ -3236,6 +3942,8 @@ namespace memory {
     /** Konstanten 0x003C NTCYCL_EBUS_SCOM */
     @ext(0x84, 0x02, 0x3C)
     model NTCYCL_EBUS_SCOM is Memory<UCH>;
+//    @ext(0x34, 0x12, 0x3C)
+//    model NTCYCL_EBUS_SCOM is Memory<UIN>;
 
     /** Konstanten 0x003D MAX_TAUTOSYN */
     @ext(0x85, 0x02, 0x3D)
@@ -3248,11 +3956,15 @@ namespace memory {
     /** Konstanten 0x0040 AIN_ERR_BW2 */
     @ext(0xf8, 0x02, 0x40)
     model AIN_ERR_BW2 is Memory<UCH>;
+//    @ext(0x48, 0x12, 0x40)
+//    model AIN_ERR_BW2 is Memory<UIN>;
 
     // Alias of AIN_ERR_BW2
     // /** Konstanten 0x0040 NTC1_NTC2 */
     // @ext(0xf8, 0x02, 0x40)
     // model NTC1_NTC2 is Memory<UCH>;
+//    // @ext(0x48, 0x12, 0x40)
+//    // model NTC1_NTC2 is Memory<UIN>;
 
     /** Konstanten 0x0041 P_HZTHTWWSOLL_MAX */
     @ext(0xf9, 0x02, 0x41)
@@ -3261,6 +3973,8 @@ namespace memory {
     /** Konstanten 0x0044 NIT_SHORT */
     @ext(0xfc, 0x02, 0x44)
     model NIT_SHORT is Memory<UCH>;
+//    @ext(0x4c, 0x12, 0x44)
+//    model NIT_SHORT is Memory<UIN>;
 
     /** Konstanten 0x0045 NIT_MIN */
     @ext(0xfd, 0x02, 0x45)
@@ -3274,6 +3988,8 @@ namespace memory {
     /** Konstanten 0x0048 L_FCODE_ZAEHLER */
     @ext(0xf0, 0x02, 0x48)
     model L_FCODE_ZAEHLER is Memory<UCH>;
+//    @ext(0x40, 0x12, 0x48)
+//    model L_FCODE_ZAEHLER is Memory<UIN>;
 
     /** Konstanten 0x004F NR_ACTIVATE_STATI */
     @ext(0xf7, 0x02, 0x4F)
@@ -3282,16 +3998,22 @@ namespace memory {
     /** Konstanten 0x0050 AD_SCALE_4 */
     @ext(0xe8, 0x02, 0x50)
     model AD_SCALE_4 is Memory<UCH>;
+//    @ext(0x58, 0x12, 0x50)
+//    model AD_SCALE_4 is Memory<UIN>;
 
     // Alias of AD_SCALE_4
     // /** Konstanten 0x0050 DE_MAX_CNT */
     // @ext(0xe8, 0x02, 0x50)
     // model DE_MAX_CNT is Memory<UCH>;
+//    // @ext(0x58, 0x12, 0x50)
+//    // model DE_MAX_CNT is Memory<UIN>;
 
     // Alias of AD_SCALE_4
     // /** Konstanten 0x0050 K_ID */
     // @ext(0xe8, 0x02, 0x50)
     // model K_ID is Memory<UCH>;
+//    // @ext(0x58, 0x12, 0x50)
+//    // model K_ID is Memory<UIN>;
 
     /** Konstanten 0x0051 EEAEPKCRC */
     @ext(0xe9, 0x02, 0x51)
@@ -3308,10 +4030,14 @@ namespace memory {
     /** Konstanten 0x0060 NG_GR_MIN__IMPS */
     @ext(0xd8, 0x02, 0x60)
     model NG_GR_MIN__IMPS is Memory<UCH>;
+//    @ext(0x68, 0x12, 0x60)
+//    model NG_GR_MIN__IMPS is Memory<UIN>;
 
     /** Konstanten 0x0064 SCHEDULE_TAKT */
     @ext(0xdc, 0x02, 0x64)
     model SCHEDULE_TAKT is Memory<UCH>;
+//    @ext(0x6c, 0x12, 0x64)
+//    model SCHEDULE_TAKT is Memory<UIN>;
 
     /** Konstanten 0x0065 NR_NG_BR_MIN */
     @ext(0xdd, 0x02, 0x65)
@@ -3320,16 +4046,22 @@ namespace memory {
     /** Konstanten 0x0070 AD_SCALE_5 */
     @ext(0xc8, 0x02, 0x70)
     model AD_SCALE_5 is Memory<UCH>;
+//    @ext(0x78, 0x12, 0x70)
+//    model AD_SCALE_5 is Memory<UIN>;
 
     // Alias of AD_SCALE_5
     // /** Konstanten 0x0070 KESS_BIT_MASK */
     // @ext(0xc8, 0x02, 0x70)
     // model KESS_BIT_MASK is Memory<UCH>;
+//    // @ext(0x78, 0x12, 0x70)
+//    // model KESS_BIT_MASK is Memory<UIN>;
 
     // Alias of AD_SCALE_5
     // /** Konstanten 0x0070 OFFSET_NR_CCINFO_NR */
     // @ext(0xc8, 0x02, 0x70)
     // model OFFSET_NR_CCINFO_NR is Memory<UCH>;
+//    // @ext(0x78, 0x12, 0x70)
+//    // model OFFSET_NR_CCINFO_NR is Memory<UIN>;
 
     /** Konstanten 0x0071 OFFSET_NR_CC_RELAESE */
     @ext(0xc9, 0x02, 0x71)
@@ -3338,6 +4070,8 @@ namespace memory {
     /** Konstanten 0x0072 OFFSET_NR_FW1 */
     @ext(0xca, 0x02, 0x72)
     model OFFSET_NR_FW1 is Memory<UCH>;
+//    @ext(0x7a, 0x12, 0x72)
+//    model OFFSET_NR_FW1 is Memory<UIN>;
 
     /** Konstanten 0x0073 OFFSET_NR_FW2 */
     @ext(0xcb, 0x02, 0x73)
@@ -3346,6 +4080,8 @@ namespace memory {
     /** Konstanten 0x0074 OFFSET_NR_FW3 */
     @ext(0xcc, 0x02, 0x74)
     model OFFSET_NR_FW3 is Memory<UCH>;
+//    @ext(0x7c, 0x12, 0x74)
+//    model OFFSET_NR_FW3 is Memory<UIN>;
 
     /** Konstanten 0x0075 OFFSET_NR_FW4 */
     @ext(0xcd, 0x02, 0x75)
@@ -3354,6 +4090,8 @@ namespace memory {
     /** Konstanten 0x0076 OFFSET_NR_FW5 */
     @ext(0xce, 0x02, 0x76)
     model OFFSET_NR_FW5 is Memory<UCH>;
+//    @ext(0x7e, 0x12, 0x76)
+//    model OFFSET_NR_FW5 is Memory<UIN>;
 
     /** Konstanten 0x0077 OFFSET_NR_CRC */
     @ext(0xcf, 0x02, 0x77)
@@ -3362,19 +4100,27 @@ namespace memory {
     /** Konstanten 0x0078 ANZ_INFONR */
     @ext(0xc0, 0x02, 0x78)
     model ANZ_INFONR is Memory<UCH>;
+//    @ext(0x70, 0x12, 0x78)
+//    model ANZ_INFONR is Memory<UIN>;
 
     // Alias of ANZ_INFONR
     // /** Konstanten 0x0078 REF_MIN_OFF */
     // @ext(0xc0, 0x02, 0x78)
     // model REF_MIN_OFF is Memory<UCH>;
+//    // @ext(0x70, 0x12, 0x78)
+//    // model REF_MIN_OFF is Memory<UIN>;
 
     /** Konstanten 0x007A ION_GRENZ */
     @ext(0xc2, 0x02, 0x7A)
     model ION_GRENZ is Memory<UCH>;
+//    @ext(0x72, 0x12, 0x7A)
+//    model ION_GRENZ is Memory<UIN>;
 
     /** Konstanten 0x007C ADX_TEST */
     @ext(0xc4, 0x02, 0x7C)
     model ADX_TEST is Memory<UCH>;
+//    @ext(0x74, 0x12, 0x7C)
+//    model ADX_TEST is Memory<UIN>;
 
     /** Konstanten 0x007D V24_KM_ADR_DEFAULT */
     @ext(0xc5, 0x02, 0x7D)
@@ -3407,26 +4153,36 @@ namespace memory {
     /** Konstanten 0x0080 MINTVSOLL__TRLAUF */
     @ext(0x38, 0x02, 0x80)
     model MINTVSOLL__TRLAUF is Memory<UCH>;
+//    @ext(0x88, 0x12, 0x80)
+//    model MINTVSOLL__TRLAUF is Memory<UIN>;
 
     // Alias of MINTVSOLL__TRLAUF
     // /** Konstanten 0x0080 NG_GR_MIN__FABTAST */
     // @ext(0x38, 0x02, 0x80)
     // model NG_GR_MIN__FABTAST is Memory<UCH>;
+//    // @ext(0x88, 0x12, 0x80)
+//    // model NG_GR_MIN__FABTAST is Memory<UIN>;
 
     // Alias of MINTVSOLL__TRLAUF
     // /** Konstanten 0x0080 PNL_HZ__BETRART */
     // @ext(0x38, 0x02, 0x80)
     // model PNL_HZ__BETRART is Memory<UCH>;
+//    // @ext(0x88, 0x12, 0x80)
+//    // model PNL_HZ__BETRART is Memory<UIN>;
 
     // Alias of MINTVSOLL__TRLAUF
     // /** Konstanten 0x0080 PNL_HZ__PDL */
     // @ext(0x38, 0x02, 0x80)
     // model PNL_HZ__PDL is Memory<UCH>;
+//    // @ext(0x88, 0x12, 0x80)
+//    // model PNL_HZ__PDL is Memory<UIN>;
 
     // Alias of MINTVSOLL__TRLAUF
     // /** Konstanten 0x0080 TBRMINOFF__ERDGAS */
     // @ext(0x38, 0x02, 0x80)
     // model TBRMINOFF__ERDGAS is Memory<UCH>;
+//    // @ext(0x88, 0x12, 0x80)
+//    // model TBRMINOFF__ERDGAS is Memory<UIN>;
 
     /** Konstanten 0x0089 EEAEPKCRC2 */
     @ext(0x31, 0x02, 0x89)
@@ -3435,43 +4191,61 @@ namespace memory {
     /** Konstanten 0x008A EEA_RAM_ANF2 */
     @ext(0x32, 0x02, 0x8A)
     model EEA_RAM_ANF2 is Memory<UCH>;
+//    @ext(0x82, 0x12, 0x8A)
+//    model EEA_RAM_ANF2 is Memory<UIN>;
 
     // Alias of EEA_RAM_ANF2
     // /** Konstanten 0x008A WAIT_A_1 */
     // @ext(0x32, 0x02, 0x8A)
     // model WAIT_A_1 is Memory<UCH>;
+//    // @ext(0x82, 0x12, 0x8A)
+//    // model WAIT_A_1 is Memory<UIN>;
 
     /** Konstanten 0x008C EEA_CONST_ANF2 */
     @ext(0x34, 0x02, 0x8C)
     model EEA_CONST_ANF2 is Memory<UCH>;
+//    @ext(0x84, 0x12, 0x8C)
+//    model EEA_CONST_ANF2 is Memory<UIN>;
 
     /** Konstanten 0x0090 AD_SCALE_6 */
     @ext(0x28, 0x02, 0x90)
     model AD_SCALE_6 is Memory<UCH>;
+//    @ext(0x98, 0x12, 0x90)
+//    model AD_SCALE_6 is Memory<UIN>;
 
     // Alias of AD_SCALE_6
     // /** Konstanten 0x0090 NTC_ERR_ZEIT */
     // @ext(0x28, 0x02, 0x90)
     // model NTC_ERR_ZEIT is Memory<UCH>;
+//    // @ext(0x98, 0x12, 0x90)
+//    // model NTC_ERR_ZEIT is Memory<UIN>;
 
     // Alias of AD_SCALE_6
     // /** Konstanten 0x0090 SST1 */
     // @ext(0x28, 0x02, 0x90)
     // model SST1 is Memory<UCH>;
+//    // @ext(0x98, 0x12, 0x90)
+//    // model SST1 is Memory<UIN>;
 
     /** Konstanten 0x00A0 CS_BYTE_WR */
     @ext(0x18, 0x02, 0xA0)
     model CS_BYTE_WR is Memory<UCH>;
+//    @ext(0xa8, 0x12, 0xA0)
+//    model CS_BYTE_WR is Memory<UIN>;
 
     // Alias of CS_BYTE_WR
     // /** Konstanten 0x00A0 ENAB_MASK */
     // @ext(0x18, 0x02, 0xA0)
     // model ENAB_MASK is Memory<UCH>;
+//    // @ext(0xa8, 0x12, 0xA0)
+//    // model ENAB_MASK is Memory<UIN>;
 
     // Alias of CS_BYTE_WR
     // /** Konstanten 0x00A0 ENAB_MASK_WD */
     // @ext(0x18, 0x02, 0xA0)
     // model ENAB_MASK_WD is Memory<UCH>;
+//    // @ext(0xa8, 0x12, 0xA0)
+//    // model ENAB_MASK_WD is Memory<UIN>;
 
     /** Konstanten 0x00A1 CS_BYTE_RD */
     @ext(0x19, 0x02, 0xA1)
@@ -3480,6 +4254,8 @@ namespace memory {
     /** Konstanten 0x00A2 EEA_CONST_CRC2 */
     @ext(0x1a, 0x02, 0xA2)
     model EEA_CONST_CRC2 is Memory<UCH>;
+//    @ext(0xaa, 0x12, 0xA2)
+//    model EEA_CONST_CRC2 is Memory<UIN>;
 
     /** Konstanten 0x00A3 INT_EEA_ID_NR_BCC */
     @ext(0x1b, 0x02, 0xA3)
@@ -3488,6 +4264,8 @@ namespace memory {
     /** Konstanten 0x00A4 INT_EEA_ID_NR_BCC_1 */
     @ext(0x1c, 0x02, 0xA4)
     model INT_EEA_ID_NR_BCC_1 is Memory<UCH>;
+//    @ext(0xac, 0x12, 0xA4)
+//    model INT_EEA_ID_NR_BCC_1 is Memory<UIN>;
 
     /** Konstanten 0x00A5 INT_EEA_ID_CRC_BCC */
     @ext(0x1d, 0x02, 0xA5)
@@ -3496,15 +4274,21 @@ namespace memory {
     /** Konstanten 0x00A6 INT_EEA_ID_NR_BCC_2 */
     @ext(0x1e, 0x02, 0xA6)
     model INT_EEA_ID_NR_BCC_2 is Memory<UCH>;
+//    @ext(0xae, 0x12, 0xA6)
+//    model INT_EEA_ID_NR_BCC_2 is Memory<UIN>;
 
     /** Konstanten 0x00A8 INT_EEA_ID_CRC_BCC_2 */
     @ext(0x10, 0x02, 0xA8)
     model INT_EEA_ID_CRC_BCC_2 is Memory<UCH>;
+//    @ext(0xa0, 0x12, 0xA8)
+//    model INT_EEA_ID_CRC_BCC_2 is Memory<UIN>;
 
     // Alias of INT_EEA_ID_CRC_BCC_2
     // /** Konstanten 0x00A8 NCL1HRS */
     // @ext(0x10, 0x02, 0xA8)
     // model NCL1HRS is Memory<UCH>;
+//    // @ext(0xa0, 0x12, 0xA8)
+//    // model NCL1HRS is Memory<UIN>;
 
     /** Konstanten 0x00A9 EEA_ION_KALIB */
     @ext(0x11, 0x02, 0xA9)
@@ -3513,6 +4297,8 @@ namespace memory {
     /** Konstanten 0x00AA EEA_ION_KALIB_INV */
     @ext(0x12, 0x02, 0xAA)
     model EEA_ION_KALIB_INV is Memory<UCH>;
+//    @ext(0xa2, 0x12, 0xAA)
+//    model EEA_ION_KALIB_INV is Memory<UIN>;
 
     /** Konstanten 0x00AB EEA_ION_KALIB_2 */
     @ext(0x13, 0x02, 0xAB)
@@ -3521,15 +4307,21 @@ namespace memory {
     /** Konstanten 0x00B0 SST3 */
     @ext(0x08, 0x02, 0xB0)
     model SST3 is Memory<UCH>;
+//    @ext(0xb8, 0x12, 0xB0)
+//    model SST3 is Memory<UIN>;
 
     /** Konstanten 0x00B4 C_DECGAP */
     @ext(0x0c, 0x02, 0xB4)
     model C_DECGAP is Memory<UCH>;
+//    @ext(0xbc, 0x12, 0xB4)
+//    model C_DECGAP is Memory<UIN>;
 
     // Alias of C_DECGAP
     // /** Konstanten 0x00B4 NCL20SEC */
     // @ext(0x0c, 0x02, 0xB4)
     // model NCL20SEC is Memory<UCH>;
+//    // @ext(0xbc, 0x12, 0xB4)
+//    // model NCL20SEC is Memory<UIN>;
 
     /** Konstanten 0x00B7 REF_MAX_ON */
     @ext(0x0f, 0x02, 0xB7)
@@ -3546,10 +4338,14 @@ namespace memory {
     /** Konstanten 0x00C8 NCL100MSEC */
     @ext(0x70, 0x02, 0xC8)
     model NCL100MSEC is Memory<UCH>;
+//    @ext(0xc0, 0x12, 0xC8)
+//    model NCL100MSEC is Memory<UIN>;
 
     /** Konstanten 0x00D0 RST1 */
     @ext(0x68, 0x02, 0xD0)
     model RST1 is Memory<UCH>;
+//    @ext(0xd8, 0x12, 0xD0)
+//    model RST1 is Memory<UIN>;
 
     /** Konstanten 0x00D5 AD8_OF_25GRDC */
     @ext(0x6d, 0x02, 0xD5)
@@ -3558,6 +4354,8 @@ namespace memory {
     /** Konstanten 0x00E0 TFRS_A__REST */
     @ext(0x58, 0x02, 0xE0)
     model TFRS_A__REST is Memory<UCH>;
+//    @ext(0xe8, 0x12, 0xE0)
+//    model TFRS_A__REST is Memory<UIN>;
 
     /** Konstanten 0x00E1 NTC_TOL_ZEIT */
     @ext(0x59, 0x02, 0xE1)
@@ -3574,61 +4372,85 @@ namespace memory {
     /** Konstanten 0x00F0 HZ_HYS__NEG */
     @ext(0x48, 0x02, 0xF0)
     model HZ_HYS__NEG is Memory<UCH>;
+//    @ext(0xf8, 0x12, 0xF0)
+//    model HZ_HYS__NEG is Memory<UIN>;
 
     // Alias of HZ_HYS__NEG
     // /** Konstanten 0x00F0 NG_INCR_DECR__DECR */
     // @ext(0x48, 0x02, 0xF0)
     // model NG_INCR_DECR__DECR is Memory<UCH>;
+//    // @ext(0xf8, 0x12, 0xF0)
+//    // model NG_INCR_DECR__DECR is Memory<UIN>;
 
     // Alias of HZ_HYS__NEG
     // /** Konstanten 0x00F0 NG_REG_ANPASS__START */
     // @ext(0x48, 0x02, 0xF0)
     // model NG_REG_ANPASS__START is Memory<UCH>;
+//    // @ext(0xf8, 0x12, 0xF0)
+//    // model NG_REG_ANPASS__START is Memory<UIN>;
 
     // Alias of HZ_HYS__NEG
     // /** Konstanten 0x00F0 PU_TAKT__PULS */
     // @ext(0x48, 0x02, 0xF0)
     // model PU_TAKT__PULS is Memory<UCH>;
+//    // @ext(0xf8, 0x12, 0xF0)
+//    // model PU_TAKT__PULS is Memory<UIN>;
 
     // Alias of HZ_HYS__NEG
     // /** Konstanten 0x00F0 P_LPG__BETRIEB */
     // @ext(0x48, 0x02, 0xF0)
     // model P_LPG__BETRIEB is Memory<UCH>;
+//    // @ext(0xf8, 0x12, 0xF0)
+//    // model P_LPG__BETRIEB is Memory<UIN>;
 
     // Alias of HZ_HYS__NEG
     // /** Konstanten 0x00F0 RST3 */
     // @ext(0x48, 0x02, 0xF0)
     // model RST3 is Memory<UCH>;
+//    // @ext(0xf8, 0x12, 0xF0)
+//    // model RST3 is Memory<UIN>;
 
     // Alias of HZ_HYS__NEG
     // /** Konstanten 0x00F0 SEL_IN_1_2__2 */
     // @ext(0x48, 0x02, 0xF0)
     // model SEL_IN_1_2__2 is Memory<UCH>;
+//    // @ext(0xf8, 0x12, 0xF0)
+//    // model SEL_IN_1_2__2 is Memory<UIN>;
 
     // Alias of HZ_HYS__NEG
     // /** Konstanten 0x00F0 SEL_IN_3_4__4 */
     // @ext(0x48, 0x02, 0xF0)
     // model SEL_IN_3_4__4 is Memory<UCH>;
+//    // @ext(0xf8, 0x12, 0xF0)
+//    // model SEL_IN_3_4__4 is Memory<UIN>;
 
     // Alias of HZ_HYS__NEG
     // /** Konstanten 0x00F0 SEL_PR_1_2__2 */
     // @ext(0x48, 0x02, 0xF0)
     // model SEL_PR_1_2__2 is Memory<UCH>;
+//    // @ext(0xf8, 0x12, 0xF0)
+//    // model SEL_PR_1_2__2 is Memory<UIN>;
 
     // Alias of HZ_HYS__NEG
     // /** Konstanten 0x00F0 SEL_PR_3_4__4 */
     // @ext(0x48, 0x02, 0xF0)
     // model SEL_PR_3_4__4 is Memory<UCH>;
+//    // @ext(0xf8, 0x12, 0xF0)
+//    // model SEL_PR_3_4__4 is Memory<UIN>;
 
     // Alias of HZ_HYS__NEG
     // /** Konstanten 0x00F0 WW_HYS__NEG */
     // @ext(0x48, 0x02, 0xF0)
     // model WW_HYS__NEG is Memory<UCH>;
+//    // @ext(0xf8, 0x12, 0xF0)
+//    // model WW_HYS__NEG is Memory<UIN>;
 
     // Alias of HZ_HYS__NEG
     // /** Konstanten 0x00F0 XRAM_PAGE_DEFAULT */
     // @ext(0x48, 0x02, 0xF0)
     // model XRAM_PAGE_DEFAULT is Memory<UCH>;
+//    // @ext(0xf8, 0x12, 0xF0)
+//    // model XRAM_PAGE_DEFAULT is Memory<UIN>;
 
     /** Konstanten 0x00F1 NTC_TA_MAX */
     @ext(0x49, 0x02, 0xF1)
@@ -3650,25 +4472,35 @@ namespace memory {
     /** Konstanten 0x00F8 NTC_MAX */
     @ext(0x40, 0x02, 0xF8)
     model NTC_MAX is Memory<UCH>;
+//    @ext(0xf0, 0x12, 0xF8)
+//    model NTC_MAX is Memory<UIN>;
 
     // Alias of NTC_MAX
     // /** Konstanten 0x00F8 TTOL__NON_ZERO_CHECK */
     // @ext(0x40, 0x02, 0xF8)
     // model TTOL__NON_ZERO_CHECK is Memory<UCH>;
+//    // @ext(0xf0, 0x12, 0xF8)
+//    // model TTOL__NON_ZERO_CHECK is Memory<UIN>;
 
     /** Konstanten 0x00FA EEA_P_CODE */
     @ext(0x42, 0x02, 0xFA)
     model EEA_P_CODE is Memory<UCH>;
+//    @ext(0xf2, 0x12, 0xFA)
+//    model EEA_P_CODE is Memory<UIN>;
 
     // Alias of EEA_P_CODE
     // /** Konstanten 0x00FA EEA_STATI_AKTIV */
     // @ext(0x42, 0x02, 0xFA)
     // model EEA_STATI_AKTIV is Memory<UCH>;
+//    // @ext(0xf2, 0x12, 0xFA)
+//    // model EEA_STATI_AKTIV is Memory<UIN>;
 
     // Alias of EEA_P_CODE
     // /** Konstanten 0x00FA MX_RES_CYCL */
     // @ext(0x42, 0x02, 0xFA)
     // model MX_RES_CYCL is Memory<UCH>;
+//    // @ext(0xf2, 0x12, 0xFA)
+//    // model MX_RES_CYCL is Memory<UIN>;
 
     /** Konstanten 0x00FB BOOSTER_ANL_MASK */
     @ext(0x43, 0x02, 0xFB)
@@ -3677,6 +4509,8 @@ namespace memory {
     /** Konstanten 0x00FC HZ_KTND__D */
     @ext(0x44, 0x02, 0xFC)
     model HZ_KTND__D is Memory<UCH>;
+//    @ext(0xf4, 0x12, 0xFC)
+//    model HZ_KTND__D is Memory<UIN>;
 
     /** Konstanten 0x00FF ADC_BREAK */
     @ext(0x47, 0x02, 0xFF)
@@ -3695,6 +4529,8 @@ namespace memory {
     /** Konstanten 0x0100 EEA_ANF2 */
     @ext(0x34, 0x06, 0x01, 0x02, 0x00)
     model EEA_ANF2 is Memory<UCH>;
+//    @ext(0x84, 0x06, 0x01, 0x12, 0x00)
+//    model EEA_ANF2 is Memory<UIN>;
 
     /** Konstanten 0x011D TWARTEQQ */
     @ext(0x29, 0x06, 0x01, 0x02, 0x1D)
@@ -3707,146 +4543,218 @@ namespace memory {
     /** Konstanten 0x0192 EEA_WRONG_ADR */
     @ext(0xa6, 0x06, 0x01, 0x02, 0x92)
     model EEA_WRONG_ADR is Memory<UCH>;
+//    @ext(0x16, 0x06, 0x01, 0x12, 0x92)
+//    model EEA_WRONG_ADR is Memory<UIN>;
 
     /** Konstanten 0x0194 EEA_FCODE_NOT */
     @ext(0xa0, 0x06, 0x01, 0x02, 0x94)
     model EEA_FCODE_NOT is Memory<UCH>;
+//    @ext(0x10, 0x06, 0x01, 0x12, 0x94)
+//    model EEA_FCODE_NOT is Memory<UIN>;
 
     /** Konstanten 0x0196 EEA_FC_57 */
     @ext(0xa2, 0x06, 0x01, 0x02, 0x96)
     model EEA_FC_57 is Memory<UCH>;
+//    @ext(0x12, 0x06, 0x01, 0x12, 0x96)
+//    model EEA_FC_57 is Memory<UIN>;
 
     /** Konstanten 0x0198 EEA_FC_55 */
     @ext(0xac, 0x06, 0x01, 0x02, 0x98)
     model EEA_FC_55 is Memory<UCH>;
+//    @ext(0x1c, 0x06, 0x01, 0x12, 0x98)
+//    model EEA_FC_55 is Memory<UIN>;
 
     /** Konstanten 0x019A EEA_FC_53 */
     @ext(0xae, 0x06, 0x01, 0x02, 0x9A)
     model EEA_FC_53 is Memory<UCH>;
+//    @ext(0x1e, 0x06, 0x01, 0x12, 0x9A)
+//    model EEA_FC_53 is Memory<UIN>;
 
     /** Konstanten 0x019C EEA_FC_52 */
     @ext(0xa8, 0x06, 0x01, 0x02, 0x9C)
     model EEA_FC_52 is Memory<UCH>;
+//    @ext(0x18, 0x06, 0x01, 0x12, 0x9C)
+//    model EEA_FC_52 is Memory<UIN>;
 
     /** Konstanten 0x019E EEA_FC_51 */
     @ext(0xaa, 0x06, 0x01, 0x02, 0x9E)
     model EEA_FC_51 is Memory<UCH>;
+//    @ext(0x1a, 0x06, 0x01, 0x12, 0x9E)
+//    model EEA_FC_51 is Memory<UIN>;
 
     /** Konstanten 0x01A0 EEA_FC_49 */
     @ext(0x94, 0x06, 0x01, 0x02, 0xA0)
     model EEA_FC_49 is Memory<UCH>;
+//    @ext(0x24, 0x06, 0x01, 0x12, 0xA0)
+//    model EEA_FC_49 is Memory<UIN>;
 
     /** Konstanten 0x01A2 EEA_FC_48 */
     @ext(0x96, 0x06, 0x01, 0x02, 0xA2)
     model EEA_FC_48 is Memory<UCH>;
+//    @ext(0x26, 0x06, 0x01, 0x12, 0xA2)
+//    model EEA_FC_48 is Memory<UIN>;
 
     /** Konstanten 0x01A4 EEA_FC_47 */
     @ext(0x90, 0x06, 0x01, 0x02, 0xA4)
     model EEA_FC_47 is Memory<UCH>;
+//    @ext(0x20, 0x06, 0x01, 0x12, 0xA4)
+//    model EEA_FC_47 is Memory<UIN>;
 
     /** Konstanten 0x01A6 EEA_FC_46 */
     @ext(0x92, 0x06, 0x01, 0x02, 0xA6)
     model EEA_FC_46 is Memory<UCH>;
+//    @ext(0x22, 0x06, 0x01, 0x12, 0xA6)
+//    model EEA_FC_46 is Memory<UIN>;
 
     /** Konstanten 0x01A8 EEA_FC_45 */
     @ext(0x9c, 0x06, 0x01, 0x02, 0xA8)
     model EEA_FC_45 is Memory<UCH>;
+//    @ext(0x2c, 0x06, 0x01, 0x12, 0xA8)
+//    model EEA_FC_45 is Memory<UIN>;
 
     /** Konstanten 0x01AA EEA_FC_44 */
     @ext(0x9e, 0x06, 0x01, 0x02, 0xAA)
     model EEA_FC_44 is Memory<UCH>;
+//    @ext(0x2e, 0x06, 0x01, 0x12, 0xAA)
+//    model EEA_FC_44 is Memory<UIN>;
 
     /** Konstanten 0x01AC EEA_FC_43 */
     @ext(0x98, 0x06, 0x01, 0x02, 0xAC)
     model EEA_FC_43 is Memory<UCH>;
+//    @ext(0x28, 0x06, 0x01, 0x12, 0xAC)
+//    model EEA_FC_43 is Memory<UIN>;
 
     /** Konstanten 0x01AE EEA_FC_41 */
     @ext(0x9a, 0x06, 0x01, 0x02, 0xAE)
     model EEA_FC_41 is Memory<UCH>;
+//    @ext(0x2a, 0x06, 0x01, 0x12, 0xAE)
+//    model EEA_FC_41 is Memory<UIN>;
 
     /** Konstanten 0x01B0 EEA_FC_39 */
     @ext(0x84, 0x06, 0x01, 0x02, 0xB0)
     model EEA_FC_39 is Memory<UCH>;
+//    @ext(0x34, 0x06, 0x01, 0x12, 0xB0)
+//    model EEA_FC_39 is Memory<UIN>;
 
     /** Konstanten 0x01B2 EEA_FC_38 */
     @ext(0x86, 0x06, 0x01, 0x02, 0xB2)
     model EEA_FC_38 is Memory<UCH>;
+//    @ext(0x36, 0x06, 0x01, 0x12, 0xB2)
+//    model EEA_FC_38 is Memory<UIN>;
 
     /** Konstanten 0x01B4 EEA_FC_37 */
     @ext(0x80, 0x06, 0x01, 0x02, 0xB4)
     model EEA_FC_37 is Memory<UCH>;
+//    @ext(0x30, 0x06, 0x01, 0x12, 0xB4)
+//    model EEA_FC_37 is Memory<UIN>;
 
     /** Konstanten 0x01B6 EEA_FC_36 */
     @ext(0x82, 0x06, 0x01, 0x02, 0xB6)
     model EEA_FC_36 is Memory<UCH>;
+//    @ext(0x32, 0x06, 0x01, 0x12, 0xB6)
+//    model EEA_FC_36 is Memory<UIN>;
 
     /** Konstanten 0x01B8 EEA_FC_35 */
     @ext(0x8c, 0x06, 0x01, 0x02, 0xB8)
     model EEA_FC_35 is Memory<UCH>;
+//    @ext(0x3c, 0x06, 0x01, 0x12, 0xB8)
+//    model EEA_FC_35 is Memory<UIN>;
 
     /** Konstanten 0x01BA EEA_FC_34 */
     @ext(0x8e, 0x06, 0x01, 0x02, 0xBA)
     model EEA_FC_34 is Memory<UCH>;
+//    @ext(0x3e, 0x06, 0x01, 0x12, 0xBA)
+//    model EEA_FC_34 is Memory<UIN>;
 
     /** Konstanten 0x01BC EEA_FC_33 */
     @ext(0x88, 0x06, 0x01, 0x02, 0xBC)
     model EEA_FC_33 is Memory<UCH>;
+//    @ext(0x38, 0x06, 0x01, 0x12, 0xBC)
+//    model EEA_FC_33 is Memory<UIN>;
 
     /** Konstanten 0x01BE EEA_FC_32 */
     @ext(0x8a, 0x06, 0x01, 0x02, 0xBE)
     model EEA_FC_32 is Memory<UCH>;
+//    @ext(0x3a, 0x06, 0x01, 0x12, 0xBE)
+//    model EEA_FC_32 is Memory<UIN>;
 
     /** Konstanten 0x01C0 EEA_FC_31 */
     @ext(0xf4, 0x06, 0x01, 0x02, 0xC0)
     model EEA_FC_31 is Memory<UCH>;
+//    @ext(0x44, 0x06, 0x01, 0x12, 0xC0)
+//    model EEA_FC_31 is Memory<UIN>;
 
     /** Konstanten 0x01C2 EEA_FC_30 */
     @ext(0xf6, 0x06, 0x01, 0x02, 0xC2)
     model EEA_FC_30 is Memory<UCH>;
+//    @ext(0x46, 0x06, 0x01, 0x12, 0xC2)
+//    model EEA_FC_30 is Memory<UIN>;
 
     /** Konstanten 0x01C4 EEA_FC_24 */
     @ext(0xf0, 0x06, 0x01, 0x02, 0xC4)
     model EEA_FC_24 is Memory<UCH>;
+//    @ext(0x40, 0x06, 0x01, 0x12, 0xC4)
+//    model EEA_FC_24 is Memory<UIN>;
 
     /** Konstanten 0x01C6 EEA_FC_23 */
     @ext(0xf2, 0x06, 0x01, 0x02, 0xC6)
     model EEA_FC_23 is Memory<UCH>;
+//    @ext(0x42, 0x06, 0x01, 0x12, 0xC6)
+//    model EEA_FC_23 is Memory<UIN>;
 
     /** Konstanten 0x01C8 EEA_FC_22 */
     @ext(0xfc, 0x06, 0x01, 0x02, 0xC8)
     model EEA_FC_22 is Memory<UCH>;
+//    @ext(0x4c, 0x06, 0x01, 0x12, 0xC8)
+//    model EEA_FC_22 is Memory<UIN>;
 
     /** Konstanten 0x01CA EEA_FC_21 */
     @ext(0xfe, 0x06, 0x01, 0x02, 0xCA)
     model EEA_FC_21 is Memory<UCH>;
+//    @ext(0x4e, 0x06, 0x01, 0x12, 0xCA)
+//    model EEA_FC_21 is Memory<UIN>;
 
     /** Konstanten 0x01CC EEA_FC_18 */
     @ext(0xf8, 0x06, 0x01, 0x02, 0xCC)
     model EEA_FC_18 is Memory<UCH>;
+//    @ext(0x48, 0x06, 0x01, 0x12, 0xCC)
+//    model EEA_FC_18 is Memory<UIN>;
 
     /** Konstanten 0x01CE EEA_FC_16 */
     @ext(0xfa, 0x06, 0x01, 0x02, 0xCE)
     model EEA_FC_16 is Memory<UCH>;
+//    @ext(0x4a, 0x06, 0x01, 0x12, 0xCE)
+//    model EEA_FC_16 is Memory<UIN>;
 
     /** Konstanten 0x01D0 EEA_FC_15 */
     @ext(0xe4, 0x06, 0x01, 0x02, 0xD0)
     model EEA_FC_15 is Memory<UCH>;
+//    @ext(0x54, 0x06, 0x01, 0x12, 0xD0)
+//    model EEA_FC_15 is Memory<UIN>;
 
     /** Konstanten 0x01D2 EEA_FC_14 */
     @ext(0xe6, 0x06, 0x01, 0x02, 0xD2)
     model EEA_FC_14 is Memory<UCH>;
+//    @ext(0x56, 0x06, 0x01, 0x12, 0xD2)
+//    model EEA_FC_14 is Memory<UIN>;
 
     /** Konstanten 0x01D4 EEA_FC_12 */
     @ext(0xe0, 0x06, 0x01, 0x02, 0xD4)
     model EEA_FC_12 is Memory<UCH>;
+//    @ext(0x50, 0x06, 0x01, 0x12, 0xD4)
+//    model EEA_FC_12 is Memory<UIN>;
 
     /** Konstanten 0x01D6 EEA_FC_11 */
     @ext(0xe2, 0x06, 0x01, 0x02, 0xD6)
     model EEA_FC_11 is Memory<UCH>;
+//    @ext(0x52, 0x06, 0x01, 0x12, 0xD6)
+//    model EEA_FC_11 is Memory<UIN>;
 
     /** Konstanten 0x01D8 EEA_HBRONTAG */
     @ext(0xec, 0x06, 0x01, 0x02, 0xD8)
     model EEA_HBRONTAG is Memory<UCH>;
+//    @ext(0x5c, 0x06, 0x01, 0x12, 0xD8)
+//    model EEA_HBRONTAG is Memory<UIN>;
 
     /** Konstanten 0x01D9 EEA_NZUENDTAG */
     @ext(0xed, 0x06, 0x01, 0x02, 0xD9)
@@ -3855,6 +4763,8 @@ namespace memory {
     /** Konstanten 0x01DA EEA_N_PON */
     @ext(0xee, 0x06, 0x01, 0x02, 0xDA)
     model EEA_N_PON is Memory<UCH>;
+//    @ext(0x5e, 0x06, 0x01, 0x12, 0xDA)
+//    model EEA_N_PON is Memory<UIN>;
 
     /** Konstanten 0x01DD EEA_N_KON */
     @ext(0xe9, 0x06, 0x01, 0x02, 0xDD)
@@ -3863,6 +4773,8 @@ namespace memory {
     /** Konstanten 0x01E0 EEA_RES_CNT */
     @ext(0xd4, 0x06, 0x01, 0x02, 0xE0)
     model EEA_RES_CNT is Memory<UCH>;
+//    @ext(0x64, 0x06, 0x01, 0x12, 0xE0)
+//    model EEA_RES_CNT is Memory<UIN>;
 
     /** Konstanten 0x01E3 EEA_SHUT_OFF */
     @ext(0xd7, 0x06, 0x01, 0x02, 0xE3)
@@ -3871,6 +4783,8 @@ namespace memory {
     /** Konstanten 0x01E6 EEA_H_PON */
     @ext(0xd2, 0x06, 0x01, 0x02, 0xE6)
     model EEA_H_PON is Memory<UCH>;
+//    @ext(0x62, 0x06, 0x01, 0x12, 0xE6)
+//    model EEA_H_PON is Memory<UIN>;
 
     /** Konstanten 0x01E9 EEA_H_BON */
     @ext(0xdd, 0x06, 0x01, 0x02, 0xE9)
@@ -3883,15 +4797,21 @@ namespace memory {
     /** Konstanten 0x01EE EEA_BAUSTAND */
     @ext(0xda, 0x06, 0x01, 0x02, 0xEE)
     model EEA_BAUSTAND is Memory<UCH>;
+//    @ext(0x6a, 0x06, 0x01, 0x12, 0xEE)
+//    model EEA_BAUSTAND is Memory<UIN>;
 
     // Alias of EEA_BAUSTAND
     // /** Konstanten 0x01EE EEA_PRUEF_LOW */
     // @ext(0xda, 0x06, 0x01, 0x02, 0xEE)
     // model EEA_PRUEF_LOW is Memory<UCH>;
+//    // @ext(0x6a, 0x06, 0x01, 0x12, 0xEE)
+//    // model EEA_PRUEF_LOW is Memory<UIN>;
 
     /** Konstanten 0x01F0 EEA_KUNDE */
     @ext(0xc4, 0x06, 0x01, 0x02, 0xF0)
     model EEA_KUNDE is Memory<UCH>;
+//    @ext(0x74, 0x06, 0x01, 0x12, 0xF0)
+//    model EEA_KUNDE is Memory<UIN>;
 
     /** Konstanten 0x01F1 EEA_VARIANTE */
     @ext(0xc5, 0x06, 0x01, 0x02, 0xF1)
@@ -3904,10 +4824,14 @@ namespace memory {
     /** Konstanten 0x01F6 EEA_PRUEF_CRC */
     @ext(0xc2, 0x06, 0x01, 0x02, 0xF6)
     model EEA_PRUEF_CRC is Memory<UCH>;
+//    @ext(0x72, 0x06, 0x01, 0x12, 0xF6)
+//    model EEA_PRUEF_CRC is Memory<UIN>;
 
     /** Konstanten 0x0200 EEA_F_HIST_PTR_LOW */
     @ext(0xac, 0x06, 0x02, 0x02, 0x00)
     model EEA_F_HIST_PTR_LOW is Memory<UCH>;
+//    @ext(0x1c, 0x06, 0x02, 0x12, 0x00)
+//    model EEA_F_HIST_PTR_LOW is Memory<UIN>;
 
     /** Konstanten 0x0201 EEA_F_HIST_PTR_HIGH */
     @ext(0xad, 0x06, 0x02, 0x02, 0x01)
@@ -3916,6 +4840,8 @@ namespace memory {
     /** Konstanten 0x0202 EEA_F_HIST_ANF */
     @ext(0xae, 0x06, 0x02, 0x02, 0x02)
     model EEA_F_HIST_ANF is Memory<UCH>;
+//    @ext(0x1e, 0x06, 0x02, 0x12, 0x02)
+//    model EEA_F_HIST_ANF is Memory<UIN>;
 
     /** Konstanten 0x0231 EEA_F_HIST_END */
     @ext(0x9d, 0x06, 0x02, 0x02, 0x31)
@@ -3924,10 +4850,14 @@ namespace memory {
     /** Konstanten 0x02EE SYS_TAKT */
     @ext(0x42, 0x06, 0x02, 0x02, 0xEE)
     model SYS_TAKT is Memory<UCH>;
+//    @ext(0xf2, 0x06, 0x02, 0x12, 0xEE)
+//    model SYS_TAKT is Memory<UIN>;
 
     /** Konstanten 0x0300 EEA_TVSOLL_EPM */
     @ext(0x10, 0x06, 0x03, 0x02, 0x00)
     model EEA_TVSOLL_EPM is Memory<UCH>;
+//    @ext(0xa0, 0x06, 0x03, 0x12, 0x00)
+//    model EEA_TVSOLL_EPM is Memory<UIN>;
 
     /** Konstanten 0x0301 EEA_TVABSENK */
     @ext(0x11, 0x06, 0x03, 0x02, 0x01)
@@ -3936,6 +4866,8 @@ namespace memory {
     /** Konstanten 0x0302 EEA_TWWSOLL_EPM */
     @ext(0x12, 0x06, 0x03, 0x02, 0x02)
     model EEA_TWWSOLL_EPM is Memory<UCH>;
+//    @ext(0xa2, 0x06, 0x03, 0x12, 0x02)
+//    model EEA_TWWSOLL_EPM is Memory<UIN>;
 
     /** Konstanten 0x0303 EEA_WISO_EPM */
     @ext(0x13, 0x06, 0x03, 0x02, 0x03)
@@ -3944,6 +4876,8 @@ namespace memory {
     /** Konstanten 0x0304 EEA_MAINPARACRC */
     @ext(0x14, 0x06, 0x03, 0x02, 0x04)
     model EEA_MAINPARACRC is Memory<UCH>;
+//    @ext(0xa4, 0x06, 0x03, 0x12, 0x04)
+//    model EEA_MAINPARACRC is Memory<UIN>;
 
     /** Konstanten 0x0307 EEA_TVSOLL_EPM2 */
     @ext(0x17, 0x06, 0x03, 0x02, 0x07)
@@ -3957,6 +4891,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF000 TX_BUFFER_END */
     @ext(0xe4, 0x03, 0x00)
     model TX_BUFFER_END is Memory<UCH>;
+//    @ext(0x54, 0x13, 0x00)
+//    model TX_BUFFER_END is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF001 EBUS_ERROR */
     @ext(0xe5, 0x03, 0x01)
@@ -3965,11 +4901,15 @@ namespace memory {
     /** External RAM (XRAM) 0xF002 TX_QQ */
     @ext(0xe6, 0x03, 0x02)
     model TX_QQ is Memory<UCH>;
+//    @ext(0x56, 0x13, 0x02)
+//    model TX_QQ is Memory<UIN>;
 
     // Alias of TX_QQ
     // /** External RAM (XRAM) 0xF002 TX_XRAM */
     // @ext(0xe6, 0x03, 0x02)
     // model TX_XRAM is Memory<UCH>;
+//    // @ext(0x56, 0x13, 0x02)
+//    // model TX_XRAM is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF003 TX_ZZ */
     @ext(0xe7, 0x03, 0x03)
@@ -3978,6 +4918,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF004 TX_PB */
     @ext(0xe0, 0x03, 0x04)
     model TX_PB is Memory<UCH>;
+//    @ext(0x50, 0x13, 0x04)
+//    model TX_PB is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF005 TX_SB */
     @ext(0xe1, 0x03, 0x05)
@@ -3986,6 +4928,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF006 TX_NN */
     @ext(0xe2, 0x03, 0x06)
     model TX_NN is Memory<UCH>;
+//    @ext(0x52, 0x13, 0x06)
+//    model TX_NN is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF007 TX_DB1 */
     @ext(0xe3, 0x03, 0x07)
@@ -3994,6 +4938,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF008 TX_DB2 */
     @ext(0xec, 0x03, 0x08)
     model TX_DB2 is Memory<UCH>;
+//    @ext(0x5c, 0x13, 0x08)
+//    model TX_DB2 is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF009 TX_DB3 */
     @ext(0xed, 0x03, 0x09)
@@ -4002,6 +4948,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF00A TX_DB4 */
     @ext(0xee, 0x03, 0x0A)
     model TX_DB4 is Memory<UCH>;
+//    @ext(0x5e, 0x13, 0x0A)
+//    model TX_DB4 is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF00B TX_DB5 */
     @ext(0xef, 0x03, 0x0B)
@@ -4010,6 +4958,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF00C TX_DB6 */
     @ext(0xe8, 0x03, 0x0C)
     model TX_DB6 is Memory<UCH>;
+//    @ext(0x58, 0x13, 0x0C)
+//    model TX_DB6 is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF00D TX_DBX */
     @ext(0xe9, 0x03, 0x0D)
@@ -4027,6 +4977,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF01C RX_ZZ */
     @ext(0xf8, 0x03, 0x1C)
     model RX_ZZ is Memory<UCH>;
+//    @ext(0x48, 0x13, 0x1C)
+//    model RX_ZZ is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF01D RX_PB */
     @ext(0xf9, 0x03, 0x1D)
@@ -4035,6 +4987,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF01E RX_SB */
     @ext(0xfa, 0x03, 0x1E)
     model RX_SB is Memory<UCH>;
+//    @ext(0x4a, 0x13, 0x1E)
+//    model RX_SB is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF01F RX_NN */
     @ext(0xfb, 0x03, 0x1F)
@@ -4043,6 +4997,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF020 RX_DB1 */
     @ext(0xc4, 0x03, 0x20)
     model RX_DB1 is Memory<UCH>;
+//    @ext(0x74, 0x13, 0x20)
+//    model RX_DB1 is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF021 RX_DB2 */
     @ext(0xc5, 0x03, 0x21)
@@ -4051,6 +5007,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF022 RX_DB3 */
     @ext(0xc6, 0x03, 0x22)
     model RX_DB3 is Memory<UCH>;
+//    @ext(0x76, 0x13, 0x22)
+//    model RX_DB3 is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF023 RX_DB4 */
     @ext(0xc7, 0x03, 0x23)
@@ -4059,6 +5017,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF024 RX_DB5 */
     @ext(0xc0, 0x03, 0x24)
     model RX_DB5 is Memory<UCH>;
+//    @ext(0x70, 0x13, 0x24)
+//    model RX_DB5 is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF025 RX_DB6 */
     @ext(0xc1, 0x03, 0x25)
@@ -4067,6 +5027,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF026 RX_DB7 */
     @ext(0xc2, 0x03, 0x26)
     model RX_DB7 is Memory<UCH>;
+//    @ext(0x72, 0x13, 0x26)
+//    model RX_DB7 is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF027 RX_DB8 */
     @ext(0xc3, 0x03, 0x27)
@@ -4108,6 +5070,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF036 RX_BUFFER_END */
     @ext(0xd2, 0x03, 0x36)
     model RX_BUFFER_END is Memory<UCH>;
+//    @ext(0x62, 0x13, 0x36)
+//    model RX_BUFFER_END is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF037 EBUS_ACK */
     @ext(0xd3, 0x03, 0x37)
@@ -4116,6 +5080,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF038 TALK_EBUS */
     @ext(0xdc, 0x03, 0x38)
     model TALK_EBUS is Memory<UCH>;
+//    @ext(0x6c, 0x13, 0x38)
+//    model TALK_EBUS is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF039 T_SYN */
     @ext(0xdd, 0x03, 0x39)
@@ -4124,6 +5090,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF03A V24_DELAY_TIMER */
     @ext(0xde, 0x03, 0x3A)
     model V24_DELAY_TIMER is Memory<UCH>;
+//    @ext(0x6e, 0x13, 0x3A)
+//    model V24_DELAY_TIMER is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF03B TWWISTAD */
     @ext(0xdf, 0x03, 0x3B)
@@ -4132,6 +5100,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF03C TAUSSAD */
     @ext(0xd8, 0x03, 0x3C)
     model TAUSSAD is Memory<UCH>;
+//    @ext(0x68, 0x13, 0x3C)
+//    model TAUSSAD is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF03D TRLISTAD */
     @ext(0xd9, 0x03, 0x3D)
@@ -4140,6 +5110,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF03E AIN_WPAD */
     @ext(0xda, 0x03, 0x3E)
     model AIN_WPAD is Memory<UCH>;
+//    @ext(0x6a, 0x13, 0x3E)
+//    model AIN_WPAD is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF03F AIN_0_10VAD */
     @ext(0xdb, 0x03, 0x3F)
@@ -4148,6 +5120,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF040 AIN_0_10V */
     @ext(0xa4, 0x03, 0x40)
     model AIN_0_10V is Memory<UCH>;
+//    @ext(0x14, 0x13, 0x40)
+//    model AIN_0_10V is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF041 AIN_STB */
     @ext(0xa5, 0x03, 0x41)
@@ -4156,6 +5130,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF042 AIN_STBA */
     @ext(0xa6, 0x03, 0x42)
     model AIN_STBA is Memory<UCH>;
+//    @ext(0x16, 0x13, 0x42)
+//    model AIN_STBA is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF043 AIN_ANAIN6AD */
     @ext(0xa7, 0x03, 0x43)
@@ -4164,6 +5140,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF044 AIN_ANAIN7AD */
     @ext(0xa0, 0x03, 0x44)
     model AIN_ANAIN7AD is Memory<UCH>;
+//    @ext(0x10, 0x13, 0x44)
+//    model AIN_ANAIN7AD is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF045 TWEICHEIST */
     @ext(0xa1, 0x03, 0x45)
@@ -4172,6 +5150,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF046 TWEICHEAD */
     @ext(0xa2, 0x03, 0x46)
     model TWEICHEAD is Memory<UCH>;
+//    @ext(0x12, 0x13, 0x46)
+//    model TWEICHEAD is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF047 TABGAD */
     @ext(0xa3, 0x03, 0x47)
@@ -4180,6 +5160,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF048 ICL20SEC_BON */
     @ext(0xac, 0x03, 0x48)
     model ICL20SEC_BON is Memory<UCH>;
+//    @ext(0x1c, 0x13, 0x48)
+//    model ICL20SEC_BON is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF049 ALARM_TIMER */
     @ext(0xad, 0x03, 0x49)
@@ -4188,6 +5170,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF04A CNT_REF_OK */
     @ext(0xae, 0x03, 0x4A)
     model CNT_REF_OK is Memory<UCH>;
+//    @ext(0x1e, 0x13, 0x4A)
+//    model CNT_REF_OK is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF04B CNT_KASK_REL */
     @ext(0xaf, 0x03, 0x4B)
@@ -4196,6 +5180,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF04C VAR_VERBRAUCHER */
     @ext(0xa8, 0x03, 0x4C)
     model VAR_VERBRAUCHER is Memory<UCH>;
+//    @ext(0x18, 0x13, 0x4C)
+//    model VAR_VERBRAUCHER is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF04D FE_CNT */
     @ext(0xa9, 0x03, 0x4D)
@@ -4204,6 +5190,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF04E CNT_DECGAP */
     @ext(0xaa, 0x03, 0x4E)
     model CNT_DECGAP is Memory<UCH>;
+//    @ext(0x1a, 0x13, 0x4E)
+//    model CNT_DECGAP is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF04F ISECFEPRESSED */
     @ext(0xab, 0x03, 0x4F)
@@ -4212,6 +5200,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF050 ABREGELTEMP */
     @ext(0xb4, 0x03, 0x50)
     model ABREGELTEMP is Memory<UCH>;
+//    @ext(0x04, 0x13, 0x50)
+//    model ABREGELTEMP is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF051 INIT_ORDER_BYTE */
     @ext(0xb5, 0x03, 0x51)
@@ -4224,14 +5214,20 @@ namespace memory {
     /** External RAM (XRAM) 0xF054 YTVREG */
     @ext(0xb0, 0x03, 0x54)
     model YTVREG is Memory<UCH>;
+//    @ext(0x00, 0x13, 0x54)
+//    model YTVREG is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF056 FDE_XRAM */
     @ext(0xb2, 0x03, 0x56)
     model FDE_XRAM is Memory<UCH>;
+//    @ext(0x02, 0x13, 0x56)
+//    model FDE_XRAM is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF05E AIN_ERR_MASK */
     @ext(0xba, 0x03, 0x5E)
     model AIN_ERR_MASK is Memory<UCH>;
+//    @ext(0x0a, 0x13, 0x5E)
+//    model AIN_ERR_MASK is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF05F SIPHON_OSZ_CNT */
     @ext(0xbb, 0x03, 0x5F)
@@ -4240,6 +5236,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF060 CNT_NTC_TOL */
     @ext(0x84, 0x03, 0x60)
     model CNT_NTC_TOL is Memory<UCH>;
+//    @ext(0x34, 0x13, 0x60)
+//    model CNT_NTC_TOL is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF061 CNT_NTC_ERR */
     @ext(0x85, 0x03, 0x61)
@@ -4248,6 +5246,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF062 NTC1_TEMP */
     @ext(0x86, 0x03, 0x62)
     model NTC1_TEMP is Memory<UCH>;
+//    @ext(0x36, 0x13, 0x62)
+//    model NTC1_TEMP is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF063 NTC2_TEMP */
     @ext(0x87, 0x03, 0x63)
@@ -4256,6 +5256,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF064 NTC1_AD */
     @ext(0x80, 0x03, 0x64)
     model NTC1_AD is Memory<UCH>;
+//    @ext(0x30, 0x13, 0x64)
+//    model NTC1_AD is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF065 NTC2_AD */
     @ext(0x81, 0x03, 0x65)
@@ -4264,10 +5266,14 @@ namespace memory {
     /** External RAM (XRAM) 0xF066 CNT_W89 */
     @ext(0x82, 0x03, 0x66)
     model CNT_W89 is Memory<UCH>;
+//    @ext(0x32, 0x13, 0x66)
+//    model CNT_W89 is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF068 HZZUSTBM_2 */
     @ext(0x8c, 0x03, 0x68)
     model HZZUSTBM_2 is Memory<UCH>;
+//    @ext(0x3c, 0x13, 0x68)
+//    model HZZUSTBM_2 is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF069 EPIONNULL_INV */
     @ext(0x8d, 0x03, 0x69)
@@ -4276,6 +5282,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF06A MIN_BR_OFF_VL_ESTB_RL */
     @ext(0x8e, 0x03, 0x6A)
     model MIN_BR_OFF_VL_ESTB_RL is Memory<UCH>;
+//    @ext(0x3e, 0x13, 0x6A)
+//    model MIN_BR_OFF_VL_ESTB_RL is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF06B TWEICHEIST_INTERN */
     @ext(0x8f, 0x03, 0x6B)
@@ -4284,6 +5292,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF06C TWEICHEIST_EXTERN */
     @ext(0x88, 0x03, 0x6C)
     model TWEICHEIST_EXTERN is Memory<UCH>;
+//    @ext(0x38, 0x13, 0x6C)
+//    model TWEICHEIST_EXTERN is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF06D CNT_1_5MIN_RETRY_KLAPPE */
     @ext(0x89, 0x03, 0x6D)
@@ -4292,6 +5302,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF06E SERVICEBETR_VIA_CUI_U8 */
     @ext(0x8a, 0x03, 0x6E)
     model SERVICEBETR_VIA_CUI_U8 is Memory<UCH>;
+//    @ext(0x3a, 0x13, 0x6E)
+//    model SERVICEBETR_VIA_CUI_U8 is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF06F DEBUG_VAR_1 */
     @ext(0x8b, 0x03, 0x6F)
@@ -4300,6 +5312,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF070 DEBUG_VAR_2 */
     @ext(0x94, 0x03, 0x70)
     model DEBUG_VAR_2 is Memory<UCH>;
+//    @ext(0x24, 0x13, 0x70)
+//    model DEBUG_VAR_2 is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF071 DL_HYS_TH_OFF_ */
     @ext(0x95, 0x03, 0x71)
@@ -4308,6 +5322,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF072 TXist */
     @ext(0x96, 0x03, 0x72)
     model TXist is Memory<UCH>;
+//    @ext(0x26, 0x13, 0x72)
+//    model TXist is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF073 TVist_start_FL */
     @ext(0x97, 0x03, 0x73)
@@ -4316,6 +5332,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF074 DL_TH_OFF_SEC */
     @ext(0x90, 0x03, 0x74)
     model DL_TH_OFF_SEC is Memory<UCH>;
+//    @ext(0x20, 0x13, 0x74)
+//    model DL_TH_OFF_SEC is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF075 minWUTzeit */
     @ext(0x91, 0x03, 0x75)
@@ -4324,6 +5342,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF076 tMinCombi */
     @ext(0x92, 0x03, 0x76)
     model tMinCombi is Memory<UCH>;
+//    @ext(0x22, 0x13, 0x76)
+//    model tMinCombi is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF077 cntFlaStabHZ */
     @ext(0x93, 0x03, 0x77)
@@ -4332,10 +5352,14 @@ namespace memory {
     /** External RAM (XRAM) 0xF078 ihilf */
     @ext(0x9c, 0x03, 0x78)
     model ihilf is Memory<UCH>;
+//    @ext(0x2c, 0x13, 0x78)
+//    model ihilf is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF07A uk1 */
     @ext(0x9e, 0x03, 0x7A)
     model uk1 is Memory<UCH>;
+//    @ext(0x2e, 0x13, 0x7A)
+//    model uk1 is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF07B CNTTW */
     @ext(0x9f, 0x03, 0x7B)
@@ -4344,6 +5368,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF07C max_nGsoll */
     @ext(0x98, 0x03, 0x7C)
     model max_nGsoll is Memory<UCH>;
+//    @ext(0x28, 0x13, 0x7C)
+//    model max_nGsoll is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF07D cnt_tTvGradient */
     @ext(0x99, 0x03, 0x7D)
@@ -4352,6 +5378,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF07E secWWbetr */
     @ext(0x9a, 0x03, 0x7E)
     model secWWbetr is Memory<UCH>;
+//    @ext(0x2a, 0x13, 0x7E)
+//    model secWWbetr is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF07F icl1HrsKick */
     @ext(0x9b, 0x03, 0x7F)
@@ -4360,10 +5388,14 @@ namespace memory {
     /** External RAM (XRAM) 0xF080 cntConfig */
     @ext(0x64, 0x03, 0x80)
     model cntConfig is Memory<UCH>;
+//    @ext(0xd4, 0x13, 0x80)
+//    model cntConfig is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF082 cnt_sw_fc41 */
     @ext(0x66, 0x03, 0x82)
     model cnt_sw_fc41 is Memory<UCH>;
+//    @ext(0xd6, 0x13, 0x82)
+//    model cnt_sw_fc41 is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF083 N_DTMax_VL_eSTB */
     @ext(0x67, 0x03, 0x83)
@@ -4372,6 +5404,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF084 DL_TVIST_NGMIN_SEC */
     @ext(0x60, 0x03, 0x84)
     model DL_TVIST_NGMIN_SEC is Memory<UCH>;
+//    @ext(0xd0, 0x13, 0x84)
+//    model DL_TVIST_NGMIN_SEC is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF085 dT_VLRL_Filter */
     @ext(0x61, 0x03, 0x85)
@@ -4380,6 +5414,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF086 prev_tWWist_2 */
     @ext(0x62, 0x03, 0x86)
     model prev_tWWist_2 is Memory<UCH>;
+//    @ext(0xd2, 0x13, 0x86)
+//    model prev_tWWist_2 is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF087 cntGDW */
     @ext(0x63, 0x03, 0x87)
@@ -4388,6 +5424,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF088 DL_TH_OFF_SEC_MAX_ */
     @ext(0x6c, 0x03, 0x88)
     model DL_TH_OFF_SEC_MAX_ is Memory<UCH>;
+//    @ext(0xdc, 0x13, 0x88)
+//    model DL_TH_OFF_SEC_MAX_ is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF089 SA_Th */
     @ext(0x6d, 0x03, 0x89)
@@ -4396,10 +5434,14 @@ namespace memory {
     /** External RAM (XRAM) 0xF08A PNL_HZcnt */
     @ext(0x6e, 0x03, 0x8A)
     model PNL_HZcnt is Memory<UCH>;
+//    @ext(0xde, 0x13, 0x8A)
+//    model PNL_HZcnt is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF08C BetrArt */
     @ext(0x68, 0x03, 0x8C)
     model BetrArt is Memory<UCH>;
+//    @ext(0xd8, 0x13, 0x8C)
+//    model BetrArt is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF08D NDTMaxWT */
     @ext(0x69, 0x03, 0x8D)
@@ -4408,6 +5450,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF08E dT_Abtastzeit */
     @ext(0x6a, 0x03, 0x8E)
     model dT_Abtastzeit is Memory<UCH>;
+//    @ext(0xda, 0x13, 0x8E)
+//    model dT_Abtastzeit is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF08F prevTVist */
     @ext(0x6b, 0x03, 0x8F)
@@ -4416,6 +5460,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF090 DL_HYS_TH_ON_ */
     @ext(0x74, 0x03, 0x90)
     model DL_HYS_TH_ON_ is Memory<UCH>;
+//    @ext(0xc4, 0x13, 0x90)
+//    model DL_HYS_TH_ON_ is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF091 PNL_WWcnt */
     @ext(0x75, 0x03, 0x91)
@@ -4432,6 +5478,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF096 TRList_start_FL */
     @ext(0x72, 0x03, 0x96)
     model TRList_start_FL is Memory<UCH>;
+//    @ext(0xc2, 0x13, 0x96)
+//    model TRList_start_FL is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF097 CNTDTMaxWT */
     @ext(0x73, 0x03, 0x97)
@@ -4440,6 +5488,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF098 secFCodeW */
     @ext(0x7c, 0x03, 0x98)
     model secFCodeW is Memory<UCH>;
+//    @ext(0xcc, 0x13, 0x98)
+//    model secFCodeW is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF099 AbgSS_cnt */
     @ext(0x7d, 0x03, 0x99)
@@ -4448,6 +5498,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF09A dtWWist */
     @ext(0x7e, 0x03, 0x9A)
     model dtWWist is Memory<UCH>;
+//    @ext(0xce, 0x13, 0x9A)
+//    model dtWWist is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF09B cntLDW_Versuche */
     @ext(0x7f, 0x03, 0x9B)
@@ -4456,6 +5508,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF09C DL_XW_NGMIN_ */
     @ext(0x78, 0x03, 0x9C)
     model DL_XW_NGMIN_ is Memory<UCH>;
+//    @ext(0xc8, 0x13, 0x9C)
+//    model DL_XW_NGMIN_ is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF09D scHilf */
     @ext(0x79, 0x03, 0x9D)
@@ -4464,6 +5518,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF09E cntGDWtime */
     @ext(0x7a, 0x03, 0x9E)
     model cntGDWtime is Memory<UCH>;
+//    @ext(0xca, 0x13, 0x9E)
+//    model cntGDWtime is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF09F DL_XW_NGMAX_ */
     @ext(0x7b, 0x03, 0x9F)
@@ -4472,6 +5528,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF0A0 ucHilf */
     @ext(0x44, 0x03, 0xA0)
     model ucHilf is Memory<UCH>;
+//    @ext(0xf4, 0x13, 0xA0)
+//    model ucHilf is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF0A1 DTVIST */
     @ext(0x45, 0x03, 0xA1)
@@ -4480,6 +5538,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF0A2 CNTGradTVist */
     @ext(0x46, 0x03, 0xA2)
     model CNTGradTVist is Memory<UCH>;
+//    @ext(0xf6, 0x13, 0xA2)
+//    model CNTGradTVist is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF0A3 cntSoft */
     @ext(0x47, 0x03, 0xA3)
@@ -4488,6 +5548,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF0A4 CntAusg1 */
     @ext(0x40, 0x03, 0xA4)
     model CntAusg1 is Memory<UCH>;
+//    @ext(0xf0, 0x13, 0xA4)
+//    model CntAusg1 is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF0A5 DL_Comf_Soll */
     @ext(0x41, 0x03, 0xA5)
@@ -4496,6 +5558,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF0A6 Min_nGsoll */
     @ext(0x42, 0x03, 0xA6)
     model Min_nGsoll is Memory<UCH>;
+//    @ext(0xf2, 0x13, 0xA6)
+//    model Min_nGsoll is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF0A7 TWWIST_2 */
     @ext(0x43, 0x03, 0xA7)
@@ -4504,6 +5568,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF0A8 TRLIST_2 */
     @ext(0x4c, 0x03, 0xA8)
     model TRLIST_2 is Memory<UCH>;
+//    @ext(0xfc, 0x13, 0xA8)
+//    model TRLIST_2 is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF0A9 TVIST_2 */
     @ext(0x4d, 0x03, 0xA9)
@@ -4512,6 +5578,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF0AA TWW_DLPLUS */
     @ext(0x4e, 0x03, 0xAA)
     model TWW_DLPLUS is Memory<UCH>;
+//    @ext(0xfe, 0x13, 0xAA)
+//    model TWW_DLPLUS is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF0AB WW_DURCHFL */
     @ext(0x4f, 0x03, 0xAB)
@@ -4520,14 +5588,20 @@ namespace memory {
     /** External RAM (XRAM) 0xF0AC DL_Y_VORST */
     @ext(0x48, 0x03, 0xAC)
     model DL_Y_VORST is Memory<UCH>;
+//    @ext(0xf8, 0x13, 0xAC)
+//    model DL_Y_VORST is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF0AE TA_FILTER */
     @ext(0x4a, 0x03, 0xAE)
     model TA_FILTER is Memory<UCH>;
+//    @ext(0xfa, 0x13, 0xAE)
+//    model TA_FILTER is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF0B0 TA_MITTEL */
     @ext(0x54, 0x03, 0xB0)
     model TA_MITTEL is Memory<UCH>;
+//    @ext(0xe4, 0x13, 0xB0)
+//    model TA_MITTEL is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF0B1 MODULATIONSGRAD */
     @ext(0x55, 0x03, 0xB1)
@@ -4536,10 +5610,14 @@ namespace memory {
     /** External RAM (XRAM) 0xF0B2 SECBROFF */
     @ext(0x56, 0x03, 0xB2)
     model SECBROFF is Memory<UCH>;
+//    @ext(0xe6, 0x13, 0xB2)
+//    model SECBROFF is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF0B4 CNTF_CODE_1X */
     @ext(0x50, 0x03, 0xB4)
     model CNTF_CODE_1X is Memory<UCH>;
+//    @ext(0xe0, 0x13, 0xB4)
+//    model CNTF_CODE_1X is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF0B5 CNTF_CODE_2X */
     @ext(0x51, 0x03, 0xB5)
@@ -4548,6 +5626,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF0B6 CNTF_CODE_6X */
     @ext(0x52, 0x03, 0xB6)
     model CNTF_CODE_6X is Memory<UCH>;
+//    @ext(0xe2, 0x13, 0xB6)
+//    model CNTF_CODE_6X is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF0B7 EM_EE_REDUND */
     @ext(0x53, 0x03, 0xB7)
@@ -4556,6 +5636,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF0B8 EE_RANGE_FAIL */
     @ext(0x5c, 0x03, 0xB8)
     model EE_RANGE_FAIL is Memory<UCH>;
+//    @ext(0xec, 0x13, 0xB8)
+//    model EE_RANGE_FAIL is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF0B9 WR_KESS_P_HILF */
     @ext(0x5d, 0x03, 0xB9)
@@ -4564,6 +5646,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF0BA WR_KESS_P_HILF2 */
     @ext(0x5e, 0x03, 0xBA)
     model WR_KESS_P_HILF2 is Memory<UCH>;
+//    @ext(0xee, 0x13, 0xBA)
+//    model WR_KESS_P_HILF2 is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF0BB ANF_WR_KESS_P */
     @ext(0x5f, 0x03, 0xBB)
@@ -4572,6 +5656,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF0BC CNT_15MIN_TKKB */
     @ext(0x58, 0x03, 0xBC)
     model CNT_15MIN_TKKB is Memory<UCH>;
+//    @ext(0xe8, 0x13, 0xBC)
+//    model CNT_15MIN_TKKB is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF0BD P_CODE */
     @ext(0x59, 0x03, 0xBD)
@@ -4580,6 +5666,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF0BE MKESSSTATUSBM */
     @ext(0x5a, 0x03, 0xBE)
     model MKESSSTATUSBM is Memory<UCH>;
+//    @ext(0xea, 0x13, 0xBE)
+//    model MKESSSTATUSBM is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF0BF TVSOLL_HS */
     @ext(0x5b, 0x03, 0xBF)
@@ -4588,6 +5676,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF0C0 EE_ERR_STATUS */
     @ext(0x24, 0x03, 0xC0)
     model EE_ERR_STATUS is Memory<UCH>;
+//    @ext(0x94, 0x13, 0xC0)
+//    model EE_ERR_STATUS is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF0C1 NM_TX_ADR */
     @ext(0x25, 0x03, 0xC1)
@@ -4596,6 +5686,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF0C2 RX_TX_ZUSTAND */
     @ext(0x26, 0x03, 0xC2)
     model RX_TX_ZUSTAND is Memory<UCH>;
+//    @ext(0x96, 0x13, 0xC2)
+//    model RX_TX_ZUSTAND is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF0C3 TX_ANF_05 */
     @ext(0x27, 0x03, 0xC3)
@@ -4604,6 +5696,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF0C4 TX_ANF_50 */
     @ext(0x20, 0x03, 0xC4)
     model TX_ANF_50 is Memory<UCH>;
+//    @ext(0x90, 0x13, 0xC4)
+//    model TX_ANF_50 is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF0C5 TX_ANF_FE */
     @ext(0x21, 0x03, 0xC5)
@@ -4617,6 +5711,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF0C6 TX_ANF_07 */
     @ext(0x22, 0x03, 0xC6)
     model TX_ANF_07 is Memory<UCH>;
+//    @ext(0x92, 0x13, 0xC6)
+//    model TX_ANF_07 is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF0C7 M_5023_CRC */
     @ext(0x23, 0x03, 0xC7)
@@ -4625,6 +5721,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF0C8 TX_ANF_08 */
     @ext(0x2c, 0x03, 0xC8)
     model TX_ANF_08 is Memory<UCH>;
+//    @ext(0x9c, 0x13, 0xC8)
+//    model TX_ANF_08 is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF0C9 TCYCL_MAX */
     @ext(0x2d, 0x03, 0xC9)
@@ -4633,6 +5731,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF0CA TCYCL_QQ_M2 */
     @ext(0x2e, 0x03, 0xCA)
     model TCYCL_QQ_M2 is Memory<UCH>;
+//    @ext(0x9e, 0x13, 0xCA)
+//    model TCYCL_QQ_M2 is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF0CB TCYCL_QQ_M10 */
     @ext(0x2f, 0x03, 0xCB)
@@ -4641,6 +5741,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF0CC TCYCL_EIG_QQ */
     @ext(0x28, 0x03, 0xCC)
     model TCYCL_EIG_QQ is Memory<UCH>;
+//    @ext(0x98, 0x13, 0xCC)
+//    model TCYCL_EIG_QQ is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF0CD TCYCL_TALK_EBUS */
     @ext(0x29, 0x03, 0xCD)
@@ -4649,6 +5751,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF0CE NM_SOLL_KONF_M2 */
     @ext(0x2a, 0x03, 0xCE)
     model NM_SOLL_KONF_M2 is Memory<UCH>;
+//    @ext(0x9a, 0x13, 0xCE)
+//    model NM_SOLL_KONF_M2 is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF0CF NM_SOLL_KONF_M10 */
     @ext(0x2b, 0x03, 0xCF)
@@ -4657,6 +5761,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF0D0 z_count */
     @ext(0x34, 0x03, 0xD0)
     model z_count is Memory<UCH>;
+//    @ext(0x84, 0x13, 0xD0)
+//    model z_count is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF0D1 delta */
     @ext(0x35, 0x03, 0xD1)
@@ -4669,6 +5775,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF0D4 Z_IondmueA */
     @ext(0x30, 0x03, 0xD4)
     model Z_IondmueA is Memory<UCH>;
+//    @ext(0x80, 0x13, 0xD4)
+//    model Z_IondmueA is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF0D5 Z_IonOffdmueA */
     @ext(0x31, 0x03, 0xD5)
@@ -4677,6 +5785,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF0D6 z_last_signal */
     @ext(0x32, 0x03, 0xD6)
     model z_last_signal is Memory<UCH>;
+//    @ext(0x82, 0x13, 0xD6)
+//    model z_last_signal is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF0D7 ANAIN4AD */
     @ext(0x33, 0x03, 0xD7)
@@ -4685,6 +5795,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF0D8 AIN_REF */
     @ext(0x3c, 0x03, 0xD8)
     model AIN_REF is Memory<UCH>;
+//    @ext(0x8c, 0x13, 0xD8)
+//    model AIN_REF is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF0D9 AIN_REF_U */
     @ext(0x3d, 0x03, 0xD9)
@@ -4693,6 +5805,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF0DA AIN_REF_I */
     @ext(0x3e, 0x03, 0xDA)
     model AIN_REF_I is Memory<UCH>;
+//    @ext(0x8e, 0x13, 0xDA)
+//    model AIN_REF_I is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF0DB NGKORR */
     @ext(0x3f, 0x03, 0xDB)
@@ -4701,6 +5815,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF0DC NG_REG_FAKT */
     @ext(0x38, 0x03, 0xDC)
     model NG_REG_FAKT is Memory<UCH>;
+//    @ext(0x88, 0x13, 0xDC)
+//    model NG_REG_FAKT is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF0DD MODI_NGSOLL */
     @ext(0x39, 0x03, 0xDD)
@@ -4709,6 +5825,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF0DE MERK_NG_RAMPE */
     @ext(0x3a, 0x03, 0xDE)
     model MERK_NG_RAMPE is Memory<UCH>;
+//    @ext(0x8a, 0x13, 0xDE)
+//    model MERK_NG_RAMPE is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF0DF step_Klappe */
     @ext(0x3b, 0x03, 0xDF)
@@ -4717,6 +5835,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF0E0 cnt_HZ_SW_Versuche */
     @ext(0x04, 0x03, 0xE0)
     model cnt_HZ_SW_Versuche is Memory<UCH>;
+//    @ext(0xb4, 0x13, 0xE0)
+//    model cnt_HZ_SW_Versuche is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF0E1 cnt_Klappe */
     @ext(0x05, 0x03, 0xE1)
@@ -4725,6 +5845,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF0E2 Anlagen_Druck_cnt */
     @ext(0x06, 0x03, 0xE2)
     model Anlagen_Druck_cnt is Memory<UCH>;
+//    @ext(0xb6, 0x13, 0xE2)
+//    model Anlagen_Druck_cnt is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF0E3 CNT_GDW_LDW */
     @ext(0x07, 0x03, 0xE3)
@@ -4733,6 +5855,8 @@ namespace memory {
     /** External RAM (XRAM) 0xF0E4 CNTGFASTART */
     @ext(0x00, 0x03, 0xE4)
     model CNTGFASTART is Memory<UCH>;
+//    @ext(0xb0, 0x13, 0xE4)
+//    model CNTGFASTART is Memory<UIN>;
 
     /** External RAM (XRAM) 0xF0E5 VARIANTE */
     @ext(0x01, 0x03, 0xE5)
@@ -4745,5 +5869,7 @@ namespace memory {
     /** External RAM (XRAM) 0xF0E8 TCYCL_0800 */
     @ext(0x0c, 0x03, 0xE8)
     model TCYCL_0800 is Memory<UCH>;
+//    @ext(0xbc, 0x13, 0xE8)
+//    model TCYCL_0800 is Memory<UIN>;
 
 }
