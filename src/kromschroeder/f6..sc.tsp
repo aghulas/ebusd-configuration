@@ -1,6 +1,7 @@
 import "@ebusd/ebus-typespec";
+import "../broadcast.tsp";
 import "./_templates.tsp";
-import "../opdata_inc.tsp";
+import "./opdata_inc.tsp";
 import "./reg_inc.tsp";
 
 using Ebus;
@@ -21,13 +22,19 @@ uw,,Id,answer to identification query,,,,,mf,,UCH,6=Dungs;15=FH Ostfalia;16=TEM;
 
 */
 
-@zz(0xf5) // needed here for write to source address calculation
+@zz(0xf6) // needed here for write to source address calculation
 namespace hc {
-  /** Betriebsdaten des Reglers an den Feuerungsautomaten */
-  @write(true)
-  model Operation is Opdata_inc.HcOperation;
-
-    model BootStatus is register.BootStatus; 
+  
+  model KaStatus is Opdata_inc.KaStatus;
+  /**System Info Broadcast */
+  @qq(0xf1)
+  model InfoStatus is Broadcast.Datetime;
+  @qq(0xf1)
+  /**Display Message */
+  model StatusMessage is Broadcast.Error;
+  @qq(0xf1)
+  model IdAnswer is Ebus.Id.IdAnswer;
+  model BootStatus is register.BootStatus; 
   model ErrorStatus is register.ErrorStatus;
   model HeatDemandTemp is register.HeatDemandTemp;
   model DHWSetValue is register.DHWSetValue;

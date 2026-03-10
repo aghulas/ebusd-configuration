@@ -24,8 +24,10 @@ uw,,Id,answer to identification query,,,,,mf,,UCH,6=Dungs;15=FH Ostfalia;16=TEM;
 @zz(0x15) // needed here for write to source address calculation
 namespace hc {
   /** KA Broadcast with actual values */
-  @zz(BROADCAST)
   model KaStatus is Opdata_inc.KaStatus;
+
+  @qq(0x10)
+  model IdAnswer is Ebus.Id.IdAnswer;
 
   model BootStatus is register.BootStatus; 
   model ErrorStatus is register.ErrorStatus;

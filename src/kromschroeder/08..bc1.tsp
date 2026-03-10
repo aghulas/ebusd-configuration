@@ -1,4 +1,5 @@
 import "@ebusd/ebus-typespec";
+import "../broadcast.tsp";
 import "./_templates.tsp";
 import "./opdata_inc.tsp";
 import "./reg_inc.tsp";
@@ -13,16 +14,9 @@ namespace Weishaupt;
 @zz(0x08) // needed here for write to source address calculation
 namespace hc {
 
-  /** Operating data of the KA controller on the WTC */
-  @write(true)
-  model Operation is Opdata_inc.HcOperation;
-
-  /** ErrorStatus */
-  model ErrorStatus is register.ErrorStatus;
-
-  /** Version Minor */
-  model VersionMinor is register.VersionMinor;
-
+  @qq(0x03)
+  /**Display Message */
+  model StatusMessage is Broadcast.Error;
   /**Power Info WTC -> KA */
   @qq(0x03)
   @zz(0x15)
@@ -32,6 +26,16 @@ namespace hc {
   @qq(0x03)
   @zz(0x15)
   model WTCStatus is Opdata_inc.WTCStatus;
+
+  /** Operating data of the KA controller on the WTC */
+  @write(true)
+  model PowerDemand is Opdata_inc.HcOperation;
+
+    /** ErrorStatus */
+  model ErrorStatus is register.ErrorStatus;
+
+  /** Version Minor */
+  model VersionMinor is register.VersionMinor;
 
   /* FS-Param */
 

@@ -11,12 +11,11 @@ namespace Weishaupt;
 
 //@zz(0x52) // needed here for write to source address calculation
 namespace em3 {
+  /**Actual Values HC3 */
+  model FsStatus is Opdata_inc.FsStatus;
   /** Exch values ​​HC3->EM#3 */
   @write()
   model HcMode is Opdata_inc.HcMode;
-
-  /**Actual Values HC3 */
-  model FsStatus is Opdata_inc.FsStatus;
 
   model BootStatus is register.BootStatus; 
   model ErrorStatus is register.ErrorStatus;
