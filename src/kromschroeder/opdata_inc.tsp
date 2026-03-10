@@ -12,9 +12,16 @@ namespace Opdata_inc {
   @passive
   model uw {}
 
+  /**BootInfo ->KA */
+  @inherit(uw)
+  @ext(0x50, 0x09)
+  model BootInfo {
+      status: UCH;
+  }
+
   /** burner operational data */
   @inherit(uw)
-  @ext(0x5, 0x7)
+  @ext(0x05, 0x07)
   model HcOperation {
     /** status heat request */
     @values(Values_status)
@@ -193,7 +200,106 @@ namespace Opdata_inc {
     ByteC:UCH;
 
   }
+  @write(true)
+  @passive
+  @ext(0x05, 0x04)
+  model WTCPower {
+    CurrentLoad:percent0;
+    MinLoad:percent0;
+    MaxLoad:percent0;
+  }
 
+  /**WTC Status -> KA */
+  @write(true)
+  @passive
+  @ext(0x05, 0x0A)
+  model WTCStatus {
+    Status1:UCH;
+    /**Operating Phase */
+    Operatingphase:WtcOperatingPhase;
+    Ukn2_1:BI0;
+    Ukn2_2:BI1;
+    Ukn2_3:BI2;
+    @values(_Values_onoff)
+    Flame:BI3;
+    @values(_Values_onoff)
+    GasValve1:BI4;
+    @values(_Values_onoff)
+    GasValve2:BI5;
+    @values(_Values_onoff)
+    Pump:BI6;
+    @values(_Values_onoff)
+    Error:BI7;
+    @values(_Values_onoff)
+    ManualStartUp:BI0;
+    @values(_Values_onoff)
+    BurnerStatus:BI1;
+    Ukn3_3:BI2;
+    @values(_Values_onoff)
+    Service:BI3;
+    Ukn3_5:BI4;
+    @values(_Values_onoff)
+    Fan:BI5;
+    @values(_Values_onoff)
+    CircPump:BI6;
+    @values(_Values_onoff)
+    DHWPump:BI7;
+    /**Load Position */
+    Load:percent0;
+    /**SupplyTemp Temperature */
+    SupplyTemp:temp1;
+    /**Flue gas temperature */
+    FlueGasTemp:temp0;
+    /**Domestic Hot Water Temperature */
+    DHWTemp:temp1;
+    /**Outside Temperature */
+    OutsideTemp:temp2;
+    /**Outside Weigthed Temperature */
+    OutsideWeightedTemp:temp2;
+    /**Boiler Set Temperature */
+    SupplySetTemp:temp0;
+  }  
+
+  /**KA Broadcast with actual values */
+
+  @write()
+  @passive
+  @ext(0x50, 0x0A)
+  model KaStatus {
+    Status1:UCH;
+    /**Operating Phase */
+    Operatingphase:WtcOperatingPhase;
+    Ukn2_1:BI0;
+    Ukn2_2:BI1;
+    Ukn2_3:BI2;
+    Flame:BI3;
+    GasValve1:BI4;
+    GasValve2:BI5;
+    Pump:BI6;
+    Error:BI7;
+    ManualStartUp:BI0;
+    BurnerStatus:BI1;
+    Ukn3_3:BI2;
+    Service:BI3;
+    Ukn3_5:BI4;
+    Fan:BI5;
+    CircPump:BI6;
+    DHWPump:BI7;
+    /**Load Position */
+    Load:percent0;
+    /**SupplyTemp Temperature */
+    SupplyTemp:temp1;
+    /**Flue gas temperature */
+    FlueGasTemp:outsidetemp;
+    /**Domestic Hot Water Temperature */
+    DHWTemp:temp1;
+    /**Outside Temperature */
+    OutsideTemp:temp2;
+    /**Outside Weighted Temperature */
+    OutsideWeightedTemp:temp2;
+    /**Supply Set Temperature */
+    SupplySetTemp:temp0;
+  }
 
   enum Values_status {
     off: 0x00,

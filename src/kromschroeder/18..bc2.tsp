@@ -12,7 +12,7 @@ using Ebus.Str;
 namespace Weishaupt;
 @zz(0x18) // needed here for write to source address calculation
 namespace hc {
-  /** Operating data of the controller on the burner control unit */
+  /** Operating data of the KA controller on the WTC */
   @write(true)
   model Operation is Opdata_inc.HcOperation;
 
@@ -25,67 +25,12 @@ namespace hc {
   /**Power Info WTC -> KA */
   @qq(0x13)
   @zz(0x15)
-  @write(true)
-  @passive
-  @ext(0x05, 0x04)
-  model WTCPower {
-    CurrentLoad:percent0;
-    MinLoad:percent0;
-    MaxLoad:percent0;
-  }
+  model WTCPower is Opdata_inc.WTCPower;
 
   /**WTC Status -> KA */
   @qq(0x13)
   @zz(0x15)
-  @write(true)
-  @passive
-  @ext(0x05, 0x0A)
-  model WTCStatus {
-    Status1:UCH;
-    /**Operating Phase */
-    Operatingphase:WtcOperatingPhase;
-    Ukn2_1:BI0;
-    Ukn2_2:BI1;
-    Ukn2_3:BI2;
-    @values(_Values_onoff)
-    Flame:BI3;
-    @values(_Values_onoff)
-    GasValve1:BI4;
-    @values(_Values_onoff)
-    GasValve2:BI5;
-    @values(_Values_onoff)
-    Pump:BI6;
-    @values(_Values_onoff)
-    Error:BI7;
-    @values(_Values_onoff)
-    ManualStartUp:BI0;
-    @values(_Values_onoff)
-    BurnerStatus:BI1;
-    Ukn3_3:BI2;
-    @values(_Values_onoff)
-    Service:BI3;
-    Ukn3_5:BI4;
-    @values(_Values_onoff)
-    Fan:BI5;
-    @values(_Values_onoff)
-    CircPump:BI6;
-    @values(_Values_onoff)
-    DHWPump:BI7;
-    /**Load Position */
-    Load:percent0;
-    /**SupplyTemp Temperature */
-    SupplyTemp:temp1;
-    /**Flue gas temperature */
-    FlueGasTemp:temp0;
-    /**Domestic Hot Water Temperature */
-    DHWTemp:temp1;
-    /**Outside Temperature */
-    OutsideTemp:temp2;
-    /**Outside Weigthed Temperature */
-    OutsideWeightedTemp:temp2;
-    /**Boiler Set Temperature */
-    SupplySetTemp:temp0;
-  }  
+  model WTCStatus is Opdata_inc.WTCStatus;
 
   /* FS-Param */
 
