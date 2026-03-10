@@ -1,6 +1,6 @@
 import "@ebusd/ebus-typespec";
 import "./_templates.tsp";
-import "../opdata_inc.tsp";
+import "./opdata_inc.tsp";
 import "./reg_inc.tsp";
 import "./WH11928.tsp";
 
@@ -12,7 +12,7 @@ using Ebus.Str;
 namespace Weishaupt;
 @zz(0x08) // needed here for write to source address calculation
 namespace hc {
-  /** Betriebsdaten des Reglers an den Feuerungsautomaten */
+  /** Operating data of the controller on the burner control unit */
   @write(true)
   model Operation is Opdata_inc.HcOperation;
 
