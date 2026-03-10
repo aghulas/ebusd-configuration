@@ -23,11 +23,16 @@ uw,,Id,answer to identification query,,,,,mf,,UCH,6=Dungs;15=FH Ostfalia;16=TEM;
 
 @zz(0x35) // needed here for write to source address calculation
 namespace hc {
-  /** Betriebsdaten des Reglers an den Feuerungsautomaten */
-  @write(true)
+  /** Heat Demand, */
+  @qq(0x30)
+  @zz(0xf1)
   model Operation is Opdata_inc.HcOperation;
 
-    model BootStatus is register.BootStatus; 
+  @qq(0x30)
+  @zz(0xf1)
+  model BootInfo is Opdata_inc.BootInfo;
+
+  model BootStatus is register.BootStatus; 
   model ErrorStatus is register.ErrorStatus;
   model HeatDemandTemp is register.HeatDemandTemp;
   model DHWSetValue is register.DHWSetValue;

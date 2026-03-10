@@ -10,10 +10,13 @@ using Ebus.Str;
 namespace Weishaupt;
 
 //@zz(0x52) // needed here for write to source address calculation
-namespace em1 {
-  /** Betriebsdaten des Reglers an den Feuerungsautomaten */
-  @write(true)
+namespace em3 {
+  /** Exch values ​​HC3->EM#3 */
+  @write()
   model HcMode is Opdata_inc.HcMode;
+
+  /**Actual Values HC3 */
+  model FsStatus is Opdata_inc.FsStatus;
 
   model BootStatus is register.BootStatus; 
   model ErrorStatus is register.ErrorStatus;

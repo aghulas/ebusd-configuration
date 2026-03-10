@@ -11,8 +11,8 @@ namespace Weishaupt;
 
 //@zz(0x50) // needed here for write to source address calculation
 namespace em1 {
-  /** Betriebsdaten des Reglers an den Feuerungsautomaten */
-  @write(true)
+  /** Exch values ​​HC1->EM#1 */
+  @write()
   model HcMode is Opdata_inc.HcMode;
 
   model BootStatus is register.BootStatus; 
