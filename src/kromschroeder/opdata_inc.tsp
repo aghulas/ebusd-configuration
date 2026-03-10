@@ -212,7 +212,7 @@ namespace Opdata_inc {
   /**WTC Status -> KA */
   @write(true)
   @passive
-  @ext(0x05, 0x0A)
+  @ext(0x50, 0x0A)
   model WTCStatus {
     Status1:UCH;
     /**Operating Phase */
@@ -264,6 +264,7 @@ namespace Opdata_inc {
 
   @write()
   @passive
+  @zz(BROADCAST)
   @ext(0x50, 0x0A)
   model KaStatus {
     Status1:UCH;

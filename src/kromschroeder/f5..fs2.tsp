@@ -1,4 +1,5 @@
 import "@ebusd/ebus-typespec";
+import "../broadcast.tsp";
 import "./_templates.tsp";
 import "./opdata_inc.tsp";
 import "./reg_inc.tsp";
@@ -23,10 +24,20 @@ uw,,Id,answer to identification query,,,,,mf,,UCH,6=Dungs;15=FH Ostfalia;16=TEM;
 
 @zz(0xf5) // needed here for write to source address calculation
 namespace hc {
-  /** Heat Demand, */
+
+  @qq(0xf0)
+  /**HeatBeat */
+  model HeartBeat is Broadcast.Signoflife;
+   @qq(0xf0)
+  /**Display Message */
+  model StatusMessage is Broadcast.Error;
+
+  @qq(0xf0)
+  model IdAnswer is Ebus.Id.IdAnswer;
+  /** Heat Demand */
   @qq(0xf0)
   @zz(0xf1)
-  model Operation is Opdata_inc.HcOperation;
+  model PowerDemand is Opdata_inc.HcOperation;
 
   @qq(0xf0)
   @zz(0xf1)
