@@ -27,6 +27,7 @@ namespace hc {
   @write(true)
   model Operation is Opdata_inc.HcOperation;
 
+  model BootStatus is register.BootStatus; 
   model ErrorStatus is register.ErrorStatus;
   model HeatDemandTemp is register.HeatDemandTemp;
   model DHWSetValue is register.DHWSetValue;
@@ -300,5 +301,33 @@ namespace hc {
   model OutputMFA1 is register.OutputMFA1;
   model LegionellaTime is register.LegionellaTime;
   model UnknownSensor8 is register.UnknownSensor8;
+
+   model Durchfluss is register.Durchfluss;    
+   model YieldSince_Wh is register.YieldSince_Wh;   
+   model YieldSince_kWh is register.YieldSince_kWh;   
+   model YieldSince_MWh is register.YieldSince_MWh;   
+   model TempAbgas is register.TempAbgas;
+   model Leistung is register.Leistung;
+   model i45_LetzteWartung is register.i45_LetzteWartung;
+   model StatusDTR is register.StatusDTR;
+   model YieldSum_Wh_907 is register.YieldSum_Wh_907;
+   model YieldSum_kWh_907 is register.YieldSum_kWh_907;
+   model YieldSum_MWh is register.YieldSum_MWh;
+   model YieldResetDateYear is register.YieldResetDateYear;
+   model YieldResetDateMonth is register.YieldResetDateMonth;
+   model YieldResetDateDay is register.YieldResetDateDay;
+   model YieldSum_Wh_908 is register.YieldSum_Wh_908;
+   model YieldSum_kWh_908 is register.YieldSum_kWh_908;
+   model TempSolU_TSU_T2 is register.TempSolU_TSU_T2;
+   model TempSolVL_TKV_T3 is register.TempSolVL_TKV_T3;
+   model TempSolRL_TKR_T4 is register.TempSolRL_TKR_T4;
+   model TempVLKessel is register.TempVLKessel;
+   model i40_SchaltspielBrenner is register.i40_SchaltspielBrenner;
+   model i41_SchaltspielBrenner is register.i41_SchaltspielBrenner;
+   model i42_BetrStundenBrenner is register.i42_BetrStundenBrenner;
+   model i43_BetrStundenBrenner is register.i43_BetrStundenBrenner;
+   model i46_OelZaehler_1000 is register.i46_OelZaehler_1000;
+   model i47_OelZaehler is register.i47_OelZaehler;
+   model Currentperformance is register.Currentperformance;
 
 }

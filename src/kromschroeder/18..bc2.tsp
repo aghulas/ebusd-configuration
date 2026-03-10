@@ -47,29 +47,29 @@ namespace hc {
     Ukn2_1:BI0;
     Ukn2_2:BI1;
     Ukn2_3:BI2;
-    @values(Values_onoff)
+    @values(_Values_onoff)
     Flame:BI3;
-    @values(Values_onoff)
+    @values(_Values_onoff)
     GasValve1:BI4;
-    @values(Values_onoff)
+    @values(_Values_onoff)
     GasValve2:BI5;
-    @values(Values_onoff)
+    @values(_Values_onoff)
     Pump:BI6;
-    @values(Values_onoff)
+    @values(_Values_onoff)
     Error:BI7;
-    @values(Values_onoff)
+    @values(_Values_onoff)
     ManualStartUp:BI0;
-    @values(Values_onoff)
+    @values(_Values_onoff)
     BurnerStatus:BI1;
     Ukn3_3:BI2;
-    @values(Values_onoff)
+    @values(_Values_onoff)
     Service:BI3;
     Ukn3_5:BI4;
-    @values(Values_onoff)
+    @values(_Values_onoff)
     Fan:BI5;
-    @values(Values_onoff)
+    @values(_Values_onoff)
     CircPump:BI6;
-    @values(Values_onoff)
+    @values(_Values_onoff)
     DHWPump:BI7;
     /**Load Position */
     Load:percent0;
