@@ -10,26 +10,6 @@ using Ebus.Dtm;
 using Ebus.Str;
 
 namespace Weishaupt;
-
-/* type (r[1-9];w;u),class,name,comment,QQ,ZZ,PBSB,ID,field,part (m/s),type / templates,divider / values,unit,comment,field,part (m/s),type / templates,divider / values,unit,comment,field,part (m/s),type / templates,divider / values,unit,comment,field,part (m/s),type / templates,divider / values,unit,comment,field,part (m/s),type / templates,divider / values,unit,comment,field,part (m/s),type / templates,divider / values,unit,comment,field,part (m/s),type / templates,divider / values,unit,comment,field,part (m/s),type / templates,divider / values,unit,comment,field,part (m/s),type / templates,divider / values,unit,comment,field,part (m/s),type / templates,divider / values,unit,comment,field,part (m/s),type / templates,divider / values,unit,comment,field,part (m/s),type / templates,divider / values,unit,comment,field,part (m/s),type / templates,divider / values,unit,comment,field,part (m/s),type / templates,divider / values,unit,comment,field,part (m/s),type / templates,divider / values,unit,comment,field,part (m/s),type / templates,divider / values,unit,comment,field,part (m/s),type / templates,divider / values,unit,comment,field,part (m/s),type / templates,divider / values,unit,comment,field,part (m/s),type / templates,divider / values,unit,comment,field,part (m/s),type / templates,divider / values,unit,comment,field,part (m/s),type / templates,divider / values,unit,comment,field,part (m/s),type / templates,divider / values,unit,comment,field,part (m/s),type / templates,divider / values,unit,comment,field,part (m/s),type / templates,divider / values,unit,comment,field,part (m/s),type / templates,divider / values,unit,comment,field,part (m/s),type / templates,divider / values,unit,comment
-# WTC #A
-
-*cw,,,,03,10,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-cw,,WTCPower,Power Info WTC -> KA,,,0504,,CurrentLoad,,_8_Load,,, ,MinLoad,,_8_Load,,, ,MaxLoad,,_8_Load,,, ,
-cw,,WTCStatus,WTC Status -> KA,,,500A,,Status1,,_8_Status,,, ,Operatingphase,,_8_WtcOperatingPhase,,,Operating Phase ,Ukn2_1,,BI0,,, ,Ukn2_2,,BI1,,, ,Ukn2_3,,BI2,,, ,Flame,,BI3,1=On;0=Off,, ,GasValve1,,BI4,1=On;0=Off,, ,GasValve2,,BI5,1=On;0=Off,, ,Pump,,BI6,1=On;0=Off,, ,Erro  model BI7,,, ,ManualStartUp,,BI0,,, ,BurnerStatus,,BI1,0=Off;1=On,, ,Ukn3_3,,BI2,,, ,Service,,BI3,,, ,Ukn3_5,,BI4,,, ,Fan,,BI5,0=Off;1=On,, ,CircPump,,BI6,0=Off;1=On,, ,DHWPump,,BI7,0=Off;1=On,, ,Load,,_8_Load,,,Load Position ,SupplyTemp,,_8_Temp2,,,SupplyTemp Temperature ,FlueGasTemp,,_8_Skip,,,Flue gas temperature ,DHWTemp,,_8_Temp2,,,Domestic Hot Water Temperature,OutsideTemp,,_16_Temp0,,,Outside Temperature ,OutsideWeightedTemp,,_16_Temp0,,,Outside Weigthed Temperature ,SupplySetTemp,,_8_Temp0,,,Boiler Set Temperature
-
-
-!include,WH11928.inc,,Rom Values,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-
-#!include,wtc.rom.inc,,Rom Values,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-#!include,wtc.eeprom.inc,,Eeprom Values,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-#!include,wtc.ram.inc,,Ram Values,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-#!include,wtc.exram.inc,,External Ram Values,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-#!include,wtc.sfr.inc,,Special Function Registers,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-
-#!include,wtc.systemheatcontrol.inc,,System Heat Control Values,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-*/
-
 @zz(0x08) // needed here for write to source address calculation
 namespace hc {
   /** Betriebsdaten des Reglers an den Feuerungsautomaten */
@@ -41,6 +21,71 @@ namespace hc {
 
   /** Version Minor */
   model VersionMinor is register.VersionMinor;
+
+  /**Power Info WTC -> KA */
+  @qq(0x03)
+  @zz(0x15)
+  @write(true)
+  @passive
+  @ext(0x05, 0x04)
+  model WTCPower {
+    CurrentLoad:percent0;
+    MinLoad:percent0;
+    MaxLoad:percent0;
+  }
+
+  /**WTC Status -> KA */
+  @qq(0x03)
+  @zz(0x15)
+  @write(true)
+  @passive
+  @ext(0x05, 0x0A)
+  model WTCStatus {
+    Status1:UCH;
+    /**Operating Phase */
+    Operatingphase:WtcOperatingPhase;
+    Ukn2_1:BI0;
+    Ukn2_2:BI1;
+    Ukn2_3:BI2;
+    @values(Values_onoff)
+    Flame:BI3;
+    @values(Values_onoff)
+    GasValve1:BI4;
+    @values(Values_onoff)
+    GasValve2:BI5;
+    @values(Values_onoff)
+    Pump:BI6;
+    @values(Values_onoff)
+    Error:BI7;
+    @values(Values_onoff)
+    ManualStartUp:BI0;
+    @values(Values_onoff)
+    BurnerStatus:BI1;
+    Ukn3_3:BI2;
+    @values(Values_onoff)
+    Service:BI3;
+    Ukn3_5:BI4;
+    @values(Values_onoff)
+    Fan:BI5;
+    @values(Values_onoff)
+    CircPump:BI6;
+    @values(Values_onoff)
+    DHWPump:BI7;
+    /**Load Position */
+    Load:percent0;
+    /**SupplyTemp Temperature */
+    SupplyTemp:temp1;
+    /**Flue gas temperature */
+    FlueGasTemp:temp0;
+    /**Domestic Hot Water Temperature */
+    DHWTemp:temp1;
+    /**Outside Temperature */
+    OutsideTemp:temp2;
+    /**Outside Weigthed Temperature */
+    OutsideWeightedTemp:temp2;
+    /**Boiler Set Temperature */
+    SupplySetTemp:temp0;
+  }  
 
   /* FS-Param */
 
@@ -232,4 +277,22 @@ namespace hc {
   model EEA_N_ZUE is memory.EEA_N_ZUE;
   /**Operating hours boiler */
   model EEA_H_PON is memory.EEA_H_PON;
+
+  
+  /* Fault History */
+  model EEA_F_HIST_PTR_LOW is memory.EEA_F_HIST_PTR_LOW;
+  model EEA_F_HIST_PTR_HIGH is memory.EEA_F_HIST_PTR_HIGH;
+  model EEA_F_HIST_PTR is memory.EEA_F_HIST_PTR;
+  /** Fault History #1 */
+  model EEA_F_HIST_ANF1 is memory.EEA_F_HIST_ANF1;
+   /** Fault History #2 */
+  model EEA_F_HIST_ANF2 is memory.EEA_F_HIST_ANF2;
+   /** Fault History #3 */
+  model EEA_F_HIST_ANF3 is memory.EEA_F_HIST_ANF3;
+   /** Fault History #4 */
+  model EEA_F_HIST_ANF4 is memory.EEA_F_HIST_ANF4;
+   /** Fault History #5 */
+  model EEA_F_HIST_ANF5 is memory.EEA_F_HIST_ANF5;
+   /** Fault History #6 */
+  model EEA_F_HIST_ANF6 is memory.EEA_F_HIST_ANF6;
 }
