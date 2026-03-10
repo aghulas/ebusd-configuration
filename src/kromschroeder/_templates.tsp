@@ -46,6 +46,7 @@ model regr {
 /** default *r for memory */
 @base(0x50, 0x00) // todo 0x00 should rather be crc8 of following bytes, see https://github.com/john30/ebusd/issues/167
 model memr {
+  @maxLength(1) ign: IGN;
 }
 
 /** default *w for register */
@@ -78,7 +79,6 @@ model Register<T> {
 
 @inherit(memr, memw) //todo first byte of ext always 0x0 on write
 model Memory<T> {
-  @maxLength(1) ign: IGN;
   value: T;
 }
 
@@ -91,6 +91,33 @@ model ReadonlyRegister<T> {
 @inherit(memr)
 model ReadonlyMemory<T> {
   value: T;
+}
+
+enum ErrorType {
+  Fault:0x00,
+  Warning:0x01
+}
+
+@inherit(memr)
+model FaultHistory {
+    ErrorCode:BI0_7;
+    @values(ErrorType)
+    /** Error Type */
+    ErrorType:BI7; 
+    /** I10: Operating phase */
+    OperatingPhase:UCH; 
+    /**I11: Load setting */
+    LoadSetting:UCH;
+    /**I22: Set speed PWM pump */
+    PwmPumpSpeed:UCH;
+    /**I30: Boiler temperature */
+    BoilerTemp:outsidetemp; 
+    /**I31: Flue gas temperature */
+    FlueGasTemp:outsidetemp;
+    /** I32: Ionisation signal */
+    IonisationSignal:UCH;
+    /**I37: Return temperature */
+    ReturnTemp:outsidetemp;
 }
 
 @inherit(sregr) //todo first byte of ext always 0x0 on write
@@ -127,17 +154,6 @@ enum Values_onoff {
     off: 0,
     on: 1,
   }
-
-enum Opdataheat {
-  HotWater:0x20,
-  Heating:0x60
-}
-
-enum PState {
-  Program:0x02,
-  ProgramSuspended:0x0A,
-  ProgramExtended:0x12
-}
 
 enum month {
 January:0x01,
@@ -234,9 +250,82 @@ enum Floordrying {
   FunctionReceiptHeating:0x03
 }
 
-enum CVariation {
+enum _CVariation {
   Constant:0x000,
   WeatherCompensated:0x100,
   WeatherRoomCompensated:0x200,
   RoomCompensated:0x300
 }
+@values(_CVariation)
+scalar CVariation extends UIN;
+
+enum _WtcOperatingPhase {
+  BurnerOff:0x00;
+  StandbyCheckFan:0x01;
+  PrepurgeSpeedAchieved:0x02;
+  Prepurge:0x03;
+  IgnitionSpeedAchieved:0x04;
+  Ignition:0x05;
+  BurnerInOperation:0x06;
+  GasValveXheck:0x07;
+  PostPurge:0x08;
+  ForcedVenting:0x09;
+  F11:0x0B;//F11:Temperature at eSTL > 105 °C ;
+  W12:0x0C;//W12:Temperature at supply sensor > 95 °C ;
+  F12:0x0D;//F13:Flue gas temperature is too high;
+  W14:0x0E;//W14:Temperature at eSTL increases too rapidly ;
+  F15:0x0F;//F15:Temperature differential between flow and return too high;
+  F16:0x10;//F16:Flue gas temperature too high;
+  F17:0x11;//F17:Combustion air temperature too high;
+  F19:0x13;//F19:Combustion chamber pressure too high;
+  F21:0x15;//F21:No flame formation at burner start;
+  F22:0x16;//F22:Flame failure during operation;
+  F23:0x17;//F23:Flame simulation e. g. reflection of ignition spark through oil film in combustion chamber;
+  W24:0x18;//W24:Input H2 is closed;
+  W25:0x19;//W25:Alarm condensate lift pump Level switch has been triggered;
+  W27:0x1b;//W27:Combustion chamber pressure sensor defective;
+  W28:0x1c;//W28:System pressure sensor/return flow sensor defective;
+  F30:0x1e;//F30:Flow sensor defective;
+  F31:0x1f;//F31:Flue gas sensor defective;
+  F33:0x21;//F33/W33:External sensor defective;
+  W34:0x22;//W34:DHW sensor (B3) defective;
+  W35:0x23;//W35:DHW outlet sensor (B12) defective;
+  F36:0x24;//F36:System pressure < 0.5 bar;
+  F37:0x25;//F37:Combustion air sensor defective;
+  F38:0x26;//F38:Buffer sensor (B10) defective;
+  F39:0x27;//F39:Buffer sensor/de-couple sensor (B11) defective;
+  F40:0x29;//F41:Flue gas damper is not operating;
+  F43:0x2b;//F43:Specified fan speed is not achieved;
+  F44:0x2c;//F44:Fan standby defective;
+  F47:0x2f;//F47:Ignition faulty;
+  F50:0x32;//F50:Electronic fault;
+  F51:0x33;//F51:Data record error condensing boiler;
+  F52:0x34;//F52:Data record error burner;
+  F53:0x35;//F53:Supply voltage or power frequency outside the tolerance limits;
+  F54:0x36;//F54:Electronic fault;
+  F55:0x37;//F55:Memory fault;
+  F56:0x38;//F56:Negative component test;
+  F57:0x39;//F57:Communication boiler electronics WCM-OB-CPU and boiler control panel WCM-OB-CUI faulty;
+  F58:0x3a;//F58:[reset] button defective;
+  F59:0x3b;//F59:Internal communication error;
+  F60:0x3c;//F60:Data record error boiler electronics WCM-OB-CPU;
+  F61:0x3d;//F61:Coded plug BCC not plugged in;
+  F62:0x3e;//F62:Data record error BCC;
+  F63:0x3f;//F63:Different data records Incorrect coded plug BCC plugged in;
+  F64:0x40;//F64:Data transfer was not performed properly;
+  F65:0x41;//F65:Data transfer was not performed properly (e. g.[Enter] key was not pressed within 8 seconds);
+  F70:0x46;//F70:Connection boiler electronics WCM-OB-CPU and boiler control panel WCM-OB-CUI incorrect;
+  W80:0x50;//W80:Communication to the cascade manager or WCM-Sol is faulty;
+  W81:0x51;//W81:Communication to WCM-FS#1 is faulty;
+  W82:0x52;//W82:Communication to EM#2 or WCM-FS#2 is faulty;
+  W83:0x53;//W83:Communication to EM#3 or WCM-FS#3 is faulty;
+  W84:0x54;//W84:Communication to EM#4 or WCM-FS#4 is faulty;
+  W85:0x55;//W85:Communication to EM#5 or WCM-FS#5 is faulty;
+  W86:0x56;//W86:Communication to EM#6 or WCM-FS#6 is faulty;
+  W87:0x57;//W87:Communication to EM#7 or WCM-FS#7 is faulty;
+  W88:0x58;//W88:Communication to EM#8 or WCM-FS#8 is faulty;
+  W89:0x59;//W89:Temperature remote control is faulty;
+}
+
+@values(_WtcOperatingPhase)
+scalar WtcOperatingPhase extends UCH;

@@ -14,7 +14,7 @@ namespace hcmode {
 
   /** Exch values */
   @inherit(uw)
-  @ext(MF, 0x14)
+  @ext(0x50, 0x14)
   model HcMode {
     @out
     Ink1_1:BI0;

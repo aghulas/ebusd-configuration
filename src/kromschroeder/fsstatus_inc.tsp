@@ -7,6 +7,17 @@ using Ebus.Str;
 namespace Weishaupt;
 
 namespace fsstatus {
+
+  enum PState {
+    Program:0x02,
+    ProgramSuspended:0x0A,
+    ProgramExtended:0x12
+  }
+
+enum Opdataheat {
+    HotWater:0x20,
+    Heating:0x60
+  }
   /** default *uw */
   @write
   @passive
@@ -14,7 +25,7 @@ namespace fsstatus {
 
   /** Actual Values  */
   @inherit(uw)
-  @ext(MF, 0x10)
+  @ext(0x50, 0x10)
   model FsStatus {
     /** Room Temperature */
     @out
