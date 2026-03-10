@@ -1,6 +1,6 @@
 import "@ebusd/ebus-typespec";
 import "./_templates.tsp";
-import "./hcmode_inc.tsp";
+import "./opdata_inc.tsp";
 import "./reg_inc.tsp";
 
 using Ebus;
@@ -13,7 +13,7 @@ namespace Weishaupt;
 namespace em1 {
   /** Betriebsdaten des Reglers an den Feuerungsautomaten */
   @write(true)
-  model HcMode is hcmode.HcMode;
+  model HcMode is Opdata_inc.HcMode;
 
   model BootStatus is register.BootStatus; 
   model ErrorStatus is register.ErrorStatus;

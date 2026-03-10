@@ -1,6 +1,6 @@
 import "@ebusd/ebus-typespec";
 import "./_templates.tsp";
-import "../opdata_inc.tsp";
+import "./opdata_inc.tsp";
 import "./reg_inc.tsp";
 
 using Ebus;
