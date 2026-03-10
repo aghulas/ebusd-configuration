@@ -150,12 +150,15 @@ scalar temp1k extends D1C;
 scalar gradient10 extends SIN;
 
 
-enum Values_onoff {
+enum _Values_onoff {
     off: 0,
     on: 1,
   }
 
-enum month {
+@values(_Values_onoff)
+scalar Values_onoff extends UIN;
+
+enum _month {
 January:0x01,
 February:0x02,
 March:0x03,
@@ -170,24 +173,36 @@ November:0x10,
 December:0x11
 }
 
-enum boilerid {
+@values(_month)
+scalar month extends UIN;
+
+enum _boilerid {
   A:0,
   B:1,
   x:240
 }
 
-enum DHWOperation {
+@values(_boilerid)
+scalar boilerid extends UIN;
+
+enum _DHWOperation {
   Priority:0x0000,
   Sliding:0x0100,
   Parallel:0x0200
 }
 
-enum Constructiontype {
+@values(_DHWOperation)
+scalar DHWOperation extends UIN;
+
+enum _Constructiontype {
   Heavy:0x0,
   Light:0x1
 }
 
-enum Program {
+@values(_Constructiontype)
+scalar Constructiontype extends UIN;
+
+enum _Program {
   Standby:0x01,
   NormalTemperature:0x03,
   LoweringTemperature:0x04,
@@ -198,13 +213,19 @@ enum Program {
   StandbyWTC:0x14
 }
 
-enum Dhw {
+@values(_Program)
+scalar Program extends UIN;
+
+enum _Dhw {
   DHWProgram:0x00,
   Day24:0x01,
   DHWBeforeHeat:0x02
 }
 
-enum WeekDay {
+@values(_Dhw)
+scalar Dhw extends UIN;
+
+enum _WeekDay {
   Sunday:0x01,
   Monday:0x02,
   Tuesday:0x03,
@@ -214,7 +235,10 @@ enum WeekDay {
   Saturday:0x07
 }
 
-enum WeekDay2 {
+@values(_WeekDay)
+scalar WeekDay extends UIN;
+
+enum _WeekDay2 {
   Monday:0x01,
   Tuesday:0x02,
   Wednesday:0x03,
@@ -223,18 +247,26 @@ enum WeekDay2 {
   Saturday:0x06,
   Sunday:0x07,
 }
+@values(_WeekDay2)
+scalar WeekDay2 extends UIN;
 
-enum TempReduced {
+enum _TempReduced {
   Antifreeze:0x00,
   Setback:0x01
 }
 
-enum PumpVariationSpeed {
+@values(_TempReduced)
+scalar TempReduced extends UIN;
+
+enum _PumpVariationSpeed {
   Operating_level:0x00,
   Characteristic_Curve:0x01
 }
 
-enum HCType {
+@values(_PumpVariationSpeed)
+scalar PumpVariationSpeed extends UIN;
+
+enum _HCType {
   UnderFloorHeating:0x000,
   UndeFloorHeating2:0x100,
   Radiator60:0x200,
@@ -243,12 +275,19 @@ enum HCType {
   Universal:0x500
 }
 
-enum Floordrying {
+@values (_HCType)
+scalar HCType extends UIN;
+
+
+enum _Floordrying {
   Off:0x00,
   HeatingFunction:0x01,
   DocumentHeating:0x02,
   FunctionReceiptHeating:0x03
 }
+
+@values(_Floordrying)
+scalar Floordrying extends UIN;
 
 enum _CVariation {
   Constant:0x000,

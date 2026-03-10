@@ -80,7 +80,7 @@ namespace register {
 
    /**WW Operation (343) */
    @ext(0xd8, 0x23, 0x00)
-   model WWOperationMode is Register<DHWOperationMode>;
+   model WWOperationMode is Register<DHWOperation>;
 
    /**Maximum Blocking Time (537) */
    @ext(0x4c, 0x25, 0x00)
@@ -228,11 +228,11 @@ namespace register {
 
    /**SystemTime Minute */
    @ext(0xa9, 0x26, 0x01)
-   model ystemTimeMinute is Register<minutes>;
+   model SystemTimeMinute is Register<minutes>;
 
    /**SystemTime Hour */
    @ext(0xf5, 0x27, 0x01)
-   model ystemTimeSecond is Register<seconds>;
+   model SystemTimeSecond is Register<seconds>;
 
    /**Construction method (371) */
    @ext(0x65, 0x28, 0x01)
@@ -240,7 +240,7 @@ namespace register {
 
    /**15 Normal SPL-Set */
    @ext(0x39, 0x29, 0x01)
-   model NormalSplSetTempDay is Register<temp10>;
+   model NormalSplSetTemp is Register<temp10>;
 
    /**16 Reduced SPL-Set */
    @ext(0xdd, 0x2a, 0x01)
@@ -696,7 +696,7 @@ namespace register {
 
    /**593 SummerTime Start Day */
    @ext(0x09, 0xde, 0xfd)
-   model ummerTimeFromDay is Register<UIN>;
+   model SummerTimeFromDay is Register<UIN>;
 
    /**593 SummerTime Start Month */
    @ext(0x55, 0xdf, 0xfd)
@@ -760,7 +760,7 @@ namespace register {
 
    /**VA Status */
    @ext(0xf9, 0xf0, 0xfd)
-   model CircWVAStatusithLegionella is Register<Values_onoff>;
+   model VAStatus is Register<Values_onoff>;
 
    /**523 Output VA */
    @ext(0xa5, 0xf1, 0xfd)
