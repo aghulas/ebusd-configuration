@@ -19,7 +19,7 @@ namespace hcmode {
     @out
     Ink1_1:BI0;
     @out
-    @values(Values_onoff)
+    @values(_Values_onoff)
     Heating:BI1;
     @out
     Ink1_3:BI2;
@@ -44,7 +44,7 @@ namespace hcmode {
     @out
     Ink2_3:BI2;
     @out
-    @values(Values_onoff)
+    @values(_Values_onoff)
     DHW:BI3;
     @out
     Ink2_5:BI4;
@@ -64,17 +64,17 @@ namespace hcmode {
 
     /** HC Pump */
     @in
-    @values(Values_onoff)
+    @values(_Values_onoff)
     Pump:BI0;
 
     /** Mixer Valve Closing */
     @in
-    @values(Values_onoff)
+    @values(_Values_onoff)
     ValveClosing:BI1;
   
     /** Mixer Valve Closing */
     @in
-    @values(Values_onoff)
+    @values(_Values_onoff)
     ValveOpening:BI2;
 
     @in

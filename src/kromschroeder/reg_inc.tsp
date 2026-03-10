@@ -130,17 +130,17 @@ namespace register {
    @ext(0x48, 0x82, 0x00)
    model Durchfluss is Register<UIN>;    
 
-   /**SOL/906_ErtragSeit_Wh */
+   /**SOL/906_YieldSince_Wh */
    @ext(0x38, 0x87, 0x00)
-   model ErtragSeit_Wh is Register<UIN>;   
+   model YieldSince_Wh is Register<UIN>;   
 
-   /**SOL/906_ErtragSeit_kWh */
+   /**SOL/906_YieldSince_kWh */
    @ext(0xa8, 0x88, 0x00)
-   model ErtragSeit_kWh is Register<UIN>;   
+   model YieldSince_kWh is Register<UIN>;   
 
-   /**SOL/906_ErtragSeit_MWh */
+   /**SOL/906_YieldSince_MWh */
    @ext(0xf4, 0x89, 0x00)
-   model ErtragSeit_MWh is Register<UIN>;   
+   model YieldSince_MWh is Register<UIN>;   
 
    /**Legionella Protection Function (605) */
    @ext(0x5d, 0x01, 0x01)
@@ -400,37 +400,37 @@ namespace register {
    @ext(0x9a, 0x14, 0x06)
    model WTCDelay is Register<minutes>;
  
-   /**SOL/907_ErtragSum_Wh */
+   /**SOL/907_YieldSum_Wh */
    @ext(0x86, 0x7c, 0x06)
-   model ErtragSum_Wh_907 is Register<UIN>;
+   model YieldSum_Wh_907 is Register<UIN>;
 
-   /**SOL/907_ErtragSum_kWh */
+   /**SOL/907_YieldSum_kWh */
    @ext(0xda, 0x7d, 0x06)
-   model ErtragSum_kWh_907 is Register<UIN>;
+   model YieldSum_kWh_907 is Register<UIN>;
 
-   /**SOL/907_ErtragSum_MWh */
+   /**SOL/907_YieldSum_MWh */
    @ext(0x3e, 0x7e, 0x06)
-   model ErtragSum_MWh	 is Register<UIN>;
+   model YieldSum_MWh	 is Register<UIN>;
 
-   /**SOL/906_ErtragResetDat_Jahr */
+   /**SOL/906_YieldResetDateYear */
    @ext(0x62, 0x7f, 0x06)
-   model ErtragResetDat_Jahr is Register<UIN>;
+   model YieldResetDateYear is Register<UIN>;
 
-   /**SOL/906_ErtragResetDat_Mon */
+   /**SOL/906_YieldResetDateMonth */
    @ext(0xf6, 0x80, 0x06)
-   model ErtragResetDat_Mon is Register<UIN>;
+   model YieldResetDateMonth is Register<UIN>;
 
-   /**SOL/906_ErtragResetDat_Tag */
+   /**SOL/906_YieldResetDateDay */
    @ext(0xaa, 0x81, 0x06)
-   model ErtragResetDat_Tag is Register<UIN>;
+   model YieldResetDateDay is Register<UIN>;
 
-   /**SOL/908_ErtragSum_Wh */
+   /**SOL/908_YieldSum_Wh */
    @ext(0x62, 0x86, 0x06)
-   model ErtragSum_Wh_908 is Register<UIN>;
+   model YieldSum_Wh_908 is Register<UIN>;
 
-   /**SOL/908_ErtragSum_kWh */
+   /**SOL/908_YieldSum_kWh */
    @ext(0x3e, 0x87, 0x06)
-   model ErtragSum_kWh_908 is Register<UIN>;
+   model YieldSum_kWh_908 is Register<UIN>;
 
    /**AE06 */
    @ext(0x06, 0xaE, 0x06)
