@@ -12,7 +12,7 @@ using Ebus.Str;
 
 namespace Weishaupt;
 @zz(0x08) // needed here for write to source address calculation
-namespace hc {
+namespace bc1 {
 
   @qq(0x03)
   /**Display Message */

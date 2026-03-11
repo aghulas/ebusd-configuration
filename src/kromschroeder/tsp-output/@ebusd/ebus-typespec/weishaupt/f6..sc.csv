@@ -3,558 +3,561 @@ type,circuit,level,name,comment,qq,zz,pbsb,id,*name,part,type,divisor/values,uni
 *u,
 *r,
 *w,
-uw,Hc,,KaStatus,KA Broadcast with actual values,,fe,500a,,status1,,UCH,,,,operatingphase,,UCH,0=BurnerOff;1=StandbyCheckFan;2=PrepurgeSpeedAchieved;3=Prepurge;4=IgnitionSpeedAchieved;5=Ignition;6=BurnerInOperation;7=GasValveXheck;8=PostPurge;9=ForcedVenting;11=F11;12=W12;13=F12;14=W14;15=F15;16=F16;17=F17;19=F19;21=F21;22=F22;23=F23;24=W24;25=W25;27=W27;28=W28;30=F30;31=F31;33=F33;34=W34;35=W35;36=F36;37=F37;38=F38;39=F39;41=F40;43=F43;44=F44;47=F47;50=F50;51=F51;52=F52;53=F53;54=F54;55=F55;56=F56;57=F57;58=F58;59=F59;60=F60;61=F61;62=F62;63=F63;64=F64;65=F65;70=F70;80=W80;81=W81;82=W82;83=W83;84=W84;85=W85;86=W86;87=W87;88=W88;89=W89,,Operating Phase,ukn2_1,,BI0,,,,ukn2_2,,BI1,,,,ukn2_3,,BI2,,,,flame,,BI3,,,,gasvalve1,,BI4,,,,gasvalve2,,BI5,,,,pump,,BI6,,,,error,,BI7,,,,manualstartup,,BI0,,,,burnerstatus,,BI1,,,,ukn3_3,,BI2,,,,service,,BI3,,,,ukn3_5,,BI4,,,,fan,,BI5,,,,circpump,,BI6,,,,dhwpump,,BI7,,,,load,,UCH,,%,Load Position,supplytemp,,D1C,,°C,SupplyTemp Temperature,fluegastemp,,SCH,,°C,Flue gas temperature,dhwtemp,,D1C,,°C,Domestic Hot Water Temperature,outsidetemp,,D2B,,°C,Outside Temperature,outsideweightedtemp,,D2B,,°C,Outside Weighted Temperature,supplysettemp,,UCH,,°C,Supply Set Temperature
-u,Hc,,InfoStatus,System Info Broadcast,f1,fe,0700,,outsidetemp,,D2B,,°C,temperature,time,,BTI,,,time,date,,BDA,,,date
-u,Hc,,StatusMessage,Display Message,f1,fe,fe01,,error,,STR:10,,,
-u,Hc,,IdAnswer,answer to identification query,f1,fe,0704,,mf,,UCH,6=Dungs;15=FH Ostfalia;16=TEM;17=Lamberti;20=CEB;21=Landis-Staefa;22=FERRO;23=MONDIAL;24=Wikon;25=Wolf;32=RAWE;48=Satronic;64=ENCON;80=Kromschröder;96=Eberle;101=EBV;117=Grässlin;133=ebm-papst;149=SIG;165=Theben;167=Thermowatt;181=Vaillant;192=Toby;197=Weishaupt;253=ebusd.eu;253=ebusd,,device manufacturer,id,,STR:5,,,device id,sw,,PIN,,,software version,hw,,PIN,,,hardware version
-r,Hc,,BootStatus,Error Status,,,5022,000000,value,,UIN,,,
-r,Hc,,ErrorStatus,Error Status,,,5022,5c0100,value,,UIN,,,
-r,Hc,,HeatDemandTemp,Heat demand HK,,,5022,b80200,value,,UIN,10,°C,temperature
-r,Hc,,DHWSetValue,Hot water setpoint,,,5022,e40300,value,,UIN,10,°C,temperature
-r,Hc,,SupplySetPointTemp,pply SetPoint (121),,,5022,2c0400,value,,UIN,10,°C,temperature
-r,Hc,,RoomNormalTemp,Normal Room Temperature (112),,,5022,700500,value,,UIN,10,°C,temperature
-w,Hc,,RoomNormalTemp,Normal Room Temperature (112),,f1,5023,700500,value,,UIN,10,°C,temperature
-r,Hc,,RoomSetbackTemp,Setback Room Temperature (113),,,5022,580800,value,,UIN,10,°C,temperature
-w,Hc,,RoomSetbackTemp,Setback Room Temperature (113),,f1,5023,580800,value,,UIN,10,°C,temperature
-r,Hc,,UnknownSensor15,Unknown Sensor 15,,,5022,bc0b00,value,,UIN,,,
-r,Hc,,OutsideTemp,B1 Outside Sensor Temperature,,,5022,740c00,value,,SIN,10,°C,outside temperature
-r,Hc,,SupplyWTCTemp,Flow temperature WTC,,,5022,280d00,value,,UIN,10,°C,temperature
-r,Hc,,DHWTemp,B3 DHW Sensor Temperature,,,5022,cc0e00,value,,UIN,10,°C,temperature
-r,Hc,,SupplyHCTemp,B6 Supply Sensor Temperature,,,5022,900f00,value,,UIN,10,°C,temperature
-r,Hc,,ConfigStatus,Configuration Status,,,5022,b01000,value,,UIN,,,
-r,Hc,,RoomTemp,Room Sensor Temperature,,,5022,ec1100,value,,UIN,10,°C,temperature
-r,Hc,,RoomSetPointTemp,Room setpoint,,,5022,081200,value,,UIN,10,°C,temperature
-r,Hc,,DHWSetpoint,Hot water setpoint (176),,,5022,541300,value,,UIN,10,°C,temperature
-w,Hc,,DHWSetpoint,Hot water setpoint (176),,f1,5023,541300,value,,UIN,10,°C,temperature
-r,Hc,,OutsideBlendedTemp,Blended Outside Temperature,,,5022,501a00,value,,SIN,10,°C,outside temperature
-r,Hc,,WWOperationMode,WW Operation (343),,,5022,d82300,value,,UIN,0=Priority;256=Sliding;512=Parallel,,
-w,Hc,,WWOperationMode,WW Operation (343),,f1,5023,d82300,value,,UIN,0=Priority;256=Sliding;512=Parallel,,
-r,Hc,,BlockingTime,Maximum Blocking Time (537),,,5022,4c2500,value,,UIN,,min,minutes
-w,Hc,,BlockingTime,Maximum Blocking Time (537),,f1,5023,4c2500,value,,UIN,,min,minutes
-r,Hc,,SupplyMaxTemp,read/write sregister,,,5022,642800,value,,UIN,10,°C,temperature
-w,Hc,,SupplyMaxTemp,read/write sregister,,f1,5023,642800,value,,UIN,10,°C,temperature
-r,Hc,,MixerParameterTemp,Mixer Parameter (425),,,5022,802b00,value,,UIN,10,K,temperature K
-w,Hc,,MixerParameterTemp,Mixer Parameter (425),,f1,5023,802b00,value,,UIN,10,K,temperature K
-r,Hc,,ModulationStatus,dulation,,,5022,482c00,value,,UIN,,%,percent
-w,Hc,,ModulationStatus,dulation,,f1,5023,482c00,value,,UIN,,%,percent
-r,Hc,,DHWExceeded,576 DHW exceeded,,,5022,142d00,value,,UIN,10,°C,temperature
-w,Hc,,DHWExceeded,576 DHW exceeded,,f1,5023,142d00,value,,UIN,10,°C,temperature
-r,Hc,,MixerPump,Mixer Pump,,,5022,705200,value,,UIN,0=off;1=on,,
-r,Hc,,ValveOpening,Mixer Valve Opening,,,5022,5c5600,value,,UIN,0=off;1=on,,
-r,Hc,,ValveClosing,Mixer Valve Closing,,,5022,005700,value,,UIN,0=off;1=on,,
-w,Hc,,ValveClosing,Mixer Valve Closing,,f1,5023,005700,value,,UIN,0=off;1=on,,
-r,Hc,,ColorifierTopTemp,Calorifier Top Temp B20,,,5022,607600,value,,UIN,10,°C,temperature
-w,Hc,,ColorifierTopTemp,Calorifier Top Temp B20,,f1,5023,607600,value,,UIN,10,°C,temperature
-r,Hc,,ColorifierBottomTemp,Calorifier Bottom Temp B21,,,5022,ac7800,value,,UIN,10,°C,temperature
-w,Hc,,ColorifierBottomTemp,Calorifier Bottom Temp B21,,f1,5023,ac7800,value,,UIN,10,°C,temperature
-r,Hc,,ReductionSolarYied,14 Target value reduction for solar yield,,,5022,ac8100,value,,UIN,10,K,temperature K
-w,Hc,,ReductionSolarYied,14 Target value reduction for solar yield,,f1,5023,ac8100,value,,UIN,10,K,temperature K
-r,Hc,,DHWLegionellaDay,Legionella Protection Function (605),,,5022,5d0101,value,,UIN,1=Monday;2=Tuesday;3=Wednesday;4=Thursday;5=Friday;6=Saturday;7=Sunday,,
-w,Hc,,DHWLegionellaDay,Legionella Protection Function (605),,f1,5023,5d0101,value,,UIN,1=Monday;2=Tuesday;3=Wednesday;4=Thursday;5=Friday;6=Saturday;7=Sunday,,
-r,Hc,,RoomFactorCurve,Room Factor-P (508),,,5022,910f01,value,,UIN,,,
-w,Hc,,RoomFactorCurve,Room Factor-P (508),,f1,5023,910f01,value,,UIN,,,
-r,Hc,,RoomSensorCorrectionTemp,Room Sensor Correction (101),,,5022,050901,value,,UIN,10,K,temperature K
-w,Hc,,RoomSensorCorrectionTemp,Room Sensor Correction (101),,f1,5023,050901,value,,UIN,10,K,temperature K
-r,Hc,,GradientCurve,Steepness (175),,,5022,cd0e01,value,,SIN,10,,Steepness
-w,Hc,,GradientCurve,Steepness (175),,f1,5023,cd0e01,value,,SIN,10,,Steepness
-r,Hc,,SwitchOnRuntime,Switch-on delay (353),,,5022,b11001,value,,UIN,,min,minutes
-w,Hc,,SwitchOnRuntime,Switch-on delay (353),,f1,5023,b11001,value,,UIN,,min,minutes
-r,Hc,,BoilerMCBoostTemp,Boiler MC Boost(424),,,5022,ed1101,value,,UIN,10,K,temperature K
-w,Hc,,BoilerMCBoostTemp,Boiler MC Boost(424),,f1,5023,ed1101,value,,UIN,10,K,temperature K
-r,Hc,,ProgramMode,Program selector switch position,,,5022,091201,value,,UIN,1=Standby;3=NormalTemperature;4=LoweringTemperature;5=Summer;11=Program1;12=Program2;13=Program3;20=StandbyWTC,,
-w,Hc,,ProgramMode,Program selector switch position,,f1,5023,091201,value,,UIN,1=Standby;3=NormalTemperature;4=LoweringTemperature;5=Summer;11=Program1;12=Program2;13=Program3;20=StandbyWTC,,
-r,Hc,,AdaptionMode,Adaption (507),,,5022,c11501,value,,UIN,0=off;1=on,,
-w,Hc,,AdaptionMode,Adaption (507),,f1,5023,c11501,value,,UIN,0=off;1=on,,
-r,Hc,,SummerWinterChangeOverTemp,mmer/winter changeover temperature (174),,,5022,251601,value,,SCH,,°C,outside temperature
-w,Hc,,SummerWinterChangeOverTemp,mmer/winter changeover temperature (174),,f1,5023,251601,value,,SCH,,°C,outside temperature
-r,Hc,,FloorDryingMode,Screed function (381),,,5022,511a01,value,,UIN,0=Off;1=HeatingFunction;2=DocumentHeating;3=FunctionReceiptHeating,,
-w,Hc,,FloorDryingMode,Screed function (381),,f1,5023,511a01,value,,UIN,0=Off;1=HeatingFunction;2=DocumentHeating;3=FunctionReceiptHeating,,
-r,Hc,,HolidayRuntimeFromDay,Hollyday Start Day,,,5022,0d1b01,value,,UIN,,,
-w,Hc,,HolidayRuntimeFromDay,Hollyday Start Day,,f1,5023,0d1b01,value,,UIN,,,
-r,Hc,,HolidayRuntimeFromMonth,Hollyday Start Month,,,5022,c51d01,value,,UIN,1=January;2=February;3=March;4=April;5=May;6=June;7=July;8=August;9=September;10=October;16=November;17=December,,
-w,Hc,,HolidayRuntimeFromMonth,Hollyday Start Month,,f1,5023,c51d01,value,,UIN,1=January;2=February;3=March;4=April;5=May;6=June;7=July;8=August;9=September;10=October;16=November;17=December,,
-r,Hc,,HolidayRuntimeFromYear,Hollyday Start Year,,,5022,991d01,value,,UIN,,,
-w,Hc,,HolidayRuntimeFromYear,Hollyday Start Year,,f1,5023,991d01,value,,UIN,,,
-r,Hc,,HolidayRuntimeToDay,Hollyday End Day,,,5022,7d1e01,value,,UIN,,,
-w,Hc,,HolidayRuntimeToDay,Hollyday End Day,,f1,5023,7d1e01,value,,UIN,,,
-r,Hc,,HolidayRuntimeToMonth,Hollyday End Month,,,5022,211f01,value,,UIN,1=January;2=February;3=March;4=April;5=May;6=June;7=July;8=August;9=September;10=October;16=November;17=December,,
-w,Hc,,HolidayRuntimeToMonth,Hollyday End Month,,f1,5023,211f01,value,,UIN,1=January;2=February;3=March;4=April;5=May;6=June;7=July;8=August;9=September;10=October;16=November;17=December,,
-r,Hc,,HolidayRuntimeToYear,Hollyday End Year,,,5022,3d2001,value,,UIN,,,
-w,Hc,,HolidayRuntimeToYear,Hollyday End Year,,f1,5023,3d2001,value,,UIN,,,
-r,Hc,,SystemDateWeekday,SystemDate WeekDay,,,5022,612101,value,,UIN,1=Sunday;2=Monday;3=Tuesday;4=Wednesday;5=Thursday;6=Friday;7=Saturday,,
-w,Hc,,SystemDateWeekday,SystemDate WeekDay,,f1,5023,612101,value,,UIN,1=Sunday;2=Monday;3=Tuesday;4=Wednesday;5=Thursday;6=Friday;7=Saturday,,
-r,Hc,,SystemDateDay,SystemDate Day,,,5022,852201,value,,UIN,,,
-w,Hc,,SystemDateDay,SystemDate Day,,f1,5023,852201,value,,UIN,,,
-r,Hc,,SystemDateMonth,SystemDate Month,,,5022,d92301,value,,UIN,1=January;2=February;3=March;4=April;5=May;6=June;7=July;8=August;9=September;10=October;16=November;17=December,,
-w,Hc,,SystemDateMonth,SystemDate Month,,f1,5023,d92301,value,,UIN,1=January;2=February;3=March;4=April;5=May;6=June;7=July;8=August;9=September;10=October;16=November;17=December,,
-r,Hc,,SystemDateYear,SystemDate Year,,,5022,112401,value,,UIN,,,
-w,Hc,,SystemDateYear,SystemDate Year,,f1,5023,112401,value,,UIN,,,
-r,Hc,,SystemTimeHour,SystemTime Hour,,,5022,4d2501,value,,UIN,,h,hours
-w,Hc,,SystemTimeHour,SystemTime Hour,,f1,5023,4d2501,value,,UIN,,h,hours
-r,Hc,,SystemTimeMinute,SystemTime Minute,,,5022,a92601,value,,UIN,,min,minutes
-w,Hc,,SystemTimeMinute,SystemTime Minute,,f1,5023,a92601,value,,UIN,,min,minutes
-r,Hc,,SystemTimeSecond,SystemTime Hour,,,5022,f52701,value,,UIN,,s,seconds
-w,Hc,,SystemTimeSecond,SystemTime Hour,,f1,5023,f52701,value,,UIN,,s,seconds
-r,Hc,,TypeOfConstructionMode,Construction method (371),,,5022,652801,value,,UIN,0=Heavy;1=Light,,
-w,Hc,,TypeOfConstructionMode,Construction method (371),,f1,5023,652801,value,,UIN,0=Heavy;1=Light,,
-r,Hc,,NormalSplSetTemp,15 Normal SPL-Set,,,5022,392901,value,,UIN,10,°C,temperature
-w,Hc,,NormalSplSetTemp,15 Normal SPL-Set,,f1,5023,392901,value,,UIN,10,°C,temperature
-r,Hc,,ReducedSplSetTemp,16 Reduced SPL-Set,,,5022,dd2a01,value,,UIN,10,°C,temperature
-w,Hc,,ReducedSplSetTemp,16 Reduced SPL-Set,,f1,5023,dd2a01,value,,UIN,10,°C,temperature
-r,Hc,,SupplyMinTemp,Minimum Supply Temperature (421),,,5022,812b01,value,,UIN,10,°C,temperature
-w,Hc,,SupplyMinTemp,Minimum Supply Temperature (421),,f1,5023,812b01,value,,UIN,10,°C,temperature
-r,Hc,,HolidayTemp,Holiday temperature (183),,,5022,152d01,value,,UIN,0=Antifreeze;1=Setback,,
-w,Hc,,HolidayTemp,Holiday temperature (183),,f1,5023,152d01,value,,UIN,0=Antifreeze;1=Setback,,
-r,Hc,,WtcDelayRuntime,WTC delay(430),,,5022,f12e01,value,,UIN,,min,minutes
-w,Hc,,WtcDelayRuntime,WTC delay(430),,f1,5023,f12e01,value,,UIN,,min,minutes
-r,Hc,,PumpMaxSpeed,Max Pump speed (358),,,5022,ad2f01,value,,UIN,,%,percent
-w,Hc,,PumpMaxSpeed,Max Pump speed (358),,f1,5023,ad2f01,value,,UIN,,%,percent
-r,Hc,,PumpMinSpeed,Min Pump speed (359),,,5022,8d3001,value,,UIN,,%,percent
-w,Hc,,PumpMinSpeed,Min Pump speed (359),,f1,5023,8d3001,value,,UIN,,%,percent
-r,Hc,,PumpVSDvariable,VSD variable (429),,,5022,d13101,value,,UIN,0=Operating_level;1=Characteristic_Curve,,
-w,Hc,,PumpVSDvariable,VSD variable (429),,f1,5023,d13101,value,,UIN,0=Operating_level;1=Characteristic_Curve,,
-r,Hc,,ReductTemp,ReductTemp (501),,,5022,353201,value,,UIN,0=Antifreeze;1=Setback,,
-w,Hc,,ReductTemp,ReductTemp (501),,f1,5023,353201,value,,UIN,0=Antifreeze;1=Setback,,
-r,Hc,,DHWMinTemp,Hot water Min (177),,,5022,693301,value,,SCH,,°C,outside temperature
-w,Hc,,DHWMinTemp,Hot water Min (177),,f1,5023,693301,value,,SCH,,°C,outside temperature
-r,Hc,,DHWMaxTemp,DHW maximum Temp (601),,,5022,a13401,value,,UIN,10,°C,temperature
-w,Hc,,DHWMaxTemp,DHW maximum Temp (601),,f1,5023,a13401,value,,UIN,10,°C,temperature
-r,Hc,,DHWMode,WW-Mode (361),,,5022,fd3501,value,,UIN,0=DHWProgram;1=Day24;2=DHWBeforeHeat,,
-w,Hc,,DHWMode,WW-Mode (361),,f1,5023,fd3501,value,,UIN,0=DHWProgram;1=Day24;2=DHWBeforeHeat,,
-r,Hc,,DHWOperationMode,WW operation (360),,,5022,453701,value,,UIN,0=Priority;256=Sliding;512=Parallel,,
-w,Hc,,DHWOperationMode,WW operation (360),,f1,5023,453701,value,,UIN,0=Priority;256=Sliding;512=Parallel,,
-r,Hc,,R3B01,R3B01,,,5022,313b01,value,,UIN,,,
-w,Hc,,R3B01,R3B01,,f1,5023,313b01,value,,UIN,,,
-r,Hc,,HolidayTempLevel,42 Holiday Temperature Level,,,5022,a53d01,value,,UIN,10,°C,temperature
-w,Hc,,HolidayTempLevel,42 Holiday Temperature Level,,f1,5023,a53d01,value,,UIN,10,°C,temperature
-r,Hc,,DHWSwitchDiff,575 DHW Switch Diff,,,5022,794001,value,,UIN,10,K,temperature K
-w,Hc,,DHWSwitchDiff,575 DHW Switch Diff,,f1,5023,794001,value,,UIN,10,K,temperature K
-r,Hc,,ControlVariationMode,Control Variation (318),,,5022,254101,value,,UIN,0=Constant;256=WeatherCompensated;512=WeatherRoomCompensated;768=RoomCompensated,,
-w,Hc,,ControlVariationMode,Control Variation (318),,f1,5023,254101,value,,UIN,0=Constant;256=WeatherCompensated;512=WeatherRoomCompensated;768=RoomCompensated,,
-r,Hc,,DHWLoadTime,577 WW Load Time,,,5022,f18001,value,,UIN,,min,minutes
-w,Hc,,DHWLoadTime,577 WW Load Time,,f1,5023,f18001,value,,UIN,,min,minutes
-r,Hc,,DHWMaxTemp2,574 DHW-Max,,,5022,ad8101,value,,UIN,10,°C,temperature
-w,Hc,,DHWMaxTemp2,574 DHW-Max,,f1,5023,ad8101,value,,UIN,10,°C,temperature
-r,Hc,,KaVersion,Ka Version,,,5022,618f01,value,,SIN,,,
-r,Hc,,VersionMajor,Version Major,,,5022,459901,value,,UIN,,,
-r,Hc,,VersionMinor,Version Minor,,,5022,a19a01,value,,UIN,,,
-r,Hc,,H1ControlVoltage,H1 Control Voltage,,,5022,c9a901,value,,UIN,,,
-r,Hc,,H1ControlCurrent,H1 Control Current,,,5022,2daa01,value,,UIN,,,
-r,Hc,,FHCMinTemp,483 Screed Start Temperature,,,5022,c1bb01,value,,UIN,10,°C,temperature
-w,Hc,,FHCMinTemp,483 Screed Start Temperature,,f1,5023,c1bb01,value,,UIN,10,°C,temperature
-r,Hc,,FHCMinTempDays,484 Tag Min Temp Fhz,,,5022,09bc01,value,,UIN,,,
-w,Hc,,FHCMinTempDays,484 Tag Min Temp Fhz,,f1,5023,09bc01,value,,UIN,,,
-r,Hc,,ResetErrorMemory,Reset Error Memory,,,5022,167a02,value,,UIN,,,
-w,Hc,,ResetErrorMemory,Reset Error Memory,,f1,5023,167a02,value,,UIN,,,
-r,Hc,,FS_EM_W4_Sensor,FS_EM_W4_Sensor,,,5022,828502,value,,UIN,,,
-w,Hc,,FS_EM_W4_Sensor,FS_EM_W4_Sensor,,f1,5023,828502,value,,UIN,,,
-r,Hc,,DHWMinTemp2,573 DHW Min Temp,,,5022,128a02,value,,UIN,10,°C,temperature
-w,Hc,,DHWMinTemp2,573 DHW Min Temp,,f1,5023,128a02,value,,UIN,10,°C,temperature
-r,Hc,,RegulationI,540 I Regler,,,5022,8e9e02,value,,UIN,,,
-w,Hc,,RegulationI,540 I Regler,,f1,5023,8e9e02,value,,UIN,,,
-r,Hc,,RegulationP,539 1/P Regler,,,5022,d29f02,value,,UIN,,,
-w,Hc,,RegulationP,539 1/P Regler,,f1,5023,d29f02,value,,UIN,,,
-r,Hc,,FrostProtectionLimitTemp,82 Frost Protection Limit,,,5022,b2be02,value,,UIN,10,°C,temperature
-w,Hc,,FrostProtectionLimitTemp,82 Frost Protection Limit,,f1,5023,b2be02,value,,UIN,10,°C,temperature
-r,Hc,,FS_EM_R2_Sensor,FS_EM_R2_Sensor,,,5022,cf5903,value,,UIN,,,
-w,Hc,,FS_EM_R2_Sensor,FS_EM_R2_Sensor,,f1,5023,cf5903,value,,UIN,,,
-r,Hc,,B3Sensor,B3Sensor,,,5022,b4e904,value,,UIN,10,°C,temperature
-w,Hc,,B3Sensor,B3Sensor,,f1,5023,b4e904,value,,UIN,10,°C,temperature
-r,Hc,,LegionellaSetupTemp,580 AntiLeg Setp Temperature,,,5022,3d8705,value,,UIN,10,°C,temperature
-w,Hc,,LegionellaSetupTemp,580 AntiLeg Setp Temperature,,f1,5023,3d8705,value,,UIN,10,°C,temperature
-r,Hc,,WTCDelay,70 Delay WTC,,,5022,9a1406,value,,UIN,,min,minutes
-w,Hc,,WTCDelay,70 Delay WTC,,f1,5023,9a1406,value,,UIN,,min,minutes
-r,Hc,,AE06,AE06,,,5022,06ae06,value,,UIN,,,
-w,Hc,,AE06,AE06,,f1,5023,06ae06,value,,UIN,,,
-r,Hc,,AF06,AF06,,,5022,5aaf06,value,,UIN,,,
-w,Hc,,AF06,AF06,,f1,5023,5aaf06,value,,UIN,,,
-r,Hc,,FHCMaxTemp,485 Max Temperature FHC,,,5022,3c9c08,value,,UIN,,,
-w,Hc,,FHCMaxTemp,485 Max Temperature FHC,,f1,5023,3c9c08,value,,UIN,,,
-r,Hc,,FHCMaxTempDays,486 Days Max Temperature FHC,,,5022,609d08,value,,UIN,,,
-w,Hc,,FHCMaxTempDays,486 Days Max Temperature FHC,,f1,5023,609d08,value,,UIN,,,
-r,Hc,,FHCCoolingDays,487 Days Cooling FHC,,,5022,849e08,value,,UIN,,,
-w,Hc,,FHCCoolingDays,487 Days Cooling FHC,,f1,5023,849e08,value,,UIN,,,
-r,Hc,,BHCHeatUpDays,488 Days Heat-Up BHC,,,5022,d89f08,value,,UIN,,,
-w,Hc,,BHCHeatUpDays,488 Days Heat-Up BHC,,f1,5023,d89f08,value,,UIN,,,
-r,Hc,,BHCMaxTemp,489 Max Temperature BHC,,,5022,c4a008,value,,UIN,,,
-w,Hc,,BHCMaxTemp,489 Max Temperature BHC,,f1,5023,c4a008,value,,UIN,,,
-r,Hc,,BHCMaxTempDays,490 Days Max Temperature BHC,,,5022,98a108,value,,UIN,,,
-w,Hc,,BHCMaxTempDays,490 Days Max Temperature BHC,,f1,5023,98a108,value,,UIN,,,
-r,Hc,,BHCCoolingDays,491 Days Cooling BHC,,,5022,7ca208,value,,UIN,,,
-w,Hc,,BHCCoolingDays,491 Days Cooling BHC,,f1,5023,7ca208,value,,UIN,,,
-r,Hc,,RoomFactorI,Room factor-I,,,5022,a17109,value,,UIN,,,
-w,Hc,,RoomFactorI,Room factor-I,,f1,5023,a17109,value,,UIN,,,
-r,Hc,,R7209,R7209,,,5022,457209,value,,UIN,,,
-w,Hc,,R7209,R7209,,f1,5023,457209,value,,UIN,,,
-r,Hc,,HCTypeMode,16 Heating Circuit Type,,,5022,197309,value,,UIN,0=UnderFloorHeating;256=UndeFloorHeating2;512=Radiator60;768=Radiator75;1024=onvector;1280=Universal,,
-w,Hc,,HCTypeMode,16 Heating Circuit Type,,f1,5023,197309,value,,UIN,0=UnderFloorHeating;256=UndeFloorHeating2;512=Radiator60;768=Radiator75;1024=onvector;1280=Universal,,
-r,Hc,,LegionellaCirculationTime,583 Circ time,,,5022,298109,value,,UIN,,,
-w,Hc,,LegionellaCirculationTime,583 Circ time,,f1,5023,298109,value,,UIN,,,
-r,Hc,,R000A,R000A,,,5022,0a000a,value,,UIN,,,
-w,Hc,,R000A,R000A,,f1,5023,0a000a,value,,UIN,,,
-r,Hc,,OutsideWeightedTemp,igted Outside Temperature,,,5022,7e0c0a,value,,SCH,,°C,outside temperature
-r,Hc,,FloorDryingDay,Screed day (382),,,5022,02120a,value,,UIN,,,
-w,Hc,,FloorDryingDay,Screed day (382),,f1,5023,02120a,value,,UIN,,,
-r,Hc,,FloorDryingTemp,Screed temperature (383),,,5022,5e130a,value,,D1C,,°C,temperature
-w,Hc,,FloorDryingTemp,Screed temperature (383),,f1,5023,5e130a,value,,D1C,,°C,temperature
-r,Hc,,RoomFrostProtectionTemp,Room frost protection (173),,,5022,96140a,value,,UIN,10,°C,temperature
-w,Hc,,RoomFrostProtectionTemp,Room frost protection (173),,f1,5023,96140a,value,,UIN,10,°C,temperature
-r,Hc,,RoomThermostatTemp,Room thermostat (344),,,5022,ce1d0a,value,,D1C,,°C,temperature
-w,Hc,,RoomThermostatTemp,Room thermostat (344),,f1,5023,ce1d0a,value,,D1C,,°C,temperature
-r,Hc,,FS_EM_W1_Sensor,FS_EM_W1_Sensor,,,5022,36200a,value,,UIN,,,
-w,Hc,,FS_EM_W1_Sensor,FS_EM_W1_Sensor,,f1,5023,36200a,value,,UIN,,,
-r,Hc,,H1StatusKA,H1 Actual KA,,,5022,6e280a,value,,UIN,,,
-r,Hc,,H1Status,H1Status EM SOL/903_TempKollektor_TKO_T1,,,5022,32290a,value,,UIN,,,
-r,Hc,,PWTPrimTemp,PWT Primaire Exch B24,,,5022,72400a,value,,UIN,10,°C,temperature
-r,Hc,,H1Function,31 H1 Function,,,5022,7e5b0a,value,,UIN,,,
-r,Hc,,MFA2Status,MFA2 Actual,,,5022,368e0a,value,,UIN,,,
-r,Hc,,ErrorId,Error History Id,,,5022,ab9a0b,value,,UIN,,,
-w,Hc,,ErrorId,Error History Id,,f1,5023,ab9a0b,value,,UIN,,,
-r,Hc,,ErrorCode,Error Code,,,5022,f79b0b,value,,UIN,,,
-r,Hc,,ErrorType,Error Type,,,5022,3f9c0b,value,,UIN,,,
-r,Hc,,ErrorDevice,Error Device,,,5022,639d0b,value,,UIN,,,
-r,Hc,,ErrorMinute,Error Time Minute,,,5022,db9f0b,value,,UIN,,min,minutes
-r,Hc,,ErrorHour,rror Time Hour,,,5022,c7a00b,value,,UIN,,h,hours
-r,Hc,,ErrorDay,Error Date Day,,,5022,9ba10b,value,,UIN,,,
-r,Hc,,ErrorMonth,Error Date Month,,,5022,7fa20b,value,,UIN,1=January;2=February;3=March;4=April;5=May;6=June;7=July;8=August;9=September;10=October;16=November;17=December,,
-r,Hc,,ErrorYear,Error Date Year,,,5022,23a30b,value,,UIN,,,
-r,Hc,,R0C1F,R0C1F,,,5022,2c1f0c,value,,UIN,,,
-w,Hc,,R0C1F,R0C1F,,f1,5023,2c1f0c,value,,UIN,,,
-r,Hc,,R210C,R210C,,,5022,6c210c,value,,UIN,,,
-w,Hc,,R210C,R210C,,f1,5023,6c210c,value,,UIN,,,
-r,Hc,,SolarRecoverWithLegionella,Solar Recovery with Legionella,,,5022,4bf113,value,,UIN,0=off;1=on,,
-w,Hc,,SolarRecoverWithLegionella,Solar Recovery with Legionella,,f1,5023,4bf113,value,,UIN,0=off;1=on,,
-r,Hc,,DHWMaxLoad,578 Max Load DHW,,,5022,aff213,value,,UIN,,%,percent
-w,Hc,,DHWMaxLoad,578 Max Load DHW,,f1,5023,aff213,value,,UIN,,%,percent
-r,Hc,,HCRuntimeProgram1Mo1,Heating Program1 Monday 1 To/From,,,5022,a41014,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram1Mo1,Heating Program1 Monday 1 To/From,,f1,5023,a41014,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram1Mo2,Heating Program1 Monday 2 To/From,,,5022,f81114,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram1Mo2,Heating Program1 Monday 2 To/From,,f1,5023,f81114,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram1Mo3,Heating Program1 Monday 3 To/From,,,5022,1c1214,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram1Mo3,Heating Program1 Monday 3 To/From,,f1,5023,1c1214,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram1Tu1,Heating Program1 Tuesday 1 To/From,,,5022,282014,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram1Tu1,Heating Program1 Tuesday 1 To/From,,f1,5023,282014,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram1Tu2,Heating Program1 Tuesday 2 To/From,,,5022,742114,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram1Tu2,Heating Program1 Tuesday 2 To/From,,f1,5023,742114,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram1Tu3,Heating Program1 Tuesday 3 To/From,,,5022,902214,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram1Tu3,Heating Program1 Tuesday 3 To/From,,f1,5023,902214,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram1We1,Heating Program1 Wednesday 1 To/From,,,5022,983014,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram1We1,Heating Program1 Wednesday 1 To/From,,f1,5023,983014,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram1We2,Heating Program1 Wednesday 2 To/From,,,5022,c43114,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram1We2,Heating Program1 Wednesday 2 To/From,,f1,5023,c43114,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram1We3,Heating Program1 Wednesday 3 To/From,,,5022,203214,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram1We3,Heating Program1 Wednesday 3 To/From,,f1,5023,203214,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram1Th1,Heating Program1 Thursday 1 To/From,,,5022,6c4014,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram1Th1,Heating Program1 Thursday 1 To/From,,f1,5023,6c4014,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram1Th2,Heating Program1 Thursday 2 To/From,,,5022,304114,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram1Th2,Heating Program1 Thursday 2 To/From,,f1,5023,304114,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram1Th3,Heating Program1 Thursday 3 To/From,,,5022,d44214,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram1Th3,Heating Program1 Thursday 3 To/From,,f1,5023,d44214,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram1Fr1,Heating Program1 Friday 1 To/From,,,5022,dc5014,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram1Fr1,Heating Program1 Friday 1 To/From,,f1,5023,dc5014,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram1Fr2,Heating Program1 Friday 2 To/From,,,5022,805114,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram1Fr2,Heating Program1 Friday 2 To/From,,f1,5023,805114,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram1Fr3,Heating Program1 Friday 3 To/From,,,5022,645214,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram1Fr3,Heating Program1 Friday 3 To/From,,f1,5023,645214,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram1Sa1,Heating Program1 Saturday 1 To/From,,,5022,506014,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram1Sa1,Heating Program1 Saturday 1 To/From,,f1,5023,506014,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram1Sa2,Heating Program1 Saturday 2 To/From,,,5022,0c6114,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram1Sa2,Heating Program1 Saturday 2 To/From,,f1,5023,0c6114,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram1Sa3,Heating Program1 Saturday 3 To/From,,,5022,e86214,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram1Sa3,Heating Program1 Saturday 3 To/From,,f1,5023,e86214,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram1Su1,Heating Program1 Sunday 1 To/From,,,5022,e07014,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram1Su1,Heating Program1 Sunday 1 To/From,,f1,5023,e07014,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram1Su2,Heating Program1 Sunday 2 To/From,,,5022,bc7114,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram1Su2,Heating Program1 Sunday 2 To/From,,f1,5023,bc7114,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram1Su3,Heating Program1 Sunday 3 To/From,,,5022,587214,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram1Su3,Heating Program1 Sunday 3 To/From,,f1,5023,587214,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram2Mo1,Heating Program2 Monday 1 To/From,,,5022,a51015,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram2Mo1,Heating Program2 Monday 1 To/From,,f1,5023,a51015,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram2Mo2,Heating Program2 Monday 2 To/From,,,5022,f91115,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram2Mo2,Heating Program2 Monday 2 To/From,,f1,5023,f91115,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram2Mo3,Heating Program2 Monday 3 To/From,,,5022,1d1215,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram2Mo3,Heating Program2 Monday 3 To/From,,f1,5023,1d1215,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram2Tu1,Heating Program2 Tuesday 1 To/From,,,5022,292015,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram2Tu1,Heating Program2 Tuesday 1 To/From,,f1,5023,292015,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram2Tu2,Heating Program2 Tuesday 2 To/From,,,5022,752115,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram2Tu2,Heating Program2 Tuesday 2 To/From,,f1,5023,752115,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram2Tu3,Heating Program2 Tuesday 3 To/From,,,5022,912215,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram2Tu3,Heating Program2 Tuesday 3 To/From,,f1,5023,912215,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram2We1,Heating Program2 Wednesday 1 To/From,,,5022,993015,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram2We1,Heating Program2 Wednesday 1 To/From,,f1,5023,993015,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram2We2,Heating Program2 Wednesday 2 To/From,,,5022,c53115,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram2We2,Heating Program2 Wednesday 2 To/From,,f1,5023,c53115,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram2We3,Heating Program2 Wednesday 3 To/From,,,5022,213215,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram2We3,Heating Program2 Wednesday 3 To/From,,f1,5023,213215,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram2Th1,Heating Program2 Thursday 1 To/From,,,5022,6d4015,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram2Th1,Heating Program2 Thursday 1 To/From,,f1,5023,6d4015,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram2Th2,Heating Program2 Thursday 2 To/From,,,5022,314115,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram2Th2,Heating Program2 Thursday 2 To/From,,f1,5023,314115,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram2Th3,Heating Program2 Thursday 3 To/From,,,5022,d54215,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram2Th3,Heating Program2 Thursday 3 To/From,,f1,5023,d54215,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram2Fr1,Heating Program2 Friday 1 To/From,,,5022,dd5015,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram2Fr1,Heating Program2 Friday 1 To/From,,f1,5023,dd5015,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram2Fr2,Heating Program2 Friday 2 To/From,,,5022,815115,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram2Fr2,Heating Program2 Friday 2 To/From,,f1,5023,815115,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram2Fr3,Heating Program2 Friday 3 To/From,,,5022,655215,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram2Fr3,Heating Program2 Friday 3 To/From,,f1,5023,655215,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram2Sa1,Heating Program2 Saturday 1 To/From,,,5022,516015,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram2Sa1,Heating Program2 Saturday 1 To/From,,f1,5023,516015,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram2Sa2,Heating Program2 Saturday 2 To/From,,,5022,0d6115,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram2Sa2,Heating Program2 Saturday 2 To/From,,f1,5023,0d6115,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram2Sa3,Heating Program2 Saturday 3 To/From,,,5022,e96215,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram2Sa3,Heating Program2 Saturday 3 To/From,,f1,5023,e96215,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram2Su1,Heating Program2 Sunday 1 To/From,,,5022,e17015,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram2Su1,Heating Program2 Sunday 1 To/From,,f1,5023,e17015,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram2Su2,Heating Program2 Sunday 2 To/From,,,5022,bd7115,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram2Su2,Heating Program2 Sunday 2 To/From,,f1,5023,bd7115,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram2Su3,Heating Program2 Sunday 3 To/From,,,5022,597215,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram2Su3,Heating Program2 Sunday 3 To/From,,f1,5023,597215,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram3Mo1,Heating Program3 Monday 1 To/From,,,5022,a61016,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram3Mo1,Heating Program3 Monday 1 To/From,,f1,5023,a61016,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram3Mo2,Heating Program3 Monday 2 To/From,,,5022,fa1116,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram3Mo2,Heating Program3 Monday 2 To/From,,f1,5023,fa1116,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram3Mo3,Heating Program3 Monday 3 To/From,,,5022,1e1216,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram3Mo3,Heating Program3 Monday 3 To/From,,f1,5023,1e1216,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram3Tu1,Heating Program3 Tuesday 1 To/From,,,5022,2a2016,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram3Tu1,Heating Program3 Tuesday 1 To/From,,f1,5023,2a2016,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram3Tu2,Heating Program3 Tuesday 2 To/From,,,5022,762116,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram3Tu2,Heating Program3 Tuesday 2 To/From,,f1,5023,762116,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram3Tu3,Heating Program3 Tuesday 3 To/From,,,5022,922216,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram3Tu3,Heating Program3 Tuesday 3 To/From,,f1,5023,922216,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram3We1,Heating Program3 Wednesday 1 To/From,,,5022,9a3016,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram3We1,Heating Program3 Wednesday 1 To/From,,f1,5023,9a3016,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram3We2,Heating Program3 Wednesday 2 To/From,,,5022,c63116,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram3We2,Heating Program3 Wednesday 2 To/From,,f1,5023,c63116,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram3We3,Heating Program3 Wednesday 3 To/From,,,5022,223216,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram3We3,Heating Program3 Wednesday 3 To/From,,f1,5023,223216,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram3Th1,Heating Program3 Thursday 1 To/From,,,5022,6e4016,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram3Th1,Heating Program3 Thursday 1 To/From,,f1,5023,6e4016,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram3Th2,Heating Program3 Thursday 2 To/From,,,5022,324116,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram3Th2,Heating Program3 Thursday 2 To/From,,f1,5023,324116,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram3Th3,Heating Program3 Thursday 3 To/From,,,5022,d64216,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram3Th3,Heating Program3 Thursday 3 To/From,,f1,5023,d64216,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram3Fr1,Heating Program3 Friday 1 To/From,,,5022,de5016,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram3Fr1,Heating Program3 Friday 1 To/From,,f1,5023,de5016,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram3Fr2,Heating Program3 Friday 2 To/From,,,5022,825116,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram3Fr2,Heating Program3 Friday 2 To/From,,f1,5023,825116,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram3Fr3,Heating Program3 Friday 3 To/From,,,5022,665216,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram3Fr3,Heating Program3 Friday 3 To/From,,f1,5023,665216,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram3Sa1,Heating Program3 Saturday 1 To/From,,,5022,526016,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram3Sa1,Heating Program3 Saturday 1 To/From,,f1,5023,526016,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram3Sa2,Heating Program3 Saturday 2 To/From,,,5022,0e6116,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram3Sa2,Heating Program3 Saturday 2 To/From,,f1,5023,0e6116,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram3Sa3,Heating Program3 Saturday 3 To/From,,,5022,ea6216,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram3Sa3,Heating Program3 Saturday 3 To/From,,f1,5023,ea6216,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram3Su1,Heating Program3 Sunday 1 To/From,,,5022,e27016,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram3Su1,Heating Program3 Sunday 1 To/From,,f1,5023,e27016,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram3Su2,Heating Program3 Sunday 2 To/From,,,5022,be7116,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram3Su2,Heating Program3 Sunday 2 To/From,,f1,5023,be7116,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,HCRuntimeProgram3Su3,Heating Program3 Sunday 3 To/From,,,5022,5a7216,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,HCRuntimeProgram3Su3,Heating Program3 Sunday 3 To/From,,f1,5023,5a7216,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,DHWRuntimeProgramMo1,Hot Water Program Monday 1 To/From,,,5022,a71017,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,DHWRuntimeProgramMo1,Hot Water Program Monday 1 To/From,,f1,5023,a71017,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,DHWRuntimeProgramMo2,Hot Water Program Monday 2 To/From,,,5022,fb1117,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,DHWRuntimeProgramMo2,Hot Water Program Monday 2 To/From,,f1,5023,fb1117,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,DHWRuntimeProgramMo3,Hot Water Program Monday 3 To/From,,,5022,1f1217,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,DHWRuntimeProgramMo3,Hot Water Program Monday 3 To/From,,f1,5023,1f1217,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,DHWRuntimeProgramTu1,Hot Water Program Tuesday 1 To/From,,,5022,2b2017,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,DHWRuntimeProgramTu1,Hot Water Program Tuesday 1 To/From,,f1,5023,2b2017,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,DHWRuntimeProgramTu2,Hot Water Program Tuesday 2 To/From,,,5022,772117,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,DHWRuntimeProgramTu2,Hot Water Program Tuesday 2 To/From,,f1,5023,772117,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,DHWRuntimeProgramTu3,Hot Water Program Tuesday 3 To/From,,,5022,932217,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,DHWRuntimeProgramTu3,Hot Water Program Tuesday 3 To/From,,f1,5023,932217,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,DHWRuntimeProgramWe1,Hot Water Program Wednesday 1 To/From,,,5022,9b3017,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,DHWRuntimeProgramWe1,Hot Water Program Wednesday 1 To/From,,f1,5023,9b3017,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,DHWRuntimeProgramWe2,Hot Water Program Wednesday 2 To/From,,,5022,c73117,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,DHWRuntimeProgramWe2,Hot Water Program Wednesday 2 To/From,,f1,5023,c73117,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,DHWRuntimeProgramWe3,Hot Water Program Wednesday 3 To/From,,,5022,233217,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,DHWRuntimeProgramWe3,Hot Water Program Wednesday 3 To/From,,f1,5023,233217,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,DHWRuntimeProgramTh1,Hot Water Program Thursday 1 To/From,,,5022,6f4017,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,DHWRuntimeProgramTh1,Hot Water Program Thursday 1 To/From,,f1,5023,6f4017,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,DHWRuntimeProgramTh2,Hot Water Program Thursday 2 To/From,,,5022,334117,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,DHWRuntimeProgramTh2,Hot Water Program Thursday 2 To/From,,f1,5023,334117,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,DHWRuntimeProgramTh3,Hot Water Program Thursday 3 To/From,,,5022,d74217,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,DHWRuntimeProgramTh3,Hot Water Program Thursday 3 To/From,,f1,5023,d74217,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,DHWRuntimeProgramFr1,Hot Water Program Friday 1 To/From,,,5022,df5017,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,DHWRuntimeProgramFr1,Hot Water Program Friday 1 To/From,,f1,5023,df5017,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,DHWRuntimeProgramFr2,Hot Water Program Friday 2 To/From,,,5022,835117,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,DHWRuntimeProgramFr2,Hot Water Program Friday 2 To/From,,f1,5023,835117,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,DHWRuntimeProgramFr3,Hot Water Program Friday 3 To/From,,,5022,675217,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,DHWRuntimeProgramFr3,Hot Water Program Friday 3 To/From,,f1,5023,675217,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,DHWRuntimeProgramSa1,Hot Water Program Saturday 1 To/From,,,5022,536017,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,DHWRuntimeProgramSa1,Hot Water Program Saturday 1 To/From,,f1,5023,536017,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,DHWRuntimeProgramSa2,Hot Water Program Saturday 2 To/From,,,5022,0f6117,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,DHWRuntimeProgramSa2,Hot Water Program Saturday 2 To/From,,f1,5023,0f6117,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,DHWRuntimeProgramSa3,Hot Water Program Saturday 3 To/From,,,5022,eb6217,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,DHWRuntimeProgramSa3,Hot Water Program Saturday 3 To/From,,f1,5023,eb6217,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,DHWRuntimeProgramSu1,Hot Water Program Sunday 1 To/From,,,5022,e37017,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,DHWRuntimeProgramSu1,Hot Water Program Sunday 1 To/From,,f1,5023,e37017,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,DHWRuntimeProgramSu2,Hot Water Program Sunday 2 To/From,,,5022,bf7117,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,DHWRuntimeProgramSu2,Hot Water Program Sunday 2 To/From,,f1,5023,bf7117,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,DHWRuntimeProgramSu3,Hot Water Program Sunday 3 To/From,,,5022,5b7217,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,DHWRuntimeProgramSu3,Hot Water Program Sunday 3 To/From,,f1,5023,5b7217,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,CircRuntimeProgramMo1,Circulation Program Monday 1 To/From,,,5022,aa101a,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,CircRuntimeProgramMo1,Circulation Program Monday 1 To/From,,f1,5023,aa101a,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,CircRuntimeProgramMo2,Circulation Program Monday 2 To/From,,,5022,f6111a,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,CircRuntimeProgramMo2,Circulation Program Monday 2 To/From,,f1,5023,f6111a,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,CircRuntimeProgramMo3,Circulation Program Monday 3 To/From,,,5022,12121a,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,CircRuntimeProgramMo3,Circulation Program Monday 3 To/From,,f1,5023,12121a,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,CircRuntimeProgramTu1,Circulation Program Tuesday 1 To/From,,,5022,26201a,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,CircRuntimeProgramTu1,Circulation Program Tuesday 1 To/From,,f1,5023,26201a,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,CircRuntimeProgramTu2,Circulation Program Tuesday 2 To/From,,,5022,7a211a,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,CircRuntimeProgramTu2,Circulation Program Tuesday 2 To/From,,f1,5023,7a211a,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,CircRuntimeProgramTu3,Circulation Program Tuesday 3 To/From,,,5022,9e221a,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,CircRuntimeProgramTu3,Circulation Program Tuesday 3 To/From,,f1,5023,9e221a,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,CircRuntimeProgramWe1,Circulation Program Wednesday 1 To/From,,,5022,96301a,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,CircRuntimeProgramWe1,Circulation Program Wednesday 1 To/From,,f1,5023,96301a,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,CircRuntimeProgramWe2,Circulation Program Wednesday 2 To/From,,,5022,ca311a,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,CircRuntimeProgramWe2,Circulation Program Wednesday 2 To/From,,f1,5023,ca311a,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,CircRuntimeProgramWe3,Circulation Program Wednesday 3 To/From,,,5022,2e321a,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,CircRuntimeProgramWe3,Circulation Program Wednesday 3 To/From,,f1,5023,2e321a,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,CircRuntimeProgramTh1,Circulation Program Thursday 1 To/From,,,5022,62401a,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,CircRuntimeProgramTh1,Circulation Program Thursday 1 To/From,,f1,5023,62401a,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,CircRuntimeProgramTh2,Circulation Program Thursday 2 To/From,,,5022,3e411a,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,CircRuntimeProgramTh2,Circulation Program Thursday 2 To/From,,f1,5023,3e411a,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,CircRuntimeProgramTh3,Circulation Program Thursday 3 To/From,,,5022,da421a,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,CircRuntimeProgramTh3,Circulation Program Thursday 3 To/From,,f1,5023,da421a,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,CircRuntimeProgramFr1,Circulation Program Friday 1 To/From,,,5022,d2501a,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,CircRuntimeProgramFr1,Circulation Program Friday 1 To/From,,f1,5023,d2501a,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,CircRuntimeProgramFr2,Circulation Program Friday 2 To/From,,,5022,8e511a,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,CircRuntimeProgramFr2,Circulation Program Friday 2 To/From,,f1,5023,8e511a,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,CircRuntimeProgramFr3,Circulation Program Friday 3 To/From,,,5022,6a521a,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,CircRuntimeProgramFr3,Circulation Program Friday 3 To/From,,f1,5023,6a521a,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,CircRuntimeProgramSa1,Circulation Program Saturday 1 To/From,,,5022,5e601a,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,CircRuntimeProgramSa1,Circulation Program Saturday 1 To/From,,f1,5023,5e601a,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,CircRuntimeProgramSa2,Circulation Program Saturday 2 To/From,,,5022,02611a,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,CircRuntimeProgramSa2,Circulation Program Saturday 2 To/From,,f1,5023,02611a,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,CircRuntimeProgramSa3,Circulation Program Saturday 3 To/From,,,5022,e6621a,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,CircRuntimeProgramSa3,Circulation Program Saturday 3 To/From,,f1,5023,e6621a,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,CircRuntimeProgramSu1,Circulation Program Sunday 1 To/From,,,5022,ee701a,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,CircRuntimeProgramSu1,Circulation Program Sunday 1 To/From,,f1,5023,ee701a,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,CircRuntimeProgramSu2,Circulation Program Sunday 2 To/From,,,5022,b2711a,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,CircRuntimeProgramSu2,Circulation Program Sunday 2 To/From,,f1,5023,b2711a,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,CircRuntimeProgramSu3,Circulation Program Sunday 3 To/From,,,5022,56721a,disabled,,BI7,,,,time,,TTQ,,,
-w,Hc,,CircRuntimeProgramSu3,Circulation Program Sunday 3 To/From,,f1,5023,56721a,disabled,,BI7,,,,time,,TTQ,,,
-r,Hc,,UnknownSensor11,UnknownSensor11,,,5022,5a0476,value,,UIN,,,
-w,Hc,,UnknownSensor11,UnknownSensor11,,f1,5023,5a0476,value,,UIN,,,
-r,Hc,,UnknownSensor12,UnknownSensor12,,,5022,540478,value,,UIN,,,
-w,Hc,,UnknownSensor12,UnknownSensor12,,f1,5023,540478,value,,UIN,,,
-r,Hc,,OutputMFA2,522 Output MFA 2,,,5022,1da4fd,value,,UIN,,,
-w,Hc,,OutputMFA2,522 Output MFA 2,,f1,5023,1da4fd,value,,UIN,,,
-r,Hc,,InputN1,526 Input N1,,,5022,cdc2fd,value,,UIN,0=off;1=on,,
-w,Hc,,InputN1,526 Input N1,,f1,5023,cdc2fd,value,,UIN,0=off;1=on,,
-r,Hc,,BoilerSequence1_1,533 Boiler Sequence 1 1,,,5022,95cafd,value,,UIN,0=A;1=B;240=x,,
-w,Hc,,BoilerSequence1_1,533 Boiler Sequence 1 1,,f1,5023,95cafd,value,,UIN,0=A;1=B;240=x,,
-r,Hc,,BoilerSequence1_2,533 Boiler Sequence 1 2,,,5022,c9cbfd,value,,UIN,0=A;1=B;240=x,,
-w,Hc,,BoilerSequence1_2,533 Boiler Sequence 1 2,,f1,5023,c9cbfd,value,,UIN,0=A;1=B;240=x,,
-r,Hc,,BoilerSequence1_3,533 Boiler Sequence 1 3,,,5022,01ccfd,value,,UIN,0=A;1=B;240=x,,
-w,Hc,,BoilerSequence1_3,533 Boiler Sequence 1 3,,f1,5023,01ccfd,value,,UIN,0=A;1=B;240=x,,
-r,Hc,,BoilerSequence1_4,533 Boiler Sequence 1 4,,,5022,5dcdfd,value,,UIN,0=A;1=B;240=x,,
-w,Hc,,BoilerSequence1_4,533 Boiler Sequence 1 4,,f1,5023,5dcdfd,value,,UIN,0=A;1=B;240=x,,
-r,Hc,,BoilerSequence1_5,533 Boiler Sequence 1 5,,,5022,b9cefd,value,,UIN,0=A;1=B;240=x,,
-w,Hc,,BoilerSequence1_5,533 Boiler Sequence 1 5,,f1,5023,b9cefd,value,,UIN,0=A;1=B;240=x,,
-r,Hc,,BoilerSequence2_1,533 Boiler Sequence 2 1,,,5022,e9d4fd,value,,UIN,0=A;1=B;240=x,,
-w,Hc,,BoilerSequence2_1,533 Boiler Sequence 2 1,,f1,5023,e9d4fd,value,,UIN,0=A;1=B;240=x,,
-r,Hc,,BoilerSequence2_2,533 Boiler Sequence 2 2,,,5022,b5d5fd,value,,UIN,0=A;1=B;240=x,,
-w,Hc,,BoilerSequence2_2,533 Boiler Sequence 2 2,,f1,5023,b5d5fd,value,,UIN,0=A;1=B;240=x,,
-r,Hc,,BoilerSequence2_3,533 Boiler Sequence 2 3,,,5022,51d6fd,value,,UIN,0=A;1=B;240=x,,
-w,Hc,,BoilerSequence2_3,533 Boiler Sequence 2 3,,f1,5023,51d6fd,value,,UIN,0=A;1=B;240=x,,
-r,Hc,,BoilerSequence2_4,533 Boiler Sequence 2 4,,,5022,0dd7fd,value,,UIN,0=A;1=B;240=x,,
-w,Hc,,BoilerSequence2_4,533 Boiler Sequence 2 4,,f1,5023,0dd7fd,value,,UIN,0=A;1=B;240=x,,
-r,Hc,,BoilerSequence2_5,533 Boiler Sequence 2 5,,,5022,9dd8fd,value,,UIN,0=A;1=B;240=x,,
-w,Hc,,BoilerSequence2_5,533 Boiler Sequence 2 5,,f1,5023,9dd8fd,value,,UIN,0=A;1=B;240=x,,
-r,Hc,,SummerTimeFromDay,593 SummerTime Start Day,,,5022,09defd,value,,UIN,,,
-w,Hc,,SummerTimeFromDay,593 SummerTime Start Day,,f1,5023,09defd,value,,UIN,,,
-r,Hc,,SummerTimeFromMonth,593 SummerTime Start Month,,,5022,55dffd,value,,UIN,1=January;2=February;3=March;4=April;5=May;6=June;7=July;8=August;9=September;10=October;16=November;17=December,,
-w,Hc,,SummerTimeFromMonth,593 SummerTime Start Month,,f1,5023,55dffd,value,,UIN,1=January;2=February;3=March;4=April;5=May;6=June;7=July;8=August;9=September;10=October;16=November;17=December,,
-r,Hc,,SummerTimeToDay,594 SummerTime End Day,,,5022,49e0fd,value,,UIN,,,
-w,Hc,,SummerTimeToDay,594 SummerTime End Day,,f1,5023,49e0fd,value,,UIN,,,
-r,Hc,,SummerTimeToMonth,594 SummerTime End Month,,,5022,15e1fd,value,,UIN,1=January;2=February;3=March;4=April;5=May;6=June;7=July;8=August;9=September;10=October;16=November;17=December,,
-w,Hc,,SummerTimeToMonth,594 SummerTime End Month,,f1,5023,15e1fd,value,,UIN,1=January;2=February;3=March;4=April;5=May;6=June;7=July;8=August;9=September;10=October;16=November;17=December,,
-r,Hc,,CalorfierSwitchDifference,562 Calorfier Switch Difference,,,5022,f1e2fd,value,,D1C,,°C,temperature
-w,Hc,,CalorfierSwitchDifference,562 Calorfier Switch Difference,,f1,5023,f1e2fd,value,,D1C,,°C,temperature
-r,Hc,,CalorfierExceeded,561 Calorfier exceeded,,,5022,ade3fd,value,,D1C,,°C,temperature
-w,Hc,,CalorfierExceeded,561 Calorfier exceeded,,f1,5023,ade3fd,value,,D1C,,°C,temperature
-r,Hc,,DeCoupleMax,553 De-Couple Max,,,5022,dde6fd,value,,D1C,,°C,temperature
-w,Hc,,DeCoupleMax,553 De-Couple Max,,f1,5023,dde6fd,value,,D1C,,°C,temperature
-r,Hc,,DeCoupleMin,552 De-Couple Min,,,5022,81e7fd,value,,D1C,,°C,temperature
-w,Hc,,DeCoupleMin,552 De-Couple Min,,f1,5023,81e7fd,value,,D1C,,°C,temperature
-r,Hc,,DeCoupleExceeded,551 De-Couple Exceeded,,,5022,11e8fd,value,,D1C,,°C,temperature
-w,Hc,,DeCoupleExceeded,551 De-Couple Exceeded,,f1,5023,11e8fd,value,,D1C,,°C,temperature
-r,Hc,,ContTemp,538 Cont. Temp,,,5022,4de9fd,value,,D1C,,°C,temperature
-w,Hc,,ContTemp,538 Cont. Temp,,f1,5023,4de9fd,value,,D1C,,°C,temperature
-r,Hc,,ModulationMax,536 Modulation Max,,,5022,a9eafd,value,,UIN,,%,percent
-w,Hc,,ModulationMax,536 Modulation Max,,f1,5023,a9eafd,value,,UIN,,%,percent
-r,Hc,,ModulationMin,read/write sregister,,,5022,f5ebfd,value,,UIN,,%,percent
-w,Hc,,ModulationMin,read/write sregister,,f1,5023,f5ebfd,value,,UIN,,%,percent
-r,Hc,,ChangeOverTime,532 Change Over Time,,,5022,3decfd,value,,D1C,,°C,temperature
-w,Hc,,ChangeOverTime,532 Change Over Time,,f1,5023,3decfd,value,,D1C,,°C,temperature
-r,Hc,,SequenceChangeMode,531 Sequence Change Mode,,,5022,61edfd,value,,UIN,,,
-w,Hc,,SequenceChangeMode,531 Sequence Change Mode,,f1,5023,61edfd,value,,UIN,,,
-r,Hc,,SpecialLevel,525 Spectial Level,,,5022,85eefd,value,,UIN,,,
-w,Hc,,SpecialLevel,525 Spectial Level,,f1,5023,85eefd,value,,UIN,,,
-r,Hc,,InputH1,524 Input H1,,,5022,d9effd,value,,UIN,,,
-w,Hc,,InputH1,524 Input H1,,f1,5023,d9effd,value,,UIN,,,
-r,Hc,,VAStatus,VA Status,,,5022,f9f0fd,value,,UIN,0=off;1=on,,
-w,Hc,,VAStatus,VA Status,,f1,5023,f9f0fd,value,,UIN,0=off;1=on,,
-r,Hc,,OutputVA,523 Output VA,,,5022,a5f1fd,value,,UIN,0=off;1=on,,
-w,Hc,,OutputVA,523 Output VA,,f1,5023,a5f1fd,value,,UIN,0=off;1=on,,
-r,Hc,,MFA1Status,MFA 1 Status,,,5022,41f2fd,value,,UIN,0=off;1=on,,
-w,Hc,,MFA1Status,MFA 1 Status,,f1,5023,41f2fd,value,,UIN,0=off;1=on,,
-r,Hc,,OutputMFA1,521 Output MFA 1,,,5022,1df3fd,value,,UIN,,,
-w,Hc,,OutputMFA1,521 Output MFA 1,,f1,5023,1df3fd,value,,UIN,,,
-r,Hc,,LegionellaTime,581 Legionella Time,,,5022,d5f4fd,value,,TTQ,,,
-w,Hc,,LegionellaTime,581 Legionella Time,,f1,5023,d5f4fd,value,,TTQ,,,
-r,Hc,,UnknownSensor8,5UnknownSensor8,,,5022,45fbfd,value,,UIN,,,
-w,Hc,,UnknownSensor8,5UnknownSensor8,,f1,5023,45fbfd,value,,UIN,,,
-r,Hc,,Durchfluss,SOL/905_Durchfluss,,,5022,488200,value,,UIN,,,
-w,Hc,,Durchfluss,SOL/905_Durchfluss,,f1,5023,488200,value,,UIN,,,
-r,Hc,,YieldSince_Wh,SOL/906_YieldSince_Wh,,,5022,388700,value,,UIN,,,
-w,Hc,,YieldSince_Wh,SOL/906_YieldSince_Wh,,f1,5023,388700,value,,UIN,,,
-r,Hc,,YieldSince_kWh,SOL/906_YieldSince_kWh,,,5022,a88800,value,,UIN,,,
-w,Hc,,YieldSince_kWh,SOL/906_YieldSince_kWh,,f1,5023,a88800,value,,UIN,,,
-r,Hc,,YieldSince_MWh,SOL/906_YieldSince_MWh,,,5022,f48900,value,,UIN,,,
-w,Hc,,YieldSince_MWh,SOL/906_YieldSince_MWh,,f1,5023,f48900,value,,UIN,,,
-r,Hc,,TempAbgas,OB/i31_TempAbgas,,,5022,094501,value,,SCH,,°C,outside temperature
-r,Hc,,Leistung,SOL/905_Leistung,,,5022,85db01,value,,UIN,,,
-w,Hc,,Leistung,SOL/905_Leistung,,f1,5023,85db01,value,,UIN,,,
-r,Hc,,I45_LetzteWartung,OB/i45_LetzteWartung,,,5022,0abc02,value,,UIN,,,
-w,Hc,,I45_LetzteWartung,OB/i45_LetzteWartung,,f1,5023,0abc02,value,,UIN,,,
-r,Hc,,StatusDTR,SOL/902_StatusDTR,,,5022,5af102,value,,UIN,,,
-w,Hc,,StatusDTR,SOL/902_StatusDTR,,f1,5023,5af102,value,,UIN,,,
-r,Hc,,YieldSum_Wh_907,SOL/907_YieldSum_Wh,,,5022,867c06,value,,UIN,,,
-w,Hc,,YieldSum_Wh_907,SOL/907_YieldSum_Wh,,f1,5023,867c06,value,,UIN,,,
-r,Hc,,YieldSum_kWh_907,SOL/907_YieldSum_kWh,,,5022,da7d06,value,,UIN,,,
-w,Hc,,YieldSum_kWh_907,SOL/907_YieldSum_kWh,,f1,5023,da7d06,value,,UIN,,,
-r,Hc,,YieldSum_MWh,SOL/907_YieldSum_MWh,,,5022,3e7e06,value,,UIN,,,
-w,Hc,,YieldSum_MWh,SOL/907_YieldSum_MWh,,f1,5023,3e7e06,value,,UIN,,,
-r,Hc,,YieldResetDateYear,SOL/906_YieldResetDateYear,,,5022,627f06,value,,UIN,,,
-w,Hc,,YieldResetDateYear,SOL/906_YieldResetDateYear,,f1,5023,627f06,value,,UIN,,,
-r,Hc,,YieldResetDateMonth,SOL/906_YieldResetDateMonth,,,5022,f68006,value,,UIN,,,
-w,Hc,,YieldResetDateMonth,SOL/906_YieldResetDateMonth,,f1,5023,f68006,value,,UIN,,,
-r,Hc,,YieldResetDateDay,SOL/906_YieldResetDateDay,,,5022,aa8106,value,,UIN,,,
-w,Hc,,YieldResetDateDay,SOL/906_YieldResetDateDay,,f1,5023,aa8106,value,,UIN,,,
-r,Hc,,YieldSum_Wh_908,SOL/908_YieldSum_Wh,,,5022,628606,value,,UIN,,,
-w,Hc,,YieldSum_Wh_908,SOL/908_YieldSum_Wh,,f1,5023,628606,value,,UIN,,,
-r,Hc,,YieldSum_kWh_908,SOL/908_YieldSum_kWh,,,5022,3e8706,value,,UIN,,,
-w,Hc,,YieldSum_kWh_908,SOL/908_YieldSum_kWh,,f1,5023,3e8706,value,,UIN,,,
-r,Hc,,TempSolU_TSU_T2,SOL/903_TempSolU_TSU_T2,,,5022,d62a0a,value,,UIN,10,°C,temperature
-r,Hc,,TempSolVL_TKV_T3,SOL/904_TempSolVL_TKV_T3,,,5022,8a2b0a,value,,UIN,10,°C,temperature
-r,Hc,,TempSolRL_TKR_T4,SOL/904_TempSolRL_TKR_T4,,,5022,42c00a,value,,UIN,10,°C,temperature
-r,Hc,,TempVLKessel,OB/i30_TempVLKessel,,,5022,9a1d0c,value,,SCH,,°C,outside temperature
-w,Hc,,TempVLKessel,OB/i30_TempVLKessel,,f1,5023,9a1d0c,value,,SCH,,°C,outside temperature
-r,Hc,,I40_SchaltspielBrenner,OB/i40_SchaltspielBrenner,,,5022,d07d0c,value,,UIN,,,
-w,Hc,,I40_SchaltspielBrenner,OB/i40_SchaltspielBrenner,,f1,5023,d07d0c,value,,UIN,,,
-r,Hc,,I41_SchaltspielBrenner,OB/i41_SchaltspielBrenner,,,5022,8c7c0c,value,,UIN,,,
-w,Hc,,I41_SchaltspielBrenner,OB/i41_SchaltspielBrenner,,f1,5023,8c7c0c,value,,UIN,,,
-r,Hc,,I42_BetrStundenBrenner,OB/i42_BetrStundenBrenner,,,5022,687f0c,value,,UIN,,,
-w,Hc,,I42_BetrStundenBrenner,OB/i42_BetrStundenBrenner,,f1,5023,687f0c,value,,UIN,,,
-r,Hc,,I43_BetrStundenBrenner,OB/i43_BetrStundenBrenner,,,5022,347e0c,value,,UIN,,,
-w,Hc,,I43_BetrStundenBrenner,OB/i43_BetrStundenBrenner,,f1,5023,347e0c,value,,UIN,,,
-r,Hc,,I46_OelZaehler_1000,OB/i46_OelZaehler_1000,,,5022,36d00e,value,,UIN,,,
-w,Hc,,I46_OelZaehler_1000,OB/i46_OelZaehler_1000,,f1,5023,36d00e,value,,UIN,,,
-r,Hc,,I47_OelZaehler,OB/i47_OelZaehler,,,5022,6ad10e,value,,UIN,,,
-w,Hc,,I47_OelZaehler,OB/i47_OelZaehler,,f1,5023,6ad10e,value,,UIN,,,
-r,Hc,,Currentperformance,Current performance,,,5022,d85010,value,,UIN,,,
-w,Hc,,Currentperformance,Current performance,,f1,5023,d85010,value,,UIN,,,
+uw,,,KaStatus,KA Broadcast with actual values,,fe,500a,,status1,,UCH,,,,operatingphase,,UCH,0=BurnerOff;1=StandbyCheckFan;2=PrepurgeSpeedAchieved;3=Prepurge;4=IgnitionSpeedAchieved;5=Ignition;6=BurnerInOperation;7=GasValveXheck;8=PostPurge;9=ForcedVenting;11=F11;12=W12;13=F12;14=W14;15=F15;16=F16;17=F17;19=F19;21=F21;22=F22;23=F23;24=W24;25=W25;27=W27;28=W28;30=F30;31=F31;33=F33;34=W34;35=W35;36=F36;37=F37;38=F38;39=F39;41=F40;43=F43;44=F44;47=F47;50=F50;51=F51;52=F52;53=F53;54=F54;55=F55;56=F56;57=F57;58=F58;59=F59;60=F60;61=F61;62=F62;63=F63;64=F64;65=F65;70=F70;80=W80;81=W81;82=W82;83=W83;84=W84;85=W85;86=W86;87=W87;88=W88;89=W89,,Operating Phase,ukn2_1,,BI0,,,,ukn2_2,,BI1,,,,ukn2_3,,BI2,,,,flame,,BI3,,,,gasvalve1,,BI4,,,,gasvalve2,,BI5,,,,pump,,BI6,,,,error,,BI7,,,,manualstartup,,BI0,,,,burnerstatus,,BI1,,,,ukn3_3,,BI2,,,,service,,BI3,,,,ukn3_5,,BI4,,,,fan,,BI5,,,,circpump,,BI6,,,,dhwpump,,BI7,,,,load,,UCH,,%,Load Position,supplytemp,,D1C,,°C,SupplyTemp Temperature,fluegastemp,,SCH,,°C,Flue gas temperature,dhwtemp,,D1C,,°C,Domestic Hot Water Temperature,outsidetemp,,D2B,,°C,Outside Temperature,outsideweightedtemp,,D2B,,°C,Outside Weighted Temperature,supplysettemp,,UCH,,°C,Supply Set Temperature
+u,,,InfoStatus,System Info Broadcast,f1,fe,0700,,outsidetemp,,D2B,,°C,temperature,time,,BTI,,,time,date,,BDA,,,date
+u,,,StatusMessage,Display Message,f1,fe,fe01,,error,,STR:10,,,
+u,,,IdAnswer,answer to identification query,f1,fe,0704,,mf,,UCH,6=Dungs;15=FH Ostfalia;16=TEM;17=Lamberti;20=CEB;21=Landis-Staefa;22=FERRO;23=MONDIAL;24=Wikon;25=Wolf;32=RAWE;48=Satronic;64=ENCON;80=Kromschröder;96=Eberle;101=EBV;117=Grässlin;133=ebm-papst;149=SIG;165=Theben;167=Thermowatt;181=Vaillant;192=Toby;197=Weishaupt;253=ebusd.eu;253=ebusd,,device manufacturer,id,,STR:5,,,device id,sw,,PIN,,,software version,hw,,PIN,,,hardware version
+r,,,BootStatus,Boot Status,,,5022,000000,ign,,IGN:1,,,,value,,UIN,,,
+w,,,BootStatus,Boot Status,,f1,5023,000000,value,,UIN,,,
+u,,,BootStatus,Boot Status,,,0902,000002,value,,UIN,,,
+uw,,,BootStatus,Boot Status,,,0903,0000,value,,UIN,,,
+r,,,ErrorStatus,Error Status,,,5022,5c0100,value,,UIN,,,
+r,,,HeatDemandTemp,Heat demand HK,,,5022,b80200,value,,UIN,10,°C,temperature
+r,,,DHWSetValue,Hot water setpoint,,,5022,e40300,value,,UIN,10,°C,temperature
+r,,,SupplySetPointTemp,pply SetPoint (121),,,5022,2c0400,value,,UIN,10,°C,temperature
+r,,,RoomNormalTemp,Normal Room Temperature (112),,,5022,700500,value,,UIN,10,°C,temperature
+w,,,RoomNormalTemp,Normal Room Temperature (112),,f1,5023,700500,value,,UIN,10,°C,temperature
+r,,,RoomSetbackTemp,Setback Room Temperature (113),,,5022,580800,value,,UIN,10,°C,temperature
+w,,,RoomSetbackTemp,Setback Room Temperature (113),,f1,5023,580800,value,,UIN,10,°C,temperature
+r,,,UnknownSensor15,Unknown Sensor 15,,,5022,bc0b00,value,,UIN,,,
+r,,,OutsideTemp,B1 Outside Sensor Temperature,,,5022,740c00,value,,SIN,10,°C,outside temperature
+r,,,SupplyWTCTemp,Flow temperature WTC,,,5022,280d00,value,,UIN,10,°C,temperature
+r,,,DHWTemp,B3 DHW Sensor Temperature,,,5022,cc0e00,value,,UIN,10,°C,temperature
+r,,,SupplyHCTemp,B6 Supply Sensor Temperature,,,5022,900f00,value,,UIN,10,°C,temperature
+r,,,ConfigStatus,Configuration Status,,,5022,b01000,value,,UIN,,,
+r,,,RoomTemp,Room Sensor Temperature,,,5022,ec1100,value,,UIN,10,°C,temperature
+r,,,RoomSetPointTemp,Room setpoint,,,5022,081200,value,,UIN,10,°C,temperature
+r,,,DHWSetpoint,Hot water setpoint (176),,,5022,541300,value,,UIN,10,°C,temperature
+w,,,DHWSetpoint,Hot water setpoint (176),,f1,5023,541300,value,,UIN,10,°C,temperature
+r,,,OutsideBlendedTemp,Blended Outside Temperature,,,5022,501a00,value,,SIN,10,°C,outside temperature
+r,,,WWOperationMode,WW Operation (343),,,5022,d82300,value,,UIN,0=Priority;256=Sliding;512=Parallel,,
+w,,,WWOperationMode,WW Operation (343),,f1,5023,d82300,value,,UIN,0=Priority;256=Sliding;512=Parallel,,
+r,,,BlockingTime,Maximum Blocking Time (537),,,5022,4c2500,value,,UIN,,min,minutes
+w,,,BlockingTime,Maximum Blocking Time (537),,f1,5023,4c2500,value,,UIN,,min,minutes
+r,,,SupplyMaxTemp,read/write sregister,,,5022,642800,value,,UIN,10,°C,temperature
+w,,,SupplyMaxTemp,read/write sregister,,f1,5023,642800,value,,UIN,10,°C,temperature
+r,,,MixerParameterTemp,Mixer Parameter (425),,,5022,802b00,value,,UIN,10,K,temperature K
+w,,,MixerParameterTemp,Mixer Parameter (425),,f1,5023,802b00,value,,UIN,10,K,temperature K
+r,,,ModulationStatus,dulation,,,5022,482c00,value,,UIN,,%,percent
+w,,,ModulationStatus,dulation,,f1,5023,482c00,value,,UIN,,%,percent
+r,,,DHWExceeded,576 DHW exceeded,,,5022,142d00,value,,UIN,10,°C,temperature
+w,,,DHWExceeded,576 DHW exceeded,,f1,5023,142d00,value,,UIN,10,°C,temperature
+r,,,MixerPump,Mixer Pump,,,5022,705200,value,,UIN,0=off;1=on,,
+r,,,ValveOpening,Mixer Valve Opening,,,5022,5c5600,value,,UIN,0=off;1=on,,
+r,,,ValveClosing,Mixer Valve Closing,,,5022,005700,value,,UIN,0=off;1=on,,
+w,,,ValveClosing,Mixer Valve Closing,,f1,5023,005700,value,,UIN,0=off;1=on,,
+r,,,ColorifierTopTemp,Calorifier Top Temp B20,,,5022,607600,value,,UIN,10,°C,temperature
+w,,,ColorifierTopTemp,Calorifier Top Temp B20,,f1,5023,607600,value,,UIN,10,°C,temperature
+r,,,ColorifierBottomTemp,Calorifier Bottom Temp B21,,,5022,ac7800,value,,UIN,10,°C,temperature
+w,,,ColorifierBottomTemp,Calorifier Bottom Temp B21,,f1,5023,ac7800,value,,UIN,10,°C,temperature
+r,,,ReductionSolarYied,14 Target value reduction for solar yield,,,5022,ac8100,value,,UIN,10,K,temperature K
+w,,,ReductionSolarYied,14 Target value reduction for solar yield,,f1,5023,ac8100,value,,UIN,10,K,temperature K
+r,,,DHWLegionellaDay,Legionella Protection Function (605),,,5022,5d0101,value,,UIN,1=Monday;2=Tuesday;3=Wednesday;4=Thursday;5=Friday;6=Saturday;7=Sunday,,
+w,,,DHWLegionellaDay,Legionella Protection Function (605),,f1,5023,5d0101,value,,UIN,1=Monday;2=Tuesday;3=Wednesday;4=Thursday;5=Friday;6=Saturday;7=Sunday,,
+r,,,RoomFactorCurve,Room Factor-P (508),,,5022,910f01,value,,UIN,,,
+w,,,RoomFactorCurve,Room Factor-P (508),,f1,5023,910f01,value,,UIN,,,
+r,,,RoomSensorCorrectionTemp,Room Sensor Correction (101),,,5022,050901,value,,UIN,10,K,temperature K
+w,,,RoomSensorCorrectionTemp,Room Sensor Correction (101),,f1,5023,050901,value,,UIN,10,K,temperature K
+r,,,GradientCurve,Steepness (175),,,5022,cd0e01,value,,SIN,10,,Steepness
+w,,,GradientCurve,Steepness (175),,f1,5023,cd0e01,value,,SIN,10,,Steepness
+r,,,SwitchOnRuntime,Switch-on delay (353),,,5022,b11001,value,,UIN,,min,minutes
+w,,,SwitchOnRuntime,Switch-on delay (353),,f1,5023,b11001,value,,UIN,,min,minutes
+r,,,BoilerMCBoostTemp,Boiler MC Boost(424),,,5022,ed1101,value,,UIN,10,K,temperature K
+w,,,BoilerMCBoostTemp,Boiler MC Boost(424),,f1,5023,ed1101,value,,UIN,10,K,temperature K
+r,,,ProgramMode,Program selector switch position,,,5022,091201,value,,UIN,1=Standby;3=NormalTemperature;4=LoweringTemperature;5=Summer;11=Program1;12=Program2;13=Program3;20=StandbyWTC,,
+w,,,ProgramMode,Program selector switch position,,f1,5023,091201,value,,UIN,1=Standby;3=NormalTemperature;4=LoweringTemperature;5=Summer;11=Program1;12=Program2;13=Program3;20=StandbyWTC,,
+r,,,AdaptionMode,Adaption (507),,,5022,c11501,value,,UIN,0=off;1=on,,
+w,,,AdaptionMode,Adaption (507),,f1,5023,c11501,value,,UIN,0=off;1=on,,
+r,,,SummerWinterChangeOverTemp,mmer/winter changeover temperature (174),,,5022,251601,value,,SCH,,°C,outside temperature
+w,,,SummerWinterChangeOverTemp,mmer/winter changeover temperature (174),,f1,5023,251601,value,,SCH,,°C,outside temperature
+r,,,FloorDryingMode,Screed function (381),,,5022,511a01,value,,UIN,0=Off;1=HeatingFunction;2=DocumentHeating;3=FunctionReceiptHeating,,
+w,,,FloorDryingMode,Screed function (381),,f1,5023,511a01,value,,UIN,0=Off;1=HeatingFunction;2=DocumentHeating;3=FunctionReceiptHeating,,
+r,,,HolidayRuntimeFromDay,Hollyday Start Day,,,5022,0d1b01,value,,UIN,,,
+w,,,HolidayRuntimeFromDay,Hollyday Start Day,,f1,5023,0d1b01,value,,UIN,,,
+r,,,HolidayRuntimeFromMonth,Hollyday Start Month,,,5022,c51d01,value,,UIN,1=January;2=February;3=March;4=April;5=May;6=June;7=July;8=August;9=September;10=October;16=November;17=December,,
+w,,,HolidayRuntimeFromMonth,Hollyday Start Month,,f1,5023,c51d01,value,,UIN,1=January;2=February;3=March;4=April;5=May;6=June;7=July;8=August;9=September;10=October;16=November;17=December,,
+r,,,HolidayRuntimeFromYear,Hollyday Start Year,,,5022,991d01,value,,UIN,,,
+w,,,HolidayRuntimeFromYear,Hollyday Start Year,,f1,5023,991d01,value,,UIN,,,
+r,,,HolidayRuntimeToDay,Hollyday End Day,,,5022,7d1e01,value,,UIN,,,
+w,,,HolidayRuntimeToDay,Hollyday End Day,,f1,5023,7d1e01,value,,UIN,,,
+r,,,HolidayRuntimeToMonth,Hollyday End Month,,,5022,211f01,value,,UIN,1=January;2=February;3=March;4=April;5=May;6=June;7=July;8=August;9=September;10=October;16=November;17=December,,
+w,,,HolidayRuntimeToMonth,Hollyday End Month,,f1,5023,211f01,value,,UIN,1=January;2=February;3=March;4=April;5=May;6=June;7=July;8=August;9=September;10=October;16=November;17=December,,
+r,,,HolidayRuntimeToYear,Hollyday End Year,,,5022,3d2001,value,,UIN,,,
+w,,,HolidayRuntimeToYear,Hollyday End Year,,f1,5023,3d2001,value,,UIN,,,
+r,,,SystemDateWeekday,SystemDate WeekDay,,,5022,612101,value,,UIN,1=Sunday;2=Monday;3=Tuesday;4=Wednesday;5=Thursday;6=Friday;7=Saturday,,
+w,,,SystemDateWeekday,SystemDate WeekDay,,f1,5023,612101,value,,UIN,1=Sunday;2=Monday;3=Tuesday;4=Wednesday;5=Thursday;6=Friday;7=Saturday,,
+r,,,SystemDateDay,SystemDate Day,,,5022,852201,value,,UIN,,,
+w,,,SystemDateDay,SystemDate Day,,f1,5023,852201,value,,UIN,,,
+r,,,SystemDateMonth,SystemDate Month,,,5022,d92301,value,,UIN,1=January;2=February;3=March;4=April;5=May;6=June;7=July;8=August;9=September;10=October;16=November;17=December,,
+w,,,SystemDateMonth,SystemDate Month,,f1,5023,d92301,value,,UIN,1=January;2=February;3=March;4=April;5=May;6=June;7=July;8=August;9=September;10=October;16=November;17=December,,
+r,,,SystemDateYear,SystemDate Year,,,5022,112401,value,,UIN,,,
+w,,,SystemDateYear,SystemDate Year,,f1,5023,112401,value,,UIN,,,
+r,,,SystemTimeHour,SystemTime Hour,,,5022,4d2501,value,,UIN,,h,hours
+w,,,SystemTimeHour,SystemTime Hour,,f1,5023,4d2501,value,,UIN,,h,hours
+r,,,SystemTimeMinute,SystemTime Minute,,,5022,a92601,value,,UIN,,min,minutes
+w,,,SystemTimeMinute,SystemTime Minute,,f1,5023,a92601,value,,UIN,,min,minutes
+r,,,SystemTimeSecond,SystemTime Hour,,,5022,f52701,value,,UIN,,s,seconds
+w,,,SystemTimeSecond,SystemTime Hour,,f1,5023,f52701,value,,UIN,,s,seconds
+r,,,TypeOfConstructionMode,Construction method (371),,,5022,652801,value,,UIN,0=Heavy;1=Light,,
+w,,,TypeOfConstructionMode,Construction method (371),,f1,5023,652801,value,,UIN,0=Heavy;1=Light,,
+r,,,NormalSplSetTemp,15 Normal SPL-Set,,,5022,392901,value,,UIN,10,°C,temperature
+w,,,NormalSplSetTemp,15 Normal SPL-Set,,f1,5023,392901,value,,UIN,10,°C,temperature
+r,,,ReducedSplSetTemp,16 Reduced SPL-Set,,,5022,dd2a01,value,,UIN,10,°C,temperature
+w,,,ReducedSplSetTemp,16 Reduced SPL-Set,,f1,5023,dd2a01,value,,UIN,10,°C,temperature
+r,,,SupplyMinTemp,Minimum Supply Temperature (421),,,5022,812b01,value,,UIN,10,°C,temperature
+w,,,SupplyMinTemp,Minimum Supply Temperature (421),,f1,5023,812b01,value,,UIN,10,°C,temperature
+r,,,HolidayTemp,Holiday temperature (183),,,5022,152d01,value,,UIN,0=Antifreeze;1=Setback,,
+w,,,HolidayTemp,Holiday temperature (183),,f1,5023,152d01,value,,UIN,0=Antifreeze;1=Setback,,
+r,,,WtcDelayRuntime,WTC delay(430),,,5022,f12e01,value,,UIN,,min,minutes
+w,,,WtcDelayRuntime,WTC delay(430),,f1,5023,f12e01,value,,UIN,,min,minutes
+r,,,PumpMaxSpeed,Max Pump speed (358),,,5022,ad2f01,value,,UIN,,%,percent
+w,,,PumpMaxSpeed,Max Pump speed (358),,f1,5023,ad2f01,value,,UIN,,%,percent
+r,,,PumpMinSpeed,Min Pump speed (359),,,5022,8d3001,value,,UIN,,%,percent
+w,,,PumpMinSpeed,Min Pump speed (359),,f1,5023,8d3001,value,,UIN,,%,percent
+r,,,PumpVSDvariable,VSD variable (429),,,5022,d13101,value,,UIN,0=Operating_level;1=Characteristic_Curve,,
+w,,,PumpVSDvariable,VSD variable (429),,f1,5023,d13101,value,,UIN,0=Operating_level;1=Characteristic_Curve,,
+r,,,ReductTemp,ReductTemp (501),,,5022,353201,value,,UIN,0=Antifreeze;1=Setback,,
+w,,,ReductTemp,ReductTemp (501),,f1,5023,353201,value,,UIN,0=Antifreeze;1=Setback,,
+r,,,DHWMinTemp,Hot water Min (177),,,5022,693301,value,,SCH,,°C,outside temperature
+w,,,DHWMinTemp,Hot water Min (177),,f1,5023,693301,value,,SCH,,°C,outside temperature
+r,,,DHWMaxTemp,DHW maximum Temp (601),,,5022,a13401,value,,UIN,10,°C,temperature
+w,,,DHWMaxTemp,DHW maximum Temp (601),,f1,5023,a13401,value,,UIN,10,°C,temperature
+r,,,DHWMode,WW-Mode (361),,,5022,fd3501,value,,UIN,0=DHWProgram;1=Day24;2=DHWBeforeHeat,,
+w,,,DHWMode,WW-Mode (361),,f1,5023,fd3501,value,,UIN,0=DHWProgram;1=Day24;2=DHWBeforeHeat,,
+r,,,DHWOperationMode,WW operation (360),,,5022,453701,value,,UIN,0=Priority;256=Sliding;512=Parallel,,
+w,,,DHWOperationMode,WW operation (360),,f1,5023,453701,value,,UIN,0=Priority;256=Sliding;512=Parallel,,
+r,,,R3B01,R3B01,,,5022,313b01,value,,UIN,,,
+w,,,R3B01,R3B01,,f1,5023,313b01,value,,UIN,,,
+r,,,HolidayTempLevel,42 Holiday Temperature Level,,,5022,a53d01,value,,UIN,10,°C,temperature
+w,,,HolidayTempLevel,42 Holiday Temperature Level,,f1,5023,a53d01,value,,UIN,10,°C,temperature
+r,,,DHWSwitchDiff,575 DHW Switch Diff,,,5022,794001,value,,UIN,10,K,temperature K
+w,,,DHWSwitchDiff,575 DHW Switch Diff,,f1,5023,794001,value,,UIN,10,K,temperature K
+r,,,ControlVariationMode,Control Variation (318),,,5022,254101,value,,UIN,0=Constant;256=WeatherCompensated;512=WeatherRoomCompensated;768=RoomCompensated,,
+w,,,ControlVariationMode,Control Variation (318),,f1,5023,254101,value,,UIN,0=Constant;256=WeatherCompensated;512=WeatherRoomCompensated;768=RoomCompensated,,
+r,,,DHWLoadTime,577 WW Load Time,,,5022,f18001,value,,UIN,,min,minutes
+w,,,DHWLoadTime,577 WW Load Time,,f1,5023,f18001,value,,UIN,,min,minutes
+r,,,DHWMaxTemp2,574 DHW-Max,,,5022,ad8101,value,,UIN,10,°C,temperature
+w,,,DHWMaxTemp2,574 DHW-Max,,f1,5023,ad8101,value,,UIN,10,°C,temperature
+r,,,KaVersion,Ka Version,,,5022,618f01,value,,SIN,,,
+r,,,VersionMajor,Version Major,,,5022,459901,value,,UIN,,,
+r,,,VersionMinor,Version Minor,,,5022,a19a01,value,,UIN,,,
+r,,,H1ControlVoltage,H1 Control Voltage,,,5022,c9a901,value,,UIN,,,
+r,,,H1ControlCurrent,H1 Control Current,,,5022,2daa01,value,,UIN,,,
+r,,,FHCMinTemp,483 Screed Start Temperature,,,5022,c1bb01,value,,UIN,10,°C,temperature
+w,,,FHCMinTemp,483 Screed Start Temperature,,f1,5023,c1bb01,value,,UIN,10,°C,temperature
+r,,,FHCMinTempDays,484 Tag Min Temp Fhz,,,5022,09bc01,value,,UIN,,,
+w,,,FHCMinTempDays,484 Tag Min Temp Fhz,,f1,5023,09bc01,value,,UIN,,,
+r,,,ResetErrorMemory,Reset Error Memory,,,5022,167a02,value,,UIN,,,
+w,,,ResetErrorMemory,Reset Error Memory,,f1,5023,167a02,value,,UIN,,,
+r,,,FS_EM_W4_Sensor,FS_EM_W4_Sensor,,,5022,828502,value,,UIN,,,
+w,,,FS_EM_W4_Sensor,FS_EM_W4_Sensor,,f1,5023,828502,value,,UIN,,,
+r,,,DHWMinTemp2,573 DHW Min Temp,,,5022,128a02,value,,UIN,10,°C,temperature
+w,,,DHWMinTemp2,573 DHW Min Temp,,f1,5023,128a02,value,,UIN,10,°C,temperature
+r,,,RegulationI,540 I Regler,,,5022,8e9e02,value,,UIN,,,
+w,,,RegulationI,540 I Regler,,f1,5023,8e9e02,value,,UIN,,,
+r,,,RegulationP,539 1/P Regler,,,5022,d29f02,value,,UIN,,,
+w,,,RegulationP,539 1/P Regler,,f1,5023,d29f02,value,,UIN,,,
+r,,,FrostProtectionLimitTemp,82 Frost Protection Limit,,,5022,b2be02,value,,UIN,10,°C,temperature
+w,,,FrostProtectionLimitTemp,82 Frost Protection Limit,,f1,5023,b2be02,value,,UIN,10,°C,temperature
+r,,,FS_EM_R2_Sensor,FS_EM_R2_Sensor,,,5022,cf5903,value,,UIN,,,
+w,,,FS_EM_R2_Sensor,FS_EM_R2_Sensor,,f1,5023,cf5903,value,,UIN,,,
+r,,,B3Sensor,B3Sensor,,,5022,b4e904,value,,UIN,10,°C,temperature
+w,,,B3Sensor,B3Sensor,,f1,5023,b4e904,value,,UIN,10,°C,temperature
+r,,,LegionellaSetupTemp,580 AntiLeg Setp Temperature,,,5022,3d8705,value,,UIN,10,°C,temperature
+w,,,LegionellaSetupTemp,580 AntiLeg Setp Temperature,,f1,5023,3d8705,value,,UIN,10,°C,temperature
+r,,,WTCDelay,70 Delay WTC,,,5022,9a1406,value,,UIN,,min,minutes
+w,,,WTCDelay,70 Delay WTC,,f1,5023,9a1406,value,,UIN,,min,minutes
+r,,,AE06,AE06,,,5022,06ae06,value,,UIN,,,
+w,,,AE06,AE06,,f1,5023,06ae06,value,,UIN,,,
+r,,,AF06,AF06,,,5022,5aaf06,value,,UIN,,,
+w,,,AF06,AF06,,f1,5023,5aaf06,value,,UIN,,,
+r,,,FHCMaxTemp,485 Max Temperature FHC,,,5022,3c9c08,value,,UIN,,,
+w,,,FHCMaxTemp,485 Max Temperature FHC,,f1,5023,3c9c08,value,,UIN,,,
+r,,,FHCMaxTempDays,486 Days Max Temperature FHC,,,5022,609d08,value,,UIN,,,
+w,,,FHCMaxTempDays,486 Days Max Temperature FHC,,f1,5023,609d08,value,,UIN,,,
+r,,,FHCCoolingDays,487 Days Cooling FHC,,,5022,849e08,value,,UIN,,,
+w,,,FHCCoolingDays,487 Days Cooling FHC,,f1,5023,849e08,value,,UIN,,,
+r,,,BHCHeatUpDays,488 Days Heat-Up BHC,,,5022,d89f08,value,,UIN,,,
+w,,,BHCHeatUpDays,488 Days Heat-Up BHC,,f1,5023,d89f08,value,,UIN,,,
+r,,,BHCMaxTemp,489 Max Temperature BHC,,,5022,c4a008,value,,UIN,,,
+w,,,BHCMaxTemp,489 Max Temperature BHC,,f1,5023,c4a008,value,,UIN,,,
+r,,,BHCMaxTempDays,490 Days Max Temperature BHC,,,5022,98a108,value,,UIN,,,
+w,,,BHCMaxTempDays,490 Days Max Temperature BHC,,f1,5023,98a108,value,,UIN,,,
+r,,,BHCCoolingDays,491 Days Cooling BHC,,,5022,7ca208,value,,UIN,,,
+w,,,BHCCoolingDays,491 Days Cooling BHC,,f1,5023,7ca208,value,,UIN,,,
+r,,,RoomFactorI,Room factor-I,,,5022,a17109,value,,UIN,,,
+w,,,RoomFactorI,Room factor-I,,f1,5023,a17109,value,,UIN,,,
+r,,,R7209,R7209,,,5022,457209,value,,UIN,,,
+w,,,R7209,R7209,,f1,5023,457209,value,,UIN,,,
+r,,,HCTypeMode,16 Heating Circuit Type,,,5022,197309,value,,UIN,0=UnderFloorHeating;256=UndeFloorHeating2;512=Radiator60;768=Radiator75;1024=onvector;1280=Universal,,
+w,,,HCTypeMode,16 Heating Circuit Type,,f1,5023,197309,value,,UIN,0=UnderFloorHeating;256=UndeFloorHeating2;512=Radiator60;768=Radiator75;1024=onvector;1280=Universal,,
+r,,,LegionellaCirculationTime,583 Circ time,,,5022,298109,value,,UIN,,,
+w,,,LegionellaCirculationTime,583 Circ time,,f1,5023,298109,value,,UIN,,,
+r,,,R000A,R000A,,,5022,0a000a,value,,UIN,,,
+w,,,R000A,R000A,,f1,5023,0a000a,value,,UIN,,,
+r,,,OutsideWeightedTemp,igted Outside Temperature,,,5022,7e0c0a,value,,SCH,,°C,outside temperature
+r,,,FloorDryingDay,Screed day (382),,,5022,02120a,value,,UIN,,,
+w,,,FloorDryingDay,Screed day (382),,f1,5023,02120a,value,,UIN,,,
+r,,,FloorDryingTemp,Screed temperature (383),,,5022,5e130a,value,,D1C,,°C,temperature
+w,,,FloorDryingTemp,Screed temperature (383),,f1,5023,5e130a,value,,D1C,,°C,temperature
+r,,,RoomFrostProtectionTemp,Room frost protection (173),,,5022,96140a,value,,UIN,10,°C,temperature
+w,,,RoomFrostProtectionTemp,Room frost protection (173),,f1,5023,96140a,value,,UIN,10,°C,temperature
+r,,,RoomThermostatTemp,Room thermostat (344),,,5022,ce1d0a,value,,D1C,,°C,temperature
+w,,,RoomThermostatTemp,Room thermostat (344),,f1,5023,ce1d0a,value,,D1C,,°C,temperature
+r,,,FS_EM_W1_Sensor,FS_EM_W1_Sensor,,,5022,36200a,value,,UIN,,,
+w,,,FS_EM_W1_Sensor,FS_EM_W1_Sensor,,f1,5023,36200a,value,,UIN,,,
+r,,,H1StatusKA,H1 Actual KA,,,5022,6e280a,value,,UIN,,,
+r,,,H1Status,H1Status EM SOL/903_TempKollektor_TKO_T1,,,5022,32290a,value,,UIN,,,
+r,,,PWTPrimTemp,PWT Primaire Exch B24,,,5022,72400a,value,,UIN,10,°C,temperature
+r,,,H1Function,31 H1 Function,,,5022,7e5b0a,value,,UIN,,,
+r,,,MFA2Status,MFA2 Actual,,,5022,368e0a,value,,UIN,,,
+r,,,ErrorId,Error History Id,,,5022,ab9a0b,value,,UIN,,,
+w,,,ErrorId,Error History Id,,f1,5023,ab9a0b,value,,UIN,,,
+r,,,ErrorCode,Error Code,,,5022,f79b0b,value,,UIN,,,
+r,,,ErrorType,Error Type,,,5022,3f9c0b,value,,UIN,,,
+r,,,ErrorDevice,Error Device,,,5022,639d0b,value,,UIN,,,
+r,,,ErrorMinute,Error Time Minute,,,5022,db9f0b,value,,UIN,,min,minutes
+r,,,ErrorHour,rror Time Hour,,,5022,c7a00b,value,,UIN,,h,hours
+r,,,ErrorDay,Error Date Day,,,5022,9ba10b,value,,UIN,,,
+r,,,ErrorMonth,Error Date Month,,,5022,7fa20b,value,,UIN,1=January;2=February;3=March;4=April;5=May;6=June;7=July;8=August;9=September;10=October;16=November;17=December,,
+r,,,ErrorYear,Error Date Year,,,5022,23a30b,value,,UIN,,,
+r,,,R0C1F,R0C1F,,,5022,2c1f0c,value,,UIN,,,
+w,,,R0C1F,R0C1F,,f1,5023,2c1f0c,value,,UIN,,,
+r,,,R210C,R210C,,,5022,6c210c,value,,UIN,,,
+w,,,R210C,R210C,,f1,5023,6c210c,value,,UIN,,,
+r,,,SolarRecoverWithLegionella,Solar Recovery with Legionella,,,5022,4bf113,value,,UIN,0=off;1=on,,
+w,,,SolarRecoverWithLegionella,Solar Recovery with Legionella,,f1,5023,4bf113,value,,UIN,0=off;1=on,,
+r,,,DHWMaxLoad,578 Max Load DHW,,,5022,aff213,value,,UIN,,%,percent
+w,,,DHWMaxLoad,578 Max Load DHW,,f1,5023,aff213,value,,UIN,,%,percent
+r,,,HCRuntimeProgram1Mo1,Heating Program1 Monday 1 To/From,,,5022,a41014,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram1Mo1,Heating Program1 Monday 1 To/From,,f1,5023,a41014,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram1Mo2,Heating Program1 Monday 2 To/From,,,5022,f81114,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram1Mo2,Heating Program1 Monday 2 To/From,,f1,5023,f81114,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram1Mo3,Heating Program1 Monday 3 To/From,,,5022,1c1214,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram1Mo3,Heating Program1 Monday 3 To/From,,f1,5023,1c1214,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram1Tu1,Heating Program1 Tuesday 1 To/From,,,5022,282014,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram1Tu1,Heating Program1 Tuesday 1 To/From,,f1,5023,282014,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram1Tu2,Heating Program1 Tuesday 2 To/From,,,5022,742114,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram1Tu2,Heating Program1 Tuesday 2 To/From,,f1,5023,742114,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram1Tu3,Heating Program1 Tuesday 3 To/From,,,5022,902214,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram1Tu3,Heating Program1 Tuesday 3 To/From,,f1,5023,902214,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram1We1,Heating Program1 Wednesday 1 To/From,,,5022,983014,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram1We1,Heating Program1 Wednesday 1 To/From,,f1,5023,983014,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram1We2,Heating Program1 Wednesday 2 To/From,,,5022,c43114,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram1We2,Heating Program1 Wednesday 2 To/From,,f1,5023,c43114,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram1We3,Heating Program1 Wednesday 3 To/From,,,5022,203214,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram1We3,Heating Program1 Wednesday 3 To/From,,f1,5023,203214,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram1Th1,Heating Program1 Thursday 1 To/From,,,5022,6c4014,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram1Th1,Heating Program1 Thursday 1 To/From,,f1,5023,6c4014,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram1Th2,Heating Program1 Thursday 2 To/From,,,5022,304114,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram1Th2,Heating Program1 Thursday 2 To/From,,f1,5023,304114,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram1Th3,Heating Program1 Thursday 3 To/From,,,5022,d44214,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram1Th3,Heating Program1 Thursday 3 To/From,,f1,5023,d44214,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram1Fr1,Heating Program1 Friday 1 To/From,,,5022,dc5014,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram1Fr1,Heating Program1 Friday 1 To/From,,f1,5023,dc5014,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram1Fr2,Heating Program1 Friday 2 To/From,,,5022,805114,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram1Fr2,Heating Program1 Friday 2 To/From,,f1,5023,805114,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram1Fr3,Heating Program1 Friday 3 To/From,,,5022,645214,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram1Fr3,Heating Program1 Friday 3 To/From,,f1,5023,645214,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram1Sa1,Heating Program1 Saturday 1 To/From,,,5022,506014,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram1Sa1,Heating Program1 Saturday 1 To/From,,f1,5023,506014,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram1Sa2,Heating Program1 Saturday 2 To/From,,,5022,0c6114,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram1Sa2,Heating Program1 Saturday 2 To/From,,f1,5023,0c6114,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram1Sa3,Heating Program1 Saturday 3 To/From,,,5022,e86214,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram1Sa3,Heating Program1 Saturday 3 To/From,,f1,5023,e86214,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram1Su1,Heating Program1 Sunday 1 To/From,,,5022,e07014,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram1Su1,Heating Program1 Sunday 1 To/From,,f1,5023,e07014,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram1Su2,Heating Program1 Sunday 2 To/From,,,5022,bc7114,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram1Su2,Heating Program1 Sunday 2 To/From,,f1,5023,bc7114,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram1Su3,Heating Program1 Sunday 3 To/From,,,5022,587214,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram1Su3,Heating Program1 Sunday 3 To/From,,f1,5023,587214,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram2Mo1,Heating Program2 Monday 1 To/From,,,5022,a51015,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram2Mo1,Heating Program2 Monday 1 To/From,,f1,5023,a51015,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram2Mo2,Heating Program2 Monday 2 To/From,,,5022,f91115,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram2Mo2,Heating Program2 Monday 2 To/From,,f1,5023,f91115,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram2Mo3,Heating Program2 Monday 3 To/From,,,5022,1d1215,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram2Mo3,Heating Program2 Monday 3 To/From,,f1,5023,1d1215,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram2Tu1,Heating Program2 Tuesday 1 To/From,,,5022,292015,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram2Tu1,Heating Program2 Tuesday 1 To/From,,f1,5023,292015,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram2Tu2,Heating Program2 Tuesday 2 To/From,,,5022,752115,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram2Tu2,Heating Program2 Tuesday 2 To/From,,f1,5023,752115,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram2Tu3,Heating Program2 Tuesday 3 To/From,,,5022,912215,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram2Tu3,Heating Program2 Tuesday 3 To/From,,f1,5023,912215,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram2We1,Heating Program2 Wednesday 1 To/From,,,5022,993015,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram2We1,Heating Program2 Wednesday 1 To/From,,f1,5023,993015,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram2We2,Heating Program2 Wednesday 2 To/From,,,5022,c53115,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram2We2,Heating Program2 Wednesday 2 To/From,,f1,5023,c53115,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram2We3,Heating Program2 Wednesday 3 To/From,,,5022,213215,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram2We3,Heating Program2 Wednesday 3 To/From,,f1,5023,213215,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram2Th1,Heating Program2 Thursday 1 To/From,,,5022,6d4015,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram2Th1,Heating Program2 Thursday 1 To/From,,f1,5023,6d4015,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram2Th2,Heating Program2 Thursday 2 To/From,,,5022,314115,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram2Th2,Heating Program2 Thursday 2 To/From,,f1,5023,314115,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram2Th3,Heating Program2 Thursday 3 To/From,,,5022,d54215,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram2Th3,Heating Program2 Thursday 3 To/From,,f1,5023,d54215,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram2Fr1,Heating Program2 Friday 1 To/From,,,5022,dd5015,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram2Fr1,Heating Program2 Friday 1 To/From,,f1,5023,dd5015,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram2Fr2,Heating Program2 Friday 2 To/From,,,5022,815115,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram2Fr2,Heating Program2 Friday 2 To/From,,f1,5023,815115,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram2Fr3,Heating Program2 Friday 3 To/From,,,5022,655215,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram2Fr3,Heating Program2 Friday 3 To/From,,f1,5023,655215,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram2Sa1,Heating Program2 Saturday 1 To/From,,,5022,516015,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram2Sa1,Heating Program2 Saturday 1 To/From,,f1,5023,516015,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram2Sa2,Heating Program2 Saturday 2 To/From,,,5022,0d6115,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram2Sa2,Heating Program2 Saturday 2 To/From,,f1,5023,0d6115,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram2Sa3,Heating Program2 Saturday 3 To/From,,,5022,e96215,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram2Sa3,Heating Program2 Saturday 3 To/From,,f1,5023,e96215,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram2Su1,Heating Program2 Sunday 1 To/From,,,5022,e17015,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram2Su1,Heating Program2 Sunday 1 To/From,,f1,5023,e17015,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram2Su2,Heating Program2 Sunday 2 To/From,,,5022,bd7115,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram2Su2,Heating Program2 Sunday 2 To/From,,f1,5023,bd7115,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram2Su3,Heating Program2 Sunday 3 To/From,,,5022,597215,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram2Su3,Heating Program2 Sunday 3 To/From,,f1,5023,597215,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram3Mo1,Heating Program3 Monday 1 To/From,,,5022,a61016,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram3Mo1,Heating Program3 Monday 1 To/From,,f1,5023,a61016,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram3Mo2,Heating Program3 Monday 2 To/From,,,5022,fa1116,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram3Mo2,Heating Program3 Monday 2 To/From,,f1,5023,fa1116,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram3Mo3,Heating Program3 Monday 3 To/From,,,5022,1e1216,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram3Mo3,Heating Program3 Monday 3 To/From,,f1,5023,1e1216,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram3Tu1,Heating Program3 Tuesday 1 To/From,,,5022,2a2016,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram3Tu1,Heating Program3 Tuesday 1 To/From,,f1,5023,2a2016,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram3Tu2,Heating Program3 Tuesday 2 To/From,,,5022,762116,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram3Tu2,Heating Program3 Tuesday 2 To/From,,f1,5023,762116,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram3Tu3,Heating Program3 Tuesday 3 To/From,,,5022,922216,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram3Tu3,Heating Program3 Tuesday 3 To/From,,f1,5023,922216,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram3We1,Heating Program3 Wednesday 1 To/From,,,5022,9a3016,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram3We1,Heating Program3 Wednesday 1 To/From,,f1,5023,9a3016,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram3We2,Heating Program3 Wednesday 2 To/From,,,5022,c63116,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram3We2,Heating Program3 Wednesday 2 To/From,,f1,5023,c63116,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram3We3,Heating Program3 Wednesday 3 To/From,,,5022,223216,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram3We3,Heating Program3 Wednesday 3 To/From,,f1,5023,223216,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram3Th1,Heating Program3 Thursday 1 To/From,,,5022,6e4016,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram3Th1,Heating Program3 Thursday 1 To/From,,f1,5023,6e4016,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram3Th2,Heating Program3 Thursday 2 To/From,,,5022,324116,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram3Th2,Heating Program3 Thursday 2 To/From,,f1,5023,324116,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram3Th3,Heating Program3 Thursday 3 To/From,,,5022,d64216,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram3Th3,Heating Program3 Thursday 3 To/From,,f1,5023,d64216,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram3Fr1,Heating Program3 Friday 1 To/From,,,5022,de5016,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram3Fr1,Heating Program3 Friday 1 To/From,,f1,5023,de5016,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram3Fr2,Heating Program3 Friday 2 To/From,,,5022,825116,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram3Fr2,Heating Program3 Friday 2 To/From,,f1,5023,825116,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram3Fr3,Heating Program3 Friday 3 To/From,,,5022,665216,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram3Fr3,Heating Program3 Friday 3 To/From,,f1,5023,665216,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram3Sa1,Heating Program3 Saturday 1 To/From,,,5022,526016,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram3Sa1,Heating Program3 Saturday 1 To/From,,f1,5023,526016,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram3Sa2,Heating Program3 Saturday 2 To/From,,,5022,0e6116,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram3Sa2,Heating Program3 Saturday 2 To/From,,f1,5023,0e6116,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram3Sa3,Heating Program3 Saturday 3 To/From,,,5022,ea6216,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram3Sa3,Heating Program3 Saturday 3 To/From,,f1,5023,ea6216,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram3Su1,Heating Program3 Sunday 1 To/From,,,5022,e27016,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram3Su1,Heating Program3 Sunday 1 To/From,,f1,5023,e27016,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram3Su2,Heating Program3 Sunday 2 To/From,,,5022,be7116,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram3Su2,Heating Program3 Sunday 2 To/From,,f1,5023,be7116,disabled,,BI7,,,,time,,TTQ,,,
+r,,,HCRuntimeProgram3Su3,Heating Program3 Sunday 3 To/From,,,5022,5a7216,disabled,,BI7,,,,time,,TTQ,,,
+w,,,HCRuntimeProgram3Su3,Heating Program3 Sunday 3 To/From,,f1,5023,5a7216,disabled,,BI7,,,,time,,TTQ,,,
+r,,,DHWRuntimeProgramMo1,Hot Water Program Monday 1 To/From,,,5022,a71017,disabled,,BI7,,,,time,,TTQ,,,
+w,,,DHWRuntimeProgramMo1,Hot Water Program Monday 1 To/From,,f1,5023,a71017,disabled,,BI7,,,,time,,TTQ,,,
+r,,,DHWRuntimeProgramMo2,Hot Water Program Monday 2 To/From,,,5022,fb1117,disabled,,BI7,,,,time,,TTQ,,,
+w,,,DHWRuntimeProgramMo2,Hot Water Program Monday 2 To/From,,f1,5023,fb1117,disabled,,BI7,,,,time,,TTQ,,,
+r,,,DHWRuntimeProgramMo3,Hot Water Program Monday 3 To/From,,,5022,1f1217,disabled,,BI7,,,,time,,TTQ,,,
+w,,,DHWRuntimeProgramMo3,Hot Water Program Monday 3 To/From,,f1,5023,1f1217,disabled,,BI7,,,,time,,TTQ,,,
+r,,,DHWRuntimeProgramTu1,Hot Water Program Tuesday 1 To/From,,,5022,2b2017,disabled,,BI7,,,,time,,TTQ,,,
+w,,,DHWRuntimeProgramTu1,Hot Water Program Tuesday 1 To/From,,f1,5023,2b2017,disabled,,BI7,,,,time,,TTQ,,,
+r,,,DHWRuntimeProgramTu2,Hot Water Program Tuesday 2 To/From,,,5022,772117,disabled,,BI7,,,,time,,TTQ,,,
+w,,,DHWRuntimeProgramTu2,Hot Water Program Tuesday 2 To/From,,f1,5023,772117,disabled,,BI7,,,,time,,TTQ,,,
+r,,,DHWRuntimeProgramTu3,Hot Water Program Tuesday 3 To/From,,,5022,932217,disabled,,BI7,,,,time,,TTQ,,,
+w,,,DHWRuntimeProgramTu3,Hot Water Program Tuesday 3 To/From,,f1,5023,932217,disabled,,BI7,,,,time,,TTQ,,,
+r,,,DHWRuntimeProgramWe1,Hot Water Program Wednesday 1 To/From,,,5022,9b3017,disabled,,BI7,,,,time,,TTQ,,,
+w,,,DHWRuntimeProgramWe1,Hot Water Program Wednesday 1 To/From,,f1,5023,9b3017,disabled,,BI7,,,,time,,TTQ,,,
+r,,,DHWRuntimeProgramWe2,Hot Water Program Wednesday 2 To/From,,,5022,c73117,disabled,,BI7,,,,time,,TTQ,,,
+w,,,DHWRuntimeProgramWe2,Hot Water Program Wednesday 2 To/From,,f1,5023,c73117,disabled,,BI7,,,,time,,TTQ,,,
+r,,,DHWRuntimeProgramWe3,Hot Water Program Wednesday 3 To/From,,,5022,233217,disabled,,BI7,,,,time,,TTQ,,,
+w,,,DHWRuntimeProgramWe3,Hot Water Program Wednesday 3 To/From,,f1,5023,233217,disabled,,BI7,,,,time,,TTQ,,,
+r,,,DHWRuntimeProgramTh1,Hot Water Program Thursday 1 To/From,,,5022,6f4017,disabled,,BI7,,,,time,,TTQ,,,
+w,,,DHWRuntimeProgramTh1,Hot Water Program Thursday 1 To/From,,f1,5023,6f4017,disabled,,BI7,,,,time,,TTQ,,,
+r,,,DHWRuntimeProgramTh2,Hot Water Program Thursday 2 To/From,,,5022,334117,disabled,,BI7,,,,time,,TTQ,,,
+w,,,DHWRuntimeProgramTh2,Hot Water Program Thursday 2 To/From,,f1,5023,334117,disabled,,BI7,,,,time,,TTQ,,,
+r,,,DHWRuntimeProgramTh3,Hot Water Program Thursday 3 To/From,,,5022,d74217,disabled,,BI7,,,,time,,TTQ,,,
+w,,,DHWRuntimeProgramTh3,Hot Water Program Thursday 3 To/From,,f1,5023,d74217,disabled,,BI7,,,,time,,TTQ,,,
+r,,,DHWRuntimeProgramFr1,Hot Water Program Friday 1 To/From,,,5022,df5017,disabled,,BI7,,,,time,,TTQ,,,
+w,,,DHWRuntimeProgramFr1,Hot Water Program Friday 1 To/From,,f1,5023,df5017,disabled,,BI7,,,,time,,TTQ,,,
+r,,,DHWRuntimeProgramFr2,Hot Water Program Friday 2 To/From,,,5022,835117,disabled,,BI7,,,,time,,TTQ,,,
+w,,,DHWRuntimeProgramFr2,Hot Water Program Friday 2 To/From,,f1,5023,835117,disabled,,BI7,,,,time,,TTQ,,,
+r,,,DHWRuntimeProgramFr3,Hot Water Program Friday 3 To/From,,,5022,675217,disabled,,BI7,,,,time,,TTQ,,,
+w,,,DHWRuntimeProgramFr3,Hot Water Program Friday 3 To/From,,f1,5023,675217,disabled,,BI7,,,,time,,TTQ,,,
+r,,,DHWRuntimeProgramSa1,Hot Water Program Saturday 1 To/From,,,5022,536017,disabled,,BI7,,,,time,,TTQ,,,
+w,,,DHWRuntimeProgramSa1,Hot Water Program Saturday 1 To/From,,f1,5023,536017,disabled,,BI7,,,,time,,TTQ,,,
+r,,,DHWRuntimeProgramSa2,Hot Water Program Saturday 2 To/From,,,5022,0f6117,disabled,,BI7,,,,time,,TTQ,,,
+w,,,DHWRuntimeProgramSa2,Hot Water Program Saturday 2 To/From,,f1,5023,0f6117,disabled,,BI7,,,,time,,TTQ,,,
+r,,,DHWRuntimeProgramSa3,Hot Water Program Saturday 3 To/From,,,5022,eb6217,disabled,,BI7,,,,time,,TTQ,,,
+w,,,DHWRuntimeProgramSa3,Hot Water Program Saturday 3 To/From,,f1,5023,eb6217,disabled,,BI7,,,,time,,TTQ,,,
+r,,,DHWRuntimeProgramSu1,Hot Water Program Sunday 1 To/From,,,5022,e37017,disabled,,BI7,,,,time,,TTQ,,,
+w,,,DHWRuntimeProgramSu1,Hot Water Program Sunday 1 To/From,,f1,5023,e37017,disabled,,BI7,,,,time,,TTQ,,,
+r,,,DHWRuntimeProgramSu2,Hot Water Program Sunday 2 To/From,,,5022,bf7117,disabled,,BI7,,,,time,,TTQ,,,
+w,,,DHWRuntimeProgramSu2,Hot Water Program Sunday 2 To/From,,f1,5023,bf7117,disabled,,BI7,,,,time,,TTQ,,,
+r,,,DHWRuntimeProgramSu3,Hot Water Program Sunday 3 To/From,,,5022,5b7217,disabled,,BI7,,,,time,,TTQ,,,
+w,,,DHWRuntimeProgramSu3,Hot Water Program Sunday 3 To/From,,f1,5023,5b7217,disabled,,BI7,,,,time,,TTQ,,,
+r,,,CircRuntimeProgramMo1,Circulation Program Monday 1 To/From,,,5022,aa101a,disabled,,BI7,,,,time,,TTQ,,,
+w,,,CircRuntimeProgramMo1,Circulation Program Monday 1 To/From,,f1,5023,aa101a,disabled,,BI7,,,,time,,TTQ,,,
+r,,,CircRuntimeProgramMo2,Circulation Program Monday 2 To/From,,,5022,f6111a,disabled,,BI7,,,,time,,TTQ,,,
+w,,,CircRuntimeProgramMo2,Circulation Program Monday 2 To/From,,f1,5023,f6111a,disabled,,BI7,,,,time,,TTQ,,,
+r,,,CircRuntimeProgramMo3,Circulation Program Monday 3 To/From,,,5022,12121a,disabled,,BI7,,,,time,,TTQ,,,
+w,,,CircRuntimeProgramMo3,Circulation Program Monday 3 To/From,,f1,5023,12121a,disabled,,BI7,,,,time,,TTQ,,,
+r,,,CircRuntimeProgramTu1,Circulation Program Tuesday 1 To/From,,,5022,26201a,disabled,,BI7,,,,time,,TTQ,,,
+w,,,CircRuntimeProgramTu1,Circulation Program Tuesday 1 To/From,,f1,5023,26201a,disabled,,BI7,,,,time,,TTQ,,,
+r,,,CircRuntimeProgramTu2,Circulation Program Tuesday 2 To/From,,,5022,7a211a,disabled,,BI7,,,,time,,TTQ,,,
+w,,,CircRuntimeProgramTu2,Circulation Program Tuesday 2 To/From,,f1,5023,7a211a,disabled,,BI7,,,,time,,TTQ,,,
+r,,,CircRuntimeProgramTu3,Circulation Program Tuesday 3 To/From,,,5022,9e221a,disabled,,BI7,,,,time,,TTQ,,,
+w,,,CircRuntimeProgramTu3,Circulation Program Tuesday 3 To/From,,f1,5023,9e221a,disabled,,BI7,,,,time,,TTQ,,,
+r,,,CircRuntimeProgramWe1,Circulation Program Wednesday 1 To/From,,,5022,96301a,disabled,,BI7,,,,time,,TTQ,,,
+w,,,CircRuntimeProgramWe1,Circulation Program Wednesday 1 To/From,,f1,5023,96301a,disabled,,BI7,,,,time,,TTQ,,,
+r,,,CircRuntimeProgramWe2,Circulation Program Wednesday 2 To/From,,,5022,ca311a,disabled,,BI7,,,,time,,TTQ,,,
+w,,,CircRuntimeProgramWe2,Circulation Program Wednesday 2 To/From,,f1,5023,ca311a,disabled,,BI7,,,,time,,TTQ,,,
+r,,,CircRuntimeProgramWe3,Circulation Program Wednesday 3 To/From,,,5022,2e321a,disabled,,BI7,,,,time,,TTQ,,,
+w,,,CircRuntimeProgramWe3,Circulation Program Wednesday 3 To/From,,f1,5023,2e321a,disabled,,BI7,,,,time,,TTQ,,,
+r,,,CircRuntimeProgramTh1,Circulation Program Thursday 1 To/From,,,5022,62401a,disabled,,BI7,,,,time,,TTQ,,,
+w,,,CircRuntimeProgramTh1,Circulation Program Thursday 1 To/From,,f1,5023,62401a,disabled,,BI7,,,,time,,TTQ,,,
+r,,,CircRuntimeProgramTh2,Circulation Program Thursday 2 To/From,,,5022,3e411a,disabled,,BI7,,,,time,,TTQ,,,
+w,,,CircRuntimeProgramTh2,Circulation Program Thursday 2 To/From,,f1,5023,3e411a,disabled,,BI7,,,,time,,TTQ,,,
+r,,,CircRuntimeProgramTh3,Circulation Program Thursday 3 To/From,,,5022,da421a,disabled,,BI7,,,,time,,TTQ,,,
+w,,,CircRuntimeProgramTh3,Circulation Program Thursday 3 To/From,,f1,5023,da421a,disabled,,BI7,,,,time,,TTQ,,,
+r,,,CircRuntimeProgramFr1,Circulation Program Friday 1 To/From,,,5022,d2501a,disabled,,BI7,,,,time,,TTQ,,,
+w,,,CircRuntimeProgramFr1,Circulation Program Friday 1 To/From,,f1,5023,d2501a,disabled,,BI7,,,,time,,TTQ,,,
+r,,,CircRuntimeProgramFr2,Circulation Program Friday 2 To/From,,,5022,8e511a,disabled,,BI7,,,,time,,TTQ,,,
+w,,,CircRuntimeProgramFr2,Circulation Program Friday 2 To/From,,f1,5023,8e511a,disabled,,BI7,,,,time,,TTQ,,,
+r,,,CircRuntimeProgramFr3,Circulation Program Friday 3 To/From,,,5022,6a521a,disabled,,BI7,,,,time,,TTQ,,,
+w,,,CircRuntimeProgramFr3,Circulation Program Friday 3 To/From,,f1,5023,6a521a,disabled,,BI7,,,,time,,TTQ,,,
+r,,,CircRuntimeProgramSa1,Circulation Program Saturday 1 To/From,,,5022,5e601a,disabled,,BI7,,,,time,,TTQ,,,
+w,,,CircRuntimeProgramSa1,Circulation Program Saturday 1 To/From,,f1,5023,5e601a,disabled,,BI7,,,,time,,TTQ,,,
+r,,,CircRuntimeProgramSa2,Circulation Program Saturday 2 To/From,,,5022,02611a,disabled,,BI7,,,,time,,TTQ,,,
+w,,,CircRuntimeProgramSa2,Circulation Program Saturday 2 To/From,,f1,5023,02611a,disabled,,BI7,,,,time,,TTQ,,,
+r,,,CircRuntimeProgramSa3,Circulation Program Saturday 3 To/From,,,5022,e6621a,disabled,,BI7,,,,time,,TTQ,,,
+w,,,CircRuntimeProgramSa3,Circulation Program Saturday 3 To/From,,f1,5023,e6621a,disabled,,BI7,,,,time,,TTQ,,,
+r,,,CircRuntimeProgramSu1,Circulation Program Sunday 1 To/From,,,5022,ee701a,disabled,,BI7,,,,time,,TTQ,,,
+w,,,CircRuntimeProgramSu1,Circulation Program Sunday 1 To/From,,f1,5023,ee701a,disabled,,BI7,,,,time,,TTQ,,,
+r,,,CircRuntimeProgramSu2,Circulation Program Sunday 2 To/From,,,5022,b2711a,disabled,,BI7,,,,time,,TTQ,,,
+w,,,CircRuntimeProgramSu2,Circulation Program Sunday 2 To/From,,f1,5023,b2711a,disabled,,BI7,,,,time,,TTQ,,,
+r,,,CircRuntimeProgramSu3,Circulation Program Sunday 3 To/From,,,5022,56721a,disabled,,BI7,,,,time,,TTQ,,,
+w,,,CircRuntimeProgramSu3,Circulation Program Sunday 3 To/From,,f1,5023,56721a,disabled,,BI7,,,,time,,TTQ,,,
+r,,,UnknownSensor11,UnknownSensor11,,,5022,5a0476,value,,UIN,,,
+w,,,UnknownSensor11,UnknownSensor11,,f1,5023,5a0476,value,,UIN,,,
+r,,,UnknownSensor12,UnknownSensor12,,,5022,540478,value,,UIN,,,
+w,,,UnknownSensor12,UnknownSensor12,,f1,5023,540478,value,,UIN,,,
+r,,,OutputMFA2,522 Output MFA 2,,,5022,1da4fd,value,,UIN,,,
+w,,,OutputMFA2,522 Output MFA 2,,f1,5023,1da4fd,value,,UIN,,,
+r,,,InputN1,526 Input N1,,,5022,cdc2fd,value,,UIN,0=off;1=on,,
+w,,,InputN1,526 Input N1,,f1,5023,cdc2fd,value,,UIN,0=off;1=on,,
+r,,,BoilerSequence1_1,533 Boiler Sequence 1 1,,,5022,95cafd,value,,UIN,0=A;1=B;240=x,,
+w,,,BoilerSequence1_1,533 Boiler Sequence 1 1,,f1,5023,95cafd,value,,UIN,0=A;1=B;240=x,,
+r,,,BoilerSequence1_2,533 Boiler Sequence 1 2,,,5022,c9cbfd,value,,UIN,0=A;1=B;240=x,,
+w,,,BoilerSequence1_2,533 Boiler Sequence 1 2,,f1,5023,c9cbfd,value,,UIN,0=A;1=B;240=x,,
+r,,,BoilerSequence1_3,533 Boiler Sequence 1 3,,,5022,01ccfd,value,,UIN,0=A;1=B;240=x,,
+w,,,BoilerSequence1_3,533 Boiler Sequence 1 3,,f1,5023,01ccfd,value,,UIN,0=A;1=B;240=x,,
+r,,,BoilerSequence1_4,533 Boiler Sequence 1 4,,,5022,5dcdfd,value,,UIN,0=A;1=B;240=x,,
+w,,,BoilerSequence1_4,533 Boiler Sequence 1 4,,f1,5023,5dcdfd,value,,UIN,0=A;1=B;240=x,,
+r,,,BoilerSequence1_5,533 Boiler Sequence 1 5,,,5022,b9cefd,value,,UIN,0=A;1=B;240=x,,
+w,,,BoilerSequence1_5,533 Boiler Sequence 1 5,,f1,5023,b9cefd,value,,UIN,0=A;1=B;240=x,,
+r,,,BoilerSequence2_1,533 Boiler Sequence 2 1,,,5022,e9d4fd,value,,UIN,0=A;1=B;240=x,,
+w,,,BoilerSequence2_1,533 Boiler Sequence 2 1,,f1,5023,e9d4fd,value,,UIN,0=A;1=B;240=x,,
+r,,,BoilerSequence2_2,533 Boiler Sequence 2 2,,,5022,b5d5fd,value,,UIN,0=A;1=B;240=x,,
+w,,,BoilerSequence2_2,533 Boiler Sequence 2 2,,f1,5023,b5d5fd,value,,UIN,0=A;1=B;240=x,,
+r,,,BoilerSequence2_3,533 Boiler Sequence 2 3,,,5022,51d6fd,value,,UIN,0=A;1=B;240=x,,
+w,,,BoilerSequence2_3,533 Boiler Sequence 2 3,,f1,5023,51d6fd,value,,UIN,0=A;1=B;240=x,,
+r,,,BoilerSequence2_4,533 Boiler Sequence 2 4,,,5022,0dd7fd,value,,UIN,0=A;1=B;240=x,,
+w,,,BoilerSequence2_4,533 Boiler Sequence 2 4,,f1,5023,0dd7fd,value,,UIN,0=A;1=B;240=x,,
+r,,,BoilerSequence2_5,533 Boiler Sequence 2 5,,,5022,9dd8fd,value,,UIN,0=A;1=B;240=x,,
+w,,,BoilerSequence2_5,533 Boiler Sequence 2 5,,f1,5023,9dd8fd,value,,UIN,0=A;1=B;240=x,,
+r,,,SummerTimeFromDay,593 SummerTime Start Day,,,5022,09defd,value,,UIN,,,
+w,,,SummerTimeFromDay,593 SummerTime Start Day,,f1,5023,09defd,value,,UIN,,,
+r,,,SummerTimeFromMonth,593 SummerTime Start Month,,,5022,55dffd,value,,UIN,1=January;2=February;3=March;4=April;5=May;6=June;7=July;8=August;9=September;10=October;16=November;17=December,,
+w,,,SummerTimeFromMonth,593 SummerTime Start Month,,f1,5023,55dffd,value,,UIN,1=January;2=February;3=March;4=April;5=May;6=June;7=July;8=August;9=September;10=October;16=November;17=December,,
+r,,,SummerTimeToDay,594 SummerTime End Day,,,5022,49e0fd,value,,UIN,,,
+w,,,SummerTimeToDay,594 SummerTime End Day,,f1,5023,49e0fd,value,,UIN,,,
+r,,,SummerTimeToMonth,594 SummerTime End Month,,,5022,15e1fd,value,,UIN,1=January;2=February;3=March;4=April;5=May;6=June;7=July;8=August;9=September;10=October;16=November;17=December,,
+w,,,SummerTimeToMonth,594 SummerTime End Month,,f1,5023,15e1fd,value,,UIN,1=January;2=February;3=March;4=April;5=May;6=June;7=July;8=August;9=September;10=October;16=November;17=December,,
+r,,,CalorfierSwitchDifference,562 Calorfier Switch Difference,,,5022,f1e2fd,value,,D1C,,°C,temperature
+w,,,CalorfierSwitchDifference,562 Calorfier Switch Difference,,f1,5023,f1e2fd,value,,D1C,,°C,temperature
+r,,,CalorfierExceeded,561 Calorfier exceeded,,,5022,ade3fd,value,,D1C,,°C,temperature
+w,,,CalorfierExceeded,561 Calorfier exceeded,,f1,5023,ade3fd,value,,D1C,,°C,temperature
+r,,,DeCoupleMax,553 De-Couple Max,,,5022,dde6fd,value,,D1C,,°C,temperature
+w,,,DeCoupleMax,553 De-Couple Max,,f1,5023,dde6fd,value,,D1C,,°C,temperature
+r,,,DeCoupleMin,552 De-Couple Min,,,5022,81e7fd,value,,D1C,,°C,temperature
+w,,,DeCoupleMin,552 De-Couple Min,,f1,5023,81e7fd,value,,D1C,,°C,temperature
+r,,,DeCoupleExceeded,551 De-Couple Exceeded,,,5022,11e8fd,value,,D1C,,°C,temperature
+w,,,DeCoupleExceeded,551 De-Couple Exceeded,,f1,5023,11e8fd,value,,D1C,,°C,temperature
+r,,,ContTemp,538 Cont. Temp,,,5022,4de9fd,value,,D1C,,°C,temperature
+w,,,ContTemp,538 Cont. Temp,,f1,5023,4de9fd,value,,D1C,,°C,temperature
+r,,,ModulationMax,536 Modulation Max,,,5022,a9eafd,value,,UIN,,%,percent
+w,,,ModulationMax,536 Modulation Max,,f1,5023,a9eafd,value,,UIN,,%,percent
+r,,,ModulationMin,read/write sregister,,,5022,f5ebfd,value,,UIN,,%,percent
+w,,,ModulationMin,read/write sregister,,f1,5023,f5ebfd,value,,UIN,,%,percent
+r,,,ChangeOverTime,532 Change Over Time,,,5022,3decfd,value,,D1C,,°C,temperature
+w,,,ChangeOverTime,532 Change Over Time,,f1,5023,3decfd,value,,D1C,,°C,temperature
+r,,,SequenceChangeMode,531 Sequence Change Mode,,,5022,61edfd,value,,UIN,,,
+w,,,SequenceChangeMode,531 Sequence Change Mode,,f1,5023,61edfd,value,,UIN,,,
+r,,,SpecialLevel,525 Spectial Level,,,5022,85eefd,value,,UIN,,,
+w,,,SpecialLevel,525 Spectial Level,,f1,5023,85eefd,value,,UIN,,,
+r,,,InputH1,524 Input H1,,,5022,d9effd,value,,UIN,,,
+w,,,InputH1,524 Input H1,,f1,5023,d9effd,value,,UIN,,,
+r,,,VAStatus,VA Status,,,5022,f9f0fd,value,,UIN,0=off;1=on,,
+w,,,VAStatus,VA Status,,f1,5023,f9f0fd,value,,UIN,0=off;1=on,,
+r,,,OutputVA,523 Output VA,,,5022,a5f1fd,value,,UIN,0=off;1=on,,
+w,,,OutputVA,523 Output VA,,f1,5023,a5f1fd,value,,UIN,0=off;1=on,,
+r,,,MFA1Status,MFA 1 Status,,,5022,41f2fd,value,,UIN,0=off;1=on,,
+w,,,MFA1Status,MFA 1 Status,,f1,5023,41f2fd,value,,UIN,0=off;1=on,,
+r,,,OutputMFA1,521 Output MFA 1,,,5022,1df3fd,value,,UIN,,,
+w,,,OutputMFA1,521 Output MFA 1,,f1,5023,1df3fd,value,,UIN,,,
+r,,,LegionellaTime,581 Legionella Time,,,5022,d5f4fd,value,,TTQ,,,
+w,,,LegionellaTime,581 Legionella Time,,f1,5023,d5f4fd,value,,TTQ,,,
+r,,,UnknownSensor8,5UnknownSensor8,,,5022,45fbfd,value,,UIN,,,
+w,,,UnknownSensor8,5UnknownSensor8,,f1,5023,45fbfd,value,,UIN,,,
+r,,,Durchfluss,SOL/905_Durchfluss,,,5022,488200,value,,UIN,,,
+w,,,Durchfluss,SOL/905_Durchfluss,,f1,5023,488200,value,,UIN,,,
+r,,,YieldSince_Wh,SOL/906_YieldSince_Wh,,,5022,388700,value,,UIN,,,
+w,,,YieldSince_Wh,SOL/906_YieldSince_Wh,,f1,5023,388700,value,,UIN,,,
+r,,,YieldSince_kWh,SOL/906_YieldSince_kWh,,,5022,a88800,value,,UIN,,,
+w,,,YieldSince_kWh,SOL/906_YieldSince_kWh,,f1,5023,a88800,value,,UIN,,,
+r,,,YieldSince_MWh,SOL/906_YieldSince_MWh,,,5022,f48900,value,,UIN,,,
+w,,,YieldSince_MWh,SOL/906_YieldSince_MWh,,f1,5023,f48900,value,,UIN,,,
+r,,,TempAbgas,OB/i31_TempAbgas,,,5022,094501,value,,SCH,,°C,outside temperature
+r,,,Leistung,SOL/905_Leistung,,,5022,85db01,value,,UIN,,,
+w,,,Leistung,SOL/905_Leistung,,f1,5023,85db01,value,,UIN,,,
+r,,,I45_LetzteWartung,OB/i45_LetzteWartung,,,5022,0abc02,value,,UIN,,,
+w,,,I45_LetzteWartung,OB/i45_LetzteWartung,,f1,5023,0abc02,value,,UIN,,,
+r,,,StatusDTR,SOL/902_StatusDTR,,,5022,5af102,value,,UIN,,,
+w,,,StatusDTR,SOL/902_StatusDTR,,f1,5023,5af102,value,,UIN,,,
+r,,,YieldSum_Wh_907,SOL/907_YieldSum_Wh,,,5022,867c06,value,,UIN,,,
+w,,,YieldSum_Wh_907,SOL/907_YieldSum_Wh,,f1,5023,867c06,value,,UIN,,,
+r,,,YieldSum_kWh_907,SOL/907_YieldSum_kWh,,,5022,da7d06,value,,UIN,,,
+w,,,YieldSum_kWh_907,SOL/907_YieldSum_kWh,,f1,5023,da7d06,value,,UIN,,,
+r,,,YieldSum_MWh,SOL/907_YieldSum_MWh,,,5022,3e7e06,value,,UIN,,,
+w,,,YieldSum_MWh,SOL/907_YieldSum_MWh,,f1,5023,3e7e06,value,,UIN,,,
+r,,,YieldResetDateYear,SOL/906_YieldResetDateYear,,,5022,627f06,value,,UIN,,,
+w,,,YieldResetDateYear,SOL/906_YieldResetDateYear,,f1,5023,627f06,value,,UIN,,,
+r,,,YieldResetDateMonth,SOL/906_YieldResetDateMonth,,,5022,f68006,value,,UIN,,,
+w,,,YieldResetDateMonth,SOL/906_YieldResetDateMonth,,f1,5023,f68006,value,,UIN,,,
+r,,,YieldResetDateDay,SOL/906_YieldResetDateDay,,,5022,aa8106,value,,UIN,,,
+w,,,YieldResetDateDay,SOL/906_YieldResetDateDay,,f1,5023,aa8106,value,,UIN,,,
+r,,,YieldSum_Wh_908,SOL/908_YieldSum_Wh,,,5022,628606,value,,UIN,,,
+w,,,YieldSum_Wh_908,SOL/908_YieldSum_Wh,,f1,5023,628606,value,,UIN,,,
+r,,,YieldSum_kWh_908,SOL/908_YieldSum_kWh,,,5022,3e8706,value,,UIN,,,
+w,,,YieldSum_kWh_908,SOL/908_YieldSum_kWh,,f1,5023,3e8706,value,,UIN,,,
+r,,,TempSolU_TSU_T2,SOL/903_TempSolU_TSU_T2,,,5022,d62a0a,value,,UIN,10,°C,temperature
+r,,,TempSolVL_TKV_T3,SOL/904_TempSolVL_TKV_T3,,,5022,8a2b0a,value,,UIN,10,°C,temperature
+r,,,TempSolRL_TKR_T4,SOL/904_TempSolRL_TKR_T4,,,5022,42c00a,value,,UIN,10,°C,temperature
+r,,,TempVLKessel,OB/i30_TempVLKessel,,,5022,9a1d0c,value,,SCH,,°C,outside temperature
+w,,,TempVLKessel,OB/i30_TempVLKessel,,f1,5023,9a1d0c,value,,SCH,,°C,outside temperature
+r,,,I40_SchaltspielBrenner,OB/i40_SchaltspielBrenner,,,5022,d07d0c,value,,UIN,,,
+w,,,I40_SchaltspielBrenner,OB/i40_SchaltspielBrenner,,f1,5023,d07d0c,value,,UIN,,,
+r,,,I41_SchaltspielBrenner,OB/i41_SchaltspielBrenner,,,5022,8c7c0c,value,,UIN,,,
+w,,,I41_SchaltspielBrenner,OB/i41_SchaltspielBrenner,,f1,5023,8c7c0c,value,,UIN,,,
+r,,,I42_BetrStundenBrenner,OB/i42_BetrStundenBrenner,,,5022,687f0c,value,,UIN,,,
+w,,,I42_BetrStundenBrenner,OB/i42_BetrStundenBrenner,,f1,5023,687f0c,value,,UIN,,,
+r,,,I43_BetrStundenBrenner,OB/i43_BetrStundenBrenner,,,5022,347e0c,value,,UIN,,,
+w,,,I43_BetrStundenBrenner,OB/i43_BetrStundenBrenner,,f1,5023,347e0c,value,,UIN,,,
+r,,,I46_OelZaehler_1000,OB/i46_OelZaehler_1000,,,5022,36d00e,value,,UIN,,,
+w,,,I46_OelZaehler_1000,OB/i46_OelZaehler_1000,,f1,5023,36d00e,value,,UIN,,,
+r,,,I47_OelZaehler,OB/i47_OelZaehler,,,5022,6ad10e,value,,UIN,,,
+w,,,I47_OelZaehler,OB/i47_OelZaehler,,f1,5023,6ad10e,value,,UIN,,,
+r,,,Currentperformance,Current performance,,,5022,d85010,value,,UIN,,,
+w,,,Currentperformance,Current performance,,f1,5023,d85010,value,,UIN,,,
