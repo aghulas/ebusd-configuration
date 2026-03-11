@@ -12,14 +12,17 @@ namespace Weishaupt;
 namespace register {
 
    /**Error Status */
+   @addcrc
    @ext(0x00, 0x00)
    model BootStatus is ReadonlyRegister<UIN>;
 
    /**Error Status */
+   @addcrc
    @ext(0x01, 0x00)
    model ErrorStatus is ReadonlyRegister<UIN>;
 
    /**Heat demand HK */
+   @addcrc
    @ext(0x02, 0x00)
    model HeatDemandTemp is ReadonlyRegister<temp10>;
    
