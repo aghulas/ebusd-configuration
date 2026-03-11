@@ -78,7 +78,7 @@ model Register<T> {
 }
 
 @inherit(memr, memw) //todo first byte of ext always 0x0 on write
-model Memory<T> {
+model Memory<T = UCH> {
   value: T;
 }
 
@@ -89,7 +89,7 @@ model ReadonlyRegister<T> {
 }
 
 @inherit(memr)
-model ReadonlyMemory<T> {
+model ReadonlyMemory<T = UCH> {
   value: T;
 }
 
