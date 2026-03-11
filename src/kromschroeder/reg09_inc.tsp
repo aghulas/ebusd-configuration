@@ -112,35 +112,35 @@ namespace register {
 
    /**Mixer Valve Closing */
    @ext(0x00, 0x57, 0x00)
-   model ValveClosing is Register<Values_onoff>;
+   model ValveClosing is ReadonlyRegister<Values_onoff>;
 
    /**Calorifier Top Temp B20 */
    @ext(0x60, 0x76, 0x00)
-   model ColorifierTopTemp is Register<temp10>;
+   model ColorifierTopTemp is ReadonlyRegister<temp10>;
 
    /**Calorifier Bottom Temp B21   */
    @ext(0xac, 0x78, 0x00)
-   model ColorifierBottomTemp is Register<temp10>;
+   model ColorifierBottomTemp is ReadonlyRegister<temp10>;
 
    /**14 Target value reduction for solar yield   */
    @ext(0xac, 0x81, 0x00)
-   model ReductionSolarYied is Register<temp10k>;
+   model ReductionSolarYied is ReadonlyRegister<temp10k>;
 
    /**SOL/905_Durchfluss */
    @ext(0x48, 0x82, 0x00)
-   model Durchfluss is Register<UIN>;    
+   model Durchfluss is ReadonlyRegister<UIN>;    
 
    /**SOL/906_YieldSince_Wh */
    @ext(0x38, 0x87, 0x00)
-   model YieldSince_Wh is Register<UIN>;   
+   model YieldSince_Wh is ReadonlyRegister<UIN>;   
 
    /**SOL/906_YieldSince_kWh */
    @ext(0xa8, 0x88, 0x00)
-   model YieldSince_kWh is Register<UIN>;   
+   model YieldSince_kWh is ReadonlyRegister<UIN>;   
 
    /**SOL/906_YieldSince_MWh */
    @ext(0xf4, 0x89, 0x00)
-   model YieldSince_MWh is Register<UIN>;   
+   model YieldSince_MWh is ReadonlyRegister<UIN>;   
 
    /**Legionella Protection Function (605) */
    @ext(0x5d, 0x01, 0x01)
@@ -374,7 +374,7 @@ namespace register {
 
    /**OB/i45_LetzteWartung */
    @ext(0x0a, 0xbc, 0x02)
-   model i45_LetzteWartung is Register<UIN>;
+   model i45_LetzteWartung is ReadonlyRegister<UIN>;
 
    /**82 Frost Protection Limit */
    @ext(0xb2, 0xbe, 0x02)
@@ -382,7 +382,7 @@ namespace register {
 
    /**SOL/902_StatusDTR */
    @ext(0x5a, 0xf1, 0x02)
-   model StatusDTR is Register<UIN>;
+   model StatusDTR is ReadonlyRegister<UIN>;
 
    /**FS_EM_R2_Sensor */
    @ext(0xcf, 0x59, 0x03)
@@ -402,35 +402,35 @@ namespace register {
  
    /**SOL/907_YieldSum_Wh */
    @ext(0x86, 0x7c, 0x06)
-   model YieldSum_Wh_907 is Register<UIN>;
+   model YieldSum_Wh_907 is ReadonlyRegister<UIN>;
 
    /**SOL/907_YieldSum_kWh */
    @ext(0xda, 0x7d, 0x06)
-   model YieldSum_kWh_907 is Register<UIN>;
+   model YieldSum_kWh_907 is ReadonlyRegister<UIN>;
 
    /**SOL/907_YieldSum_MWh */
    @ext(0x3e, 0x7e, 0x06)
-   model YieldSum_MWh	 is Register<UIN>;
+   model YieldSum_MWh	 is ReadonlyRegister<UIN>;
 
    /**SOL/906_YieldResetDateYear */
    @ext(0x62, 0x7f, 0x06)
-   model YieldResetDateYear is Register<UIN>;
+   model YieldResetDateYear is ReadonlyRegister<UIN>;
 
    /**SOL/906_YieldResetDateMonth */
    @ext(0xf6, 0x80, 0x06)
-   model YieldResetDateMonth is Register<UIN>;
+   model YieldResetDateMonth is ReadonlyRegister<UIN>;
 
    /**SOL/906_YieldResetDateDay */
    @ext(0xaa, 0x81, 0x06)
-   model YieldResetDateDay is Register<UIN>;
+   model YieldResetDateDay is ReadonlyRegister<UIN>;
 
    /**SOL/908_YieldSum_Wh */
    @ext(0x62, 0x86, 0x06)
-   model YieldSum_Wh_908 is Register<UIN>;
+   model YieldSum_Wh_908 is ReadonlyRegister<UIN>;
 
    /**SOL/908_YieldSum_kWh */
    @ext(0x3e, 0x87, 0x06)
-   model YieldSum_kWh_908 is Register<UIN>;
+   model YieldSum_kWh_908 is ReadonlyRegister<UIN>;
 
    /**AE06 */
    @ext(0x06, 0xaE, 0x06)
