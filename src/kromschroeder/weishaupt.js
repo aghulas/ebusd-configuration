@@ -1,9 +1,9 @@
 function computeCrc(data) {
     if (data.length === 0)
         return 0;
-    // Start the CRC with the very first byte (Python: crc = data_bytes[0])
+    // Start the CRC with the very first byte
     let crc = data[0] & 0xFF;
-    // Loop through the remaining bytes (Python: for next_byte in data_bytes[1:])
+    // Loop through the remaining bytes
     for (let i = 1; i < data.length; i++) {
         const nextByte = data[i];
         // 1. Process the CURRENT crc through 8 shift cycles 
@@ -22,7 +22,7 @@ function computeCrc(data) {
     }
     return crc;
 }
-export function $weishauptExt(context, target, ...args) {
+export function $crcext(context, target, ...args) {
     const rawBytes = args.map(a => a.value);
     const crc = computeCrc(rawBytes);
     const finalBytes = [crc, ...rawBytes];

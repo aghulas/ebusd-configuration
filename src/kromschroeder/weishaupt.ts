@@ -3,10 +3,10 @@ import { DecoratorContext, Model, NumericValue } from "@typespec/compiler";
 function computeCrc(data: number[]): number {
   if (data.length === 0) return 0;
   
-  // Start the CRC with the very first byte (Python: crc = data_bytes[0])
+  // Start the CRC with the very first byte
   let crc = data[0] & 0xFF;
 
-  // Loop through the remaining bytes (Python: for next_byte in data_bytes[1:])
+  // Loop through the remaining bytes
   for (let i = 1; i < data.length; i++) {
     const nextByte = data[i];
 
@@ -28,7 +28,7 @@ function computeCrc(data: number[]): number {
   return crc;
 }
 
-export function $weishauptExt(context: DecoratorContext, target: Model, ...args: NumericValue[]) {
+export function $crcext(context: DecoratorContext, target: Model, ...args: NumericValue[]) {
   const rawBytes = args.map(a => a.value);
   const crc = computeCrc(rawBytes);
   const finalBytes = [crc, ...rawBytes];
