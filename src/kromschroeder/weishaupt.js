@@ -1,13 +1,11 @@
 function computeCrc(data) {
-    if (data.length === 0)
+    if (!data || data.length === 0)
         return 0;
-    // Start the CRC with the very first byte
     let crc = data[0] & 0xFF;
-    // Loop through the remaining bytes
     for (let i = 1; i < data.length; i++) {
-        const nextByte = data[i];
-        // 1. Process the CURRENT crc through 8 shift cycles 
-        // BEFORE XORing the next byte
+        let nextByte = data[i];
+        if (typeof nextByte !== 'number' || isNaN(nextByte))
+            nextByte = 0;
         for (let j = 0; j < 8; j++) {
             if (crc & 0x80) {
                 crc = ((crc << 1) ^ 0x5C) & 0xFF;
@@ -16,19 +14,79 @@ function computeCrc(data) {
                 crc = (crc << 1) & 0xFF;
             }
         }
-        // 2. NOW XOR the shifted result with the next byte
         crc ^= nextByte;
         crc &= 0xFF;
     }
     return crc;
 }
-export function $crcext(context, target, ...args) {
-    const rawBytes = args.map(a => a.value);
+export function $addcrc(context, target) {
+    // 1. Skip internal library ghost models
+    if (target.name === "regr" || target.name === "regw")
+        return;
+    let foundMap = null;
+    let existingData = null;
+    // 2. Locate the memory map
+    for (const map of context.program.stateMaps.values()) {
+        if (map.has(target)) {
+            const val = map.get(target);
+            if (val && val.isExt === true && Array.isArray(val.id)) {
+                foundMap = map;
+                existingData = val;
+                break;
+            }
+        }
+    }
+    if (!foundMap || !existingData)
+        return;
+    const numericArgs = existingData.id;
+    const rawBytes = [];
+    let internalDataSymbol = null;
+    // 3. Extract the bytes
+    for (const arg of numericArgs) {
+        let val = NaN;
+        if (typeof arg === 'number') {
+            val = arg;
+        }
+        else if (arg && typeof arg === 'object') {
+            if (typeof arg.asNumber === 'function') {
+                val = arg.asNumber();
+            }
+            else {
+                const symbols = Object.getOwnPropertySymbols(arg);
+                for (const sym of symbols) {
+                    if (String(sym).indexOf('NumericInternalData') !== -1) {
+                        internalDataSymbol = sym;
+                        val = Number(arg[sym].n);
+                        break;
+                    }
+                }
+            }
+        }
+        rawBytes.push(isNaN(val) ? 0 : val);
+    }
+    if (rawBytes.length === 0)
+        return;
+    // 4. Compute the CRC
     const crc = computeCrc(rawBytes);
-    const finalBytes = [crc, ...rawBytes];
-    const stateKey = Symbol.for("Ebus:ext");
-    context.program.stateMap(stateKey).set(target, finalBytes);
-    console.log(`[Weishaupt] Input: [${rawBytes.map(b => b.toString(16).padStart(2, '0')).join(' ')}]`);
-    console.log(`[Weishaupt] Result CRC: ${crc.toString(16).padStart(2, '0')}`);
-    console.log(`[Weishaupt] Final @ext: ${finalBytes.map(b => b.toString(16).padStart(2, '0')).join(' ')}`);
+    // 5. Build the new AST node securely
+    const baseObj = numericArgs[0];
+    const crcEntry = baseObj && typeof baseObj === 'object'
+        ? Object.assign(Object.create(Object.getPrototypeOf(baseObj)), baseObj)
+        : {};
+    crcEntry.value = crc;
+    crcEntry.valueAsString = crc.toString();
+    crcEntry.asNumber = () => crc;
+    if (baseObj && typeof baseObj === 'object' && internalDataSymbol && baseObj[internalDataSymbol]) {
+        crcEntry[internalDataSymbol] = {
+            ...baseObj[internalDataSymbol],
+            n: BigInt(crc)
+        };
+    }
+    // ---> THE FIX <---
+    // We PREPEND the crcEntry to the array instead of deleting the first byte!
+    const newIdArray = [crcEntry, ...numericArgs];
+    // 7. Overwrite the state map with a fresh object so the emitter immediately sees the change
+    foundMap.set(target, { ...existingData, id: newIdArray });
+    // Log the final array structure
+    console.log(`[Weishaupt] ✅ Finalized ${target.name || "Unknown"} | Input: [${rawBytes}] -> Final CSV Array: [${crc}, ${rawBytes}]`);
 }
