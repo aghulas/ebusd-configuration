@@ -41,7 +41,6 @@ scalar speed extends UIN;
 
 /** default *r for register */
 @base(0x50, 0x22) // todo 0x00 should rather be crc8 of following bytes, see https://github.com/john30/ebusd/issues/167
-//@addcrc
 model regr {
 }
 
@@ -53,7 +52,6 @@ model memr {
 
 /** default *w for register */
 @write(true)
-//@addcrc
 @base(0x50, 0x23)
 model regw {}
 

@@ -20,12 +20,9 @@ function computeCrc(data) {
     return crc;
 }
 export function $addcrc(context, target) {
-    // 1. Skip internal library ghost models
-    if (target.name === "regr" || target.name === "regw")
-        return;
     let foundMap = null;
     let existingData = null;
-    // 2. Locate the memory map
+    // Locate the memory map
     for (const map of context.program.stateMaps.values()) {
         if (map.has(target)) {
             const val = map.get(target);
@@ -41,7 +38,7 @@ export function $addcrc(context, target) {
     const numericArgs = existingData.id;
     const rawBytes = [];
     let internalDataSymbol = null;
-    // 3. Extract the bytes
+    // Extract the bytes
     for (const arg of numericArgs) {
         let val = NaN;
         if (typeof arg === 'number') {
@@ -66,9 +63,9 @@ export function $addcrc(context, target) {
     }
     if (rawBytes.length === 0)
         return;
-    // 4. Compute the CRC
+    // Compute the CRC
     const crc = computeCrc(rawBytes);
-    // 5. Build the new AST node securely
+    // Build the new AST node securely
     const baseObj = numericArgs[0];
     const crcEntry = baseObj && typeof baseObj === 'object'
         ? Object.assign(Object.create(Object.getPrototypeOf(baseObj)), baseObj)
@@ -82,11 +79,7 @@ export function $addcrc(context, target) {
             n: BigInt(crc)
         };
     }
-    // ---> THE FIX <---
-    // We PREPEND the crcEntry to the array instead of deleting the first byte!
     const newIdArray = [crcEntry, ...numericArgs];
-    // 7. Overwrite the state map with a fresh object so the emitter immediately sees the change
+    // Overwrite the state map with a fresh object so the emitter immediately sees the change
     foundMap.set(target, { ...existingData, id: newIdArray });
-    // Log the final array structure
-    console.log(`[Weishaupt] ✅ Finalized ${target.name || "Unknown"} | Input: [${rawBytes}] -> Final CSV Array: [${crc}, ${rawBytes}]`);
 }
