@@ -1,85 +1,65 @@
-function computeCrc(data) {
-    if (!data || data.length === 0)
-        return 0;
-    let crc = data[0] & 0xFF;
-    for (let i = 1; i < data.length; i++) {
-        let nextByte = data[i];
-        if (typeof nextByte !== 'number' || isNaN(nextByte))
-            nextByte = 0;
-        for (let j = 0; j < 8; j++) {
-            if (crc & 0x80) {
-                crc = ((crc << 1) ^ 0x5C) & 0xFF;
-            }
-            else {
-                crc = (crc << 1) & 0xFF;
-            }
-        }
-        crc ^= nextByte;
-        crc &= 0xFF;
+import { Numeric, isNumeric } from "@typespec/compiler";
+import { StateKeys, reportDiagnostic } from "../../node_modules/@ebusd/ebus-typespec/dist/src/lib.js";
+import { $ext } from "../../node_modules/@ebusd/ebus-typespec/dist/src/decorators.js";
+const getNum = (value) => {
+    if (typeof value === 'number') {
+        return value;
     }
-    return crc;
-}
-export function $addcrc(context, target) {
-    let foundMap = null;
-    let existingData = null;
-    // Locate the memory map
-    for (const map of context.program.stateMaps.values()) {
-        if (map.has(target)) {
-            const val = map.get(target);
-            if (val && val.isExt === true && Array.isArray(val.id)) {
-                foundMap = map;
-                existingData = val;
-                break;
-            }
-        }
+    if (!isNumeric(value)) {
+        return undefined;
     }
-    if (!foundMap || !existingData)
-        return;
-    const numericArgs = existingData.id;
-    const rawBytes = [];
-    let internalDataSymbol = null;
-    // Extract the bytes
-    for (const arg of numericArgs) {
-        let val = NaN;
-        if (typeof arg === 'number') {
-            val = arg;
+    const v = value.asNumber();
+    if (v === null) {
+        const b = value.asBigInt(); // weird way of having 0x00 "loosing precision"
+        if (b === null) {
+            return undefined;
         }
-        else if (arg && typeof arg === 'object') {
-            if (typeof arg.asNumber === 'function') {
-                val = arg.asNumber();
-            }
-            else {
-                const symbols = Object.getOwnPropertySymbols(arg);
-                for (const sym of symbols) {
-                    if (String(sym).indexOf('NumericInternalData') !== -1) {
-                        internalDataSymbol = sym;
-                        val = Number(arg[sym].n);
-                        break;
-                    }
+        return Number(b.valueOf());
+    }
+    return v;
+};
+export function $crcext(context, target, ...dd) {
+    // single @id and @ext can only combine with single @base from inherited model
+    if (context.program.stateMap(StateKeys.id).has(target)) {
+        reportDiagnostic(context.program, {
+            code: "multiple-decorator",
+            target: context.getArgumentTarget(0),
+            format: { which: 'ext/@id/@base' },
+        });
+    }
+    if (!dd || dd.length === 0)
+        $ext(context, target, ...[...dd]);
+    else {
+        let d0 = getNum(dd[0]);
+        if (typeof d0 !== 'number' || isNaN(d0))
+            d0 = 0;
+        let crc = d0 & 0xFF;
+        for (let i = 1; i < dd.length; i++) {
+            let nextByte = getNum(dd[i]);
+            if (typeof nextByte !== 'number' || isNaN(nextByte))
+                nextByte = 0;
+            for (let j = 0; j < 8; j++) {
+                if (crc & 0x80) {
+                    crc = ((crc << 1) ^ 0x5C) & 0xFF;
+                }
+                else {
+                    crc = (crc << 1) & 0xFF;
                 }
             }
+            crc ^= nextByte;
+            crc &= 0xFF;
         }
-        rawBytes.push(isNaN(val) ? 0 : val);
+        $ext(context, target, ...[Numeric(crc.toString()), ...dd]);
     }
-    if (rawBytes.length === 0)
-        return;
-    // Compute the CRC
-    const crc = computeCrc(rawBytes);
-    // Build the new AST node securely
-    const baseObj = numericArgs[0];
-    const crcEntry = baseObj && typeof baseObj === 'object'
-        ? Object.assign(Object.create(Object.getPrototypeOf(baseObj)), baseObj)
-        : {};
-    crcEntry.value = crc;
-    crcEntry.valueAsString = crc.toString();
-    crcEntry.asNumber = () => crc;
-    if (baseObj && typeof baseObj === 'object' && internalDataSymbol && baseObj[internalDataSymbol]) {
-        crcEntry[internalDataSymbol] = {
-            ...baseObj[internalDataSymbol],
-            n: BigInt(crc)
-        };
+}
+export function $appendext(context, target, ll, ...dd) {
+    // single @id and @ext can only combine with single @base from inherited model
+    if (context.program.stateMap(StateKeys.id).has(target)) {
+        reportDiagnostic(context.program, {
+            code: "multiple-decorator",
+            target: context.getArgumentTarget(0),
+            format: { which: 'ext/@id/@base' },
+        });
     }
-    const newIdArray = [crcEntry, ...numericArgs];
-    // Overwrite the state map with a fresh object so the emitter immediately sees the change
-    foundMap.set(target, { ...existingData, id: newIdArray });
+    $ext(context, target, ...[...dd, ll]);
 }
