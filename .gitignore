@@ -2,3 +2,6 @@
 node_modules/
 out*
 dist/
+
+# Sorties générées par tsp (régénérables)
+src/kromschroeder/tsp-output/
