@@ -87,7 +87,7 @@ namespace register {
    @wcrc(0x25, 0x00)
    model BlockingTime is Register<minutes>;
 
-    /*Maximum Supply Temperature (422) */
+   /**[WCRC] Maximum Supply Temperature (422) */
    @wcrc(0x28, 0x00)
    model SupplyMaxTemp is Register<supplyLimitTemp>;
 
@@ -738,7 +738,7 @@ namespace register {
    @wcrc(0xea, 0xfd)
    model ModulationMax is Register<modulationPercent>;
 
-   //**[WCRC] 535 Modulation Min */
+   /**[WCRC] 535 Modulation Min */
    @wcrc(0xeb, 0xfd)
    model ModulationMin is Register<modulationPercent>;
 
