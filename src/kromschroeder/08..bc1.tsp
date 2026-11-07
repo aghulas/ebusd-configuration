@@ -11,7 +11,7 @@ using Ebus.Dtm;
 using Ebus.Str;
 
 namespace Weishaupt;
-@zz(0x08) // needed here for write to source address calculation
+//@zz(0x08) // needed here for write to source address calculation
 namespace bc1 {
 
   @qq(0x03)

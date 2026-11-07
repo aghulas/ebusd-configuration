@@ -10,7 +10,7 @@ using Ebus.Str;
 
 namespace Weishaupt;
 
-@zz(0x15) // needed here for write to source address calculation
+//@zz(0x15) // needed here for write to source address calculation
 namespace ka {
   /** KA Broadcast with actual values */
   model KaStatus is Opdata_inc.KaStatus;

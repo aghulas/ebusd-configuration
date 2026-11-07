@@ -5,3 +5,5 @@ dist/
 
 # Sorties générées par tsp (régénérables)
 src/kromschroeder/tsp-output/
+.DS_Store
+src/.DS_Store

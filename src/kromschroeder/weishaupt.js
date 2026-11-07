@@ -52,6 +52,20 @@ export function $crcext(context, target, ...dd) {
         $ext(context, target, ...[Numeric(crc.toString()), ...dd]);
     }
 }
+export function $wcrc(context, target, ...dd) {
+    // single @id and @ext can only combine with single @base from inherited model
+    if (context.program.stateMap(StateKeys.id).has(target)) {
+        reportDiagnostic(context.program, {
+            code: "multiple-decorator",
+            target: context.getArgumentTarget(0),
+            format: { which: 'ext/@id/@base' },
+        });
+    }
+    // The Weishaupt register CRC-8 covers the data too, so it cannot be precomputed for
+    // writes. Emit a placeholder first ID byte (0x00); the forked ebusd computes the real
+    // CRC at runtime for messages whose comment carries the WCRC marker (issue #167).
+    $ext(context, target, ...[Numeric("0"), ...dd]);
+}
 export function $appendext(context, target, ll, ...dd) {
     // single @id and @ext can only combine with single @base from inherited model
     if (context.program.stateMap(StateKeys.id).has(target)) {

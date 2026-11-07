@@ -187,9 +187,9 @@ enum _boilerid {
 scalar boilerid extends UIN;
 
 enum _DHWOperation {
-  Priority:0x0000,
-  Sliding:0x0100,
-  Parallel:0x0200
+  Priority:0x00,
+  Sliding:0x01,
+  Parallel:0x02
 }
 
 @values(_DHWOperation)
@@ -268,12 +268,12 @@ enum _PumpVariationSpeed {
 scalar PumpVariationSpeed extends UIN;
 
 enum _HCType {
-  UnderFloorHeating:0x000,
-  UndeFloorHeating2:0x100,
-  Radiator60:0x200,
-  Radiator75:0x300,
-  onvector:0x400,
-  Universal:0x500
+  UnderFloorHeating:0x00,
+  UndeFloorHeating2:0x01,
+  Radiator60:0x02,
+  Radiator75:0x03,
+  Convector:0x04,
+  Universal:0x05
 }
 
 @values (_HCType)
@@ -291,10 +291,10 @@ enum _Floordrying {
 scalar Floordrying extends UIN;
 
 enum _CVariation {
-  Constant:0x000,
-  WeatherCompensated:0x100,
-  WeatherRoomCompensated:0x200,
-  RoomCompensated:0x300
+  Constant:0x00,
+  WeatherCompensated:0x01,
+  WeatherRoomCompensated:0x02,
+  RoomCompensated:0x03
 }
 @values(_CVariation)
 scalar CVariation extends UIN;
@@ -369,3 +369,18 @@ enum _WtcOperatingPhase {
 
 @values(_WtcOperatingPhase)
 scalar WtcOperatingPhase extends UCH;
+
+// --- Writable setpoint ranges (ebusd enforces them on write) ---
+// Bounds from the Weishaupt manuals WCM-FS 2.0 (83277701, p.21 / §4.7) and WCM-KA 3.0
+// (83258401, p.50-63). The manuals give no step; 0.5 K and 1 % are the steps of their
+// display examples. Linked bounds (e.g. reduced <= normal room setpoint, supply min <=
+// supply max) cannot be expressed as a static range and stay in the integration guard.
+@minValue(16) @maxValue(35) @step(0.5) scalar roomNormalTemp extends temp10;
+@minValue(4) @maxValue(16) @step(0.5) scalar roomFrostTemp extends temp10;
+@minValue(8) @maxValue(30) @step(0.5) scalar summerWinterTemp extends outsidetemp;
+// room_reduced (10-21.5 C) and gradient (2.5-40) have a fractional endpoint that the
+// integer-typed @minValue/@maxValue cannot express; their bounds, like the linked bounds
+// (reduced <= normal, supply min <= max), stay in the ha-weishaupt integration guard.
+@minValue(8) @maxValue(82) @step(0.5) scalar supplyLimitTemp extends temp10;
+@minValue(40) @maxValue(60) @step(0.5) scalar dhwSetpointTemp extends temp10;
+@minValue(30) @maxValue(100) @step(1) scalar modulationPercent extends percent;

@@ -11,7 +11,7 @@ using Ebus.Str;
 
 namespace Weishaupt;
 
-@zz(0x35) // needed here for write to source address calculation
+//@zz(0x35) // needed here for write to source address calculation
 namespace fs1 {
   @qq(0x30)
   /**Display Message */
