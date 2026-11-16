@@ -21,6 +21,73 @@ model CrcRead<T> {
   value: T;
 }
 
+// --- memory read of the boiler automat (PBSB 50 00), see evidence ---
+
+/**
+ * Memory read. The ID is the precomputed CRC-8 followed by items "code, address": the high
+ * nibble of the code is the number of bytes minus one, the low nibble the memory area
+ * (2 = EEPROM); code 0x06 sets the high byte of the address. The answer starts with a
+ * status byte.
+ */
+@base(MF, 0x00)
+model memr {
+  /** first answer byte: 0, or the number of bytes asked for when the data read 0 */
+  FirstByte: UCH;
+}
+
+enum _faultKind {
+  fault: 0,
+  warning: 1,
+}
+
+/** ionisation signal */
+@divisor(10)
+scalar ionisation extends UCH;
+
+/**
+ * One slot of the fault history of the boiler automat: the fault and the operating values
+ * at the moment it occurred. The six slots form a ring, see FaultHistoryPointer.
+ */
+@inherit(memr)
+model FaultHistorySlot {
+  /** fault number */
+  Number: BI0_7;
+
+  /** fault (F) or warning (W) */
+  @values(_faultKind)
+  Kind: BI7;
+
+  /** operating phase */
+  OperatingPhase: operatingPhase;
+
+  /** burner load */
+  Load: percent0;
+
+  /** set speed of the PWM pump */
+  PumpSpeed: percent0;
+
+  /** boiler temperature */
+  BoilerTemp: temp0;
+
+  /** flue gas temperature */
+  FlueGasTemp: temp0;
+
+  /** ionisation signal */
+  Ionisation: ionisation;
+
+  /** return temperature */
+  ReturnTemp: temp0;
+}
+
+/**
+ * Address of the last byte written to the fault history. The slot that ends at this address
+ * holds the most recent fault (slot 1 ends at 0x0209, slot 6 at 0x0231).
+ */
+@inherit(memr)
+model FaultHistoryPointer {
+  value: UIN;
+}
+
 // Signed tenths: outside sensors, and registers that answer -100.0 when no sensor is fitted.
 /** temperature */
 @unit("°C")

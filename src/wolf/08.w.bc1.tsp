@@ -16,4 +16,34 @@ namespace bc1 {
     @factor(10)
     value: hours;
   }
+
+  // --- Fault history, EEPROM 0x0200 to 0x0231 ---
+
+  /** fault history: address of the last byte written */
+  @ext(0x1c, 0x06, 0x02, 0x12, 0x00)
+  model FaultHistoryPointer is Wolf.FaultHistoryPointer;
+
+  /** fault history slot 1 */
+  @ext(0x5a, 0x06, 0x02, 0x72, 0x02)
+  model FaultHistorySlot1 is FaultHistorySlot;
+
+  /** fault history slot 2 */
+  @ext(0x52, 0x06, 0x02, 0x72, 0x0a)
+  model FaultHistorySlot2 is FaultHistorySlot;
+
+  /** fault history slot 3 */
+  @ext(0x4a, 0x06, 0x02, 0x72, 0x12)
+  model FaultHistorySlot3 is FaultHistorySlot;
+
+  /** fault history slot 4 */
+  @ext(0x42, 0x06, 0x02, 0x72, 0x1a)
+  model FaultHistorySlot4 is FaultHistorySlot;
+
+  /** fault history slot 5 */
+  @ext(0x7a, 0x06, 0x02, 0x72, 0x22)
+  model FaultHistorySlot5 is FaultHistorySlot;
+
+  /** fault history slot 6 */
+  @ext(0x72, 0x06, 0x02, 0x72, 0x2a)
+  model FaultHistorySlot6 is FaultHistorySlot;
 }
