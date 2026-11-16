@@ -216,4 +216,43 @@ namespace em1 {
   /** Sunday slot 3 */
   @ext(0x5b, 0x72, 0x17)
   model DHWProgramSun3 is SwitchTimes;
+
+  // --- Fault log, read side. ErrorId selects the entry (0 = most recent); the other fields
+  // return that entry's code, source and timestamp. Selecting an entry is a write (later lot).
+
+  /** selected fault-log entry (0 = most recent) */
+  @ext(0xab, 0x9a, 0x0b)
+  model ErrorId is CrcRead<UIN>;
+
+  /** fault code of the selected entry */
+  @ext(0xf7, 0x9b, 0x0b)
+  model ErrorCode is CrcRead<UIN>;
+
+  /** fault type of the selected entry */
+  @ext(0x3f, 0x9c, 0x0b)
+  model ErrorType is CrcRead<UIN>;
+
+  /** device that raised the selected entry */
+  @ext(0x63, 0x9d, 0x0b)
+  model ErrorDevice is CrcRead<UIN>;
+
+  /** fault minute */
+  @ext(0xdb, 0x9f, 0x0b)
+  model ErrorMinute is CrcRead<minutes>;
+
+  /** fault hour */
+  @ext(0xc7, 0xa0, 0x0b)
+  model ErrorHour is CrcRead<hours>;
+
+  /** fault day of the month */
+  @ext(0x9b, 0xa1, 0x0b)
+  model ErrorDay is CrcRead<UIN>;
+
+  /** fault month */
+  @ext(0x7f, 0xa2, 0x0b)
+  model ErrorMonth is CrcRead<month>;
+
+  /** fault year */
+  @ext(0x23, 0xa3, 0x0b)
+  model ErrorYear is CrcRead<UIN>;
 }
