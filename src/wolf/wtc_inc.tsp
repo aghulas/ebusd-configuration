@@ -88,6 +88,23 @@ model FaultHistoryPointer {
   value: UIN;
 }
 
+/**
+ * Counters of the boiler automat, read in one memory read of EEPROM 0x01e6 to 0x01ed.
+ */
+@inherit(memr)
+@ext(0x26, 0x06, 0x01, 0x72, 0xe6)
+model Counters {
+  /** hours with mains on */
+  @unit("h")
+  OperatingHours: U3N;
+
+  /** burner operating hours */
+  BurnerHours: hours;
+
+  /** burner starts */
+  BurnerStarts: U3N;
+}
+
 // Signed tenths: outside sensors, and registers that answer -100.0 when no sensor is fitted.
 /** temperature */
 @unit("°C")

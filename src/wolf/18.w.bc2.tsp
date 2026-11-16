@@ -17,6 +17,9 @@ namespace bc2 {
     value: hours;
   }
 
+  /** operating hours, burner hours and burner starts */
+  model Counters is Wolf.Counters;
+
   // --- Fault history, EEPROM 0x0200 to 0x0231 ---
 
   /** fault history: address of the last byte written */
