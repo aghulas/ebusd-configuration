@@ -26,8 +26,8 @@ model CrcRead<T> {
 /**
  * Memory read. The ID is the precomputed CRC-8 followed by items "code, address": the high
  * nibble of the code is the number of bytes minus one, the low nibble the memory area
- * (2 = EEPROM); code 0x06 sets the high byte of the address. The answer starts with a
- * status byte.
+ * (1 = RAM, 2 = EEPROM, 3 = XRAM); code 0x06 sets the high byte of the address. The answer
+ * starts with a status byte, followed by the bytes of all items in order.
  */
 @base(MF, 0x00)
 model memr {
@@ -103,6 +103,30 @@ model Counters {
 
   /** burner starts */
   BurnerStarts: U3N;
+}
+
+/** temperature, -40 when the sensor is not fitted */
+@unit("°C")
+scalar temp0s extends SCH;
+
+/**
+ * Temperatures measured by the boiler automat, read in one memory read of the RAM bytes
+ * 0x62, 0x63, 0x68 and 0x6c.
+ */
+@inherit(memr)
+@ext(0x40, 0x11, 0x62, 0x01, 0x68, 0x01, 0x6c)
+model Temperatures {
+  /** return temperature */
+  ReturnTemp: temp0s;
+
+  /** flue gas temperature */
+  FlueGasTemp: temp0s;
+
+  /** boiler flow temperature */
+  SupplyTemp: temp0s;
+
+  /** outside temperature */
+  OutsideTemp: temp0s;
 }
 
 // Signed tenths: outside sensors, and registers that answer -100.0 when no sensor is fitted.

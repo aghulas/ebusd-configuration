@@ -7,7 +7,7 @@ using Ebus.Num;
 
 namespace Wolf;
 
-// Register reads addressed to the first boiler (ZZ 0x08 from the file name).
+// Register and memory reads addressed to the first boiler (ZZ 0x08 from the file name).
 namespace bc1 {
   /** burner hours since the last service (maintenance counter i46) */
   @ext(0x0a, 0xbc, 0x02)
@@ -19,6 +19,9 @@ namespace bc1 {
 
   /** operating hours, burner hours and burner starts */
   model Counters is Wolf.Counters;
+
+  /** return, flue gas, flow and outside temperature */
+  model Temperatures is Wolf.Temperatures;
 
   // --- Fault history, EEPROM 0x0200 to 0x0231 ---
 

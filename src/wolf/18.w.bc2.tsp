@@ -20,6 +20,9 @@ namespace bc2 {
   /** operating hours, burner hours and burner starts */
   model Counters is Wolf.Counters;
 
+  /** return, flue gas, flow and outside temperature */
+  model Temperatures is Wolf.Temperatures;
+
   // --- Fault history, EEPROM 0x0200 to 0x0231 ---
 
   /** fault history: address of the last byte written */
