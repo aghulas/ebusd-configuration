@@ -25,4 +25,34 @@ namespace em3 {
     @divisor(10)
     value: UIN;
   }
+
+  // Other values and settings of the heating circuit, read side only: no write of them was
+  // captured on this module.
+
+  /** flow setpoint of the heating circuit */
+  model SupplyHCSetTemp is Wolf.SupplyHCSetTemp;
+
+  /** flow temperature of the heating circuit */
+  model SupplyHCTemp is Wolf.SupplyHCTemp;
+
+  /** boiler boost offset */
+  model BoilerMCBoostTemp is Wolf.BoilerMCBoostTemp;
+
+  /** normal room temperature setpoint */
+  model RoomNormalTemp is Wolf.RoomNormalTemp;
+
+  /** setback room temperature setpoint */
+  model RoomSetbackTemp is Wolf.RoomSetbackTemp;
+
+  /** room temperature setpoint of the frost protection */
+  model RoomFrostProtectionTemp is Wolf.RoomFrostProtectionTemp;
+
+  /** outside temperature of the summer / winter changeover */
+  model SummerWinterChangeOverTemp is Wolf.SummerWinterChangeOverTemp;
+
+  /** maximum flow temperature */
+  model SupplyMaxTemp is Wolf.SupplyMaxTemp;
+
+  /** minimum flow temperature */
+  model SupplyMinTemp is Wolf.SupplyMinTemp;
 }
