@@ -166,4 +166,44 @@ namespace ka {
     @step(0.5)
     value: diff10;
   }
+
+  /** hot water switching differential, below the setpoint */
+  @wcrc(0x40, 0x01)
+  @inherit(crcr, crcw)
+  model DHWSwitchDiff {
+    @minValue(-10)
+    @maxValue(-1)
+    @step(0.5)
+    value: diff10;
+  }
+
+  /** maximum hot water loading time */
+  @wcrc(0x80, 0x01)
+  @inherit(crcr, crcw)
+  model DHWLoadTime {
+    @minValue(0)
+    @maxValue(180)
+    @step(10)
+    value: minutes;
+  }
+
+  /** hot water setpoint of the legionella protection */
+  @wcrc(0x87, 0x05)
+  @inherit(crcr, crcw)
+  model LegionellaSetpoint {
+    @minValue(40)
+    @maxValue(80)
+    @step(0.5)
+    value: temp10;
+  }
+
+  /** running time of the circulation pump during legionella protection */
+  @wcrc(0xb1, 0x09)
+  @inherit(crcr, crcw)
+  model LegionellaCirculationTime {
+    @minValue(180)
+    @maxValue(1200)
+    @step(60)
+    value: seconds;
+  }
 }
