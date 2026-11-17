@@ -301,6 +301,269 @@ model SwitchTimes {
   @values(_enabled) FromEnabled: BI7;
 }
 
+// --- weekly programs of the room units (FS), read side, see evidence ---
+// Three switch-time slots per weekday. Register address: the weekday in the high nibble
+// (1 = Monday to 7 = Sunday) and the slot in the low nibble (0 to 2); the second byte selects
+// the program.
+
+// heating program 1 (0x14)
+
+/** heating program 1, Monday slot 1 */
+@ext(0xa4, 0x10, 0x14)
+model HCProgram1Mon1 is SwitchTimes;
+
+/** heating program 1, Monday slot 2 */
+@ext(0xf8, 0x11, 0x14)
+model HCProgram1Mon2 is SwitchTimes;
+
+/** heating program 1, Monday slot 3 */
+@ext(0x1c, 0x12, 0x14)
+model HCProgram1Mon3 is SwitchTimes;
+
+/** heating program 1, Tuesday slot 1 */
+@ext(0x28, 0x20, 0x14)
+model HCProgram1Tue1 is SwitchTimes;
+
+/** heating program 1, Tuesday slot 2 */
+@ext(0x74, 0x21, 0x14)
+model HCProgram1Tue2 is SwitchTimes;
+
+/** heating program 1, Tuesday slot 3 */
+@ext(0x90, 0x22, 0x14)
+model HCProgram1Tue3 is SwitchTimes;
+
+/** heating program 1, Wednesday slot 1 */
+@ext(0x98, 0x30, 0x14)
+model HCProgram1Wed1 is SwitchTimes;
+
+/** heating program 1, Wednesday slot 2 */
+@ext(0xc4, 0x31, 0x14)
+model HCProgram1Wed2 is SwitchTimes;
+
+/** heating program 1, Wednesday slot 3 */
+@ext(0x20, 0x32, 0x14)
+model HCProgram1Wed3 is SwitchTimes;
+
+/** heating program 1, Thursday slot 1 */
+@ext(0x6c, 0x40, 0x14)
+model HCProgram1Thu1 is SwitchTimes;
+
+/** heating program 1, Thursday slot 2 */
+@ext(0x30, 0x41, 0x14)
+model HCProgram1Thu2 is SwitchTimes;
+
+/** heating program 1, Thursday slot 3 */
+@ext(0xd4, 0x42, 0x14)
+model HCProgram1Thu3 is SwitchTimes;
+
+/** heating program 1, Friday slot 1 */
+@ext(0xdc, 0x50, 0x14)
+model HCProgram1Fri1 is SwitchTimes;
+
+/** heating program 1, Friday slot 2 */
+@ext(0x80, 0x51, 0x14)
+model HCProgram1Fri2 is SwitchTimes;
+
+/** heating program 1, Friday slot 3 */
+@ext(0x64, 0x52, 0x14)
+model HCProgram1Fri3 is SwitchTimes;
+
+/** heating program 1, Saturday slot 1 */
+@ext(0x50, 0x60, 0x14)
+model HCProgram1Sat1 is SwitchTimes;
+
+/** heating program 1, Saturday slot 2 */
+@ext(0x0c, 0x61, 0x14)
+model HCProgram1Sat2 is SwitchTimes;
+
+/** heating program 1, Saturday slot 3 */
+@ext(0xe8, 0x62, 0x14)
+model HCProgram1Sat3 is SwitchTimes;
+
+/** heating program 1, Sunday slot 1 */
+@ext(0xe0, 0x70, 0x14)
+model HCProgram1Sun1 is SwitchTimes;
+
+/** heating program 1, Sunday slot 2 */
+@ext(0xbc, 0x71, 0x14)
+model HCProgram1Sun2 is SwitchTimes;
+
+/** heating program 1, Sunday slot 3 */
+@ext(0x58, 0x72, 0x14)
+model HCProgram1Sun3 is SwitchTimes;
+
+// heating program 2 (0x15)
+
+/** heating program 2, Monday slot 1 */
+@ext(0xa5, 0x10, 0x15)
+model HCProgram2Mon1 is SwitchTimes;
+
+/** heating program 2, Monday slot 2 */
+@ext(0xf9, 0x11, 0x15)
+model HCProgram2Mon2 is SwitchTimes;
+
+/** heating program 2, Monday slot 3 */
+@ext(0x1d, 0x12, 0x15)
+model HCProgram2Mon3 is SwitchTimes;
+
+/** heating program 2, Tuesday slot 1 */
+@ext(0x29, 0x20, 0x15)
+model HCProgram2Tue1 is SwitchTimes;
+
+/** heating program 2, Tuesday slot 2 */
+@ext(0x75, 0x21, 0x15)
+model HCProgram2Tue2 is SwitchTimes;
+
+/** heating program 2, Tuesday slot 3 */
+@ext(0x91, 0x22, 0x15)
+model HCProgram2Tue3 is SwitchTimes;
+
+/** heating program 2, Wednesday slot 1 */
+@ext(0x99, 0x30, 0x15)
+model HCProgram2Wed1 is SwitchTimes;
+
+/** heating program 2, Wednesday slot 2 */
+@ext(0xc5, 0x31, 0x15)
+model HCProgram2Wed2 is SwitchTimes;
+
+/** heating program 2, Wednesday slot 3 */
+@ext(0x21, 0x32, 0x15)
+model HCProgram2Wed3 is SwitchTimes;
+
+/** heating program 2, Thursday slot 1 */
+@ext(0x6d, 0x40, 0x15)
+model HCProgram2Thu1 is SwitchTimes;
+
+/** heating program 2, Thursday slot 2 */
+@ext(0x31, 0x41, 0x15)
+model HCProgram2Thu2 is SwitchTimes;
+
+/** heating program 2, Thursday slot 3 */
+@ext(0xd5, 0x42, 0x15)
+model HCProgram2Thu3 is SwitchTimes;
+
+/** heating program 2, Friday slot 1 */
+@ext(0xdd, 0x50, 0x15)
+model HCProgram2Fri1 is SwitchTimes;
+
+/** heating program 2, Friday slot 2 */
+@ext(0x81, 0x51, 0x15)
+model HCProgram2Fri2 is SwitchTimes;
+
+/** heating program 2, Friday slot 3 */
+@ext(0x65, 0x52, 0x15)
+model HCProgram2Fri3 is SwitchTimes;
+
+/** heating program 2, Saturday slot 1 */
+@ext(0x51, 0x60, 0x15)
+model HCProgram2Sat1 is SwitchTimes;
+
+/** heating program 2, Saturday slot 2 */
+@ext(0x0d, 0x61, 0x15)
+model HCProgram2Sat2 is SwitchTimes;
+
+/** heating program 2, Saturday slot 3 */
+@ext(0xe9, 0x62, 0x15)
+model HCProgram2Sat3 is SwitchTimes;
+
+/** heating program 2, Sunday slot 1 */
+@ext(0xe1, 0x70, 0x15)
+model HCProgram2Sun1 is SwitchTimes;
+
+/** heating program 2, Sunday slot 2 */
+@ext(0xbd, 0x71, 0x15)
+model HCProgram2Sun2 is SwitchTimes;
+
+/** heating program 2, Sunday slot 3 */
+@ext(0x59, 0x72, 0x15)
+model HCProgram2Sun3 is SwitchTimes;
+
+// heating program 3 (0x16)
+
+/** heating program 3, Monday slot 1 */
+@ext(0xa6, 0x10, 0x16)
+model HCProgram3Mon1 is SwitchTimes;
+
+/** heating program 3, Monday slot 2 */
+@ext(0xfa, 0x11, 0x16)
+model HCProgram3Mon2 is SwitchTimes;
+
+/** heating program 3, Monday slot 3 */
+@ext(0x1e, 0x12, 0x16)
+model HCProgram3Mon3 is SwitchTimes;
+
+/** heating program 3, Tuesday slot 1 */
+@ext(0x2a, 0x20, 0x16)
+model HCProgram3Tue1 is SwitchTimes;
+
+/** heating program 3, Tuesday slot 2 */
+@ext(0x76, 0x21, 0x16)
+model HCProgram3Tue2 is SwitchTimes;
+
+/** heating program 3, Tuesday slot 3 */
+@ext(0x92, 0x22, 0x16)
+model HCProgram3Tue3 is SwitchTimes;
+
+/** heating program 3, Wednesday slot 1 */
+@ext(0x9a, 0x30, 0x16)
+model HCProgram3Wed1 is SwitchTimes;
+
+/** heating program 3, Wednesday slot 2 */
+@ext(0xc6, 0x31, 0x16)
+model HCProgram3Wed2 is SwitchTimes;
+
+/** heating program 3, Wednesday slot 3 */
+@ext(0x22, 0x32, 0x16)
+model HCProgram3Wed3 is SwitchTimes;
+
+/** heating program 3, Thursday slot 1 */
+@ext(0x6e, 0x40, 0x16)
+model HCProgram3Thu1 is SwitchTimes;
+
+/** heating program 3, Thursday slot 2 */
+@ext(0x32, 0x41, 0x16)
+model HCProgram3Thu2 is SwitchTimes;
+
+/** heating program 3, Thursday slot 3 */
+@ext(0xd6, 0x42, 0x16)
+model HCProgram3Thu3 is SwitchTimes;
+
+/** heating program 3, Friday slot 1 */
+@ext(0xde, 0x50, 0x16)
+model HCProgram3Fri1 is SwitchTimes;
+
+/** heating program 3, Friday slot 2 */
+@ext(0x82, 0x51, 0x16)
+model HCProgram3Fri2 is SwitchTimes;
+
+/** heating program 3, Friday slot 3 */
+@ext(0x66, 0x52, 0x16)
+model HCProgram3Fri3 is SwitchTimes;
+
+/** heating program 3, Saturday slot 1 */
+@ext(0x52, 0x60, 0x16)
+model HCProgram3Sat1 is SwitchTimes;
+
+/** heating program 3, Saturday slot 2 */
+@ext(0x0e, 0x61, 0x16)
+model HCProgram3Sat2 is SwitchTimes;
+
+/** heating program 3, Saturday slot 3 */
+@ext(0xea, 0x62, 0x16)
+model HCProgram3Sat3 is SwitchTimes;
+
+/** heating program 3, Sunday slot 1 */
+@ext(0xe2, 0x70, 0x16)
+model HCProgram3Sun1 is SwitchTimes;
+
+/** heating program 3, Sunday slot 2 */
+@ext(0xbe, 0x71, 0x16)
+model HCProgram3Sun2 is SwitchTimes;
+
+/** heating program 3, Sunday slot 3 */
+@ext(0x5a, 0x72, 0x16)
+model HCProgram3Sun3 is SwitchTimes;
+
 enum _onoff {
   off: 0,
   on: 1,
