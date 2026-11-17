@@ -26,6 +26,29 @@ namespace bc2 {
   /** burner load, ionisation signal and pump speed */
   model Operation is Wolf.Operation;
 
+  // --- Fault counters, EEPROM 0x0196 to 0x01d7 ---
+
+  /** fault counters, numbers 57 to 51 */
+  model FaultCounters1 is Wolf.FaultCounters1;
+
+  /** fault counters, numbers 49 to 45 */
+  model FaultCounters2 is Wolf.FaultCounters2;
+
+  /** fault counters, numbers 44 to 38 */
+  model FaultCounters3 is Wolf.FaultCounters3;
+
+  /** fault counters, numbers 37 to 33 */
+  model FaultCounters4 is Wolf.FaultCounters4;
+
+  /** fault counters, numbers 32 to 23 */
+  model FaultCounters5 is Wolf.FaultCounters5;
+
+  /** fault counters, numbers 22 to 15 */
+  model FaultCounters6 is Wolf.FaultCounters6;
+
+  /** fault counters, numbers 14 to 11 */
+  model FaultCounters7 is Wolf.FaultCounters7;
+
   // --- Fault history, EEPROM 0x0200 to 0x0231 ---
 
   /** fault history: address of the last byte written */
