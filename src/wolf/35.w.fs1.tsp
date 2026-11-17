@@ -209,4 +209,201 @@ namespace fs1 {
     @step(0.5)
     value: diff10;
   }
+
+  // Weekly heating programs, read side only: three switch-time slots per weekday.
+
+  // Heating program 1
+
+  /** heating program 1, Monday slot 1 */
+  model HCProgram1Mon1 is Wolf.HCProgram1Mon1;
+
+  /** heating program 1, Monday slot 2 */
+  model HCProgram1Mon2 is Wolf.HCProgram1Mon2;
+
+  /** heating program 1, Monday slot 3 */
+  model HCProgram1Mon3 is Wolf.HCProgram1Mon3;
+
+  /** heating program 1, Tuesday slot 1 */
+  model HCProgram1Tue1 is Wolf.HCProgram1Tue1;
+
+  /** heating program 1, Tuesday slot 2 */
+  model HCProgram1Tue2 is Wolf.HCProgram1Tue2;
+
+  /** heating program 1, Tuesday slot 3 */
+  model HCProgram1Tue3 is Wolf.HCProgram1Tue3;
+
+  /** heating program 1, Wednesday slot 1 */
+  model HCProgram1Wed1 is Wolf.HCProgram1Wed1;
+
+  /** heating program 1, Wednesday slot 2 */
+  model HCProgram1Wed2 is Wolf.HCProgram1Wed2;
+
+  /** heating program 1, Wednesday slot 3 */
+  model HCProgram1Wed3 is Wolf.HCProgram1Wed3;
+
+  /** heating program 1, Thursday slot 1 */
+  model HCProgram1Thu1 is Wolf.HCProgram1Thu1;
+
+  /** heating program 1, Thursday slot 2 */
+  model HCProgram1Thu2 is Wolf.HCProgram1Thu2;
+
+  /** heating program 1, Thursday slot 3 */
+  model HCProgram1Thu3 is Wolf.HCProgram1Thu3;
+
+  /** heating program 1, Friday slot 1 */
+  model HCProgram1Fri1 is Wolf.HCProgram1Fri1;
+
+  /** heating program 1, Friday slot 2 */
+  model HCProgram1Fri2 is Wolf.HCProgram1Fri2;
+
+  /** heating program 1, Friday slot 3 */
+  model HCProgram1Fri3 is Wolf.HCProgram1Fri3;
+
+  /** heating program 1, Saturday slot 1 */
+  model HCProgram1Sat1 is Wolf.HCProgram1Sat1;
+
+  /** heating program 1, Saturday slot 2 */
+  model HCProgram1Sat2 is Wolf.HCProgram1Sat2;
+
+  /** heating program 1, Saturday slot 3 */
+  model HCProgram1Sat3 is Wolf.HCProgram1Sat3;
+
+  /** heating program 1, Sunday slot 1 */
+  model HCProgram1Sun1 is Wolf.HCProgram1Sun1;
+
+  /** heating program 1, Sunday slot 2 */
+  model HCProgram1Sun2 is Wolf.HCProgram1Sun2;
+
+  /** heating program 1, Sunday slot 3 */
+  model HCProgram1Sun3 is Wolf.HCProgram1Sun3;
+
+  // Heating program 2
+
+  /** heating program 2, Monday slot 1 */
+  model HCProgram2Mon1 is Wolf.HCProgram2Mon1;
+
+  /** heating program 2, Monday slot 2 */
+  model HCProgram2Mon2 is Wolf.HCProgram2Mon2;
+
+  /** heating program 2, Monday slot 3 */
+  model HCProgram2Mon3 is Wolf.HCProgram2Mon3;
+
+  /** heating program 2, Tuesday slot 1 */
+  model HCProgram2Tue1 is Wolf.HCProgram2Tue1;
+
+  /** heating program 2, Tuesday slot 2 */
+  model HCProgram2Tue2 is Wolf.HCProgram2Tue2;
+
+  /** heating program 2, Tuesday slot 3 */
+  model HCProgram2Tue3 is Wolf.HCProgram2Tue3;
+
+  /** heating program 2, Wednesday slot 1 */
+  model HCProgram2Wed1 is Wolf.HCProgram2Wed1;
+
+  /** heating program 2, Wednesday slot 2 */
+  model HCProgram2Wed2 is Wolf.HCProgram2Wed2;
+
+  /** heating program 2, Wednesday slot 3 */
+  model HCProgram2Wed3 is Wolf.HCProgram2Wed3;
+
+  /** heating program 2, Thursday slot 1 */
+  model HCProgram2Thu1 is Wolf.HCProgram2Thu1;
+
+  /** heating program 2, Thursday slot 2 */
+  model HCProgram2Thu2 is Wolf.HCProgram2Thu2;
+
+  /** heating program 2, Thursday slot 3 */
+  model HCProgram2Thu3 is Wolf.HCProgram2Thu3;
+
+  /** heating program 2, Friday slot 1 */
+  model HCProgram2Fri1 is Wolf.HCProgram2Fri1;
+
+  /** heating program 2, Friday slot 2 */
+  model HCProgram2Fri2 is Wolf.HCProgram2Fri2;
+
+  /** heating program 2, Friday slot 3 */
+  model HCProgram2Fri3 is Wolf.HCProgram2Fri3;
+
+  /** heating program 2, Saturday slot 1 */
+  model HCProgram2Sat1 is Wolf.HCProgram2Sat1;
+
+  /** heating program 2, Saturday slot 2 */
+  model HCProgram2Sat2 is Wolf.HCProgram2Sat2;
+
+  /** heating program 2, Saturday slot 3 */
+  model HCProgram2Sat3 is Wolf.HCProgram2Sat3;
+
+  /** heating program 2, Sunday slot 1 */
+  model HCProgram2Sun1 is Wolf.HCProgram2Sun1;
+
+  /** heating program 2, Sunday slot 2 */
+  model HCProgram2Sun2 is Wolf.HCProgram2Sun2;
+
+  /** heating program 2, Sunday slot 3 */
+  model HCProgram2Sun3 is Wolf.HCProgram2Sun3;
+
+  // Heating program 3
+
+  /** heating program 3, Monday slot 1 */
+  model HCProgram3Mon1 is Wolf.HCProgram3Mon1;
+
+  /** heating program 3, Monday slot 2 */
+  model HCProgram3Mon2 is Wolf.HCProgram3Mon2;
+
+  /** heating program 3, Monday slot 3 */
+  model HCProgram3Mon3 is Wolf.HCProgram3Mon3;
+
+  /** heating program 3, Tuesday slot 1 */
+  model HCProgram3Tue1 is Wolf.HCProgram3Tue1;
+
+  /** heating program 3, Tuesday slot 2 */
+  model HCProgram3Tue2 is Wolf.HCProgram3Tue2;
+
+  /** heating program 3, Tuesday slot 3 */
+  model HCProgram3Tue3 is Wolf.HCProgram3Tue3;
+
+  /** heating program 3, Wednesday slot 1 */
+  model HCProgram3Wed1 is Wolf.HCProgram3Wed1;
+
+  /** heating program 3, Wednesday slot 2 */
+  model HCProgram3Wed2 is Wolf.HCProgram3Wed2;
+
+  /** heating program 3, Wednesday slot 3 */
+  model HCProgram3Wed3 is Wolf.HCProgram3Wed3;
+
+  /** heating program 3, Thursday slot 1 */
+  model HCProgram3Thu1 is Wolf.HCProgram3Thu1;
+
+  /** heating program 3, Thursday slot 2 */
+  model HCProgram3Thu2 is Wolf.HCProgram3Thu2;
+
+  /** heating program 3, Thursday slot 3 */
+  model HCProgram3Thu3 is Wolf.HCProgram3Thu3;
+
+  /** heating program 3, Friday slot 1 */
+  model HCProgram3Fri1 is Wolf.HCProgram3Fri1;
+
+  /** heating program 3, Friday slot 2 */
+  model HCProgram3Fri2 is Wolf.HCProgram3Fri2;
+
+  /** heating program 3, Friday slot 3 */
+  model HCProgram3Fri3 is Wolf.HCProgram3Fri3;
+
+  /** heating program 3, Saturday slot 1 */
+  model HCProgram3Sat1 is Wolf.HCProgram3Sat1;
+
+  /** heating program 3, Saturday slot 2 */
+  model HCProgram3Sat2 is Wolf.HCProgram3Sat2;
+
+  /** heating program 3, Saturday slot 3 */
+  model HCProgram3Sat3 is Wolf.HCProgram3Sat3;
+
+  /** heating program 3, Sunday slot 1 */
+  model HCProgram3Sun1 is Wolf.HCProgram3Sun1;
+
+  /** heating program 3, Sunday slot 2 */
+  model HCProgram3Sun2 is Wolf.HCProgram3Sun2;
+
+  /** heating program 3, Sunday slot 3 */
+  model HCProgram3Sun3 is Wolf.HCProgram3Sun3;
 }
