@@ -137,4 +137,33 @@ namespace ka {
     @maxValue(30)
     value: minutes;
   }
+
+  /** running time after which the boiler sequence of the cascade changes over */
+  @wcrc(0xec, 0xfd)
+  @inherit(crcr, crcw)
+  model ChangeOverTime {
+    @minValue(0)
+    @maxValue(250)
+    value: hours;
+  }
+
+  /** minimum temperature at the de-couple sensor */
+  @wcrc(0xe7, 0xfd)
+  @inherit(crcr, crcw)
+  model DeCoupleMinTemp {
+    @minValue(0)
+    @maxValue(50)
+    @step(0.5)
+    value: temp10;
+  }
+
+  /** switching differential of the calorifier */
+  @wcrc(0xe2, 0xfd)
+  @inherit(crcr, crcw)
+  model CalorifierSwitchDiff {
+    @minValue(1)
+    @maxValue(20)
+    @step(0.5)
+    value: diff10;
+  }
 }

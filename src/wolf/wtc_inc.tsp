@@ -169,6 +169,11 @@ model Operation {
 @divisor(10)
 scalar otemp10 extends SIN;
 
+/** temperature difference */
+@unit("K")
+@divisor(10)
+scalar diff10 extends SIN;
+
 /** seconds */
 @unit("s")
 scalar seconds extends UIN;
