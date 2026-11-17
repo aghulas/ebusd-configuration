@@ -66,6 +66,21 @@ namespace em1 {
     value: temp10;
   }
 
+  // --- Other settings of the heating circuit, read side only. Address 0x50 is the system
+  // manager's own direct heating circuit, the same device as 0x15 (same software version), not
+  // a WCM-EM add-on module like 0x51 and 0x52: two WCM-EM modules are installed, at 0x51 and
+  // 0x52. It answers these register reads with the values of 0x15, so they duplicate the
+  // system manager's. ---
+
+  /** maximum flow temperature */
+  model SupplyMaxTemp is Wolf.SupplyMaxTemp;
+
+  /** minimum flow temperature */
+  model SupplyMinTemp is Wolf.SupplyMinTemp;
+
+  /** boiler boost offset */
+  model BoilerMCBoostTemp is Wolf.BoilerMCBoostTemp;
+
   // --- System clock, read side (writes are a separate lot) ---
 
   /** day of the week */
