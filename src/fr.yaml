@@ -82,6 +82,39 @@ second: seconde
 hours: heures
 minutes: minutes
 seconds: secondes
+"W57/F57: communication between the automat and its operating unit faulty": "W57/F57 : problème de communication entre l'électronique chaudière et le tableau de commande chaudière"
+"F55: reset too often": "F55 : installation déverrouillée trop fréquemment"
+"F53: supply voltage or mains frequency out of tolerance": "F53 : alimentation électrique hors tolérances"
+"F52: burner data record error": "F52 : défaut de transmission des données vers le brûleur"
+"F51: boiler data record error": "F51 : erreur de transmission des données chaudière"
+"F49: input H2 closed while set for a condensate lifting unit": "F49 : entrée H2 fermée, réglée pour un dispositif de relevage des condensats"
+"W48/F48: run time of the flue gas damper exceeded": "W48/F48 : durée d'enclenchement maximale du clapet de fumées dépassée"
+"W47: gas pressure too low": "W47 : pression gaz trop faible"
+"F46: pressure on the flue gas side too high": "F46 : pression trop élevée côté fumées"
+"F45: air pressure switch does not switch": "F45 : le pressostat d'air ne s'enclenche pas"
+"F44: fan standstill check failed": "F44 : position de repos du ventilateur défectueuse"
+"F43: fan does not reach the requested speed": "F43 : vitesse du ventilateur non atteinte"
+"F41: gas valve leaking": "F41 : multibloc gaz non étanche"
+"W39: de-coupling sensor defective": "W39 : sonde de bouteille casse-pression défectueuse"
+"F38: flue gas pressure switch does not release at the fan standstill check": "F38 : le pressostat fumées ne retombe pas lors du contrôle à l'arrêt du ventilateur"
+"F37: return sensor defective": "F37 : sonde de retour défectueuse"
+"F36: water pressure too low": "F36 : pression installation trop faible"
+"F35: flow sensor defective": "F35 : sonde de départ défectueuse"
+"W34: hot-water sensor defective": "W34 : sonde ECS défectueuse"
+"W33: outside sensor defective": "W33 : sonde extérieure défectueuse"
+"F32: air pressure switch not in its rest position": "F32 : pressostat d'air pas en position de repos"
+"F31: flue gas sensor defective": "F31 : sonde de fumées défectueuse"
+"F30: sensor of the safety temperature limiter defective": "F30 : thermostat de sécurité limiteur défectueux"
+"W24: input H2 closed while set as a lockout input": "W24 : entrée H2 fermée, réglée en verrouillage brûleur"
+"F23: flame signal without a flame": "F23 : flamme parasite"
+"W22: flame lost during operation": "W22 : perte de flamme en fonctionnement"
+"W21/F21: no flame at burner start": "W21/F21 : pas de formation de flamme au démarrage du brûleur"
+"W18/F18: difference between limiter and flow temperature too large": "W18/F18 : différence trop élevée entre la température du thermostat de sécurité et la température de départ"
+"W16: flue gas temperature too high": "W16 : température des fumées trop élevée"
+"W15/F15: difference between flow and return temperature too large": "W15/F15 : différence trop élevée entre les températures départ et retour"
+"W14: temperature at the safety limiter rises too fast": "W14 : la température du thermostat de sécurité augmente trop vite"
+"W12: temperature at the safety limiter, flow or return sensor above 95 °C": "W12 : température au thermostat de sécurité, à la sonde de départ ou de retour supérieure à 95 °C"
+"F11: temperature at the safety limiter above 105 °C": "F11 : température au thermostat de sécurité supérieure à 105 °C"
 
 # provisional: at least one term of the comment has no vendor source yet
 requested flow setpoint: consigne de température départ demandée
@@ -104,6 +137,14 @@ fault code of the selected entry: code défaut de l'entrée sélectionnée
 fault type of the selected entry: type de défaut de l'entrée sélectionnée
 device that raised the selected entry: origine du défaut de l'entrée sélectionnée
 percent: pour cent
+"fault counters, numbers 57 to 51": "compteurs de défauts, numéros 57 à 51"
+"fault counters, numbers 49 to 45": "compteurs de défauts, numéros 49 à 45"
+"fault counters, numbers 44 to 38": "compteurs de défauts, numéros 44 à 38"
+"fault counters, numbers 37 to 33": "compteurs de défauts, numéros 37 à 33"
+"fault counters, numbers 32 to 23": "compteurs de défauts, numéros 32 à 23"
+"fault counters, numbers 22 to 15": "compteurs de défauts, numéros 22 à 15"
+"fault counters, numbers 14 to 11": "compteurs de défauts, numéros 14 à 11"
+"first answer byte: 0, or the number of bytes asked for when the data read 0": "premier octet de la réponse : 0, ou le nombre d'octets demandés quand les données sont lues à 0"
 
 # Wolf messages of the broadcast file, translated without a vendor source
 room controller target values: valeurs de consigne du régulateur d'ambiance
