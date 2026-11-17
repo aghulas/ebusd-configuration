@@ -9,6 +9,23 @@ namespace Wolf;
 
 @zz(0x35) // room unit of heating circuit #1 (FS)
 namespace fs1 {
+  // Values of the heating circuit, read side only.
+
+  /** flow temperature the heating circuit requests from the heat source */
+  model HeatDemandTemp is Wolf.HeatDemandTemp;
+
+  /** flow setpoint of the heating circuit */
+  model SupplyHCSetTemp is Wolf.SupplyHCSetTemp;
+
+  /** outside temperature */
+  model OutsideTemp is Wolf.OutsideTemp;
+
+  /** outside temperature, weighted over time */
+  model OutsideWeightedTemp is Wolf.OutsideWeightedTemp;
+
+  /** room temperature */
+  model RoomTemp is Wolf.RoomTemp;
+
   // Settings, read and written. The room unit acknowledges a write from any master but takes
   // the value only from source address 0xff (`write -s ff`).
 
