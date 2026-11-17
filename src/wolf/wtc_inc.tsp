@@ -38,6 +38,69 @@ model CrcSetting<T> {
   value: T;
 }
 
+// --- heating-circuit registers of the room units (FS), read side, see evidence ---
+// A room unit and its heating module answer the same register numbers, each with its own value.
+
+/** flow temperature the heating circuit requests from the heat source */
+@ext(0xb8, 0x02, 0x00)
+model HeatDemandTemp is CrcRead<temp10>;
+
+/** flow setpoint of the heating circuit */
+@ext(0x2c, 0x04, 0x00)
+model SupplyHCSetTemp is CrcRead<otemp10>;
+
+/** outside temperature */
+@ext(0x74, 0x0c, 0x00)
+model OutsideTemp is CrcRead<otemp10>;
+
+/** outside temperature, weighted over time */
+@ext(0x7e, 0x0c, 0x0a)
+model OutsideWeightedTemp is CrcRead<otemp10>;
+
+/** room temperature */
+@ext(0xec, 0x11, 0x00)
+model RoomTemp is CrcRead<otemp10>;
+
+/** normal room temperature setpoint */
+@ext(0x70, 0x05, 0x00)
+model RoomNormalTemp is CrcRead<temp10>;
+
+/** setback room temperature setpoint */
+@ext(0x58, 0x08, 0x00)
+model RoomSetbackTemp is CrcRead<temp10>;
+
+/** room temperature setpoint of the frost protection */
+@ext(0x96, 0x14, 0x0a)
+model RoomFrostProtectionTemp is CrcRead<temp10>;
+
+/** steepness of the heating curve */
+@inherit(crcr)
+@ext(0xcd, 0x0e, 0x01)
+model GradientCurve {
+  @divisor(10)
+  value: UIN;
+}
+
+/** outside temperature of the summer / winter changeover */
+@ext(0x25, 0x16, 0x01)
+model SummerWinterChangeOverTemp is CrcRead<temp10>;
+
+/** maximum flow temperature */
+@ext(0x64, 0x28, 0x00)
+model SupplyMaxTemp is CrcRead<temp10>;
+
+/** minimum flow temperature */
+@ext(0x81, 0x2b, 0x01)
+model SupplyMinTemp is CrcRead<temp10>;
+
+/** lead time of the optimised switch-on */
+@ext(0xb1, 0x10, 0x01)
+model SwitchOnRuntime is CrcRead<minutes>;
+
+/** outside temperature below which the frost protection starts */
+@ext(0xb2, 0xbe, 0x02)
+model FrostProtectionLimitTemp is CrcRead<otemp10>;
+
 // --- memory read of the boiler automat (PBSB 50 00), see evidence ---
 
 /**
