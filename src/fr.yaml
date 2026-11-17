@@ -3,11 +3,12 @@
 #
 # Entries for the Weishaupt / Kromschröder files of the wolf folder (NN.w.*.tsp, wtc_inc.tsp,
 # broadcast.tsp). The terms are those of the French editions of the vendor's manuals; where no
-# manual gives one, the translation is provisional and listed apart below.
+# manual gives one, the translation was either accepted by the operator of the test installation
+# or is still provisional; each kind has its heading below.
 
 # terms of the vendor's manuals
 temperature: température
-temperature difference: écart de température
+temperature difference: différentiel de température
 outside temperature: température extérieure
 outside temperature, weighted over time: température extérieure pondérée
 outside sensor B1: sonde extérieure B1
@@ -116,7 +117,7 @@ seconds: secondes
 "W12: temperature at the safety limiter, flow or return sensor above 95 °C": "W12 : température au thermostat de sécurité, à la sonde de départ ou de retour supérieure à 95 °C"
 "F11: temperature at the safety limiter above 105 °C": "F11 : température au thermostat de sécurité supérieure à 105 °C"
 
-# provisional: at least one term of the comment has no vendor source yet
+# accepted by the operator: at least one term of the comment has no vendor source
 requested flow setpoint: consigne de température départ demandée
 flow temperature the heating circuit requests from the heat source: température de départ demandée par le circuit de chauffage au générateur de chaleur
 maximum flow temperature limit: limite de la température de départ maximale
@@ -125,7 +126,7 @@ switching differential of the calorifier: différentiel de commutation du stock 
 status byte: octet d'état
 boiler status broadcast by the WTC: état de la chaudière diffusé par la WTC
 configuration status: état de la configuration
-error status, 0 when no error is pending: état de défaut, 0 en l'absence de défaut
+error status, 0 when no error is pending: code défaut, 0 en l'absence de défaut
 firmware version, major part: version du logiciel, partie majeure
 firmware version, minor part: version du logiciel, partie mineure
 hours with mains on: heures sous tension
@@ -137,6 +138,8 @@ fault code of the selected entry: code défaut de l'entrée sélectionnée
 fault type of the selected entry: type de défaut de l'entrée sélectionnée
 device that raised the selected entry: origine du défaut de l'entrée sélectionnée
 percent: pour cent
+
+# provisional: at least one term of the comment has no vendor source yet
 "fault counters, numbers 57 to 51": "compteurs de défauts, numéros 57 à 51"
 "fault counters, numbers 49 to 45": "compteurs de défauts, numéros 49 à 45"
 "fault counters, numbers 44 to 38": "compteurs de défauts, numéros 44 à 38"
