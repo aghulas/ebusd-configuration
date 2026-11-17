@@ -4,7 +4,8 @@
 # Entries for the Weishaupt / Kromschröder files of the wolf folder (NN.w.*.tsp, wtc_inc.tsp,
 # broadcast.tsp). The terms are those of the French editions of the vendor's manuals; where no
 # manual gives one, the translation was either accepted by the operator of the test installation
-# or is still provisional; each kind has its heading below.
+# or is still provisional; each kind has its heading below. The Wolf messages of the broadcast
+# file have no entry and stay in English.
 
 # terms of the vendor's manuals
 temperature: température
@@ -148,32 +149,6 @@ percent: pour cent
 "fault counters, numbers 22 to 15": "compteurs de défauts, numéros 22 à 15"
 "fault counters, numbers 14 to 11": "compteurs de défauts, numéros 14 à 11"
 "first answer byte: 0, or the number of bytes asked for when the data read 0": "premier octet de la réponse : 0, ou le nombre d'octets demandés quand les données sont lues à 0"
-
-# Wolf messages of the broadcast file, translated without a vendor source
-room controller target values: valeurs de consigne du régulateur d'ambiance
-room controller operational data: données de fonctionnement du régulateur d'ambiance
-control commands: commandes de régulation
-boiler target temperature: température de consigne de la chaudière
-boiler effective temperature: température réelle de la chaudière
-hot water target temperature: température de consigne ECS
-hot water effective temperature: température réelle ECS
-return flow temperature: température de retour
-forced performance: puissance forcée
-expected performance: puissance attendue
-hot water active: ECS active
-heat active: chauffage actif
-pump active: pompe active
-buffer 1 active: tampon 1 actif
-buffer 2 active: tampon 2 actif
-loading pump active: pompe de charge active
-hot water loading pump active: pompe de charge ECS active
-TBF connected: TBF raccordé
-emission test: mesure des émissions
-first device with error: premier appareil en défaut
-error code: code défaut
-reset network state: réinitialisation de l'état du réseau
-reset network config: réinitialisation de la configuration du réseau
-network loss: perte du réseau
 
 # patterned entries, written by scripts/i18n-patterns.py of the workbench: do not edit
 heating program 1, Monday slot 1: programme de chauffe 1, lundi, plage horaire 1
