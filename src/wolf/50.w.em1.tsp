@@ -15,6 +15,36 @@ namespace em1 {
   @qq(0x30)
   model HcMode is Wolf.HcMode;
 
+  // --- Settings of the heating circuit, read side only. Address 0x50 is the system manager's
+  // own direct heating circuit, the same device as 0x15 (same software version), not a WCM-EM
+  // add-on module like 0x51 and 0x52: two WCM-EM modules are installed, at 0x51 and 0x52. It
+  // answers these eight register reads with the values of 0x15, so they duplicate the system
+  // manager's. ---
+
+  /** normal room temperature setpoint */
+  model RoomNormalTemp is Wolf.RoomNormalTemp;
+
+  /** setback room temperature setpoint */
+  model RoomSetbackTemp is Wolf.RoomSetbackTemp;
+
+  /** room temperature setpoint of the frost protection */
+  model RoomFrostProtectionTemp is Wolf.RoomFrostProtectionTemp;
+
+  /** steepness of the heating curve */
+  model GradientCurve is Wolf.GradientCurve;
+
+  /** outside temperature of the summer / winter changeover */
+  model SummerWinterChangeOverTemp is Wolf.SummerWinterChangeOverTemp;
+
+  /** maximum flow temperature */
+  model SupplyMaxTemp is Wolf.SupplyMaxTemp;
+
+  /** minimum flow temperature */
+  model SupplyMinTemp is Wolf.SupplyMinTemp;
+
+  /** boiler boost offset */
+  model BoilerMCBoostTemp is Wolf.BoilerMCBoostTemp;
+
   // --- System clock, read side (writes are a separate lot) ---
 
   /** day of the week */

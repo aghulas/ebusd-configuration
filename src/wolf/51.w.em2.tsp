@@ -14,6 +14,17 @@ namespace em2 {
   @qq(0x70)
   model HcMode is Wolf.HcMode;
 
+  // Values of the heating circuit, read side only.
+
+  /** flow setpoint of the heating circuit */
+  model SupplyHCSetTemp is Wolf.SupplyHCSetTemp;
+
+  /** flow temperature of the heating circuit */
+  model SupplyHCTemp is Wolf.SupplyHCTemp;
+
+  /** boiler boost offset */
+  model BoilerMCBoostTemp is Wolf.BoilerMCBoostTemp;
+
   // Settings of the heating circuit, read and written. The module acknowledges a write from
   // any master. It takes the two flow limits from the address of ebusd as well, the others
   // only from source address 0xff (`write -s ff`).
