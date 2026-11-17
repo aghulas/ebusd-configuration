@@ -74,6 +74,7 @@ import "./wolf/08..hc.tsp";
 import "./wolf/08.w.bc1.tsp";
 import "./wolf/15.w.ka.tsp";
 import "./wolf/18.w.bc2.tsp";
+import "./wolf/35.w.fs1.tsp";
 import "./wolf/50..mc.tsp";
 import "./wolf/50.w.em1.tsp";
 import "./wolf/51.w.em2.tsp";
