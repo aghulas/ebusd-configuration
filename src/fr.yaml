@@ -49,8 +49,8 @@ status of the first boiler: état de la première chaudière
 status of the second boiler: état de la seconde chaudière
 burner operating hours: heures de fonctionnement du brûleur
 burner starts: démarrages brûleur
-burner hours since the last service (maintenance counter i45): heures brûleur écoulées depuis le dernier entretien (compteur d'entretien i45)
-minimum burner blocking time: temps de blocage minimal du brûleur
+burner hours since the last service (maintenance counter i46): heures brûleur écoulées depuis le dernier entretien (compteur d'entretien i46)
+blocking time before a further boiler of the cascade is switched on: temps de blocage avant enclenchement d'une chaudière supplémentaire de la cascade
 running time after which the boiler sequence of the cascade changes over: temps de marche après lequel l'ordre d'enclenchement des chaudières de la cascade change
 de-couple sensor B22 (hydraulic separator or plate exchanger, secondary side): sonde B22 (bouteille casse-pression ou échangeur à plaques, côté secondaire)
 minimum temperature at the de-couple sensor: température minimale à la sonde de bouteille casse-pression
