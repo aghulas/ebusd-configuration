@@ -7,8 +7,16 @@ using Ebus.Num;
 
 namespace Wolf;
 
-// Memory reads addressed to the second boiler (ZZ 0x18 from the file name).
+// Register and memory reads addressed to the second boiler (ZZ 0x18 from the file name).
 namespace bc2 {
+  /** burner hours since the last service (maintenance counter i46) */
+  @ext(0x0a, 0xbc, 0x02)
+  @inherit(crcr)
+  model BurnerServiceHours {
+    @factor(10)
+    value: hours;
+  }
+
   // --- Fault history, EEPROM 0x0200 to 0x0231 ---
 
   /** fault history: address of the last byte written */
