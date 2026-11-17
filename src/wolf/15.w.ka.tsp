@@ -114,10 +114,6 @@ namespace ka {
   @ext(0xd8, 0x23, 0x00)
   model DHWLoadingPriority is CrcRead<DHWOperation>;
 
-  /** blocking time before a further boiler of the cascade is switched on */
-  @ext(0x4c, 0x25, 0x00)
-  model BlockingTime is CrcRead<minutes>;
-
   /** maximum flow temperature limit */
   @ext(0x64, 0x28, 0x00)
   model SupplyMaxTemp is CrcRead<temp10>;
@@ -129,4 +125,16 @@ namespace ka {
   /** hot water exceed temperature */
   @ext(0x14, 0x2d, 0x00)
   model DHWExceeded is CrcRead<temp10>;
+
+  // Settings, read and written. The system manager acknowledges a write from any master but
+  // takes the value only from source address 0xff (`write -s ff`).
+
+  /** blocking time before a further boiler of the cascade is switched on */
+  @wcrc(0x25, 0x00)
+  @inherit(crcr, crcw)
+  model BlockingTime {
+    @minValue(0)
+    @maxValue(30)
+    value: minutes;
+  }
 }

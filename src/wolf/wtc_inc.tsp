@@ -21,6 +21,23 @@ model CrcRead<T> {
   value: T;
 }
 
+/**
+ * register write: ebusd computes the first ID byte when sending, a CRC-8 (poly 0x5C) over the
+ * register address and the value
+ */
+@write
+@base(MF, 0x23)
+model crcw {}
+
+/**
+ * Setting read with 50 22 and written with 50 23, one register per telegram, both with the
+ * checksum computed at run time (`@wcrc` on the model).
+ */
+@inherit(crcr, crcw)
+model CrcSetting<T> {
+  value: T;
+}
+
 // --- memory read of the boiler automat (PBSB 50 00), see evidence ---
 
 /**
