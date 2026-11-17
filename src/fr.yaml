@@ -1,0 +1,106 @@
+# French translations of the comments, same format as de.yaml: English comment as key.
+# A comment without an entry stays in English. Names, value lists and units are not translated.
+#
+# Entries for the Weishaupt / Kromschröder files of the wolf folder (NN.w.*.tsp, wtc_inc.tsp,
+# broadcast.tsp). The terms are those of the French editions of the vendor's manuals; where no
+# manual gives one, the translation is provisional and listed apart below.
+
+# terms of the vendor's manuals
+temperature: température
+temperature difference: écart de température
+outside temperature: température extérieure
+outside temperature, weighted over time: température extérieure pondérée
+outside sensor B1: sonde extérieure B1
+room temperature: température ambiante
+normal room temperature setpoint: consigne de température ambiante normale
+setback room temperature setpoint: consigne de température ambiante réduite
+room temperature setpoint of the frost protection: consigne de température ambiante hors-gel
+outside temperature below which the frost protection starts: température extérieure limite de la protection hors-gel
+outside temperature of the summer / winter changeover: température extérieure de commutation été/hiver
+steepness of the heating curve: pente de la courbe de chauffe
+lead time of the optimised switch-on: durée d'anticipation de l'optimisation au démarrage
+operating mode: mode de fonctionnement
+flow temperature of the heating circuit: température de départ du circuit de chauffage
+flow setpoint of the heating circuit: consigne de température départ du circuit de chauffage
+actual flow temperature: température de départ instantanée
+maximum flow temperature: température de départ maximale
+minimum flow temperature: température de départ minimale
+heat demand of the heating circuit: demande de chaleur du circuit de chauffage
+boiler boost offset: surélévation de température chaudière avec circuit mélangé
+boiler temperature: température chaudière
+boiler flow temperature: température de départ de la chaudière
+boiler flow setpoint: consigne de température départ de la chaudière
+return temperature: température retour
+flue gas temperature: température des fumées
+return, flue gas, flow and outside temperature: températures de retour, des fumées, de départ et extérieure
+burner load: puissance du brûleur
+current burner load: puissance actuelle du brûleur
+minimum burner load: puissance minimale du brûleur
+maximum burner load: puissance maximale du brûleur
+burner load of the first boiler: puissance du brûleur de la première chaudière
+burner load of the second boiler: puissance du brûleur de la seconde chaudière
+current burner modulation: degré de modulation instantané du brûleur
+ionisation signal: signal d'ionisation
+set speed of the PWM pump: consigne de vitesse du circulateur PWM
+burner load, ionisation signal and pump speed: puissance du brûleur, signal d'ionisation et vitesse du circulateur
+operating phase: phase de fonctionnement
+burner operating phase: phase de fonctionnement du brûleur
+status of the first boiler: état de la première chaudière
+status of the second boiler: état de la seconde chaudière
+burner operating hours: heures de fonctionnement du brûleur
+burner starts: démarrages brûleur
+burner hours since the last service (maintenance counter i45): heures brûleur écoulées depuis le dernier entretien (compteur d'entretien i45)
+minimum burner blocking time: temps de blocage minimal du brûleur
+running time after which the boiler sequence of the cascade changes over: temps de marche après lequel l'ordre d'enclenchement des chaudières de la cascade change
+de-couple sensor B22 (hydraulic separator or plate exchanger, secondary side): sonde B22 (bouteille casse-pression ou échangeur à plaques, côté secondaire)
+minimum temperature at the de-couple sensor: température minimale à la sonde de bouteille casse-pression
+domestic hot water temperature: température ECS
+domestic hot water sensor B3: sonde ECS B3
+domestic hot water setpoint: consigne de température ECS
+configured hot water setpoint: consigne de température ECS réglée
+hot water operating mode: mode de fonctionnement ECS
+domestic hot water operating mode: mode de fonctionnement ECS
+hot water exceed temperature: surélévation de température ECS
+hot water switching differential, below the setpoint: différentiel de commutation ECS, sous la consigne
+maximum hot water loading time: temps de charge maximal pour l'ECS
+hot water setpoint of the legionella protection: consigne de température anti-légionelle
+running time of the circulation pump during legionella protection: temps de fonctionnement de la pompe de circulation ECS en fonction anti-légionelle
+fault (F) or warning (W): défaut (F) ou alarme (W)
+fault minute: minute du défaut
+fault hour: heure du défaut
+fault day of the month: jour du mois du défaut
+fault month: mois du défaut
+fault year: année du défaut
+day of the week: jour de la semaine
+day of the month: jour du mois
+month: mois
+month of the year: mois de l'année
+year: année
+hour: heure
+minute: minute
+second: seconde
+hours: heures
+minutes: minutes
+seconds: secondes
+
+# provisional: at least one term of the comment has no vendor source yet
+requested flow setpoint: consigne de température départ demandée
+flow temperature the heating circuit requests from the heat source: température de départ demandée par le circuit de chauffage au générateur de chaleur
+maximum flow temperature limit: limite de la température de départ maximale
+room-controller / heating-module exchange: échange entre commande à distance et module d'extension
+switching differential of the calorifier: différentiel de commutation du stock tampon
+status byte: octet d'état
+boiler status broadcast by the WTC: état de la chaudière diffusé par la WTC
+configuration status: état de la configuration
+error status, 0 when no error is pending: état de défaut, 0 en l'absence de défaut
+firmware version, major part: version du logiciel, partie majeure
+firmware version, minor part: version du logiciel, partie mineure
+hours with mains on: heures sous tension
+operating hours, burner hours and burner starts: heures de fonctionnement, heures brûleur et démarrages brûleur
+fault number: numéro de défaut
+"fault history: address of the last byte written": "mémoire de défauts : adresse du dernier octet écrit"
+selected fault-log entry (0 = most recent): entrée sélectionnée de l'historique des défauts (0 = la plus récente)
+fault code of the selected entry: code défaut de l'entrée sélectionnée
+fault type of the selected entry: type de défaut de l'entrée sélectionnée
+device that raised the selected entry: origine du défaut de l'entrée sélectionnée
+percent: pour cent
