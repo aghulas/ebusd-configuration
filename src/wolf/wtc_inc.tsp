@@ -195,6 +195,149 @@ model Counters {
   BurnerStarts: U3N;
 }
 
+/*
+ * Fault counters of the boiler automat, one per fault number, two bytes each, in EEPROM
+ * 0x0196 to 0x01d7 by descending number. The number is the one of the fault history; a
+ * number the manual lists both as a warning (W) and as a fault (F) has one counter only.
+ * Read in items of at most 10 bytes: an answer of 12 data bytes that are all zero was lost
+ * most of the time on the bus, one of 10 never. The first byte of each answer is kept as a
+ * field through the shared `memr` base, like the other memory reads.
+ */
+
+/** Fault counters, EEPROM 0x0196 to 0x019f. */
+@inherit(memr)
+@ext(0xe2, 0x06, 0x01, 0x92, 0x96)
+model FaultCounters1 {
+  /** W57/F57: communication between the automat and its operating unit faulty */
+  Code57: UIN;
+
+  /** F55: reset too often */
+  Code55: UIN;
+
+  /** F53: supply voltage or mains frequency out of tolerance */
+  Code53: UIN;
+
+  /** F52: burner data record error */
+  Code52: UIN;
+
+  /** F51: boiler data record error */
+  Code51: UIN;
+}
+
+/** Fault counters, EEPROM 0x01a0 to 0x01a9. */
+@inherit(memr)
+@ext(0xd4, 0x06, 0x01, 0x92, 0xa0)
+model FaultCounters2 {
+  /** F49: input H2 closed while set for a condensate lifting unit */
+  Code49: UIN;
+
+  /** W48/F48: run time of the flue gas damper exceeded */
+  Code48: UIN;
+
+  /** W47: gas pressure too low */
+  Code47: UIN;
+
+  /** F46: pressure on the flue gas side too high */
+  Code46: UIN;
+
+  /** F45: air pressure switch does not switch */
+  Code45: UIN;
+}
+
+/** Fault counters, EEPROM 0x01aa to 0x01b3. */
+@inherit(memr)
+@ext(0xde, 0x06, 0x01, 0x92, 0xaa)
+model FaultCounters3 {
+  /** F44: fan standstill check failed */
+  Code44: UIN;
+
+  /** F43: fan does not reach the requested speed */
+  Code43: UIN;
+
+  /** F41: gas valve leaking */
+  Code41: UIN;
+
+  /** W39: de-coupling sensor defective */
+  Code39: UIN;
+
+  /** F38: flue gas pressure switch does not release at the fan standstill check */
+  Code38: UIN;
+}
+
+/** Fault counters, EEPROM 0x01b4 to 0x01bd. */
+@inherit(memr)
+@ext(0xc0, 0x06, 0x01, 0x92, 0xb4)
+model FaultCounters4 {
+  /** F37: return sensor defective */
+  Code37: UIN;
+
+  /** F36: water pressure too low */
+  Code36: UIN;
+
+  /** F35: flow sensor defective */
+  Code35: UIN;
+
+  /** W34: hot-water sensor defective */
+  Code34: UIN;
+
+  /** W33: outside sensor defective */
+  Code33: UIN;
+}
+
+/** Fault counters, EEPROM 0x01be to 0x01c7. */
+@inherit(memr)
+@ext(0xca, 0x06, 0x01, 0x92, 0xbe)
+model FaultCounters5 {
+  /** F32: air pressure switch not in its rest position */
+  Code32: UIN;
+
+  /** F31: flue gas sensor defective */
+  Code31: UIN;
+
+  /** F30: sensor of the safety temperature limiter defective */
+  Code30: UIN;
+
+  /** W24: input H2 closed while set as a lockout input */
+  Code24: UIN;
+
+  /** F23: flame signal without a flame */
+  Code23: UIN;
+}
+
+/** Fault counters, EEPROM 0x01c8 to 0x01d1. */
+@inherit(memr)
+@ext(0xbc, 0x06, 0x01, 0x92, 0xc8)
+model FaultCounters6 {
+  /** W22: flame lost during operation */
+  Code22: UIN;
+
+  /** W21/F21: no flame at burner start */
+  Code21: UIN;
+
+  /** W18/F18: difference between limiter and flow temperature too large */
+  Code18: UIN;
+
+  /** W16: flue gas temperature too high */
+  Code16: UIN;
+
+  /** W15/F15: difference between flow and return temperature too large */
+  Code15: UIN;
+}
+
+/** Fault counters, EEPROM 0x01d2 to 0x01d7. */
+@inherit(memr)
+@ext(0x2e, 0x06, 0x01, 0x52, 0xd2)
+model FaultCounters7 {
+  /** W14: temperature at the safety limiter rises too fast */
+  Code14: UIN;
+
+  /** W12: temperature at the safety limiter, flow or return sensor above 95 °C */
+  Code12: UIN;
+
+  /** F11: temperature at the safety limiter above 105 °C */
+  Code11: UIN;
+}
+
 /** temperature, -40 when the sensor is not fitted */
 @unit("°C")
 scalar temp0s extends SCH;
