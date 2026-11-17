@@ -129,6 +129,23 @@ model Temperatures {
   OutsideTemp: temp0s;
 }
 
+/**
+ * Burner load, flame signal and pump speed of the boiler automat, read in one memory read of
+ * the XRAM bytes 0xb2 and 0xd5 and the RAM byte 0xed.
+ */
+@inherit(memr)
+@ext(0xd1, 0x03, 0xb2, 0x03, 0xd5, 0x01, 0xed)
+model Operation {
+  /** burner load */
+  Load: percent0;
+
+  /** ionisation signal */
+  Ionisation: ionisation;
+
+  /** set speed of the PWM pump */
+  PumpSpeed: percent0;
+}
+
 // Signed tenths: outside sensors, and registers that answer -100.0 when no sensor is fitted.
 /** temperature */
 @unit("°C")

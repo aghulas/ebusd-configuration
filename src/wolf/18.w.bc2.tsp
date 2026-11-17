@@ -23,6 +23,9 @@ namespace bc2 {
   /** return, flue gas, flow and outside temperature */
   model Temperatures is Wolf.Temperatures;
 
+  /** burner load, ionisation signal and pump speed */
+  model Operation is Wolf.Operation;
+
   // --- Fault history, EEPROM 0x0200 to 0x0231 ---
 
   /** fault history: address of the last byte written */
