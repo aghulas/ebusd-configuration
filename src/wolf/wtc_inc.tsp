@@ -101,6 +101,16 @@ model SwitchOnRuntime is CrcRead<minutes>;
 @ext(0xb2, 0xbe, 0x02)
 model FrostProtectionLimitTemp is CrcRead<otemp10>;
 
+// --- registers of the heating modules (EM), read side, see evidence ---
+
+/** flow temperature of the heating circuit */
+@ext(0x90, 0x0f, 0x00)
+model SupplyHCTemp is CrcRead<otemp10>;
+
+/** boiler boost offset: added to the flow setpoint for the demand to the heat source */
+@ext(0xed, 0x11, 0x01)
+model BoilerMCBoostTemp is CrcRead<diff10>;
+
 // --- memory read of the boiler automat (PBSB 50 00), see evidence ---
 
 /**
