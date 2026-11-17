@@ -406,4 +406,136 @@ namespace fs3 {
 
   /** heating program 3, Sunday slot 3 */
   model HCProgram3Sun3 is Wolf.HCProgram3Sun3;
+
+  // Weekly hot-water and circulation programs as stored by the room unit, read side only.
+
+  // Hot-water program
+
+  /** hot-water program, Monday slot 1 */
+  model DHWProgramMon1 is Wolf.DHWProgramMon1;
+
+  /** hot-water program, Monday slot 2 */
+  model DHWProgramMon2 is Wolf.DHWProgramMon2;
+
+  /** hot-water program, Monday slot 3 */
+  model DHWProgramMon3 is Wolf.DHWProgramMon3;
+
+  /** hot-water program, Tuesday slot 1 */
+  model DHWProgramTue1 is Wolf.DHWProgramTue1;
+
+  /** hot-water program, Tuesday slot 2 */
+  model DHWProgramTue2 is Wolf.DHWProgramTue2;
+
+  /** hot-water program, Tuesday slot 3 */
+  model DHWProgramTue3 is Wolf.DHWProgramTue3;
+
+  /** hot-water program, Wednesday slot 1 */
+  model DHWProgramWed1 is Wolf.DHWProgramWed1;
+
+  /** hot-water program, Wednesday slot 2 */
+  model DHWProgramWed2 is Wolf.DHWProgramWed2;
+
+  /** hot-water program, Wednesday slot 3 */
+  model DHWProgramWed3 is Wolf.DHWProgramWed3;
+
+  /** hot-water program, Thursday slot 1 */
+  model DHWProgramThu1 is Wolf.DHWProgramThu1;
+
+  /** hot-water program, Thursday slot 2 */
+  model DHWProgramThu2 is Wolf.DHWProgramThu2;
+
+  /** hot-water program, Thursday slot 3 */
+  model DHWProgramThu3 is Wolf.DHWProgramThu3;
+
+  /** hot-water program, Friday slot 1 */
+  model DHWProgramFri1 is Wolf.DHWProgramFri1;
+
+  /** hot-water program, Friday slot 2 */
+  model DHWProgramFri2 is Wolf.DHWProgramFri2;
+
+  /** hot-water program, Friday slot 3 */
+  model DHWProgramFri3 is Wolf.DHWProgramFri3;
+
+  /** hot-water program, Saturday slot 1 */
+  model DHWProgramSat1 is Wolf.DHWProgramSat1;
+
+  /** hot-water program, Saturday slot 2 */
+  model DHWProgramSat2 is Wolf.DHWProgramSat2;
+
+  /** hot-water program, Saturday slot 3 */
+  model DHWProgramSat3 is Wolf.DHWProgramSat3;
+
+  /** hot-water program, Sunday slot 1 */
+  model DHWProgramSun1 is Wolf.DHWProgramSun1;
+
+  /** hot-water program, Sunday slot 2 */
+  model DHWProgramSun2 is Wolf.DHWProgramSun2;
+
+  /** hot-water program, Sunday slot 3 */
+  model DHWProgramSun3 is Wolf.DHWProgramSun3;
+
+  // Circulation program
+
+  /** circulation program, Monday slot 1 */
+  model CircProgramMon1 is Wolf.CircProgramMon1;
+
+  /** circulation program, Monday slot 2 */
+  model CircProgramMon2 is Wolf.CircProgramMon2;
+
+  /** circulation program, Monday slot 3 */
+  model CircProgramMon3 is Wolf.CircProgramMon3;
+
+  /** circulation program, Tuesday slot 1 */
+  model CircProgramTue1 is Wolf.CircProgramTue1;
+
+  /** circulation program, Tuesday slot 2 */
+  model CircProgramTue2 is Wolf.CircProgramTue2;
+
+  /** circulation program, Tuesday slot 3 */
+  model CircProgramTue3 is Wolf.CircProgramTue3;
+
+  /** circulation program, Wednesday slot 1 */
+  model CircProgramWed1 is Wolf.CircProgramWed1;
+
+  /** circulation program, Wednesday slot 2 */
+  model CircProgramWed2 is Wolf.CircProgramWed2;
+
+  /** circulation program, Wednesday slot 3 */
+  model CircProgramWed3 is Wolf.CircProgramWed3;
+
+  /** circulation program, Thursday slot 1 */
+  model CircProgramThu1 is Wolf.CircProgramThu1;
+
+  /** circulation program, Thursday slot 2 */
+  model CircProgramThu2 is Wolf.CircProgramThu2;
+
+  /** circulation program, Thursday slot 3 */
+  model CircProgramThu3 is Wolf.CircProgramThu3;
+
+  /** circulation program, Friday slot 1 */
+  model CircProgramFri1 is Wolf.CircProgramFri1;
+
+  /** circulation program, Friday slot 2 */
+  model CircProgramFri2 is Wolf.CircProgramFri2;
+
+  /** circulation program, Friday slot 3 */
+  model CircProgramFri3 is Wolf.CircProgramFri3;
+
+  /** circulation program, Saturday slot 1 */
+  model CircProgramSat1 is Wolf.CircProgramSat1;
+
+  /** circulation program, Saturday slot 2 */
+  model CircProgramSat2 is Wolf.CircProgramSat2;
+
+  /** circulation program, Saturday slot 3 */
+  model CircProgramSat3 is Wolf.CircProgramSat3;
+
+  /** circulation program, Sunday slot 1 */
+  model CircProgramSun1 is Wolf.CircProgramSun1;
+
+  /** circulation program, Sunday slot 2 */
+  model CircProgramSun2 is Wolf.CircProgramSun2;
+
+  /** circulation program, Sunday slot 3 */
+  model CircProgramSun3 is Wolf.CircProgramSun3;
 }
