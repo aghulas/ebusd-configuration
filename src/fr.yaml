@@ -130,3 +130,138 @@ error code: code défaut
 reset network state: réinitialisation de l'état du réseau
 reset network config: réinitialisation de la configuration du réseau
 network loss: perte du réseau
+
+# patterned entries, written by scripts/i18n-patterns.py of the workbench: do not edit
+heating program 1, Monday slot 1: programme de chauffe 1, lundi, plage horaire 1
+heating program 1, Monday slot 2: programme de chauffe 1, lundi, plage horaire 2
+heating program 1, Monday slot 3: programme de chauffe 1, lundi, plage horaire 3
+heating program 1, Tuesday slot 1: programme de chauffe 1, mardi, plage horaire 1
+heating program 1, Tuesday slot 2: programme de chauffe 1, mardi, plage horaire 2
+heating program 1, Tuesday slot 3: programme de chauffe 1, mardi, plage horaire 3
+heating program 1, Wednesday slot 1: programme de chauffe 1, mercredi, plage horaire 1
+heating program 1, Wednesday slot 2: programme de chauffe 1, mercredi, plage horaire 2
+heating program 1, Wednesday slot 3: programme de chauffe 1, mercredi, plage horaire 3
+heating program 1, Thursday slot 1: programme de chauffe 1, jeudi, plage horaire 1
+heating program 1, Thursday slot 2: programme de chauffe 1, jeudi, plage horaire 2
+heating program 1, Thursday slot 3: programme de chauffe 1, jeudi, plage horaire 3
+heating program 1, Friday slot 1: programme de chauffe 1, vendredi, plage horaire 1
+heating program 1, Friday slot 2: programme de chauffe 1, vendredi, plage horaire 2
+heating program 1, Friday slot 3: programme de chauffe 1, vendredi, plage horaire 3
+heating program 1, Saturday slot 1: programme de chauffe 1, samedi, plage horaire 1
+heating program 1, Saturday slot 2: programme de chauffe 1, samedi, plage horaire 2
+heating program 1, Saturday slot 3: programme de chauffe 1, samedi, plage horaire 3
+heating program 1, Sunday slot 1: programme de chauffe 1, dimanche, plage horaire 1
+heating program 1, Sunday slot 2: programme de chauffe 1, dimanche, plage horaire 2
+heating program 1, Sunday slot 3: programme de chauffe 1, dimanche, plage horaire 3
+heating program 2, Monday slot 1: programme de chauffe 2, lundi, plage horaire 1
+heating program 2, Monday slot 2: programme de chauffe 2, lundi, plage horaire 2
+heating program 2, Monday slot 3: programme de chauffe 2, lundi, plage horaire 3
+heating program 2, Tuesday slot 1: programme de chauffe 2, mardi, plage horaire 1
+heating program 2, Tuesday slot 2: programme de chauffe 2, mardi, plage horaire 2
+heating program 2, Tuesday slot 3: programme de chauffe 2, mardi, plage horaire 3
+heating program 2, Wednesday slot 1: programme de chauffe 2, mercredi, plage horaire 1
+heating program 2, Wednesday slot 2: programme de chauffe 2, mercredi, plage horaire 2
+heating program 2, Wednesday slot 3: programme de chauffe 2, mercredi, plage horaire 3
+heating program 2, Thursday slot 1: programme de chauffe 2, jeudi, plage horaire 1
+heating program 2, Thursday slot 2: programme de chauffe 2, jeudi, plage horaire 2
+heating program 2, Thursday slot 3: programme de chauffe 2, jeudi, plage horaire 3
+heating program 2, Friday slot 1: programme de chauffe 2, vendredi, plage horaire 1
+heating program 2, Friday slot 2: programme de chauffe 2, vendredi, plage horaire 2
+heating program 2, Friday slot 3: programme de chauffe 2, vendredi, plage horaire 3
+heating program 2, Saturday slot 1: programme de chauffe 2, samedi, plage horaire 1
+heating program 2, Saturday slot 2: programme de chauffe 2, samedi, plage horaire 2
+heating program 2, Saturday slot 3: programme de chauffe 2, samedi, plage horaire 3
+heating program 2, Sunday slot 1: programme de chauffe 2, dimanche, plage horaire 1
+heating program 2, Sunday slot 2: programme de chauffe 2, dimanche, plage horaire 2
+heating program 2, Sunday slot 3: programme de chauffe 2, dimanche, plage horaire 3
+heating program 3, Monday slot 1: programme de chauffe 3, lundi, plage horaire 1
+heating program 3, Monday slot 2: programme de chauffe 3, lundi, plage horaire 2
+heating program 3, Monday slot 3: programme de chauffe 3, lundi, plage horaire 3
+heating program 3, Tuesday slot 1: programme de chauffe 3, mardi, plage horaire 1
+heating program 3, Tuesday slot 2: programme de chauffe 3, mardi, plage horaire 2
+heating program 3, Tuesday slot 3: programme de chauffe 3, mardi, plage horaire 3
+heating program 3, Wednesday slot 1: programme de chauffe 3, mercredi, plage horaire 1
+heating program 3, Wednesday slot 2: programme de chauffe 3, mercredi, plage horaire 2
+heating program 3, Wednesday slot 3: programme de chauffe 3, mercredi, plage horaire 3
+heating program 3, Thursday slot 1: programme de chauffe 3, jeudi, plage horaire 1
+heating program 3, Thursday slot 2: programme de chauffe 3, jeudi, plage horaire 2
+heating program 3, Thursday slot 3: programme de chauffe 3, jeudi, plage horaire 3
+heating program 3, Friday slot 1: programme de chauffe 3, vendredi, plage horaire 1
+heating program 3, Friday slot 2: programme de chauffe 3, vendredi, plage horaire 2
+heating program 3, Friday slot 3: programme de chauffe 3, vendredi, plage horaire 3
+heating program 3, Saturday slot 1: programme de chauffe 3, samedi, plage horaire 1
+heating program 3, Saturday slot 2: programme de chauffe 3, samedi, plage horaire 2
+heating program 3, Saturday slot 3: programme de chauffe 3, samedi, plage horaire 3
+heating program 3, Sunday slot 1: programme de chauffe 3, dimanche, plage horaire 1
+heating program 3, Sunday slot 2: programme de chauffe 3, dimanche, plage horaire 2
+heating program 3, Sunday slot 3: programme de chauffe 3, dimanche, plage horaire 3
+hot-water program stored in the room unit, Monday slot 1: programme ECS enregistré dans la commande à distance, lundi, plage horaire 1
+hot-water program stored in the room unit, Monday slot 2: programme ECS enregistré dans la commande à distance, lundi, plage horaire 2
+hot-water program stored in the room unit, Monday slot 3: programme ECS enregistré dans la commande à distance, lundi, plage horaire 3
+hot-water program stored in the room unit, Tuesday slot 1: programme ECS enregistré dans la commande à distance, mardi, plage horaire 1
+hot-water program stored in the room unit, Tuesday slot 2: programme ECS enregistré dans la commande à distance, mardi, plage horaire 2
+hot-water program stored in the room unit, Tuesday slot 3: programme ECS enregistré dans la commande à distance, mardi, plage horaire 3
+hot-water program stored in the room unit, Wednesday slot 1: programme ECS enregistré dans la commande à distance, mercredi, plage horaire 1
+hot-water program stored in the room unit, Wednesday slot 2: programme ECS enregistré dans la commande à distance, mercredi, plage horaire 2
+hot-water program stored in the room unit, Wednesday slot 3: programme ECS enregistré dans la commande à distance, mercredi, plage horaire 3
+hot-water program stored in the room unit, Thursday slot 1: programme ECS enregistré dans la commande à distance, jeudi, plage horaire 1
+hot-water program stored in the room unit, Thursday slot 2: programme ECS enregistré dans la commande à distance, jeudi, plage horaire 2
+hot-water program stored in the room unit, Thursday slot 3: programme ECS enregistré dans la commande à distance, jeudi, plage horaire 3
+hot-water program stored in the room unit, Friday slot 1: programme ECS enregistré dans la commande à distance, vendredi, plage horaire 1
+hot-water program stored in the room unit, Friday slot 2: programme ECS enregistré dans la commande à distance, vendredi, plage horaire 2
+hot-water program stored in the room unit, Friday slot 3: programme ECS enregistré dans la commande à distance, vendredi, plage horaire 3
+hot-water program stored in the room unit, Saturday slot 1: programme ECS enregistré dans la commande à distance, samedi, plage horaire 1
+hot-water program stored in the room unit, Saturday slot 2: programme ECS enregistré dans la commande à distance, samedi, plage horaire 2
+hot-water program stored in the room unit, Saturday slot 3: programme ECS enregistré dans la commande à distance, samedi, plage horaire 3
+hot-water program stored in the room unit, Sunday slot 1: programme ECS enregistré dans la commande à distance, dimanche, plage horaire 1
+hot-water program stored in the room unit, Sunday slot 2: programme ECS enregistré dans la commande à distance, dimanche, plage horaire 2
+hot-water program stored in the room unit, Sunday slot 3: programme ECS enregistré dans la commande à distance, dimanche, plage horaire 3
+circulation program stored in the room unit, Monday slot 1: programme de circulation ECS enregistré dans la commande à distance, lundi, plage horaire 1
+circulation program stored in the room unit, Monday slot 2: programme de circulation ECS enregistré dans la commande à distance, lundi, plage horaire 2
+circulation program stored in the room unit, Monday slot 3: programme de circulation ECS enregistré dans la commande à distance, lundi, plage horaire 3
+circulation program stored in the room unit, Tuesday slot 1: programme de circulation ECS enregistré dans la commande à distance, mardi, plage horaire 1
+circulation program stored in the room unit, Tuesday slot 2: programme de circulation ECS enregistré dans la commande à distance, mardi, plage horaire 2
+circulation program stored in the room unit, Tuesday slot 3: programme de circulation ECS enregistré dans la commande à distance, mardi, plage horaire 3
+circulation program stored in the room unit, Wednesday slot 1: programme de circulation ECS enregistré dans la commande à distance, mercredi, plage horaire 1
+circulation program stored in the room unit, Wednesday slot 2: programme de circulation ECS enregistré dans la commande à distance, mercredi, plage horaire 2
+circulation program stored in the room unit, Wednesday slot 3: programme de circulation ECS enregistré dans la commande à distance, mercredi, plage horaire 3
+circulation program stored in the room unit, Thursday slot 1: programme de circulation ECS enregistré dans la commande à distance, jeudi, plage horaire 1
+circulation program stored in the room unit, Thursday slot 2: programme de circulation ECS enregistré dans la commande à distance, jeudi, plage horaire 2
+circulation program stored in the room unit, Thursday slot 3: programme de circulation ECS enregistré dans la commande à distance, jeudi, plage horaire 3
+circulation program stored in the room unit, Friday slot 1: programme de circulation ECS enregistré dans la commande à distance, vendredi, plage horaire 1
+circulation program stored in the room unit, Friday slot 2: programme de circulation ECS enregistré dans la commande à distance, vendredi, plage horaire 2
+circulation program stored in the room unit, Friday slot 3: programme de circulation ECS enregistré dans la commande à distance, vendredi, plage horaire 3
+circulation program stored in the room unit, Saturday slot 1: programme de circulation ECS enregistré dans la commande à distance, samedi, plage horaire 1
+circulation program stored in the room unit, Saturday slot 2: programme de circulation ECS enregistré dans la commande à distance, samedi, plage horaire 2
+circulation program stored in the room unit, Saturday slot 3: programme de circulation ECS enregistré dans la commande à distance, samedi, plage horaire 3
+circulation program stored in the room unit, Sunday slot 1: programme de circulation ECS enregistré dans la commande à distance, dimanche, plage horaire 1
+circulation program stored in the room unit, Sunday slot 2: programme de circulation ECS enregistré dans la commande à distance, dimanche, plage horaire 2
+circulation program stored in the room unit, Sunday slot 3: programme de circulation ECS enregistré dans la commande à distance, dimanche, plage horaire 3
+Monday slot 1: lundi, plage horaire 1
+Monday slot 2: lundi, plage horaire 2
+Monday slot 3: lundi, plage horaire 3
+Tuesday slot 1: mardi, plage horaire 1
+Tuesday slot 2: mardi, plage horaire 2
+Tuesday slot 3: mardi, plage horaire 3
+Wednesday slot 1: mercredi, plage horaire 1
+Wednesday slot 2: mercredi, plage horaire 2
+Wednesday slot 3: mercredi, plage horaire 3
+Thursday slot 1: jeudi, plage horaire 1
+Thursday slot 2: jeudi, plage horaire 2
+Thursday slot 3: jeudi, plage horaire 3
+Friday slot 1: vendredi, plage horaire 1
+Friday slot 2: vendredi, plage horaire 2
+Friday slot 3: vendredi, plage horaire 3
+Saturday slot 1: samedi, plage horaire 1
+Saturday slot 2: samedi, plage horaire 2
+Saturday slot 3: samedi, plage horaire 3
+Sunday slot 1: dimanche, plage horaire 1
+Sunday slot 2: dimanche, plage horaire 2
+Sunday slot 3: dimanche, plage horaire 3
+fault history slot 1: mémoire de défauts, emplacement 1
+fault history slot 2: mémoire de défauts, emplacement 2
+fault history slot 3: mémoire de défauts, emplacement 3
+fault history slot 4: mémoire de défauts, emplacement 4
+fault history slot 5: mémoire de défauts, emplacement 5
+fault history slot 6: mémoire de défauts, emplacement 6
+# end of the patterned entries
