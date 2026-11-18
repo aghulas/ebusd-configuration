@@ -14,11 +14,13 @@
 # poll      cyclic | on_demand, only where a record shows how the vendor service tool reads
 #           the value; absent otherwise. Passive messages need none. A message without one
 #           takes the default of its kind in [poll_default], if there is one.
-# write     only for a setting a lot writes: source address of the captured write, risk class
-#           (comfort | regulation), proof (captured | change-observed), open questions; and
-#           min, max, step with range_source where the definition cannot carry the range (a
-#           fractional bound on an integer register). Risk class comfort: the room setpoints
-#           (normal, setback) and the hot-water setpoint, on every device; the rest regulation.
+# write     only for a setting or a program slot a lot writes: source address of the
+#           captured write, risk class (comfort | regulation), proof (captured |
+#           change-observed | family: the slots of one program of one device proven by one
+#           captured slot, named by proof_slot), open questions; and min, max, step with
+#           range_source where the definition cannot carry the range (a fractional bound on an
+#           integer register). Risk class comfort: the room setpoints (normal, setback), the
+#           hot-water setpoint and the program slots, on every device; the rest regulation.
 # evidence  records under evidence/ of the workbench repository.
 #
 # [days] names the weekdays for the labels of the program slots and of the weekday value
@@ -1524,8 +1526,38 @@ label = { en = "Frost protection limit", fr = "Température limite hors-gel" }
 evidence = ["settings-writes", "room-units-reads"]
 write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"] }
 
+# Heating program 1 of room unit 1, read and written: one slot captured changed and read back
+# (HCProgram1Tue1), the other 20 by the owner's rule of 2026-11-18 (same codec and register
+# scheme in one program of one device).
 [[entry]]
-circuits = ["fs1", "fs2", "fs3"]
+circuits = ["fs1"]
+pattern = "HCProgram(?P<p>1)(?P<day>Mon|Tue|Wed|Thu|Fri|Sat|Sun)(?P<slot>[1-3])"
+count = 21
+kind = "program_slot"
+menu = "programs"
+label = { en = "Heating program {p}, {day} slot {slot}", fr = "Programme de chauffe {p}, {day}, plage horaire {slot}" }
+family = "program"
+group_id = "heating{p}"
+group_label = { en = "Heating program {p}", fr = "Programme de chauffe {p}" }
+fields = "slot"
+evidence = ["room-units-programs", "choice-date-program-writes"]
+write = { source = "31", risk = "comfort", proof = "family", proof_slot = "HCProgram1Tue1" }
+
+[[entry]]
+circuits = ["fs1"]
+pattern = "HCProgram(?P<p>[23])(?P<day>Mon|Tue|Wed|Thu|Fri|Sat|Sun)(?P<slot>[1-3])"
+count = 42
+kind = "program_slot"
+menu = "programs"
+label = { en = "Heating program {p}, {day} slot {slot}", fr = "Programme de chauffe {p}, {day}, plage horaire {slot}" }
+family = "program"
+group_id = "heating{p}"
+group_label = { en = "Heating program {p}", fr = "Programme de chauffe {p}" }
+fields = "slot"
+evidence = ["room-units-programs"]
+
+[[entry]]
+circuits = ["fs2", "fs3"]
 pattern = "HCProgram(?P<p>[1-3])(?P<day>Mon|Tue|Wed|Thu|Fri|Sat|Sun)(?P<slot>[1-3])"
 count = 63
 kind = "program_slot"
