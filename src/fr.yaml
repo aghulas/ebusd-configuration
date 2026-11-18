@@ -149,6 +149,14 @@ percent: pour cent
 "fault counters, numbers 22 to 15": "compteurs de défauts, numéros 22 à 15"
 "fault counters, numbers 14 to 11": "compteurs de défauts, numéros 14 à 11"
 "first answer byte: 0, or the number of bytes asked for when the data read 0": "premier octet de la réponse : 0, ou le nombre d'octets demandés quand les données sont lues à 0"
+flow temperature (info value i35): température de départ (valeur d'information i35)
+return temperature (info value i37): température retour (valeur d'information i37)
+flue gas temperature (info value i31): température des fumées (valeur d'information i31)
+outside temperature (info value i33): température extérieure (valeur d'information i33)
+domestic hot water temperature (info value i34): température ECS (valeur d'information i34)
+hydraulic separator temperature (info value i39): température de la bouteille casse-pression (valeur d'information i39)
+WCM-CPU software version (info value i44): version du logiciel WCM-CPU (valeur d'information i44)
+WCM-CUI software version (info value i45): version du logiciel WCM-CUI (valeur d'information i45)
 
 # patterned entries, written by scripts/i18n-patterns.py of the workbench: do not edit
 heating program 1, Monday slot 1: programme de chauffe 1, lundi, plage horaire 1
