@@ -13,4 +13,16 @@ namespace em3 {
   @passive
   @qq(0xf0)
   model HcMode is Wolf.HcMode;
+
+  // Setting of the heating circuit, read and written. The module acknowledges a write from
+  // any master; this one was taken from source address 0xff (`write -s ff`).
+
+  /** steepness of the heating curve */
+  @wcrc(0x0e, 0x01)
+  @inherit(crcr, crcw)
+  model GradientCurve {
+    // 2.5 to 40.0: no range here, a bound of an integer type cannot be fractional
+    @divisor(10)
+    value: UIN;
+  }
 }
