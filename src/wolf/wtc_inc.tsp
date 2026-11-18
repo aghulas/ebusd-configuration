@@ -301,6 +301,18 @@ model SwitchTimes {
   @values(_enabled) FromEnabled: BI7;
 }
 
+/**
+ * Switch-time slot read and written, one slot per telegram, the checksum computed at run time
+ * (`@wcrc` on the model): end time then start time, each with its enable flag.
+ */
+@inherit(crcr, crcw)
+model SwitchTimesSetting {
+  ToTime: TTQ;
+  @values(_enabled) ToEnabled: BI7;
+  FromTime: TTQ;
+  @values(_enabled) FromEnabled: BI7;
+}
+
 // --- weekly programs of the room units (FS), read side, see evidence ---
 // Three switch-time slots per weekday. Register address: the weekday in the high nibble
 // (1 = Monday to 7 = Sunday) and the slot in the low nibble (0 to 2); the second byte selects
