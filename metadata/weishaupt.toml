@@ -613,10 +613,11 @@ evidence = ["ka-reads"]
 
 [[entry]]
 circuits = ["ka"]
-message = "DHWOperationMode"
+message = "DHWLoadingPriority"
+renamed_from = "ka/DHWOperationMode"
 kind = "setting"
 menu = "dhw"
-label = { en = "Hot water operating mode", fr = "Mode de fonctionnement ECS" }
+label = { en = "Hot water loading priority", fr = "Priorité de la charge ECS" }
 evidence = ["ka-reads"]
 
 [[entry]]
