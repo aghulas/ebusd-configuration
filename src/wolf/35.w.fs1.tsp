@@ -12,6 +12,16 @@ namespace fs1 {
   // Settings, read and written. The room unit acknowledges a write from any master but takes
   // the value only from source address 0xff (`write -s ff`).
 
+  /** room temperature setpoint of the frost protection */
+  @wcrc(0x14, 0x0a)
+  @inherit(crcr, crcw)
+  model RoomFrostProtectionTemp {
+    @minValue(4)
+    @maxValue(16)
+    @step(0.5)
+    value: temp10;
+  }
+
   /** lead time of the optimised switch-on */
   @wcrc(0x10, 0x01)
   @inherit(crcr, crcw)
