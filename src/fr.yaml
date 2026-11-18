@@ -12,6 +12,7 @@ temperature: température
 temperature difference: différentiel de température
 outside temperature: température extérieure
 outside temperature, weighted over time: température extérieure pondérée
+"outside temperature, -100.0 when the module has no outside sensor": "température extérieure, -100.0 lorsque le module n'a pas de sonde extérieure"
 outside sensor B1: sonde extérieure B1
 room temperature: température ambiante
 normal room temperature setpoint: consigne de température ambiante normale
@@ -60,8 +61,8 @@ domestic hot water temperature: température ECS
 domestic hot water sensor B3: sonde ECS B3
 domestic hot water setpoint: consigne de température ECS
 configured hot water setpoint: consigne de température ECS réglée
-hot water operating mode: mode de fonctionnement ECS
-domestic hot water operating mode: mode de fonctionnement ECS
+priority of the hot water loading over the heating circuit: priorité de la charge ECS sur le circuit de chauffage
+"hot water loading with priority over the heating circuit, in parallel with it, or sliding": "charge ECS prioritaire sur le circuit de chauffage, en parallèle, ou mobile"
 hot water exceed temperature: surélévation de température ECS
 hot water switching differential, below the setpoint: différentiel de commutation ECS, sous la consigne
 maximum hot water loading time: temps de charge maximal pour l'ECS
