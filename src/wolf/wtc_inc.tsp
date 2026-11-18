@@ -132,6 +132,29 @@ model FlueGasTemp is CrcRead<otemp10>;
 @ext(0xcc, 0x0e, 0x00)
 model DHWTemp is CrcRead<otemp10>;
 
+/** hydraulic separator temperature */
+@ext(0x66, 0x86, 0x02)
+model HydraulicSeparatorTemp is CrcRead<otemp10>;
+
+// Software versions: two bytes carrying the version the bus scan reports as "SW" (for the
+// boiler automat, 0x11 0x04 = SW 1104). Kept as the raw bytes, like the scan.
+
+/** WCM-CPU software version */
+@inherit(crcr)
+@ext(0x45, 0x99, 0x01)
+model SoftwareVersionCPU {
+  @maxLength(2)
+  value: HEX;
+}
+
+/** WCM-CUI software version */
+@inherit(crcr)
+@ext(0xa1, 0x9a, 0x01)
+model SoftwareVersionCUI {
+  @maxLength(2)
+  value: HEX;
+}
+
 // --- memory read of the boiler automat (PBSB 50 00), see evidence ---
 
 /**
