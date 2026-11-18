@@ -701,6 +701,24 @@ write = { source = "ff", risk = "regulation", proof = "captured" }
 
 [[entry]]
 circuits = ["ka"]
+message = "RegulationP"
+kind = "setting"
+menu = "cascade"
+label = { en = "Power controller, factor 1/P", fr = "Régulateur de puissance, facteur 1/P" }
+evidence = ["settings-writes", "register-write-crc"]
+write = { source = "ff", risk = "regulation", proof = "captured" }
+
+[[entry]]
+circuits = ["ka"]
+message = "RegulationI"
+kind = "setting"
+menu = "cascade"
+label = { en = "Power controller, factor I", fr = "Régulateur de puissance, facteur I" }
+evidence = ["settings-writes", "register-write-crc"]
+write = { source = "ff", risk = "regulation", proof = "captured" }
+
+[[entry]]
+circuits = ["ka"]
 message = "DeCoupleMinTemp"
 kind = "setting"
 menu = "separator"
@@ -1257,6 +1275,17 @@ menu = "control"
 label = { en = "Frost protection limit", fr = "Température limite hors-gel" }
 evidence = ["settings-writes", "room-units-reads"]
 write = { source = "ff", risk = "regulation", proof = "captured" }
+
+# Written on fs1 only. The heating modules answer the same register (read in lot G) with
+# another value on the third circuit; which copy the regulation uses is not established.
+[[entry]]
+circuits = ["fs1"]
+message = "BoilerMCBoostTemp"
+kind = "setting"
+menu = "flow"
+label = { en = "Boiler boost offset", fr = "Surélévation de température chaudière" }
+evidence = ["settings-writes"]
+write = { source = "ff", risk = "regulation", proof = "captured", open = ["copy-in-use"] }
 
 [[entry]]
 circuits = ["fs2", "fs3"]
