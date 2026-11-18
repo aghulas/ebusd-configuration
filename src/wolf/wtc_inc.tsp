@@ -111,6 +111,27 @@ model SupplyHCTemp is CrcRead<otemp10>;
 @ext(0xed, 0x11, 0x01)
 model BoilerMCBoostTemp is CrcRead<diff10>;
 
+// --- information-value registers of the boiler automat (PBSB 50 22), read side, see evidence ---
+// The WTC display shows these as "i" codes (menu Info). They share the generic register space
+// with the system manager (lot A); the sensor wired to a register differs by device. Shared by
+// both boilers; the "i" code is cited on the per-boiler read.
+
+/** flow temperature */
+@ext(0x28, 0x0d, 0x00)
+model SupplyTemp is CrcRead<otemp10>;
+
+/** return temperature */
+@ext(0x24, 0x16, 0x00)
+model ReturnTemp is CrcRead<otemp10>;
+
+/** flue gas temperature */
+@ext(0x09, 0x45, 0x01)
+model FlueGasTemp is CrcRead<otemp10>;
+
+/** domestic hot water temperature */
+@ext(0xcc, 0x0e, 0x00)
+model DHWTemp is CrcRead<otemp10>;
+
 // --- memory read of the boiler automat (PBSB 50 00), see evidence ---
 
 /**
