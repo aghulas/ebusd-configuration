@@ -78,6 +78,14 @@ fault day of the month: jour du mois du défaut
 fault month: mois du défaut
 fault year: année du défaut
 day of the week: jour de la semaine
+day of the week, or off: jour de la semaine, ou arrêt
+off or on: arrêt ou marche
+day of the legionella protection: jour de la fonction anti-légionelle
+circulation pump during the legionella protection: pompe de circulation ECS pendant la fonction anti-légionelle
+temperature level during a holiday period: niveau de température pendant les vacances
+date and time set for the whole installation: date et heure de toute l'installation
+time: heure
+date: date
 day of the month: jour du mois
 month: mois
 month of the year: mois de l'année
