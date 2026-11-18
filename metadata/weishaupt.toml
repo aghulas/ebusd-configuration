@@ -1204,7 +1204,7 @@ label = { en = "Room temperature", fr = "Température ambiante" }
 evidence = ["room-units-reads"]
 
 [[entry]]
-circuits = ["fs1", "fs2", "fs3"]
+circuits = ["fs1", "fs3"]
 message = "RoomNormalTemp"
 kind = "setting"
 menu = "settings"
@@ -1212,7 +1212,7 @@ label = { en = "Normal room temperature", fr = "Température ambiante normale" }
 evidence = ["room-units-reads"]
 
 [[entry]]
-circuits = ["fs1", "fs2", "fs3"]
+circuits = ["fs1", "fs3"]
 message = "RoomSetbackTemp"
 kind = "setting"
 menu = "settings"
@@ -1229,7 +1229,7 @@ evidence = ["settings-writes", "room-units-reads"]
 write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"] }
 
 [[entry]]
-circuits = ["fs2", "fs3"]
+circuits = ["fs3"]
 message = "RoomFrostProtectionTemp"
 kind = "setting"
 menu = "settings"
@@ -1237,7 +1237,7 @@ label = { en = "Frost protection room temperature", fr = "Température ambiante 
 evidence = ["room-units-reads"]
 
 [[entry]]
-circuits = ["fs1", "fs2", "fs3"]
+circuits = ["fs1", "fs3"]
 message = "GradientCurve"
 kind = "setting"
 menu = "settings"
@@ -1245,7 +1245,7 @@ label = { en = "Heating curve gradient", fr = "Pente de la courbe de chauffe" }
 evidence = ["room-units-reads"]
 
 [[entry]]
-circuits = ["fs1", "fs2", "fs3"]
+circuits = ["fs1", "fs3"]
 message = "SummerWinterChangeOverTemp"
 kind = "setting"
 menu = "settings"
@@ -1253,7 +1253,7 @@ label = { en = "Summer / winter changeover", fr = "Commutation été/hiver" }
 evidence = ["room-units-reads"]
 
 [[entry]]
-circuits = ["fs1", "fs2", "fs3"]
+circuits = ["fs1", "fs3"]
 message = "SupplyMaxTemp"
 kind = "setting"
 menu = "flow"
@@ -1261,7 +1261,7 @@ label = { en = "Maximum flow temperature", fr = "Température de départ maximal
 evidence = ["room-units-reads"]
 
 [[entry]]
-circuits = ["fs1", "fs2", "fs3"]
+circuits = ["fs1", "fs3"]
 message = "SupplyMinTemp"
 kind = "setting"
 menu = "flow"
@@ -1298,7 +1298,7 @@ evidence = ["settings-writes"]
 write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"] }
 
 [[entry]]
-circuits = ["fs2", "fs3"]
+circuits = ["fs3"]
 message = "SwitchOnRuntime"
 kind = "setting"
 menu = "control"
@@ -1306,12 +1306,113 @@ label = { en = "Optimised switch-on lead time", fr = "Durée d'anticipation de l
 evidence = ["room-units-reads"]
 
 [[entry]]
-circuits = ["fs2", "fs3"]
+circuits = ["fs3"]
 message = "FrostProtectionLimitTemp"
 kind = "setting"
 menu = "control"
 label = { en = "Frost protection limit", fr = "Température limite hors-gel" }
 evidence = ["room-units-reads"]
+
+# The eleven settings written on room unit 2 (75), each seen changed and restored on the bus.
+
+[[entry]]
+circuits = ["fs2"]
+message = "RoomNormalTemp"
+kind = "setting"
+menu = "settings"
+label = { en = "Normal room temperature", fr = "Température ambiante normale" }
+evidence = ["settings-writes", "room-units-reads"]
+write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"] }
+
+[[entry]]
+circuits = ["fs2"]
+message = "RoomSetbackTemp"
+kind = "setting"
+menu = "settings"
+label = { en = "Setback room temperature", fr = "Température ambiante réduite" }
+evidence = ["settings-writes", "room-units-reads"]
+write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"] }
+
+[[entry]]
+circuits = ["fs2"]
+message = "RoomFrostProtectionTemp"
+kind = "setting"
+menu = "settings"
+label = { en = "Frost protection room temperature", fr = "Température ambiante hors-gel" }
+evidence = ["settings-writes", "room-units-reads"]
+write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"] }
+
+[[entry]]
+circuits = ["fs2"]
+message = "GradientCurve"
+kind = "setting"
+menu = "settings"
+label = { en = "Heating curve gradient", fr = "Pente de la courbe de chauffe" }
+evidence = ["settings-writes", "room-units-reads"]
+write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"] }
+
+[[entry]]
+circuits = ["fs2"]
+message = "SummerWinterChangeOverTemp"
+kind = "setting"
+menu = "settings"
+label = { en = "Summer / winter changeover", fr = "Commutation été/hiver" }
+evidence = ["settings-writes", "room-units-reads"]
+write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"] }
+
+[[entry]]
+circuits = ["fs2"]
+message = "SupplyMaxTemp"
+kind = "setting"
+menu = "flow"
+label = { en = "Maximum flow temperature", fr = "Température de départ maximale" }
+evidence = ["settings-writes", "room-units-reads"]
+write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"] }
+
+[[entry]]
+circuits = ["fs2"]
+message = "SupplyMinTemp"
+kind = "setting"
+menu = "flow"
+label = { en = "Minimum flow temperature", fr = "Température de départ minimale" }
+evidence = ["settings-writes", "room-units-reads"]
+write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"] }
+
+[[entry]]
+circuits = ["fs2"]
+message = "DHWSetpoint"
+kind = "setting"
+menu = "settings"
+label = { en = "Hot water setpoint", fr = "Consigne de température ECS" }
+evidence = ["settings-writes"]
+write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"] }
+
+[[entry]]
+circuits = ["fs2"]
+message = "BoilerMCBoostTemp"
+kind = "setting"
+menu = "flow"
+label = { en = "Boiler boost offset", fr = "Surélévation de température chaudière" }
+evidence = ["settings-writes"]
+write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"] }
+
+[[entry]]
+circuits = ["fs2"]
+message = "SwitchOnRuntime"
+kind = "setting"
+menu = "control"
+label = { en = "Optimised switch-on lead time", fr = "Durée d'anticipation de l'optimisation au démarrage" }
+evidence = ["settings-writes", "room-units-reads"]
+write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"] }
+
+[[entry]]
+circuits = ["fs2"]
+message = "FrostProtectionLimitTemp"
+kind = "setting"
+menu = "control"
+label = { en = "Frost protection limit", fr = "Température limite hors-gel" }
+evidence = ["settings-writes", "room-units-reads"]
+write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"] }
 
 [[entry]]
 circuits = ["fs1", "fs2", "fs3"]
