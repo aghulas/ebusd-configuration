@@ -17,6 +17,23 @@ namespace bc1 {
     value: hours;
   }
 
+  // --- Information values read with 50 22 (WTC display "i" codes) ---
+
+  /** flow temperature (info value i35) */
+  model SupplyTemp is Wolf.SupplyTemp;
+
+  /** return temperature (info value i37) */
+  model ReturnTemp is Wolf.ReturnTemp;
+
+  /** flue gas temperature (info value i31) */
+  model FlueGasTemp is Wolf.FlueGasTemp;
+
+  /** outside temperature (info value i33) */
+  model OutsideTemp is Wolf.OutsideTemp;
+
+  /** domestic hot water temperature (info value i34) */
+  model DHWTemp is Wolf.DHWTemp;
+
   /** operating hours, burner hours and burner starts */
   model Counters is Wolf.Counters;
 
