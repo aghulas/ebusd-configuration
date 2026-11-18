@@ -30,4 +30,14 @@ namespace fs1 {
     @step(0.5)
     value: otemp10;
   }
+
+  /** boiler boost offset: added to the flow setpoint for the demand to the heat source */
+  @wcrc(0x11, 0x01)
+  @inherit(crcr, crcw)
+  model BoilerMCBoostTemp {
+    @minValue(0)
+    @maxValue(20)
+    @step(0.5)
+    value: diff10;
+  }
 }
