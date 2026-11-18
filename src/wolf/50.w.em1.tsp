@@ -15,6 +15,57 @@ namespace em1 {
   @qq(0x30)
   model HcMode is Wolf.HcMode;
 
+  // Settings of the heating circuit, read and written, taken only from source address 0xff
+  // (`write -s ff`). Address 0x50 answers as the same device as 0x15: a value written here is
+  // read back at 0x15 as well.
+
+  /** normal room temperature setpoint */
+  @wcrc(0x05, 0x00)
+  @inherit(crcr, crcw)
+  model RoomNormalTemp {
+    @minValue(16)
+    @maxValue(35)
+    @step(0.5)
+    value: temp10;
+  }
+
+  /** setback room temperature setpoint */
+  @wcrc(0x08, 0x00)
+  @inherit(crcr, crcw)
+  model RoomSetbackTemp {
+    // 10.0 to 21.5: no range here, a bound of an integer type cannot be fractional
+    value: temp10;
+  }
+
+  /** room temperature setpoint of the frost protection */
+  @wcrc(0x14, 0x0a)
+  @inherit(crcr, crcw)
+  model RoomFrostProtectionTemp {
+    @minValue(4)
+    @maxValue(16)
+    @step(0.5)
+    value: temp10;
+  }
+
+  /** steepness of the heating curve */
+  @wcrc(0x0e, 0x01)
+  @inherit(crcr, crcw)
+  model GradientCurve {
+    // 2.5 to 40.0: no range here, for the same reason
+    @divisor(10)
+    value: UIN;
+  }
+
+  /** outside temperature of the summer / winter changeover */
+  @wcrc(0x16, 0x01)
+  @inherit(crcr, crcw)
+  model SummerWinterChangeOverTemp {
+    @minValue(8)
+    @maxValue(30)
+    @step(0.5)
+    value: temp10;
+  }
+
   // --- System clock, read side (writes are a separate lot) ---
 
   /** day of the week */
