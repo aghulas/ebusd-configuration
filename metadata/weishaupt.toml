@@ -838,7 +838,8 @@ kind = "setting"
 menu = "flow"
 label = { en = "Maximum flow temperature", fr = "Température de départ maximale" }
 same_as = "ka/{name}"
-evidence = ["heating-modules-reads"]
+evidence = ["settings-writes", "heating-modules-reads"]
+write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"] }
 
 [[entry]]
 circuits = ["em1"]
@@ -846,7 +847,8 @@ message = "SupplyMinTemp"
 kind = "setting"
 menu = "flow"
 label = { en = "Minimum flow temperature", fr = "Température de départ minimale" }
-evidence = ["heating-modules-reads"]
+evidence = ["settings-writes", "heating-modules-reads"]
+write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"] }
 
 [[entry]]
 circuits = ["em1"]
