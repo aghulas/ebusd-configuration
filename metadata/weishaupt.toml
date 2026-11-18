@@ -789,7 +789,8 @@ kind = "setting"
 menu = "settings"
 label = { en = "Normal room temperature", fr = "Température ambiante normale" }
 same_as = "ka/{name}"
-evidence = ["heating-modules-reads"]
+evidence = ["settings-writes", "heating-modules-reads"]
+write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"] }
 
 [[entry]]
 circuits = ["em1"]
@@ -798,7 +799,8 @@ kind = "setting"
 menu = "settings"
 label = { en = "Setback room temperature", fr = "Température ambiante réduite" }
 same_as = "ka/{name}"
-evidence = ["heating-modules-reads"]
+evidence = ["settings-writes", "heating-modules-reads"]
+write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"] }
 
 [[entry]]
 circuits = ["em1"]
@@ -806,7 +808,8 @@ message = "RoomFrostProtectionTemp"
 kind = "setting"
 menu = "settings"
 label = { en = "Frost protection room temperature", fr = "Température ambiante hors-gel" }
-evidence = ["heating-modules-reads"]
+evidence = ["settings-writes", "heating-modules-reads"]
+write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"] }
 
 [[entry]]
 circuits = ["em1"]
@@ -814,7 +817,8 @@ message = "GradientCurve"
 kind = "setting"
 menu = "settings"
 label = { en = "Heating curve gradient", fr = "Pente de la courbe de chauffe" }
-evidence = ["heating-modules-reads"]
+evidence = ["settings-writes", "heating-modules-reads"]
+write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"] }
 
 [[entry]]
 circuits = ["em1"]
@@ -822,7 +826,8 @@ message = "SummerWinterChangeOverTemp"
 kind = "setting"
 menu = "settings"
 label = { en = "Summer / winter changeover", fr = "Commutation été/hiver" }
-evidence = ["heating-modules-reads"]
+evidence = ["settings-writes", "heating-modules-reads"]
+write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"] }
 
 [[entry]]
 circuits = ["em1"]
