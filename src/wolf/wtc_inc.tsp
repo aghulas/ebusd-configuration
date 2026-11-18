@@ -233,6 +233,34 @@ enum _onoff {
   on: 1,
 }
 
+/** off or on */
+@values(_onoff)
+scalar onoff16 extends UIN;
+
+enum _legionellaDay {
+  off: 0,
+  Monday: 1,
+  Tuesday: 2,
+  Wednesday: 3,
+  Thursday: 4,
+  Friday: 5,
+  Saturday: 6,
+  Sunday: 7,
+}
+
+/** day of the week, or off */
+@values(_legionellaDay)
+scalar legionellaDay extends UIN;
+
+enum _holidayLevel {
+  Antifreeze: 0,
+  Setback: 1,
+}
+
+/** temperature level during a holiday period */
+@values(_holidayLevel)
+scalar holidayLevel extends UIN;
+
 enum _operatingPhase {
   BurnerOff: 0x00,
   StandbyCheckFan: 0x01,

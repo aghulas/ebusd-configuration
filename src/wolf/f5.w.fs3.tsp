@@ -99,6 +99,13 @@ namespace fs3 {
     value: diff10;
   }
 
+  /** temperature level during a holiday period */
+  @wcrc(0x3d, 0x01)
+  @inherit(crcr, crcw)
+  model HolidayTempLevel {
+    value: holidayLevel;
+  }
+
   /** lead time of the optimised switch-on */
   @wcrc(0x10, 0x01)
   @inherit(crcr, crcw)

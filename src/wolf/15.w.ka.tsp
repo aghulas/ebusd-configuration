@@ -169,6 +169,20 @@ namespace ka {
     value: temp10;
   }
 
+  /** day of the legionella protection */
+  @wcrc(0x01, 0x01)
+  @inherit(crcr, crcw)
+  model DHWLegionellaDay {
+    value: legionellaDay;
+  }
+
+  /** circulation pump during the legionella protection */
+  @wcrc(0xf3, 0x13)
+  @inherit(crcr, crcw)
+  model CircWithLegionella {
+    value: onoff16;
+  }
+
   /** switching differential of the calorifier */
   @wcrc(0xe2, 0xfd)
   @inherit(crcr, crcw)
