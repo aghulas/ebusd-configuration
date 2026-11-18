@@ -16,8 +16,9 @@ namespace em1 {
   model HcMode is Wolf.HcMode;
 
   // Settings of the heating circuit, read and written, taken only from source address 0xff
-  // (`write -s ff`). Address 0x50 answers as the same device as 0x15: a value written here is
-  // read back at 0x15 as well.
+  // (`write -s ff`), the flow limits too: from the address of ebusd they are acknowledged and
+  // not taken, unlike on the heating modules 0x51 and 0x52. Address 0x50 answers as the same
+  // device as 0x15: a value written here is read back at 0x15 as well.
 
   /** normal room temperature setpoint */
   @wcrc(0x05, 0x00)
@@ -62,6 +63,26 @@ namespace em1 {
   model SummerWinterChangeOverTemp {
     @minValue(8)
     @maxValue(30)
+    @step(0.5)
+    value: temp10;
+  }
+
+  /** maximum flow temperature */
+  @wcrc(0x28, 0x00)
+  @inherit(crcr, crcw)
+  model SupplyMaxTemp {
+    @minValue(8)
+    @maxValue(82)
+    @step(0.5)
+    value: temp10;
+  }
+
+  /** minimum flow temperature */
+  @wcrc(0x2b, 0x01)
+  @inherit(crcr, crcw)
+  model SupplyMinTemp {
+    @minValue(8)
+    @maxValue(82)
     @step(0.5)
     value: temp10;
   }
