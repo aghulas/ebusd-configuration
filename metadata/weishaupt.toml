@@ -17,14 +17,19 @@
 # write     only for a setting a lot writes: source address of the captured write, risk class
 #           (comfort | regulation), proof (captured | change-observed), open questions.
 # evidence  records under evidence/ of the workbench repository.
+#
+# [days] names the weekdays for the labels of the program slots and of the weekday value
+# list; [values] labels the entries of the other value lists.
 
 schema = 1
 
-# The menu trees and the short labels were proposed to the owner of the project and accepted
-# as written on the date below. A menu or a label added later is put to the owner first.
+# The menu trees, the short labels and the labels of the value-list entries were proposed to
+# the owner of the project and accepted as written on the date below. A menu or a label added
+# later is put to the owner first.
 [status]
 menus = "accepted"
 labels = "accepted"
+values = "accepted"
 date = "2026-11-18"
 
 # Polling class of a message no record gives one for, by kind: a decision of the owner of the
@@ -44,6 +49,54 @@ Thu = { en = "Thursday", fr = "jeudi" }
 Fri = { en = "Friday", fr = "vendredi" }
 Sat = { en = "Saturday", fr = "samedi" }
 Sun = { en = "Sunday", fr = "dimanche" }
+
+# Labels of the value-list entries, by ebusd name: the text an interface shows in place of
+# the name. The lists themselves are in the CSV; the names stay the interface (a write and a
+# published value use the name, never the label). One entry per name of the seven value
+# lists of the lot files; the names are distinct across the lists. The seven weekdays are
+# not repeated here: their labels come from [days], the French with a capital.
+# French from the vendor's manuals where they print the word, accepted by the owner of the
+# project on the date of [status] otherwise (sources per entry: evidence/terms.md of the
+# workbench, "Labels of the value-list entries"). provisional: no source says what the entry
+# is; the label may change.
+[values]
+# burner operating phase
+BurnerOff = { en = "Burner off", fr = "Brûleur arrêté" }
+StandbyCheckFan = { en = "Standby check fan", fr = "Contrôle du ventilateur à l'arrêt" }
+PrepurgeSpeedAchieved = { en = "Prepurge speed achieved", fr = "Atteindre vitesse de préventilation" }
+Prepurge = { en = "Prepurge", fr = "Préventilation" }
+IgnitionSpeedAchieved = { en = "Ignition speed achieved", fr = "Atteindre vitesse d'allumage" }
+Ignition = { en = "Ignition", fr = "Allumage" }
+BurnerInOperation = { en = "Burner in operation", fr = "Brûleur en service" }
+GasValveCheck = { en = "Gas valve check", fr = "Contrôle vannes gaz" }
+PostPurge = { en = "Post purge", fr = "Post-ventilation" }
+ForcedVenting = { en = "Forced venting", fr = "Ventilation forcée", provisional = true }
+# entry of a fault history
+fault = { en = "Fault", fr = "Défaut" }
+warning = { en = "Warning", fr = "Alarme" }
+# state of an output, bit of a status
+off = { en = "Off", fr = "Arrêt" }
+on = { en = "On", fr = "Marche" }
+# hot-water loading priority
+Priority = { en = "Priority", fr = "Priorité" }
+Sliding = { en = "Sliding", fr = "Mobile" }
+Parallel = { en = "Parallel", fr = "Parallèle" }
+# switch time of a weekly program
+Enabled = { en = "Enabled", fr = "Activé" }
+Disabled = { en = "Disabled", fr = "Désactivé" }
+# month
+January = { en = "January", fr = "Janvier" }
+February = { en = "February", fr = "Février" }
+March = { en = "March", fr = "Mars" }
+April = { en = "April", fr = "Avril" }
+May = { en = "May", fr = "Mai" }
+June = { en = "June", fr = "Juin" }
+July = { en = "July", fr = "Juillet" }
+August = { en = "August", fr = "Août" }
+September = { en = "September", fr = "Septembre" }
+October = { en = "October", fr = "Octobre" }
+November = { en = "November", fr = "Novembre" }
+December = { en = "December", fr = "Décembre" }
 
 # --- devices -----------------------------------------------------------------------------
 # One device per controller. The circuit em1 (address 50) is the direct heating circuit of the
