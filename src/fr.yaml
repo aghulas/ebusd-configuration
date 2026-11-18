@@ -30,6 +30,7 @@ maximum flow temperature: température de départ maximale
 minimum flow temperature: température de départ minimale
 heat demand of the heating circuit: demande de chaleur du circuit de chauffage
 boiler boost offset: surélévation de température chaudière avec circuit mélangé
+"boiler boost offset: added to the flow setpoint for the demand to the heat source": "surélévation de température chaudière avec circuit mélangé : ajoutée à la consigne de température départ pour la demande au générateur de chaleur"
 boiler temperature: température chaudière
 boiler flow temperature: température de départ de la chaudière
 boiler flow setpoint: consigne de température départ de la chaudière
@@ -55,6 +56,8 @@ burner starts: démarrages brûleur
 burner hours since the last service (maintenance counter i46): heures brûleur écoulées depuis le dernier entretien (compteur d'entretien i46)
 blocking time before a further boiler of the cascade is switched on: temps de blocage avant enclenchement d'une chaudière supplémentaire de la cascade
 running time after which the boiler sequence of the cascade changes over: temps de marche après lequel l'ordre d'enclenchement des chaudières de la cascade change
+factor 1/P of the power controller of the cascade: facteur 1/P du régulateur de puissance de la cascade
+factor I of the power controller of the cascade: facteur I du régulateur de puissance de la cascade
 de-couple sensor B22 (hydraulic separator or plate exchanger, secondary side): sonde B22 (bouteille casse-pression ou échangeur à plaques, côté secondaire)
 minimum temperature at the de-couple sensor: température minimale à la sonde de bouteille casse-pression
 domestic hot water temperature: température ECS
