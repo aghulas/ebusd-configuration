@@ -34,6 +34,15 @@ namespace bc1 {
   /** domestic hot water temperature (info value i34) */
   model DHWTemp is Wolf.DHWTemp;
 
+  /** hydraulic separator temperature (info value i39) */
+  model HydraulicSeparatorTemp is Wolf.HydraulicSeparatorTemp;
+
+  /** WCM-CPU software version (info value i44) */
+  model SoftwareVersionCPU is Wolf.SoftwareVersionCPU;
+
+  /** WCM-CUI software version (info value i45) */
+  model SoftwareVersionCUI is Wolf.SoftwareVersionCUI;
+
   /** operating hours, burner hours and burner starts */
   model Counters is Wolf.Counters;
 
