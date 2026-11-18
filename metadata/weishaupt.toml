@@ -15,7 +15,10 @@
 #           the value; absent otherwise. Passive messages need none. A message without one
 #           takes the default of its kind in [poll_default], if there is one.
 # write     only for a setting a lot writes: source address of the captured write, risk class
-#           (comfort | regulation), proof (captured | change-observed), open questions.
+#           (comfort | regulation), proof (captured | change-observed), open questions; and
+#           min, max, step with range_source where the definition cannot carry the range (a
+#           fractional bound on an integer register). Risk class comfort: the room setpoints
+#           (normal, setback) and the hot-water setpoint, on every device; the rest regulation.
 # evidence  records under evidence/ of the workbench repository.
 #
 # [days] names the weekdays for the labels of the program slots and of the weekday value
@@ -664,7 +667,7 @@ kind = "setting"
 menu = "dhw"
 label = { en = "Hot water setpoint", fr = "Consigne de température ECS" }
 evidence = ["settings-writes", "ka-reads"]
-write = { source = "ff", risk = "regulation", proof = "change-observed" }
+write = { source = "ff", risk = "comfort", proof = "change-observed" }
 
 [[entry]]
 circuits = ["ka"]
@@ -792,7 +795,7 @@ menu = "settings"
 label = { en = "Normal room temperature", fr = "Température ambiante normale" }
 same_as = "ka/{name}"
 evidence = ["settings-writes", "heating-modules-reads"]
-write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"] }
+write = { source = "ff", risk = "comfort", proof = "change-observed", open = ["copy-in-use"] }
 
 [[entry]]
 circuits = ["em1"]
@@ -802,7 +805,7 @@ menu = "settings"
 label = { en = "Setback room temperature", fr = "Température ambiante réduite" }
 same_as = "ka/{name}"
 evidence = ["settings-writes", "heating-modules-reads"]
-write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"] }
+write = { source = "ff", risk = "comfort", proof = "change-observed", open = ["copy-in-use"], min = 10.0, max = 21.5, step = 0.5, range_source = "room unit user manual 83277702, p. 29, section 4.7.10; evidence settings-writes" }
 
 [[entry]]
 circuits = ["em1"]
@@ -820,7 +823,7 @@ kind = "setting"
 menu = "settings"
 label = { en = "Heating curve gradient", fr = "Pente de la courbe de chauffe" }
 evidence = ["settings-writes", "heating-modules-reads"]
-write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"] }
+write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"], min = 2.5, max = 40.0, step = 0.5, range_source = "room unit user manual 83277702, p. 31, section 4.7.14 (type Universal; narrower per type of heating circuit); evidence settings-writes" }
 
 [[entry]]
 circuits = ["em1"]
@@ -1066,7 +1069,7 @@ kind = "setting"
 menu = "settings"
 label = { en = "Setback room temperature", fr = "Température ambiante réduite" }
 evidence = ["settings-writes", "heating-modules-reads"]
-write = { source = "ff", risk = "comfort", proof = "change-observed", open = ["copy-in-use"] }
+write = { source = "ff", risk = "comfort", proof = "change-observed", open = ["copy-in-use"], min = 10.0, max = 21.5, step = 0.5, range_source = "room unit user manual 83277702, p. 29, section 4.7.10; evidence settings-writes" }
 
 [[entry]]
 circuits = ["em2"]
@@ -1084,7 +1087,7 @@ kind = "setting"
 menu = "settings"
 label = { en = "Heating curve gradient", fr = "Pente de la courbe de chauffe" }
 evidence = ["settings-writes", "heating-modules-reads"]
-write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"] }
+write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"], min = 2.5, max = 40.0, step = 0.5, range_source = "room unit user manual 83277702, p. 31, section 4.7.14 (type Universal; narrower per type of heating circuit); evidence settings-writes" }
 
 [[entry]]
 circuits = ["em2"]
@@ -1120,7 +1123,7 @@ kind = "setting"
 menu = "settings"
 label = { en = "Normal room temperature", fr = "Température ambiante normale" }
 evidence = ["settings-writes", "heating-modules-reads"]
-write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"] }
+write = { source = "ff", risk = "comfort", proof = "change-observed", open = ["copy-in-use"] }
 
 [[entry]]
 circuits = ["em3"]
@@ -1129,7 +1132,7 @@ kind = "setting"
 menu = "settings"
 label = { en = "Setback room temperature", fr = "Température ambiante réduite" }
 evidence = ["settings-writes", "heating-modules-reads"]
-write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"] }
+write = { source = "ff", risk = "comfort", proof = "change-observed", open = ["copy-in-use"], min = 10.0, max = 21.5, step = 0.5, range_source = "room unit user manual 83277702, p. 29, section 4.7.10; evidence settings-writes" }
 
 [[entry]]
 circuits = ["em3"]
@@ -1147,7 +1150,7 @@ kind = "setting"
 menu = "settings"
 label = { en = "Heating curve gradient", fr = "Pente de la courbe de chauffe" }
 evidence = ["settings-writes", "heating-modules-reads"]
-write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"] }
+write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"], min = 2.5, max = 40.0, step = 0.5, range_source = "room unit user manual 83277702, p. 31, section 4.7.14 (type Universal; narrower per type of heating circuit); evidence settings-writes" }
 
 [[entry]]
 circuits = ["em3"]
@@ -1225,7 +1228,7 @@ kind = "setting"
 menu = "settings"
 label = { en = "Normal room temperature", fr = "Température ambiante normale" }
 evidence = ["settings-writes", "room-units-reads"]
-write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"] }
+write = { source = "ff", risk = "comfort", proof = "change-observed", open = ["copy-in-use"] }
 
 [[entry]]
 circuits = ["fs1"]
@@ -1234,7 +1237,7 @@ kind = "setting"
 menu = "settings"
 label = { en = "Setback room temperature", fr = "Température ambiante réduite" }
 evidence = ["settings-writes", "room-units-reads"]
-write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"] }
+write = { source = "ff", risk = "comfort", proof = "change-observed", open = ["copy-in-use"], min = 10.0, max = 21.5, step = 0.5, range_source = "room unit user manual 83277702, p. 29, section 4.7.10; evidence settings-writes" }
 
 [[entry]]
 circuits = ["fs1"]
@@ -1252,7 +1255,7 @@ kind = "setting"
 menu = "settings"
 label = { en = "Heating curve gradient", fr = "Pente de la courbe de chauffe" }
 evidence = ["settings-writes", "room-units-reads"]
-write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"] }
+write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"], min = 2.5, max = 40.0, step = 0.5, range_source = "room unit user manual 83277702, p. 31, section 4.7.14 (type Universal; narrower per type of heating circuit); evidence settings-writes" }
 
 [[entry]]
 circuits = ["fs1"]
@@ -1308,7 +1311,7 @@ kind = "setting"
 menu = "settings"
 label = { en = "Hot water setpoint", fr = "Consigne de température ECS" }
 evidence = ["settings-writes"]
-write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"] }
+write = { source = "ff", risk = "comfort", proof = "change-observed", open = ["copy-in-use"] }
 
 [[entry]]
 circuits = ["fs1"]
@@ -1328,7 +1331,7 @@ kind = "setting"
 menu = "settings"
 label = { en = "Normal room temperature", fr = "Température ambiante normale" }
 evidence = ["settings-writes", "room-units-reads"]
-write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"] }
+write = { source = "ff", risk = "comfort", proof = "change-observed", open = ["copy-in-use"] }
 
 [[entry]]
 circuits = ["fs2"]
@@ -1337,7 +1340,7 @@ kind = "setting"
 menu = "settings"
 label = { en = "Setback room temperature", fr = "Température ambiante réduite" }
 evidence = ["settings-writes", "room-units-reads"]
-write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"] }
+write = { source = "ff", risk = "comfort", proof = "change-observed", open = ["copy-in-use"], min = 10.0, max = 21.5, step = 0.5, range_source = "room unit user manual 83277702, p. 29, section 4.7.10; evidence settings-writes" }
 
 [[entry]]
 circuits = ["fs2"]
@@ -1355,7 +1358,7 @@ kind = "setting"
 menu = "settings"
 label = { en = "Heating curve gradient", fr = "Pente de la courbe de chauffe" }
 evidence = ["settings-writes", "room-units-reads"]
-write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"] }
+write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"], min = 2.5, max = 40.0, step = 0.5, range_source = "room unit user manual 83277702, p. 31, section 4.7.14 (type Universal; narrower per type of heating circuit); evidence settings-writes" }
 
 [[entry]]
 circuits = ["fs2"]
@@ -1391,7 +1394,7 @@ kind = "setting"
 menu = "settings"
 label = { en = "Hot water setpoint", fr = "Consigne de température ECS" }
 evidence = ["settings-writes"]
-write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"] }
+write = { source = "ff", risk = "comfort", proof = "change-observed", open = ["copy-in-use"] }
 
 [[entry]]
 circuits = ["fs2"]
@@ -1429,7 +1432,7 @@ kind = "setting"
 menu = "settings"
 label = { en = "Normal room temperature", fr = "Température ambiante normale" }
 evidence = ["settings-writes", "room-units-reads"]
-write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"] }
+write = { source = "ff", risk = "comfort", proof = "change-observed", open = ["copy-in-use"] }
 
 [[entry]]
 circuits = ["fs3"]
@@ -1438,7 +1441,7 @@ kind = "setting"
 menu = "settings"
 label = { en = "Setback room temperature", fr = "Température ambiante réduite" }
 evidence = ["settings-writes", "room-units-reads"]
-write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"] }
+write = { source = "ff", risk = "comfort", proof = "change-observed", open = ["copy-in-use"], min = 10.0, max = 21.5, step = 0.5, range_source = "room unit user manual 83277702, p. 29, section 4.7.10; evidence settings-writes" }
 
 [[entry]]
 circuits = ["fs3"]
@@ -1456,7 +1459,7 @@ kind = "setting"
 menu = "settings"
 label = { en = "Heating curve gradient", fr = "Pente de la courbe de chauffe" }
 evidence = ["settings-writes", "room-units-reads"]
-write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"] }
+write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"], min = 2.5, max = 40.0, step = 0.5, range_source = "room unit user manual 83277702, p. 31, section 4.7.14 (type Universal; narrower per type of heating circuit); evidence settings-writes" }
 
 [[entry]]
 circuits = ["fs3"]
@@ -1492,7 +1495,7 @@ kind = "setting"
 menu = "settings"
 label = { en = "Hot water setpoint", fr = "Consigne de température ECS" }
 evidence = ["settings-writes"]
-write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"] }
+write = { source = "ff", risk = "comfort", proof = "change-observed", open = ["copy-in-use"] }
 
 [[entry]]
 circuits = ["fs3"]
