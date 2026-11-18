@@ -106,17 +106,9 @@ namespace ka {
   @ext(0x58, 0x08, 0x00)
   model RoomSetbackTemp is CrcRead<temp10>;
 
-  /** configured hot water setpoint */
-  @ext(0x54, 0x13, 0x00)
-  model DHWSetpoint is CrcRead<temp10>;
-
   /** priority of the hot water loading over the heating circuit */
   @ext(0xd8, 0x23, 0x00)
   model DHWLoadingPriority is CrcRead<DHWOperation>;
-
-  /** maximum flow temperature limit */
-  @ext(0x64, 0x28, 0x00)
-  model SupplyMaxTemp is CrcRead<temp10>;
 
   /** current burner modulation */
   @ext(0x48, 0x2c, 0x00)
@@ -153,6 +145,26 @@ namespace ka {
   model DeCoupleMinTemp {
     @minValue(0)
     @maxValue(50)
+    @step(0.5)
+    value: temp10;
+  }
+
+  /** maximum flow temperature limit */
+  @wcrc(0x28, 0x00)
+  @inherit(crcr, crcw)
+  model SupplyMaxTemp {
+    @minValue(8)
+    @maxValue(82)
+    @step(0.5)
+    value: temp10;
+  }
+
+  /** configured hot water setpoint */
+  @wcrc(0x13, 0x00)
+  @inherit(crcr, crcw)
+  model DHWSetpoint {
+    @minValue(40)
+    @maxValue(60)
     @step(0.5)
     value: temp10;
   }
