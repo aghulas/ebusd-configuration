@@ -1,0 +1,1263 @@
+# Metadata of the Weishaupt / Kromschroeder messages of src/wolf (NN.w.*.tsp, broadcast.tsp):
+# what a user interface needs and the compiled CSV does not say. Devices, menus, short labels,
+# kind of value, polling class, write conditions, evidence record.
+#
+# Nothing the CSV already holds is repeated here (types, units, value lists, ranges, comments,
+# the [WCRC] marker, passive messages). The metadata file of a release is generated from this
+# file and the compiled CSV; this file is checked against the CSV with every change of a lot.
+#
+# An [[entry]] names one message (`message`) or a family of messages (`pattern`, a regular
+# expression on the whole name, with `count` = the number of messages it must match in each
+# circuit). Every message of the lot files is matched by exactly one entry.
+#
+# kind      live | state | counter | diagnostic | setting | program_slot
+# poll      cyclic | on_demand, only where a record shows how the vendor service tool reads
+#           the value; absent otherwise. Passive messages need none.
+# write     only for a setting a lot writes: source address of the captured write, risk class
+#           (comfort | regulation), proof (captured | change-observed), open questions.
+# evidence  records under evidence/ of the workbench repository.
+
+schema = 1
+
+# The menu trees and the short labels are a proposal until the owner of the project has
+# accepted them; "accepted" is set here when that is done.
+[status]
+menus = "proposed"
+labels = "proposed"
+
+[days]
+Mon = { en = "Monday", fr = "lundi" }
+Tue = { en = "Tuesday", fr = "mardi" }
+Wed = { en = "Wednesday", fr = "mercredi" }
+Thu = { en = "Thursday", fr = "jeudi" }
+Fri = { en = "Friday", fr = "vendredi" }
+Sat = { en = "Saturday", fr = "samedi" }
+Sun = { en = "Sunday", fr = "dimanche" }
+
+# --- devices -----------------------------------------------------------------------------
+# One device per controller. The circuit em1 (address 50) is the direct heating circuit of the
+# system manager, the same device as ka (address 15).
+
+[devices.boiler1]
+type = "boiler"
+circuits = ["bc1"]
+label = { en = "Boiler 1", fr = "Chaudière 1" }
+
+[devices.boiler2]
+type = "boiler"
+circuits = ["bc2"]
+label = { en = "Boiler 2", fr = "Chaudière 2" }
+
+[devices.manager]
+type = "manager"
+circuits = ["ka", "em1"]
+label = { en = "System manager", fr = "Manager de cascade" }
+
+[devices.module2]
+type = "module"
+circuits = ["em2"]
+label = { en = "Heating module 2", fr = "Module d'extension 2" }
+
+[devices.module3]
+type = "module"
+circuits = ["em3"]
+label = { en = "Heating module 3", fr = "Module d'extension 3" }
+
+[devices.room1]
+type = "room"
+circuits = ["fs1"]
+label = { en = "Room unit 1", fr = "Commande à distance 1" }
+
+[devices.room2]
+type = "room"
+circuits = ["fs2"]
+label = { en = "Room unit 2", fr = "Commande à distance 2" }
+
+[devices.room3]
+type = "room"
+circuits = ["fs3"]
+label = { en = "Room unit 3", fr = "Commande à distance 3" }
+
+[devices.system]
+type = "system"
+circuits = ["broadcast"]
+label = { en = "Installation", fr = "Installation" }
+
+# --- menus, per device type ----------------------------------------------------------------
+# `source` says where the grouping comes from: a tab of the vendor service tool (session log
+# evidence/service-tool-log.md) or a menu of a vendor manual (document number and page of the
+# French edition, as listed in evidence/terms.md).
+
+[menus.boiler.info]
+label = { en = "Info", fr = "Info" }
+source = "boiler manual 83251704, Info menu, p. 46-47"
+
+[menus.boiler.info_sensors]
+parent = "info"
+label = { en = "Sensors", fr = "Sondes" }
+source = "boiler manual 83251704, Info menu, values i30 to i39, p. 46-47"
+
+[menus.boiler.info_system]
+parent = "info"
+label = { en = "System info", fr = "Info système" }
+source = "boiler manual 83251704, Info menu, values i42 to i46, p. 47"
+
+[menus.boiler.process]
+label = { en = "Process values", fr = "Valeurs instantanées" }
+source = "service tool, tab 'Process values WTC' and data logger"
+
+[menus.boiler.statistics]
+label = { en = "Statistics", fr = "Statistiques" }
+source = "service tool, tab 'Statistic'"
+
+[menus.boiler.faults]
+label = { en = "Fault history", fr = "Mémoire de défauts" }
+source = "boiler manual 83251704, p. 45 and 88-89; service tool, tab 'Error history'"
+
+[menus.manager.process]
+label = { en = "Process values", fr = "Valeurs instantanées" }
+source = "service tool, tab 'Process values' of the system manager"
+
+[menus.manager.boilers]
+parent = "process"
+label = { en = "Boilers of the cascade", fr = "Chaudières de la cascade" }
+source = "service tool, cascade block of the tab 'Process values'"
+
+[menus.manager.circuit]
+label = { en = "Heating circuit 1", fr = "Circuit de chauffage 1" }
+source = "system manager manual 83258404, levels of circuit 1, p. 35-37 and 51-53"
+
+[menus.manager.settings]
+parent = "circuit"
+label = { en = "Settings", fr = "Réglage" }
+source = "system manager manual 83258404, menu of parameters 111 to 118, p. 37"
+
+[menus.manager.flow]
+parent = "circuit"
+label = { en = "Direct circuit", fr = "Circuit direct" }
+source = "system manager manual 83258404, menu of parameters 341 and 342, p. 53"
+
+[menus.manager.cascade]
+label = { en = "Cascade", fr = "Cascade" }
+source = "system manager manual 83258404, menu of parameters 531 to 540, p. 65"
+
+[menus.manager.separator]
+label = { en = "Hydraulic separator / exchanger", fr = "Casse-pression / échangeur" }
+source = "system manager manual 83258404, menu of parameters 551 to 553, p. 66"
+
+[menus.manager.buffer]
+label = { en = "Buffer", fr = "Tampon" }
+source = "system manager manual 83258404, menu of parameters 561 and 562, p. 66"
+
+[menus.manager.dhw]
+label = { en = "Hot water", fr = "ECS" }
+source = "system manager manual 83258404, menu of parameters 571 to 583, p. 66"
+
+[menus.manager.date]
+label = { en = "Date and time", fr = "Date" }
+source = "system manager manual 83258404, menu of parameters 591 to 594, p. 66 and 105"
+
+[menus.manager.programs]
+label = { en = "Time programs", fr = "Programmes horaires" }
+source = "system manager manual 83258404, time-program menu of the manager level, p. 66 and 106-108"
+
+[menus.manager.sysinfo]
+label = { en = "System info", fr = "Info système" }
+source = "system manager manual 83258404, menu of parameters 601 to 609, p. 67 and 109-110"
+
+[menus.manager.faultlog]
+parent = "sysinfo"
+label = { en = "Fault log", fr = "Historique des défauts" }
+source = "system manager manual 83258404, parameter 608, p. 110"
+
+[menus.module.info]
+label = { en = "Heating circuit info", fr = "Info circuit de chauffage" }
+source = "room unit and module manual 83277504, menu of parameters P521 to P527, p. 39"
+
+[menus.module.settings]
+label = { en = "Settings", fr = "Réglage" }
+source = "room unit and module manual 83277504, menu of parameters P111 to P119, p. 32"
+
+[menus.module.flow]
+label = { en = "Heating circuit", fr = "Circuit de chauffage" }
+source = "room unit and module manual 83277504, menu of parameters P421 to P431, p. 37"
+
+[menus.room.info]
+label = { en = "Heating circuit info", fr = "Info circuit de chauffage" }
+source = "room unit and module manual 83277504, menus of parameters P331 to P341 and P521 to P527, p. 36 and 39"
+
+[menus.room.settings]
+label = { en = "Settings", fr = "Réglage" }
+source = "room unit and module manual 83277504, menu of parameters P111 to P119, p. 32"
+
+[menus.room.flow]
+label = { en = "Heating circuit", fr = "Circuit de chauffage" }
+source = "room unit and module manual 83277504, menu of parameters P421 to P431, p. 37"
+
+[menus.room.control]
+label = { en = "Control behaviour", fr = "Comportement de régulation" }
+source = "room unit and module manual 83277504, menu of parameters P501 to P508, p. 38"
+
+[menus.room.programs]
+label = { en = "Time programs", fr = "Programmes horaires" }
+source = "room unit and module manual 83277504, time-program menu of the user level, p. 32"
+
+[menus.system.status]
+label = { en = "Boiler status", fr = "État de la chaudière" }
+source = "no vendor menu: status telegram broadcast on the bus"
+
+# --- field sets of the messages with several fields ------------------------------------------
+# A key is a field name, or a regular expression on the whole field name. `skip`: no label,
+# the field is not shown (bits without a known meaning). `guard`: the reading is valid only
+# when this field reads 0.
+
+[fields.memory.firstbyte]
+label = { en = "First answer byte", fr = "Premier octet de la réponse" }
+kind = "diagnostic"
+guard = true
+
+[fields.counters]
+include = "memory"
+operatinghours = { label = { en = "Operating hours", fr = "Heures de fonctionnement" } }
+burnerhours = { label = { en = "Burner operating hours", fr = "Heures de fonctionnement du brûleur" } }
+burnerstarts = { label = { en = "Burner starts", fr = "Démarrages brûleur" } }
+
+[fields.temperatures]
+include = "memory"
+returntemp = { label = { en = "Return temperature", fr = "Température retour" } }
+fluegastemp = { label = { en = "Flue gas temperature", fr = "Température des fumées" } }
+supplytemp = { label = { en = "Flow temperature", fr = "Température de départ" } }
+outsidetemp = { label = { en = "Outside temperature", fr = "Température extérieure" } }
+
+[fields.operation]
+include = "memory"
+load = { label = { en = "Burner load", fr = "Puissance du brûleur" } }
+ionisation = { label = { en = "Ionisation signal", fr = "Signal d'ionisation" } }
+pumpspeed = { label = { en = "Pump speed", fr = "Vitesse du circulateur" } }
+
+[fields.faultcounters]
+include = "memory"
+"code(?P<n>\\d+)" = { label = { en = "Fault {n} counter", fr = "Compteur du défaut {n}" } }
+
+[fields.pointer]
+include = "memory"
+value = { label = { en = "Address of the last byte written", fr = "Adresse du dernier octet écrit" } }
+
+[fields.faulthistory]
+include = "memory"
+number = { label = { en = "Fault number", fr = "Numéro de défaut" } }
+kind = { label = { en = "Fault or warning", fr = "Défaut ou alarme" } }
+operatingphase = { label = { en = "Operating phase", fr = "Phase de fonctionnement" } }
+load = { label = { en = "Burner load", fr = "Puissance du brûleur" } }
+pumpspeed = { label = { en = "Pump set speed", fr = "Consigne de vitesse du circulateur" } }
+boilertemp = { label = { en = "Boiler temperature", fr = "Température chaudière" } }
+fluegastemp = { label = { en = "Flue gas temperature", fr = "Température des fumées" } }
+ionisation = { label = { en = "Ionisation signal", fr = "Signal d'ionisation" } }
+returntemp = { label = { en = "Return temperature", fr = "Température retour" } }
+
+[fields.status]
+status1 = { label = { en = "Status byte", fr = "Octet d'état" }, kind = "diagnostic" }
+operatingphase = { label = { en = "Operating phase", fr = "Phase de fonctionnement" } }
+"ukn\\d_\\d" = { skip = true }
+flame = { label = { en = "Flame", fr = "Flamme" } }
+gasvalve1 = { label = { en = "Gas valve 1", fr = "Vanne gaz 1" } }
+gasvalve2 = { label = { en = "Gas valve 2", fr = "Vanne gaz 2" } }
+pump = { label = { en = "Pump", fr = "Circulateur" } }
+error = { label = { en = "Fault", fr = "Défaut" } }
+manualstartup = { label = { en = "Manual start-up", fr = "Réglage manuel de la puissance" } }
+burnerstatus = { label = { en = "Burner", fr = "Brûleur" } }
+service = { label = { en = "Service", fr = "Entretien" } }
+fan = { label = { en = "Fan", fr = "Ventilateur" } }
+circpump = { label = { en = "Circulation pump", fr = "Pompe de circulation ECS" } }
+dhwpump = { label = { en = "Hot water pump", fr = "Pompe ECS" } }
+load = { label = { en = "Burner load", fr = "Puissance du brûleur" }, kind = "live" }
+supplytemp = { label = { en = "Boiler flow temperature", fr = "Température de départ de la chaudière" }, kind = "live" }
+fluegastemp = { label = { en = "Flue gas temperature", fr = "Température des fumées" }, kind = "live" }
+dhwtemp = { label = { en = "Hot water temperature", fr = "Température ECS" }, kind = "live" }
+outsidetemp = { label = { en = "Outside temperature", fr = "Température extérieure" }, kind = "live" }
+outsideweightedtemp = { label = { en = "Weighted outside temperature", fr = "Température extérieure pondérée" }, kind = "live" }
+supplysettemp = { label = { en = "Boiler flow setpoint", fr = "Consigne de température départ de la chaudière" }, kind = "live" }
+
+[fields.power]
+currentload = { label = { en = "Current burner load", fr = "Puissance actuelle du brûleur" } }
+minload = { label = { en = "Minimum burner load", fr = "Puissance minimale du brûleur" } }
+maxload = { label = { en = "Maximum burner load", fr = "Puissance maximale du brûleur" } }
+
+[fields.hcmode]
+"ink\\d_\\d" = { skip = true }
+"opmode_\\d" = { skip = true }
+heating = { label = { en = "Heating", fr = "Chauffage" } }
+supplyhcsettemp = { label = { en = "Requested flow setpoint", fr = "Consigne de température départ demandée" }, kind = "live" }
+roomtemp = { label = { en = "Room temperature", fr = "Température ambiante" }, kind = "live" }
+dhw = { label = { en = "Hot water", fr = "ECS" } }
+opmode = { label = { en = "Operating mode", fr = "Mode de fonctionnement" } }
+pump = { label = { en = "Pump", fr = "Pompe" } }
+valveclosing = { label = { en = "Mixer closing", fr = "Vanne mélangeuse, fermeture" } }
+valveopening = { label = { en = "Mixer opening", fr = "Vanne mélangeuse, ouverture" } }
+supplyhctemp = { label = { en = "Flow temperature", fr = "Température de départ" }, kind = "live" }
+outsidetemp = { label = { en = "Outside temperature", fr = "Température extérieure" }, kind = "live" }
+boilermcboosttemp = { label = { en = "Boiler boost offset", fr = "Surélévation de température chaudière" }, kind = "setting" }
+supplyhcmaxtemp = { label = { en = "Maximum flow temperature", fr = "Température de départ maximale" }, kind = "setting" }
+supplyhcmintemp = { label = { en = "Minimum flow temperature", fr = "Température de départ minimale" }, kind = "setting" }
+
+[fields.slot]
+fromtime = { label = { en = "Start", fr = "Début" } }
+fromenabled = { label = { en = "Start enabled", fr = "Début activé" } }
+totime = { label = { en = "End", fr = "Fin" } }
+toenabled = { label = { en = "End enabled", fr = "Fin activée" } }
+
+# --- boiler automats (08, 18) ----------------------------------------------------------------
+
+[[entry]]
+circuits = ["bc1", "bc2"]
+message = "SupplyTemp"
+kind = "live"
+menu = "info_sensors"
+label = { en = "Flow temperature (i35)", fr = "Température de départ (i35)" }
+evidence = ["bc-info-values"]
+
+[[entry]]
+circuits = ["bc1", "bc2"]
+message = "ReturnTemp"
+kind = "live"
+menu = "info_sensors"
+label = { en = "Return temperature (i37)", fr = "Température retour (i37)" }
+evidence = ["bc-info-values"]
+
+[[entry]]
+circuits = ["bc1", "bc2"]
+message = "FlueGasTemp"
+kind = "live"
+menu = "info_sensors"
+label = { en = "Flue gas temperature (i31)", fr = "Température des fumées (i31)" }
+evidence = ["bc-info-values"]
+
+[[entry]]
+circuits = ["bc1", "bc2"]
+message = "OutsideTemp"
+kind = "live"
+menu = "info_sensors"
+label = { en = "Outside temperature (i33)", fr = "Température extérieure (i33)" }
+evidence = ["bc-info-values"]
+
+[[entry]]
+circuits = ["bc1", "bc2"]
+message = "DHWTemp"
+kind = "live"
+menu = "info_sensors"
+label = { en = "Hot water temperature (i34)", fr = "Température ECS (i34)" }
+evidence = ["bc-info-values"]
+
+[[entry]]
+circuits = ["bc1", "bc2"]
+message = "HydraulicSeparatorTemp"
+kind = "live"
+menu = "info_sensors"
+label = { en = "Hydraulic separator temperature (i39)", fr = "Température de la bouteille casse-pression (i39)" }
+evidence = ["bc-info-values"]
+
+[[entry]]
+circuits = ["bc1", "bc2"]
+message = "SoftwareVersionCPU"
+kind = "diagnostic"
+menu = "info_system"
+label = { en = "WCM-CPU software version (i44)", fr = "Version du logiciel WCM-CPU (i44)" }
+poll = "on_demand"
+evidence = ["bc-info-values"]
+
+[[entry]]
+circuits = ["bc1", "bc2"]
+message = "SoftwareVersionCUI"
+kind = "diagnostic"
+menu = "info_system"
+label = { en = "WCM-CUI software version (i45)", fr = "Version du logiciel WCM-CUI (i45)" }
+poll = "on_demand"
+evidence = ["bc-info-values"]
+
+[[entry]]
+circuits = ["bc1", "bc2"]
+message = "BurnerServiceHours"
+kind = "counter"
+menu = "info_system"
+label = { en = "Burner hours since the last service (i46)", fr = "Heures brûleur depuis le dernier entretien (i46)" }
+evidence = ["bc-counters"]
+
+[[entry]]
+circuits = ["bc1", "bc2"]
+message = "Temperatures"
+kind = "live"
+menu = "process"
+label = { en = "Temperatures", fr = "Températures" }
+fields = "temperatures"
+poll = "cyclic"
+evidence = ["bc-live-values"]
+
+[[entry]]
+circuits = ["bc1", "bc2"]
+message = "Operation"
+kind = "live"
+menu = "process"
+label = { en = "Burner operation", fr = "Fonctionnement du brûleur" }
+fields = "operation"
+poll = "cyclic"
+evidence = ["bc-live-values"]
+
+[[entry]]
+circuits = ["bc1", "bc2"]
+message = "Counters"
+kind = "counter"
+menu = "statistics"
+label = { en = "Counters", fr = "Compteurs" }
+fields = "counters"
+poll = "on_demand"
+evidence = ["bc-counters"]
+
+[[entry]]
+circuits = ["bc1", "bc2"]
+pattern = "FaultCounters(?P<n>[1-7])"
+count = 7
+kind = "counter"
+menu = "statistics"
+label = { en = "Fault counters, block {n}", fr = "Compteurs de défauts, bloc {n}" }
+family = "fault_counter"
+group_label = { en = "Fault counters", fr = "Compteurs de défauts" }
+fields = "faultcounters"
+poll = "on_demand"
+evidence = ["bc-fault-counters"]
+
+[[entry]]
+circuits = ["bc1", "bc2"]
+message = "FaultHistoryPointer"
+kind = "diagnostic"
+menu = "faults"
+label = { en = "Fault history pointer", fr = "Mémoire de défauts, pointeur d'écriture" }
+fields = "pointer"
+poll = "on_demand"
+evidence = ["bc-fault-history"]
+
+[[entry]]
+circuits = ["bc1", "bc2"]
+pattern = "FaultHistorySlot(?P<n>[1-6])"
+count = 6
+kind = "diagnostic"
+menu = "faults"
+label = { en = "Fault history, slot {n}", fr = "Mémoire de défauts, emplacement {n}" }
+family = "fault_history"
+group_label = { en = "Fault history", fr = "Mémoire de défauts" }
+fields = "faulthistory"
+compose = true
+poll = "on_demand"
+evidence = ["bc-fault-history"]
+
+# --- system manager (15) ---------------------------------------------------------------------
+
+[[entry]]
+circuits = ["ka"]
+pattern = "Boiler(?P<n>[12])Status"
+count = 2
+kind = "state"
+menu = "boilers"
+label = { en = "Boiler {n} status", fr = "État de la chaudière {n}" }
+fields = "status"
+compose = true
+evidence = ["bc1-boiler-status"]
+
+[[entry]]
+circuits = ["ka"]
+pattern = "Boiler(?P<n>[12])Power"
+count = 2
+kind = "live"
+menu = "boilers"
+label = { en = "Boiler {n} load", fr = "Puissance de la chaudière {n}" }
+fields = "power"
+compose = true
+evidence = ["bc1-boiler-status"]
+
+[[entry]]
+circuits = ["ka"]
+message = "ErrorStatus"
+kind = "state"
+menu = "process"
+label = { en = "Fault code", fr = "Code défaut" }
+poll = "cyclic"
+evidence = ["ka-reads"]
+
+[[entry]]
+circuits = ["ka"]
+message = "HeatDemandTemp"
+kind = "live"
+menu = "process"
+label = { en = "Heat demand", fr = "Demande de chaleur" }
+poll = "cyclic"
+evidence = ["ka-reads"]
+
+[[entry]]
+circuits = ["ka"]
+message = "DHWSetValue"
+kind = "live"
+menu = "process"
+label = { en = "Current hot water setpoint", fr = "Consigne de température ECS actuelle" }
+poll = "cyclic"
+evidence = ["ka-reads"]
+
+[[entry]]
+circuits = ["ka"]
+message = "OutsideTemp"
+kind = "live"
+menu = "process"
+label = { en = "Outside temperature", fr = "Température extérieure" }
+evidence = ["ka-reads"]
+
+[[entry]]
+circuits = ["ka"]
+message = "OutsideWeightedTemp"
+kind = "live"
+menu = "process"
+label = { en = "Weighted outside temperature", fr = "Température extérieure pondérée" }
+evidence = ["ka-reads"]
+
+[[entry]]
+circuits = ["ka"]
+message = "DeCoupleTemp"
+kind = "live"
+menu = "process"
+label = { en = "De-couple sensor B22", fr = "Sonde de bouteille casse-pression B22" }
+poll = "cyclic"
+evidence = ["ka-reads"]
+
+[[entry]]
+circuits = ["ka"]
+message = "DHWTemp"
+kind = "live"
+menu = "process"
+label = { en = "Hot water temperature", fr = "Température ECS" }
+poll = "cyclic"
+evidence = ["ka-reads"]
+
+[[entry]]
+circuits = ["ka"]
+message = "ConfigStatus"
+kind = "diagnostic"
+menu = "process"
+label = { en = "Configuration status", fr = "État de la configuration" }
+poll = "cyclic"
+evidence = ["ka-reads"]
+
+[[entry]]
+circuits = ["ka"]
+message = "ModulationStatus"
+kind = "live"
+menu = "process"
+label = { en = "Burner modulation", fr = "Degré de modulation" }
+poll = "cyclic"
+evidence = ["ka-reads"]
+
+[[entry]]
+circuits = ["ka"]
+message = "VersionMajor"
+kind = "diagnostic"
+menu = "sysinfo"
+label = { en = "Software version, major part", fr = "Version du logiciel, partie majeure" }
+evidence = ["ka-reads"]
+
+[[entry]]
+circuits = ["ka"]
+message = "VersionMinor"
+kind = "diagnostic"
+menu = "sysinfo"
+label = { en = "Software version, minor part", fr = "Version du logiciel, partie mineure" }
+evidence = ["ka-reads"]
+
+[[entry]]
+circuits = ["ka"]
+message = "RoomNormalTemp"
+kind = "setting"
+menu = "settings"
+label = { en = "Normal room temperature", fr = "Température ambiante normale" }
+evidence = ["ka-reads"]
+
+[[entry]]
+circuits = ["ka"]
+message = "RoomSetbackTemp"
+kind = "setting"
+menu = "settings"
+label = { en = "Setback room temperature", fr = "Température ambiante réduite" }
+evidence = ["ka-reads"]
+
+[[entry]]
+circuits = ["ka"]
+message = "SupplyMaxTemp"
+kind = "setting"
+menu = "flow"
+label = { en = "Maximum flow temperature", fr = "Température de départ maximale" }
+evidence = ["ka-reads"]
+
+[[entry]]
+circuits = ["ka"]
+message = "DHWSetpoint"
+kind = "setting"
+menu = "dhw"
+label = { en = "Hot water setpoint", fr = "Consigne de température ECS" }
+evidence = ["ka-reads"]
+
+[[entry]]
+circuits = ["ka"]
+message = "DHWOperationMode"
+kind = "setting"
+menu = "dhw"
+label = { en = "Hot water operating mode", fr = "Mode de fonctionnement ECS" }
+evidence = ["ka-reads"]
+
+[[entry]]
+circuits = ["ka"]
+message = "DHWExceeded"
+kind = "setting"
+menu = "dhw"
+label = { en = "Hot water exceed temperature", fr = "Surélévation de température ECS" }
+evidence = ["ka-reads"]
+
+[[entry]]
+circuits = ["ka"]
+message = "BlockingTime"
+kind = "setting"
+menu = "cascade"
+label = { en = "Blocking time", fr = "Temps de blocage" }
+evidence = ["settings-writes", "register-write-crc"]
+write = { source = "ff", risk = "regulation", proof = "change-observed" }
+
+[[entry]]
+circuits = ["ka"]
+message = "ChangeOverTime"
+kind = "setting"
+menu = "cascade"
+label = { en = "Boiler sequence changeover time", fr = "Temps de marche avant changement de l'ordre des chaudières" }
+evidence = ["settings-writes", "register-write-crc"]
+write = { source = "ff", risk = "regulation", proof = "captured" }
+
+[[entry]]
+circuits = ["ka"]
+message = "DeCoupleMinTemp"
+kind = "setting"
+menu = "separator"
+label = { en = "De-couple minimum temperature", fr = "Température minimale de bouteille casse-pression" }
+evidence = ["settings-writes", "register-write-crc"]
+write = { source = "ff", risk = "regulation", proof = "captured" }
+
+[[entry]]
+circuits = ["ka"]
+message = "CalorifierSwitchDiff"
+kind = "setting"
+menu = "buffer"
+label = { en = "Calorifier switching differential", fr = "Différentiel de commutation du stock tampon" }
+evidence = ["settings-writes", "register-write-crc"]
+write = { source = "ff", risk = "regulation", proof = "captured" }
+
+[[entry]]
+circuits = ["ka"]
+message = "DHWSwitchDiff"
+kind = "setting"
+menu = "dhw"
+label = { en = "Hot water switching differential", fr = "Différentiel de commutation ECS" }
+evidence = ["settings-writes", "register-write-crc"]
+write = { source = "ff", risk = "regulation", proof = "captured" }
+
+[[entry]]
+circuits = ["ka"]
+message = "DHWLoadTime"
+kind = "setting"
+menu = "dhw"
+label = { en = "Maximum hot water loading time", fr = "Temps de charge maximal ECS" }
+evidence = ["settings-writes", "register-write-crc"]
+write = { source = "ff", risk = "regulation", proof = "captured" }
+
+[[entry]]
+circuits = ["ka"]
+message = "LegionellaSetpoint"
+kind = "setting"
+menu = "dhw"
+label = { en = "Legionella protection setpoint", fr = "Consigne de température anti-légionelle" }
+evidence = ["settings-writes", "register-write-crc"]
+write = { source = "ff", risk = "regulation", proof = "captured" }
+
+[[entry]]
+circuits = ["ka"]
+message = "LegionellaCirculationTime"
+kind = "setting"
+menu = "dhw"
+label = { en = "Legionella circulation time", fr = "Temps de circulation anti-légionelle" }
+evidence = ["settings-writes", "register-write-crc"]
+write = { source = "ff", risk = "regulation", proof = "captured" }
+
+# --- direct circuit of the system manager (50) -----------------------------------------------
+
+[[entry]]
+circuits = ["em1"]
+message = "HcMode"
+kind = "state"
+menu = "circuit"
+label = { en = "Room unit / circuit exchange", fr = "Échange commande à distance / circuit" }
+fields = "hcmode"
+evidence = ["em-hcmode"]
+
+[[entry]]
+circuits = ["em1"]
+message = "RoomNormalTemp"
+kind = "setting"
+menu = "settings"
+label = { en = "Normal room temperature", fr = "Température ambiante normale" }
+same_as = "ka/{name}"
+evidence = ["heating-modules-reads"]
+
+[[entry]]
+circuits = ["em1"]
+message = "RoomSetbackTemp"
+kind = "setting"
+menu = "settings"
+label = { en = "Setback room temperature", fr = "Température ambiante réduite" }
+same_as = "ka/{name}"
+evidence = ["heating-modules-reads"]
+
+[[entry]]
+circuits = ["em1"]
+message = "RoomFrostProtectionTemp"
+kind = "setting"
+menu = "settings"
+label = { en = "Frost protection room temperature", fr = "Température ambiante hors-gel" }
+evidence = ["heating-modules-reads"]
+
+[[entry]]
+circuits = ["em1"]
+message = "GradientCurve"
+kind = "setting"
+menu = "settings"
+label = { en = "Heating curve gradient", fr = "Pente de la courbe de chauffe" }
+evidence = ["heating-modules-reads"]
+
+[[entry]]
+circuits = ["em1"]
+message = "SummerWinterChangeOverTemp"
+kind = "setting"
+menu = "settings"
+label = { en = "Summer / winter changeover", fr = "Commutation été/hiver" }
+evidence = ["heating-modules-reads"]
+
+[[entry]]
+circuits = ["em1"]
+message = "SupplyMaxTemp"
+kind = "setting"
+menu = "flow"
+label = { en = "Maximum flow temperature", fr = "Température de départ maximale" }
+same_as = "ka/{name}"
+evidence = ["heating-modules-reads"]
+
+[[entry]]
+circuits = ["em1"]
+message = "SupplyMinTemp"
+kind = "setting"
+menu = "flow"
+label = { en = "Minimum flow temperature", fr = "Température de départ minimale" }
+evidence = ["heating-modules-reads"]
+
+[[entry]]
+circuits = ["em1"]
+message = "BoilerMCBoostTemp"
+kind = "setting"
+menu = "flow"
+label = { en = "Boiler boost offset", fr = "Surélévation de température chaudière" }
+evidence = ["heating-modules-reads"]
+
+[[entry]]
+circuits = ["em1"]
+message = "SystemWeekday"
+kind = "diagnostic"
+menu = "date"
+label = { en = "Day of the week", fr = "Jour de la semaine" }
+evidence = ["em1-clock-program"]
+
+[[entry]]
+circuits = ["em1"]
+message = "SystemDay"
+kind = "diagnostic"
+menu = "date"
+label = { en = "Day of the month", fr = "Jour du mois" }
+evidence = ["em1-clock-program"]
+
+[[entry]]
+circuits = ["em1"]
+message = "SystemMonth"
+kind = "diagnostic"
+menu = "date"
+label = { en = "Month", fr = "Mois" }
+evidence = ["em1-clock-program"]
+
+[[entry]]
+circuits = ["em1"]
+message = "SystemYear"
+kind = "diagnostic"
+menu = "date"
+label = { en = "Year", fr = "Année" }
+evidence = ["em1-clock-program"]
+
+[[entry]]
+circuits = ["em1"]
+message = "SystemHour"
+kind = "diagnostic"
+menu = "date"
+label = { en = "Hour", fr = "Heure" }
+evidence = ["em1-clock-program"]
+
+[[entry]]
+circuits = ["em1"]
+message = "SystemMinute"
+kind = "diagnostic"
+menu = "date"
+label = { en = "Minute", fr = "Minute" }
+evidence = ["em1-clock-program"]
+
+[[entry]]
+circuits = ["em1"]
+message = "SystemSecond"
+kind = "diagnostic"
+menu = "date"
+label = { en = "Second", fr = "Seconde" }
+evidence = ["em1-clock-program"]
+
+[[entry]]
+circuits = ["em1"]
+message = "ErrorId"
+kind = "diagnostic"
+menu = "faultlog"
+label = { en = "Selected fault-log entry", fr = "Entrée sélectionnée de l'historique des défauts" }
+evidence = ["em1-fault-log"]
+
+[[entry]]
+circuits = ["em1"]
+message = "ErrorCode"
+kind = "diagnostic"
+menu = "faultlog"
+label = { en = "Fault code of the entry", fr = "Code défaut de l'entrée" }
+evidence = ["em1-fault-log"]
+
+[[entry]]
+circuits = ["em1"]
+message = "ErrorType"
+kind = "diagnostic"
+menu = "faultlog"
+label = { en = "Fault type of the entry", fr = "Type de défaut de l'entrée" }
+evidence = ["em1-fault-log"]
+
+[[entry]]
+circuits = ["em1"]
+message = "ErrorDevice"
+kind = "diagnostic"
+menu = "faultlog"
+label = { en = "Origin of the entry", fr = "Origine du défaut de l'entrée" }
+evidence = ["em1-fault-log"]
+
+[[entry]]
+circuits = ["em1"]
+message = "ErrorMinute"
+kind = "diagnostic"
+menu = "faultlog"
+label = { en = "Fault minute", fr = "Minute du défaut" }
+evidence = ["em1-fault-log"]
+
+[[entry]]
+circuits = ["em1"]
+message = "ErrorHour"
+kind = "diagnostic"
+menu = "faultlog"
+label = { en = "Fault hour", fr = "Heure du défaut" }
+evidence = ["em1-fault-log"]
+
+[[entry]]
+circuits = ["em1"]
+message = "ErrorDay"
+kind = "diagnostic"
+menu = "faultlog"
+label = { en = "Fault day of the month", fr = "Jour du mois du défaut" }
+evidence = ["em1-fault-log"]
+
+[[entry]]
+circuits = ["em1"]
+message = "ErrorMonth"
+kind = "diagnostic"
+menu = "faultlog"
+label = { en = "Fault month", fr = "Mois du défaut" }
+evidence = ["em1-fault-log"]
+
+[[entry]]
+circuits = ["em1"]
+message = "ErrorYear"
+kind = "diagnostic"
+menu = "faultlog"
+label = { en = "Fault year", fr = "Année du défaut" }
+evidence = ["em1-fault-log"]
+
+[[entry]]
+circuits = ["em1"]
+pattern = "DHWProgram(?P<day>Mon|Tue|Wed|Thu|Fri|Sat|Sun)(?P<slot>[1-3])"
+count = 21
+kind = "program_slot"
+menu = "programs"
+label = { en = "Hot water program, {day} slot {slot}", fr = "Programme ECS, {day}, plage horaire {slot}" }
+family = "program"
+group_id = "dhw"
+group_label = { en = "Hot water program", fr = "Programme ECS" }
+fields = "slot"
+evidence = ["em1-clock-program"]
+
+[[entry]]
+circuits = ["em1"]
+pattern = "CircProgram(?P<day>Mon|Tue|Wed|Thu|Fri|Sat|Sun)(?P<slot>[1-3])"
+count = 21
+kind = "program_slot"
+menu = "programs"
+label = { en = "Circulation program, {day} slot {slot}", fr = "Programme de circulation ECS, {day}, plage horaire {slot}" }
+family = "program"
+group_id = "circulation"
+group_label = { en = "Circulation program", fr = "Programme de circulation ECS" }
+fields = "slot"
+evidence = ["em1-clock-program"]
+
+# --- heating modules (51, 52) ----------------------------------------------------------------
+
+[[entry]]
+circuits = ["em2", "em3"]
+message = "HcMode"
+kind = "state"
+menu = "info"
+label = { en = "Room unit / module exchange", fr = "Échange commande à distance / module d'extension" }
+fields = "hcmode"
+evidence = ["em-hcmode"]
+
+[[entry]]
+circuits = ["em2", "em3"]
+message = "SupplyHCSetTemp"
+kind = "live"
+menu = "info"
+label = { en = "Flow setpoint", fr = "Consigne de température départ" }
+evidence = ["heating-modules-reads"]
+
+[[entry]]
+circuits = ["em2", "em3"]
+message = "SupplyHCTemp"
+kind = "live"
+menu = "info"
+label = { en = "Flow temperature", fr = "Température de départ" }
+evidence = ["heating-modules-reads"]
+
+[[entry]]
+circuits = ["em2", "em3"]
+message = "BoilerMCBoostTemp"
+kind = "setting"
+menu = "flow"
+label = { en = "Boiler boost offset", fr = "Surélévation de température chaudière" }
+evidence = ["heating-modules-reads"]
+
+# The seven settings written on 51. A room unit and its heating module answer the same
+# registers with different values; which copy the regulation uses is not established.
+
+[[entry]]
+circuits = ["em2"]
+message = "RoomNormalTemp"
+kind = "setting"
+menu = "settings"
+label = { en = "Normal room temperature", fr = "Température ambiante normale" }
+evidence = ["settings-writes", "heating-modules-reads"]
+write = { source = "ff", risk = "comfort", proof = "captured", open = ["copy-in-use"] }
+
+[[entry]]
+circuits = ["em2"]
+message = "RoomSetbackTemp"
+kind = "setting"
+menu = "settings"
+label = { en = "Setback room temperature", fr = "Température ambiante réduite" }
+evidence = ["settings-writes", "heating-modules-reads"]
+write = { source = "ff", risk = "comfort", proof = "captured", open = ["copy-in-use"] }
+
+[[entry]]
+circuits = ["em2"]
+message = "RoomFrostProtectionTemp"
+kind = "setting"
+menu = "settings"
+label = { en = "Frost protection room temperature", fr = "Température ambiante hors-gel" }
+evidence = ["settings-writes", "heating-modules-reads"]
+write = { source = "ff", risk = "regulation", proof = "captured", open = ["copy-in-use"] }
+
+[[entry]]
+circuits = ["em2"]
+message = "GradientCurve"
+kind = "setting"
+menu = "settings"
+label = { en = "Heating curve gradient", fr = "Pente de la courbe de chauffe" }
+evidence = ["settings-writes", "heating-modules-reads"]
+write = { source = "ff", risk = "regulation", proof = "captured", open = ["copy-in-use"] }
+
+[[entry]]
+circuits = ["em2"]
+message = "SummerWinterChangeOverTemp"
+kind = "setting"
+menu = "settings"
+label = { en = "Summer / winter changeover", fr = "Commutation été/hiver" }
+evidence = ["settings-writes", "heating-modules-reads"]
+write = { source = "ff", risk = "regulation", proof = "captured", open = ["copy-in-use"] }
+
+[[entry]]
+circuits = ["em2"]
+message = "SupplyMaxTemp"
+kind = "setting"
+menu = "flow"
+label = { en = "Maximum flow temperature", fr = "Température de départ maximale" }
+evidence = ["settings-writes", "heating-modules-reads"]
+write = { source = "31", risk = "regulation", proof = "captured", open = ["copy-in-use"] }
+
+[[entry]]
+circuits = ["em2"]
+message = "SupplyMinTemp"
+kind = "setting"
+menu = "flow"
+label = { en = "Minimum flow temperature", fr = "Température de départ minimale" }
+evidence = ["settings-writes", "heating-modules-reads"]
+write = { source = "31", risk = "regulation", proof = "captured", open = ["copy-in-use"] }
+
+[[entry]]
+circuits = ["em3"]
+message = "RoomNormalTemp"
+kind = "setting"
+menu = "settings"
+label = { en = "Normal room temperature", fr = "Température ambiante normale" }
+evidence = ["heating-modules-reads"]
+
+[[entry]]
+circuits = ["em3"]
+message = "RoomSetbackTemp"
+kind = "setting"
+menu = "settings"
+label = { en = "Setback room temperature", fr = "Température ambiante réduite" }
+evidence = ["heating-modules-reads"]
+
+[[entry]]
+circuits = ["em3"]
+message = "RoomFrostProtectionTemp"
+kind = "setting"
+menu = "settings"
+label = { en = "Frost protection room temperature", fr = "Température ambiante hors-gel" }
+evidence = ["heating-modules-reads"]
+
+[[entry]]
+circuits = ["em3"]
+message = "GradientCurve"
+kind = "setting"
+menu = "settings"
+label = { en = "Heating curve gradient", fr = "Pente de la courbe de chauffe" }
+evidence = ["heating-modules-reads"]
+
+[[entry]]
+circuits = ["em3"]
+message = "SummerWinterChangeOverTemp"
+kind = "setting"
+menu = "settings"
+label = { en = "Summer / winter changeover", fr = "Commutation été/hiver" }
+evidence = ["heating-modules-reads"]
+
+[[entry]]
+circuits = ["em3"]
+message = "SupplyMaxTemp"
+kind = "setting"
+menu = "flow"
+label = { en = "Maximum flow temperature", fr = "Température de départ maximale" }
+evidence = ["heating-modules-reads"]
+
+[[entry]]
+circuits = ["em3"]
+message = "SupplyMinTemp"
+kind = "setting"
+menu = "flow"
+label = { en = "Minimum flow temperature", fr = "Température de départ minimale" }
+evidence = ["heating-modules-reads"]
+
+# --- room units (35, 75, f5) -----------------------------------------------------------------
+
+[[entry]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "HeatDemandTemp"
+kind = "live"
+menu = "info"
+label = { en = "Requested flow temperature", fr = "Température de départ demandée" }
+evidence = ["room-units-reads"]
+
+[[entry]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "SupplyHCSetTemp"
+kind = "live"
+menu = "info"
+label = { en = "Flow setpoint", fr = "Consigne de température départ" }
+evidence = ["room-units-reads"]
+
+[[entry]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "OutsideTemp"
+kind = "live"
+menu = "info"
+label = { en = "Outside temperature", fr = "Température extérieure" }
+evidence = ["room-units-reads"]
+
+[[entry]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "OutsideWeightedTemp"
+kind = "live"
+menu = "info"
+label = { en = "Weighted outside temperature", fr = "Température extérieure pondérée" }
+evidence = ["room-units-reads"]
+
+[[entry]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "RoomTemp"
+kind = "live"
+menu = "info"
+label = { en = "Room temperature", fr = "Température ambiante" }
+evidence = ["room-units-reads"]
+
+[[entry]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "RoomNormalTemp"
+kind = "setting"
+menu = "settings"
+label = { en = "Normal room temperature", fr = "Température ambiante normale" }
+evidence = ["room-units-reads"]
+
+[[entry]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "RoomSetbackTemp"
+kind = "setting"
+menu = "settings"
+label = { en = "Setback room temperature", fr = "Température ambiante réduite" }
+evidence = ["room-units-reads"]
+
+[[entry]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "RoomFrostProtectionTemp"
+kind = "setting"
+menu = "settings"
+label = { en = "Frost protection room temperature", fr = "Température ambiante hors-gel" }
+evidence = ["room-units-reads"]
+
+[[entry]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "GradientCurve"
+kind = "setting"
+menu = "settings"
+label = { en = "Heating curve gradient", fr = "Pente de la courbe de chauffe" }
+evidence = ["room-units-reads"]
+
+[[entry]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "SummerWinterChangeOverTemp"
+kind = "setting"
+menu = "settings"
+label = { en = "Summer / winter changeover", fr = "Commutation été/hiver" }
+evidence = ["room-units-reads"]
+
+[[entry]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "SupplyMaxTemp"
+kind = "setting"
+menu = "flow"
+label = { en = "Maximum flow temperature", fr = "Température de départ maximale" }
+evidence = ["room-units-reads"]
+
+[[entry]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "SupplyMinTemp"
+kind = "setting"
+menu = "flow"
+label = { en = "Minimum flow temperature", fr = "Température de départ minimale" }
+evidence = ["room-units-reads"]
+
+[[entry]]
+circuits = ["fs1"]
+message = "SwitchOnRuntime"
+kind = "setting"
+menu = "control"
+label = { en = "Optimised switch-on lead time", fr = "Durée d'anticipation de l'optimisation au démarrage" }
+evidence = ["settings-writes", "room-units-reads"]
+write = { source = "ff", risk = "regulation", proof = "captured" }
+
+[[entry]]
+circuits = ["fs1"]
+message = "FrostProtectionLimitTemp"
+kind = "setting"
+menu = "control"
+label = { en = "Frost protection limit", fr = "Température limite hors-gel" }
+evidence = ["settings-writes", "room-units-reads"]
+write = { source = "ff", risk = "regulation", proof = "captured" }
+
+[[entry]]
+circuits = ["fs2", "fs3"]
+message = "SwitchOnRuntime"
+kind = "setting"
+menu = "control"
+label = { en = "Optimised switch-on lead time", fr = "Durée d'anticipation de l'optimisation au démarrage" }
+evidence = ["room-units-reads"]
+
+[[entry]]
+circuits = ["fs2", "fs3"]
+message = "FrostProtectionLimitTemp"
+kind = "setting"
+menu = "control"
+label = { en = "Frost protection limit", fr = "Température limite hors-gel" }
+evidence = ["room-units-reads"]
+
+[[entry]]
+circuits = ["fs1", "fs2", "fs3"]
+pattern = "HCProgram(?P<p>[1-3])(?P<day>Mon|Tue|Wed|Thu|Fri|Sat|Sun)(?P<slot>[1-3])"
+count = 63
+kind = "program_slot"
+menu = "programs"
+label = { en = "Heating program {p}, {day} slot {slot}", fr = "Programme de chauffe {p}, {day}, plage horaire {slot}" }
+family = "program"
+group_id = "heating{p}"
+group_label = { en = "Heating program {p}", fr = "Programme de chauffe {p}" }
+fields = "slot"
+evidence = ["room-units-programs"]
+
+# The room units answer hot-water and circulation programs that the installation does not
+# follow: the hot water follows the program of the system manager.
+
+[[entry]]
+circuits = ["fs1", "fs2", "fs3"]
+pattern = "DHWProgram(?P<day>Mon|Tue|Wed|Thu|Fri|Sat|Sun)(?P<slot>[1-3])"
+count = 21
+kind = "program_slot"
+menu = "programs"
+label = { en = "Stored hot water program, {day} slot {slot}", fr = "Programme ECS enregistré, {day}, plage horaire {slot}" }
+family = "program"
+group_id = "dhw_stored"
+group_label = { en = "Hot water program stored in the room unit", fr = "Programme ECS enregistré dans la commande à distance" }
+fields = "slot"
+evidence = ["room-units-programs"]
+
+[[entry]]
+circuits = ["fs1", "fs2", "fs3"]
+pattern = "CircProgram(?P<day>Mon|Tue|Wed|Thu|Fri|Sat|Sun)(?P<slot>[1-3])"
+count = 21
+kind = "program_slot"
+menu = "programs"
+label = { en = "Stored circulation program, {day} slot {slot}", fr = "Programme de circulation ECS enregistré, {day}, plage horaire {slot}" }
+family = "program"
+group_id = "circulation_stored"
+group_label = { en = "Circulation program stored in the room unit", fr = "Programme de circulation ECS enregistré dans la commande à distance" }
+fields = "slot"
+evidence = ["room-units-programs"]
+
+# --- broadcast -------------------------------------------------------------------------------
+
+[[entry]]
+circuits = ["broadcast"]
+message = "KaStatus"
+kind = "state"
+menu = "status"
+label = { en = "Boiler status", fr = "État de la chaudière" }
+fields = "status"
+evidence = ["broadcast-kastatus"]
