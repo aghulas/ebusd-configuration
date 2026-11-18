@@ -654,7 +654,8 @@ message = "SupplyMaxTemp"
 kind = "setting"
 menu = "flow"
 label = { en = "Maximum flow temperature", fr = "Température de départ maximale" }
-evidence = ["ka-reads"]
+evidence = ["settings-writes", "ka-reads"]
+write = { source = "ff", risk = "regulation", proof = "change-observed" }
 
 [[entry]]
 circuits = ["ka"]
@@ -662,7 +663,8 @@ message = "DHWSetpoint"
 kind = "setting"
 menu = "dhw"
 label = { en = "Hot water setpoint", fr = "Consigne de température ECS" }
-evidence = ["ka-reads"]
+evidence = ["settings-writes", "ka-reads"]
+write = { source = "ff", risk = "regulation", proof = "change-observed" }
 
 [[entry]]
 circuits = ["ka"]
