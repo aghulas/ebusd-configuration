@@ -12,18 +12,29 @@
 #
 # kind      live | state | counter | diagnostic | setting | program_slot
 # poll      cyclic | on_demand, only where a record shows how the vendor service tool reads
-#           the value; absent otherwise. Passive messages need none.
+#           the value; absent otherwise. Passive messages need none. A message without one
+#           takes the default of its kind in [poll_default], if there is one.
 # write     only for a setting a lot writes: source address of the captured write, risk class
 #           (comfort | regulation), proof (captured | change-observed), open questions.
 # evidence  records under evidence/ of the workbench repository.
 
 schema = 1
 
-# The menu trees and the short labels are a proposal until the owner of the project has
-# accepted them; "accepted" is set here when that is done.
+# The menu trees and the short labels were proposed to the owner of the project and accepted
+# as written on the date below. A menu or a label added later is put to the owner first.
 [status]
-menus = "proposed"
-labels = "proposed"
+menus = "accepted"
+labels = "accepted"
+date = "2026-11-18"
+
+# Polling class of a message no record gives one for, by kind: a decision of the owner of the
+# project (same date), not an observation. No interval goes with it: the load a bus accepts
+# has not been measured. Counters and states have no default.
+[poll_default]
+live = "cyclic"
+setting = "on_demand"
+program_slot = "on_demand"
+diagnostic = "on_demand"
 
 [days]
 Mon = { en = "Monday", fr = "lundi" }
