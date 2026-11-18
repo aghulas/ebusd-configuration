@@ -206,4 +206,22 @@ namespace ka {
     @step(60)
     value: seconds;
   }
+
+  /** factor 1/P of the power controller of the cascade */
+  @wcrc(0x9f, 0x02)
+  @inherit(crcr, crcw)
+  model RegulationP {
+    @minValue(10)
+    @maxValue(300)
+    value: UIN;
+  }
+
+  /** factor I of the power controller of the cascade */
+  @wcrc(0x9e, 0x02)
+  @inherit(crcr, crcw)
+  model RegulationI {
+    @minValue(10)
+    @maxValue(200)
+    value: UIN;
+  }
 }
