@@ -96,6 +96,18 @@ namespace fs1 {
     value: holidayLevel;
   }
 
+  // Control variation: 1 is the value in service. 0 was written and read back on 2026-11-19;
+  // while it was set, the heating modules of the first two circuits raised the flow setpoint
+  // they broadcast, the second to its maximum flow temperature. No other value was tried and
+  // no list of names is established.
+
+  /** control variation of the heating circuit, a number */
+  @wcrc(0x41, 0x01)
+  @inherit(crcr, crcw)
+  model ControlVariation {
+    value: UIN;
+  }
+
   // Holiday period: start and end date, three registers each, read and written from 0xff. Day
   // and month are the calendar values. The third register of each date took 0 and 24 and read
   // them back; what it holds is not established (the operator's log reports it set back to 0
