@@ -106,12 +106,13 @@ namespace fs3 {
     value: holidayLevel;
   }
 
-  // Control variation: 1 is the value in service. 0 was written and read back on 2026-11-19;
-  // while it was set, the heating modules of the first two circuits raised the flow setpoint
-  // they broadcast, the second to its maximum flow temperature. No other value was tried and
-  // no list of names is established.
+  // Control variation, vendor parameter 315 / 316 of the room unit. 1 is the value in service,
+  // the factory setting "outside temperature". 0 was written and read back on 2026-11-19: the
+  // modules then broadcast the constant flow setpoint of the circuit type (60 and 75 °C), as
+  // the manual describes "constant flow". The manual also lists "room" and "outside and room";
+  // which of 2 and 3 is which is not established, so the field stays a number.
 
-  /** control variation of the heating circuit, a number */
+  /** control variation of the heating circuit (parameter 315): 0 constant flow temperature, 1 outside temperature */
   @wcrc(0x41, 0x01)
   @inherit(crcr, crcw)
   model ControlVariation {
