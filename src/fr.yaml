@@ -60,7 +60,7 @@ factor 1/P of the power controller of the cascade: facteur 1/P du régulateur de
 factor I of the power controller of the cascade: facteur I du régulateur de puissance de la cascade
 upper limit of the optimal operating range of the cascade: limite haute de la plage de fonctionnement optimale de la cascade
 lower limit of the optimal operating range of the cascade: limite basse de la plage de fonctionnement optimale de la cascade
-"control variation of the heating circuit, a number": "variante de régulation du circuit de chauffage, un nombre"
+"control variation of the heating circuit (parameter 315): 0 constant flow temperature, 1 outside temperature": "variante de régulation du circuit de chauffage (paramètre 315) : 0 température de départ constante, 1 en fonction de la température extérieure"
 de-couple sensor B22 (hydraulic separator or plate exchanger, secondary side): sonde B22 (bouteille casse-pression ou échangeur à plaques, côté secondaire)
 minimum temperature at the de-couple sensor: température minimale à la sonde de bouteille casse-pression
 domestic hot water temperature: température ECS
