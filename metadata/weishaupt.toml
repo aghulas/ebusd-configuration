@@ -1611,8 +1611,38 @@ fields = "slot"
 evidence = ["room-units-programs", "choice-date-program-writes"]
 write = { source = "31", risk = "comfort", proof = "family", proof_slot = "HCProgram3Sun3" }
 
+# Heating program 1 of room unit 3: Sunday slot 3 captured changed and read back on
+# 2026-11-19, the other 20 slots by the same rule; its programs 2 and 3 are read only.
 [[entry]]
-circuits = ["fs2", "fs3"]
+circuits = ["fs3"]
+pattern = "HCProgram(?P<p>1)(?P<day>Mon|Tue|Wed|Thu|Fri|Sat|Sun)(?P<slot>[1-3])"
+count = 21
+kind = "program_slot"
+menu = "programs"
+label = { en = "Heating program {p}, {day} slot {slot}", fr = "Programme de chauffe {p}, {day}, plage horaire {slot}" }
+family = "program"
+group_id = "heating{p}"
+group_label = { en = "Heating program {p}", fr = "Programme de chauffe {p}" }
+fields = "slot"
+evidence = ["room-units-programs", "choice-date-program-writes"]
+write = { source = "31", risk = "comfort", proof = "family", proof_slot = "HCProgram1Sun3" }
+
+[[entry]]
+circuits = ["fs3"]
+pattern = "HCProgram(?P<p>[23])(?P<day>Mon|Tue|Wed|Thu|Fri|Sat|Sun)(?P<slot>[1-3])"
+count = 42
+kind = "program_slot"
+menu = "programs"
+label = { en = "Heating program {p}, {day} slot {slot}", fr = "Programme de chauffe {p}, {day}, plage horaire {slot}" }
+family = "program"
+group_id = "heating{p}"
+group_label = { en = "Heating program {p}", fr = "Programme de chauffe {p}" }
+fields = "slot"
+evidence = ["room-units-programs"]
+
+# Room unit 2 acknowledged a slot write and did not keep it: its programs are read only.
+[[entry]]
+circuits = ["fs2"]
 pattern = "HCProgram(?P<p>[1-3])(?P<day>Mon|Tue|Wed|Thu|Fri|Sat|Sun)(?P<slot>[1-3])"
 count = 63
 kind = "program_slot"
