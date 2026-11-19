@@ -151,6 +151,15 @@ fault code of the selected entry: code défaut de l'entrée sélectionnée
 fault type of the selected entry: type de défaut de l'entrée sélectionnée
 device that raised the selected entry: origine du défaut de l'entrée sélectionnée
 percent: pour cent
+heat demand of the cascade manager to the first boiler: demande de chaleur du manager de cascade à la première chaudière
+heat demand of the cascade manager to the second boiler: demande de chaleur du manager de cascade à la seconde chaudière
+heat demand of the room unit to the cascade manager: demande de chaleur de la commande à distance au manager de cascade
+requested flow temperature: température de départ demandée
+modulation demand: demande de modulation
+"request state, values not established": "état de la demande, valeurs non établies"
+"second byte, meaning not established": "deuxième octet, signification non établie"
+"fifth and sixth byte, meaning not established": "cinquième et sixième octets, signification non établie"
+"ninth byte, meaning not established": "neuvième octet, signification non établie"
 
 # provisional: at least one term of the comment has no vendor source yet
 "fault counters, numbers 57 to 51": "compteurs de défauts, numéros 57 à 51"
