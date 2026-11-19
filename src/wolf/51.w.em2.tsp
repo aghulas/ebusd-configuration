@@ -28,6 +28,12 @@ namespace em2 {
   /** mixer parameter */
   model MixerParameter is Wolf.MixerParameter;
 
+  /** state of the mixer-circuit pump, 1 = on */
+  model MixerPump is Wolf.MixerPump;
+
+  /** circulation return temperature setpoint */
+  model CirculationReturnSetTemp is Wolf.CirculationReturnSetTemp;
+
   /** software version, major part */
   model VersionMajor is Wolf.UnitVersionMajor;
 

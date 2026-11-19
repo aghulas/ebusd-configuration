@@ -56,6 +56,9 @@ namespace bc2 {
   /** operating hours, burner hours and burner starts */
   model Counters is Wolf.Counters;
 
+  /** event counters: burner hours and ignitions of the day, switch-ons, resets, shut-offs */
+  model EventCounters is Wolf.EventCounters;
+
   /** return, flue gas, flow and outside temperature */
   model Temperatures is Wolf.Temperatures;
 
