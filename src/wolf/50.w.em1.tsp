@@ -114,17 +114,20 @@ namespace em1 {
   @ext(0x11, 0x24, 0x01)
   model SystemYear is CrcRead<UIN>;
 
+  // Hour, minute and second of the clock: values of the time of day, without the unit of a
+  // duration.
+
   /** hour */
   @ext(0x4d, 0x25, 0x01)
-  model SystemHour is CrcRead<hours>;
+  model SystemHour is CrcRead<UIN>;
 
   /** minute */
   @ext(0xa9, 0x26, 0x01)
-  model SystemMinute is CrcRead<minutes>;
+  model SystemMinute is CrcRead<UIN>;
 
   /** second */
   @ext(0xf5, 0x27, 0x01)
-  model SystemSecond is CrcRead<seconds>;
+  model SystemSecond is CrcRead<UIN>;
 
   // --- Weekly circulation program, read side: three switch-time slots per day ---
 
@@ -319,11 +322,11 @@ namespace em1 {
 
   /** fault minute */
   @ext(0xdb, 0x9f, 0x0b)
-  model ErrorMinute is CrcRead<minutes>;
+  model ErrorMinute is CrcRead<UIN>;
 
   /** fault hour */
   @ext(0xc7, 0xa0, 0x0b)
-  model ErrorHour is CrcRead<hours>;
+  model ErrorHour is CrcRead<UIN>;
 
   /** fault day of the month */
   @ext(0x9b, 0xa1, 0x0b)
