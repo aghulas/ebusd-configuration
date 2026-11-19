@@ -9,6 +9,15 @@ namespace Wolf;
 
 @zz(0x35) // room unit of heating circuit #1 (FS)
 namespace fs1 {
+  // Heat demand, passive: sent by this room unit (QQ 0x30, its master address) to the cascade
+  // manager (ZZ 0xf1), whose slave address has no file of its own.
+
+  /** heat demand of the room unit to the cascade manager */
+  @passive
+  @qq(0x30)
+  @zz(0xf1)
+  model PowerDemand is Wolf.PowerDemand;
+
   // Values of the heating circuit, read side only.
 
   /** flow temperature the heating circuit requests from the heat source */
