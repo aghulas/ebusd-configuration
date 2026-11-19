@@ -58,6 +58,9 @@ blocking time before a further boiler of the cascade is switched on: temps de bl
 running time after which the boiler sequence of the cascade changes over: temps de marche après lequel l'ordre d'enclenchement des chaudières de la cascade change
 factor 1/P of the power controller of the cascade: facteur 1/P du régulateur de puissance de la cascade
 factor I of the power controller of the cascade: facteur I du régulateur de puissance de la cascade
+upper limit of the optimal operating range of the cascade: limite haute de la plage de fonctionnement optimale de la cascade
+lower limit of the optimal operating range of the cascade: limite basse de la plage de fonctionnement optimale de la cascade
+"control variation of the heating circuit, a number": "variante de régulation du circuit de chauffage, un nombre"
 de-couple sensor B22 (hydraulic separator or plate exchanger, secondary side): sonde B22 (bouteille casse-pression ou échangeur à plaques, côté secondaire)
 minimum temperature at the de-couple sensor: température minimale à la sonde de bouteille casse-pression
 domestic hot water temperature: température ECS
