@@ -83,6 +83,12 @@ off or on: arrêt ou marche
 day of the legionella protection: jour de la fonction anti-légionelle
 circulation pump during the legionella protection: pompe de circulation ECS pendant la fonction anti-légionelle
 temperature level during a holiday period: niveau de température pendant les vacances
+day of the month on which the holiday period starts: jour du mois du début des vacances
+month in which the holiday period starts: mois du début des vacances
+"third register of the start date of the holiday period, meaning not established": "troisième registre de la date de début des vacances, signification non établie"
+day of the month on which the holiday period ends: jour du mois de la fin des vacances
+month in which the holiday period ends: mois de la fin des vacances
+"third register of the end date of the holiday period, meaning not established": "troisième registre de la date de fin des vacances, signification non établie"
 date and time set for the whole installation: date et heure de toute l'installation
 time: heure
 date: date
