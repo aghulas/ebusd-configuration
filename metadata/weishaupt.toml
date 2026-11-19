@@ -302,6 +302,15 @@ label = { en = "First answer byte", fr = "Premier octet de la réponse" }
 kind = "diagnostic"
 guard = true
 
+[fields.eventcounters]
+include = "memory"
+burnerhourstoday = { label = { en = "Burner hours today (by the symbol)", fr = "Heures brûleur du jour (selon le symbole)" } }
+ignitionstoday = { label = { en = "Ignitions today (by the symbol)", fr = "Allumages du jour (selon le symbole)" } }
+poweroncount = { label = { en = "Mains switch-ons", fr = "Mises sous tension" } }
+"ukn\\d" = { skip = true }
+resetcount = { label = { en = "Resets", fr = "Réinitialisations" } }
+shutoffcount = { label = { en = "Shut-offs", fr = "Coupures" } }
+
 [fields.counters]
 include = "memory"
 operatinghours = { label = { en = "Operating hours", fr = "Heures de fonctionnement" } }
@@ -535,6 +544,16 @@ label = { en = "Counters", fr = "Compteurs" }
 fields = "counters"
 poll = "on_demand"
 evidence = ["bc-counters"]
+
+[[entry]]
+circuits = ["bc1", "bc2"]
+message = "EventCounters"
+kind = "counter"
+menu = "statistics"
+label = { en = "Event counters", fr = "Compteurs d'événements" }
+fields = "eventcounters"
+poll = "on_demand"
+evidence = ["survey-reads"]
 
 [[entry]]
 circuits = ["bc1", "bc2"]
@@ -1621,6 +1640,63 @@ message = "VersionMinor"
 kind = "diagnostic"
 menu = "info"
 label = { en = "Software version, minor part", fr = "Version du logiciel, partie mineure" }
+evidence = ["survey-reads"]
+
+# Third group of survey reads (approved 2026-11-19).
+[[entry]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "LegionellaSetpoint"
+kind = "setting"
+menu = "settings"
+label = { en = "Legionella setpoint (stored)", fr = "Consigne anti-légionelle (mémorisée)" }
+evidence = ["survey-reads"]
+
+[[entry]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "SummerTimeStartDay"
+kind = "setting"
+menu = "settings"
+label = { en = "Summer time start, day", fr = "Début heure d'été, jour" }
+evidence = ["survey-reads"]
+
+[[entry]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "SummerTimeStartMonth"
+kind = "setting"
+menu = "settings"
+label = { en = "Summer time start, month", fr = "Début heure d'été, mois" }
+evidence = ["survey-reads"]
+
+[[entry]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "SummerTimeEndDay"
+kind = "setting"
+menu = "settings"
+label = { en = "Summer time end, day", fr = "Fin heure d'été, jour" }
+evidence = ["survey-reads"]
+
+[[entry]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "SummerTimeEndMonth"
+kind = "setting"
+menu = "settings"
+label = { en = "Summer time end, month", fr = "Fin heure d'été, mois" }
+evidence = ["survey-reads"]
+
+[[entry]]
+circuits = ["em2", "em3"]
+message = "MixerPump"
+kind = "state"
+menu = "info"
+label = { en = "Mixer circuit pump", fr = "Pompe du circuit mélangé" }
+evidence = ["survey-reads"]
+
+[[entry]]
+circuits = ["em2", "em3"]
+message = "CirculationReturnSetTemp"
+kind = "setting"
+menu = "settings"
+label = { en = "Circulation return setpoint", fr = "Consigne retour circulation ECS" }
 evidence = ["survey-reads"]
 
 [[entry]]
