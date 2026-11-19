@@ -272,4 +272,73 @@ namespace ka {
     @maxValue(100)
     value: percent;
   }
+
+  // Read only, established by the register survey of 2026-11-19 and the vendor service tool's
+  // screens (see evidence): settings of the cascade and of the hot water, and the primary
+  // sensor of the plate exchanger.
+
+  /** modulation differential added to the system setpoint for the modulation limit (parameter 538) */
+  @ext(0x4d, 0xe9, 0xfd)
+  model ModulationDiffTemp is CrcRead<diff10>;
+
+  /** de-couple excess over the system setpoint (parameter 551) */
+  @ext(0x11, 0xe8, 0xfd)
+  model DeCoupleExcessTemp is CrcRead<diff10>;
+
+  // Read only: a write of 78.5 was acknowledged and not taken (the vendor tool sets this parameter up to 78.0).
+  /** de-couple maximum temperature (parameter 553) */
+  @ext(0xdd, 0xe6, 0xfd)
+  model DeCoupleMaxTemp is CrcRead<temp10>;
+
+  /** calorifier excess over the hot-water setpoint (parameter 561) */
+  @ext(0xad, 0xe3, 0xfd)
+  model CalorifierExcessTemp is CrcRead<diff10>;
+
+  /** day of the start of summer time (parameter 593) */
+  @ext(0x09, 0xde, 0xfd)
+  model SummerTimeStartDay is CrcRead<UIN>;
+
+  /** month of the start of summer time (parameter 593) */
+  @ext(0x55, 0xdf, 0xfd)
+  model SummerTimeStartMonth is CrcRead<month>;
+
+  /** day of the end of summer time (parameter 594) */
+  @ext(0x49, 0xe0, 0xfd)
+  model SummerTimeEndDay is CrcRead<UIN>;
+
+  /** month of the end of summer time (parameter 594) */
+  @ext(0x15, 0xe1, 0xfd)
+  model SummerTimeEndMonth is CrcRead<month>;
+
+  // Boiler sequences of the cascade (parameters 533, 534), read only: each position holds the
+  // boiler that comes first or second in that sequence.
+
+  /** boiler sequence 1, first position */
+  @ext(0x95, 0xca, 0xfd)
+  model BoilerSequence1First is CrcRead<cascadeBoiler>;
+
+  /** boiler sequence 1, second position */
+  @ext(0xc9, 0xcb, 0xfd)
+  model BoilerSequence1Second is CrcRead<cascadeBoiler>;
+
+  /** boiler sequence 2, first position */
+  @ext(0xe9, 0xd4, 0xfd)
+  model BoilerSequence2First is CrcRead<cascadeBoiler>;
+
+  /** boiler sequence 2, second position */
+  @ext(0xb5, 0xd5, 0xfd)
+  model BoilerSequence2Second is CrcRead<cascadeBoiler>;
+
+  /** reduced hot-water setpoint (parameter 573) */
+  @ext(0x12, 0x8a, 0x02)
+  model DHWSetbackTemp is CrcRead<temp10>;
+
+  // Quarter hours since midnight: 34 is 08:30.
+  /** start time of the legionella protection, in quarter hours (parameter 581) */
+  @ext(0xd5, 0xf4, 0xfd)
+  model LegionellaStartTime is CrcRead<UIN>;
+
+  /** primary sensor B24 of the plate exchanger; -100.0 when not fitted */
+  @ext(0x72, 0x40, 0x0a)
+  model PlateExchangerPrimaryTemp is CrcRead<otemp10>;
 }
