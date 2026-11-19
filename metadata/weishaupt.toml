@@ -1470,6 +1470,159 @@ menu = "control"
 label = { en = "Heating circuit type", fr = "Type de circuit de chauffage" }
 evidence = ["survey-reads"]
 
+# Second group of survey reads (approved 2026-11-19): room units and heating modules.
+[[entry]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "VersionMajor"
+kind = "diagnostic"
+menu = "info"
+label = { en = "Software version, major part", fr = "Version du logiciel, partie majeure" }
+evidence = ["survey-reads"]
+
+[[entry]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "VersionMinor"
+kind = "diagnostic"
+menu = "info"
+label = { en = "Software version, minor part", fr = "Version du logiciel, partie mineure" }
+evidence = ["survey-reads"]
+
+[[entry]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "DHWLoadingPriority"
+kind = "setting"
+menu = "settings"
+label = { en = "Hot water priority (stored)", fr = "Priorité ECS (mémorisée)" }
+evidence = ["survey-reads"]
+
+[[entry]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "DHWSetbackTemp"
+kind = "setting"
+menu = "settings"
+label = { en = "Reduced hot water setpoint (stored)", fr = "Consigne ECS réduite (mémorisée)" }
+evidence = ["survey-reads"]
+
+[[entry]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "DHWMaxTemp"
+kind = "setting"
+menu = "settings"
+label = { en = "Maximum hot water temperature (stored)", fr = "Température ECS maximale (mémorisée)" }
+evidence = ["survey-reads"]
+
+[[entry]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "DHWLegionellaDay"
+kind = "setting"
+menu = "settings"
+label = { en = "Legionella day (stored)", fr = "Jour anti-légionelle (mémorisé)" }
+evidence = ["survey-reads"]
+
+[[entry]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "LegionellaCirculationTime"
+kind = "setting"
+menu = "settings"
+label = { en = "Circulation time with legionella (stored)", fr = "Temps de circulation anti-légionelle (mémorisé)" }
+evidence = ["survey-reads"]
+
+[[entry]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "ErrorId"
+kind = "diagnostic"
+menu = "info"
+label = { en = "Selected fault-log entry", fr = "Entrée sélectionnée de l'historique des défauts" }
+evidence = ["survey-reads"]
+
+[[entry]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "ErrorCode"
+kind = "diagnostic"
+menu = "info"
+label = { en = "Fault code of the entry", fr = "Code défaut de l'entrée" }
+evidence = ["survey-reads"]
+
+[[entry]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "ErrorType"
+kind = "diagnostic"
+menu = "info"
+label = { en = "Fault type of the entry", fr = "Type de défaut de l'entrée" }
+evidence = ["survey-reads"]
+
+[[entry]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "ErrorDevice"
+kind = "diagnostic"
+menu = "info"
+label = { en = "Origin of the entry", fr = "Origine du défaut de l'entrée" }
+evidence = ["survey-reads"]
+
+[[entry]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "ErrorMinute"
+kind = "diagnostic"
+menu = "info"
+label = { en = "Fault minute", fr = "Minute du défaut" }
+evidence = ["survey-reads"]
+
+[[entry]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "ErrorHour"
+kind = "diagnostic"
+menu = "info"
+label = { en = "Fault hour", fr = "Heure du défaut" }
+evidence = ["survey-reads"]
+
+[[entry]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "ErrorDay"
+kind = "diagnostic"
+menu = "info"
+label = { en = "Fault day of the month", fr = "Jour du mois du défaut" }
+evidence = ["survey-reads"]
+
+[[entry]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "ErrorMonth"
+kind = "diagnostic"
+menu = "info"
+label = { en = "Fault month", fr = "Mois du défaut" }
+evidence = ["survey-reads"]
+
+[[entry]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "ErrorYear"
+kind = "diagnostic"
+menu = "info"
+label = { en = "Fault year", fr = "Année du défaut" }
+evidence = ["survey-reads"]
+
+[[entry]]
+circuits = ["em2", "em3"]
+message = "MixerParameter"
+kind = "setting"
+menu = "settings"
+label = { en = "Mixer parameter", fr = "Paramètre de la vanne mélangeuse" }
+evidence = ["survey-reads"]
+
+[[entry]]
+circuits = ["em2", "em3"]
+message = "VersionMajor"
+kind = "diagnostic"
+menu = "info"
+label = { en = "Software version, major part", fr = "Version du logiciel, partie majeure" }
+evidence = ["survey-reads"]
+
+[[entry]]
+circuits = ["em2", "em3"]
+message = "VersionMinor"
+kind = "diagnostic"
+menu = "info"
+label = { en = "Software version, minor part", fr = "Version du logiciel, partie mineure" }
+evidence = ["survey-reads"]
+
 [[entry]]
 circuits = ["fs1", "fs2", "fs3"]
 message = "RoomTemp"
