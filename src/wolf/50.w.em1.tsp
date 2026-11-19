@@ -126,177 +126,179 @@ namespace em1 {
   @ext(0xf5, 0x27, 0x01)
   model SystemSecond is CrcRead<seconds>;
 
-  // --- Weekly circulation program, read side: three switch-time slots per day ---
+  // --- Weekly circulation program, read and written (from the address of ebusd): three
+  // switch-time slots per day ---
 
   /** Monday slot 1 */
-  @ext(0xaa, 0x10, 0x1a)
-  model CircProgramMon1 is SwitchTimes;
+  @wcrc(0x10, 0x1a)
+  model CircProgramMon1 is SwitchTimesSetting;
 
   /** Monday slot 2 */
-  @ext(0xf6, 0x11, 0x1a)
-  model CircProgramMon2 is SwitchTimes;
+  @wcrc(0x11, 0x1a)
+  model CircProgramMon2 is SwitchTimesSetting;
 
   /** Monday slot 3 */
-  @ext(0x12, 0x12, 0x1a)
-  model CircProgramMon3 is SwitchTimes;
+  @wcrc(0x12, 0x1a)
+  model CircProgramMon3 is SwitchTimesSetting;
 
   /** Tuesday slot 1 */
-  @ext(0x26, 0x20, 0x1a)
-  model CircProgramTue1 is SwitchTimes;
+  @wcrc(0x20, 0x1a)
+  model CircProgramTue1 is SwitchTimesSetting;
 
   /** Tuesday slot 2 */
-  @ext(0x7a, 0x21, 0x1a)
-  model CircProgramTue2 is SwitchTimes;
+  @wcrc(0x21, 0x1a)
+  model CircProgramTue2 is SwitchTimesSetting;
 
   /** Tuesday slot 3 */
-  @ext(0x9e, 0x22, 0x1a)
-  model CircProgramTue3 is SwitchTimes;
+  @wcrc(0x22, 0x1a)
+  model CircProgramTue3 is SwitchTimesSetting;
 
   /** Wednesday slot 1 */
-  @ext(0x96, 0x30, 0x1a)
-  model CircProgramWed1 is SwitchTimes;
+  @wcrc(0x30, 0x1a)
+  model CircProgramWed1 is SwitchTimesSetting;
 
   /** Wednesday slot 2 */
-  @ext(0xca, 0x31, 0x1a)
-  model CircProgramWed2 is SwitchTimes;
+  @wcrc(0x31, 0x1a)
+  model CircProgramWed2 is SwitchTimesSetting;
 
   /** Wednesday slot 3 */
-  @ext(0x2e, 0x32, 0x1a)
-  model CircProgramWed3 is SwitchTimes;
+  @wcrc(0x32, 0x1a)
+  model CircProgramWed3 is SwitchTimesSetting;
 
   /** Thursday slot 1 */
-  @ext(0x62, 0x40, 0x1a)
-  model CircProgramThu1 is SwitchTimes;
+  @wcrc(0x40, 0x1a)
+  model CircProgramThu1 is SwitchTimesSetting;
 
   /** Thursday slot 2 */
-  @ext(0x3e, 0x41, 0x1a)
-  model CircProgramThu2 is SwitchTimes;
+  @wcrc(0x41, 0x1a)
+  model CircProgramThu2 is SwitchTimesSetting;
 
   /** Thursday slot 3 */
-  @ext(0xda, 0x42, 0x1a)
-  model CircProgramThu3 is SwitchTimes;
+  @wcrc(0x42, 0x1a)
+  model CircProgramThu3 is SwitchTimesSetting;
 
   /** Friday slot 1 */
-  @ext(0xd2, 0x50, 0x1a)
-  model CircProgramFri1 is SwitchTimes;
+  @wcrc(0x50, 0x1a)
+  model CircProgramFri1 is SwitchTimesSetting;
 
   /** Friday slot 2 */
-  @ext(0x8e, 0x51, 0x1a)
-  model CircProgramFri2 is SwitchTimes;
+  @wcrc(0x51, 0x1a)
+  model CircProgramFri2 is SwitchTimesSetting;
 
   /** Friday slot 3 */
-  @ext(0x6a, 0x52, 0x1a)
-  model CircProgramFri3 is SwitchTimes;
+  @wcrc(0x52, 0x1a)
+  model CircProgramFri3 is SwitchTimesSetting;
 
   /** Saturday slot 1 */
-  @ext(0x5e, 0x60, 0x1a)
-  model CircProgramSat1 is SwitchTimes;
+  @wcrc(0x60, 0x1a)
+  model CircProgramSat1 is SwitchTimesSetting;
 
   /** Saturday slot 2 */
-  @ext(0x02, 0x61, 0x1a)
-  model CircProgramSat2 is SwitchTimes;
+  @wcrc(0x61, 0x1a)
+  model CircProgramSat2 is SwitchTimesSetting;
 
   /** Saturday slot 3 */
-  @ext(0xe6, 0x62, 0x1a)
-  model CircProgramSat3 is SwitchTimes;
+  @wcrc(0x62, 0x1a)
+  model CircProgramSat3 is SwitchTimesSetting;
 
   /** Sunday slot 1 */
-  @ext(0xee, 0x70, 0x1a)
-  model CircProgramSun1 is SwitchTimes;
+  @wcrc(0x70, 0x1a)
+  model CircProgramSun1 is SwitchTimesSetting;
 
   /** Sunday slot 2 */
-  @ext(0xb2, 0x71, 0x1a)
-  model CircProgramSun2 is SwitchTimes;
+  @wcrc(0x71, 0x1a)
+  model CircProgramSun2 is SwitchTimesSetting;
 
   /** Sunday slot 3 */
-  @ext(0x56, 0x72, 0x1a)
-  model CircProgramSun3 is SwitchTimes;
+  @wcrc(0x72, 0x1a)
+  model CircProgramSun3 is SwitchTimesSetting;
 
-  // --- Weekly hot-water program, read side: three switch-time slots per day ---
+  // --- Weekly hot-water program, read and written (from the address of ebusd): three
+  // switch-time slots per day. It is the program the installation applies ---
 
   /** Monday slot 1 */
-  @ext(0xa7, 0x10, 0x17)
-  model DHWProgramMon1 is SwitchTimes;
+  @wcrc(0x10, 0x17)
+  model DHWProgramMon1 is SwitchTimesSetting;
 
   /** Monday slot 2 */
-  @ext(0xfb, 0x11, 0x17)
-  model DHWProgramMon2 is SwitchTimes;
+  @wcrc(0x11, 0x17)
+  model DHWProgramMon2 is SwitchTimesSetting;
 
   /** Monday slot 3 */
-  @ext(0x1f, 0x12, 0x17)
-  model DHWProgramMon3 is SwitchTimes;
+  @wcrc(0x12, 0x17)
+  model DHWProgramMon3 is SwitchTimesSetting;
 
   /** Tuesday slot 1 */
-  @ext(0x2b, 0x20, 0x17)
-  model DHWProgramTue1 is SwitchTimes;
+  @wcrc(0x20, 0x17)
+  model DHWProgramTue1 is SwitchTimesSetting;
 
   /** Tuesday slot 2 */
-  @ext(0x77, 0x21, 0x17)
-  model DHWProgramTue2 is SwitchTimes;
+  @wcrc(0x21, 0x17)
+  model DHWProgramTue2 is SwitchTimesSetting;
 
   /** Tuesday slot 3 */
-  @ext(0x93, 0x22, 0x17)
-  model DHWProgramTue3 is SwitchTimes;
+  @wcrc(0x22, 0x17)
+  model DHWProgramTue3 is SwitchTimesSetting;
 
   /** Wednesday slot 1 */
-  @ext(0x9b, 0x30, 0x17)
-  model DHWProgramWed1 is SwitchTimes;
+  @wcrc(0x30, 0x17)
+  model DHWProgramWed1 is SwitchTimesSetting;
 
   /** Wednesday slot 2 */
-  @ext(0xc7, 0x31, 0x17)
-  model DHWProgramWed2 is SwitchTimes;
+  @wcrc(0x31, 0x17)
+  model DHWProgramWed2 is SwitchTimesSetting;
 
   /** Wednesday slot 3 */
-  @ext(0x23, 0x32, 0x17)
-  model DHWProgramWed3 is SwitchTimes;
+  @wcrc(0x32, 0x17)
+  model DHWProgramWed3 is SwitchTimesSetting;
 
   /** Thursday slot 1 */
-  @ext(0x6f, 0x40, 0x17)
-  model DHWProgramThu1 is SwitchTimes;
+  @wcrc(0x40, 0x17)
+  model DHWProgramThu1 is SwitchTimesSetting;
 
   /** Thursday slot 2 */
-  @ext(0x33, 0x41, 0x17)
-  model DHWProgramThu2 is SwitchTimes;
+  @wcrc(0x41, 0x17)
+  model DHWProgramThu2 is SwitchTimesSetting;
 
   /** Thursday slot 3 */
-  @ext(0xd7, 0x42, 0x17)
-  model DHWProgramThu3 is SwitchTimes;
+  @wcrc(0x42, 0x17)
+  model DHWProgramThu3 is SwitchTimesSetting;
 
   /** Friday slot 1 */
-  @ext(0xdf, 0x50, 0x17)
-  model DHWProgramFri1 is SwitchTimes;
+  @wcrc(0x50, 0x17)
+  model DHWProgramFri1 is SwitchTimesSetting;
 
   /** Friday slot 2 */
-  @ext(0x83, 0x51, 0x17)
-  model DHWProgramFri2 is SwitchTimes;
+  @wcrc(0x51, 0x17)
+  model DHWProgramFri2 is SwitchTimesSetting;
 
   /** Friday slot 3 */
-  @ext(0x67, 0x52, 0x17)
-  model DHWProgramFri3 is SwitchTimes;
+  @wcrc(0x52, 0x17)
+  model DHWProgramFri3 is SwitchTimesSetting;
 
   /** Saturday slot 1 */
-  @ext(0x53, 0x60, 0x17)
-  model DHWProgramSat1 is SwitchTimes;
+  @wcrc(0x60, 0x17)
+  model DHWProgramSat1 is SwitchTimesSetting;
 
   /** Saturday slot 2 */
-  @ext(0x0f, 0x61, 0x17)
-  model DHWProgramSat2 is SwitchTimes;
+  @wcrc(0x61, 0x17)
+  model DHWProgramSat2 is SwitchTimesSetting;
 
   /** Saturday slot 3 */
-  @ext(0xeb, 0x62, 0x17)
-  model DHWProgramSat3 is SwitchTimes;
+  @wcrc(0x62, 0x17)
+  model DHWProgramSat3 is SwitchTimesSetting;
 
   /** Sunday slot 1 */
-  @ext(0xe3, 0x70, 0x17)
-  model DHWProgramSun1 is SwitchTimes;
+  @wcrc(0x70, 0x17)
+  model DHWProgramSun1 is SwitchTimesSetting;
 
   /** Sunday slot 2 */
-  @ext(0xbf, 0x71, 0x17)
-  model DHWProgramSun2 is SwitchTimes;
+  @wcrc(0x71, 0x17)
+  model DHWProgramSun2 is SwitchTimesSetting;
 
   /** Sunday slot 3 */
-  @ext(0x5b, 0x72, 0x17)
-  model DHWProgramSun3 is SwitchTimes;
+  @wcrc(0x72, 0x17)
+  model DHWProgramSun3 is SwitchTimesSetting;
 
   // --- Fault log, read side. ErrorId selects the entry (0 = most recent); the other fields
   // return that entry's code, source and timestamp. Selecting an entry is a write (later lot).
