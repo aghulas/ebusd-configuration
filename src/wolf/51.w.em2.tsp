@@ -25,6 +25,15 @@ namespace em2 {
   /** boiler boost offset */
   model BoilerMCBoostTemp is Wolf.BoilerMCBoostTemp;
 
+  /** mixer parameter */
+  model MixerParameter is Wolf.MixerParameter;
+
+  /** software version, major part */
+  model VersionMajor is Wolf.UnitVersionMajor;
+
+  /** software version, minor part */
+  model VersionMinor is Wolf.UnitVersionMinor;
+
   // Settings of the heating circuit, read and written. The module acknowledges a write from
   // any master. It takes the two flow limits from the address of ebusd as well, the others
   // only from source address 0xff (`write -s ff`).

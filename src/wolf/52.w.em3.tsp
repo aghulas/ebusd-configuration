@@ -96,4 +96,13 @@ namespace em3 {
 
   /** boiler boost offset */
   model BoilerMCBoostTemp is Wolf.BoilerMCBoostTemp;
+
+  /** mixer parameter */
+  model MixerParameter is Wolf.MixerParameter;
+
+  /** software version, major part */
+  model VersionMajor is Wolf.UnitVersionMajor;
+
+  /** software version, minor part */
+  model VersionMinor is Wolf.UnitVersionMinor;
 }
