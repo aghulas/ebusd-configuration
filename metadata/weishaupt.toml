@@ -366,6 +366,16 @@ heatdemandtemp = { label = { en = "Requested flow temperature", fr = "Températu
 modulation = { label = { en = "Modulation demand", fr = "Demande de modulation" }, kind = "live" }
 dhwsettemp = { label = { en = "Hot water setpoint", fr = "Consigne de température ECS" }, kind = "live" }
 
+# The room units fill bytes 1, 3 and 4 only: ukn2, modulation and dhwsettemp are always the
+# replacement value (`ff`), so they are skipped. The requested flow temperature has its own
+# label: the room units also have the message HeatDemandTemp, which reads the same register.
+[fields.powerdemand_fs]
+status = { label = { en = "Request state", fr = "État de la demande" }, kind = "diagnostic" }
+"ukn\\d" = { skip = true }
+heatdemandtemp = { label = { en = "Requested flow temperature (sent)", fr = "Température de départ demandée (envoyée)" }, kind = "live" }
+modulation = { skip = true }
+dhwsettemp = { skip = true }
+
 [fields.hcmode]
 "ink\\d_\\d" = { skip = true }
 "opmode_\\d" = { skip = true }
@@ -1237,7 +1247,7 @@ message = "PowerDemand"
 kind = "live"
 menu = "info"
 label = { en = "Heat demand to the cascade manager", fr = "Demande de chaleur au manager de cascade" }
-fields = "powerdemand"
+fields = "powerdemand_fs"
 evidence = ["heat-demand"]
 
 [[entry]]
