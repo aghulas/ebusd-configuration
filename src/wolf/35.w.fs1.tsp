@@ -35,6 +35,15 @@ namespace fs1 {
   /** room temperature */
   model RoomTemp is Wolf.RoomTemp;
 
+  /** room setpoint in effect */
+  model RoomSetpointTemp is Wolf.RoomSetpointTemp;
+
+  /** outside temperature, mixed */
+  model OutsideMixedTemp is Wolf.OutsideMixedTemp;
+
+  /** heating circuit type, read only */
+  model HeatingCircuitType is Wolf.HeatingCircuitType;
+
   // Settings, read and written. The room unit acknowledges a write from any master but takes
   // the value only from source address 0xff (`write -s ff`).
 
