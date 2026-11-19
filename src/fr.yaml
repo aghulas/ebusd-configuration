@@ -327,7 +327,7 @@ fault history slot 6: mémoire de défauts, emplacement 6
 "boiler sequence 1, second position": "ordre d'enclenchement des chaudières 1, deuxième position"
 "boiler sequence 2, first position": "ordre d'enclenchement des chaudières 2, première position"
 "boiler sequence 2, second position": "ordre d'enclenchement des chaudières 2, deuxième position"
-"calorifier excess over the hot-water setpoint (parameter 561)": "surélévation du stock tampon par rapport à la consigne ECS (paramètre 561)"
+"calorifier (buffer storage) excess, to make up for the losses of the pipes (parameter 561)": "surélévation de température du stock tampon, pour compenser les pertes des conduites (paramètre 561)"
 "day of the end of summer time (parameter 594)": "jour de la fin de l'heure d'été (paramètre 594)"
 "day of the start of summer time (parameter 593)": "jour du début de l'heure d'été (paramètre 593)"
 "de-couple excess over the system setpoint (parameter 551)": "surélévation de la bouteille casse-pression par rapport à la consigne du système (paramètre 551)"
