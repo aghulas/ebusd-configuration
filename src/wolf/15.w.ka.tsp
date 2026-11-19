@@ -290,7 +290,9 @@ namespace ka {
   @ext(0xdd, 0xe6, 0xfd)
   model DeCoupleMaxTemp is CrcRead<temp10>;
 
-  /** calorifier excess over the hot-water setpoint (parameter 561) */
+  // The calorifier of the cascade is the buffer storage ("stock tampon", menu "Tampon" of the
+  // manual, parameter 561, 0.0 to 10.0 K), not the hot-water cylinder.
+  /** calorifier (buffer storage) excess, to make up for the losses of the pipes (parameter 561) */
   @ext(0xad, 0xe3, 0xfd)
   model CalorifierExcessTemp is CrcRead<diff10>;
 
