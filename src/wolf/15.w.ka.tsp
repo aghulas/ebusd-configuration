@@ -250,4 +250,26 @@ namespace ka {
     @maxValue(200)
     value: UIN;
   }
+
+  // Limits of the optimal operating range of the cascade (vendor parameters 535 and 536), in
+  // percent of burner load: the manual gives 30 % to the maximum for the lower limit and the
+  // minimum to 100 % for the upper one, so each bound depends on the other register.
+
+  /** upper limit of the optimal operating range of the cascade */
+  @wcrc(0xea, 0xfd)
+  @inherit(crcr, crcw)
+  model ModulationMax {
+    @minValue(30)
+    @maxValue(100)
+    value: percent;
+  }
+
+  /** lower limit of the optimal operating range of the cascade */
+  @wcrc(0xeb, 0xfd)
+  @inherit(crcr, crcw)
+  model ModulationMin {
+    @minValue(30)
+    @maxValue(100)
+    value: percent;
+  }
 }
