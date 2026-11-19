@@ -89,6 +89,16 @@ Parallel = { en = "Parallel", fr = "Parallèle" }
 # temperature level of a holiday period
 Antifreeze = { en = "Antifreeze", fr = "Hors-gel" }
 Setback = { en = "Setback", fr = "Réduit" }
+# boiler of a cascade sequence
+A = { en = "Boiler A", fr = "Chaudière A" }
+B = { en = "Boiler B", fr = "Chaudière B" }
+# heating circuit type (room unit manual 83277504, p. 48)
+FloorBaseHeating = { en = "Floor base heating", fr = "Réchauffage de base plancher" }
+FloorHeating = { en = "Underfloor heating", fr = "Plancher chauffant" }
+Radiator60 = { en = "Radiators 60 °C", fr = "Radiateurs 60" }
+Radiator70 = { en = "Radiators 70 °C", fr = "Radiateurs 70" }
+Convector = { en = "Convectors", fr = "Convecteurs" }
+Universal = { en = "Universal", fr = "Universel" }
 # switch time of a weekly program
 Enabled = { en = "Enabled", fr = "Activé" }
 Disabled = { en = "Disabled", fr = "Désactivé" }
@@ -1312,6 +1322,153 @@ kind = "live"
 menu = "info"
 label = { en = "Weighted outside temperature", fr = "Température extérieure pondérée" }
 evidence = ["room-units-reads"]
+
+# Reads established by the register survey and the service tool (2026-11-19, evidence survey-reads).
+[[entry]]
+circuits = ["ka"]
+message = "ModulationDiffTemp"
+kind = "setting"
+menu = "cascade"
+label = { en = "Modulation differential", fr = "Différentiel de modulation" }
+evidence = ["survey-reads"]
+
+[[entry]]
+circuits = ["ka"]
+message = "BoilerSequence1First"
+kind = "setting"
+menu = "cascade"
+label = { en = "Boiler sequence 1, first", fr = "Ordre des chaudières 1, première" }
+evidence = ["survey-reads"]
+
+[[entry]]
+circuits = ["ka"]
+message = "BoilerSequence1Second"
+kind = "setting"
+menu = "cascade"
+label = { en = "Boiler sequence 1, second", fr = "Ordre des chaudières 1, deuxième" }
+evidence = ["survey-reads"]
+
+[[entry]]
+circuits = ["ka"]
+message = "BoilerSequence2First"
+kind = "setting"
+menu = "cascade"
+label = { en = "Boiler sequence 2, first", fr = "Ordre des chaudières 2, première" }
+evidence = ["survey-reads"]
+
+[[entry]]
+circuits = ["ka"]
+message = "BoilerSequence2Second"
+kind = "setting"
+menu = "cascade"
+label = { en = "Boiler sequence 2, second", fr = "Ordre des chaudières 2, deuxième" }
+evidence = ["survey-reads"]
+
+[[entry]]
+circuits = ["ka"]
+message = "DeCoupleExcessTemp"
+kind = "setting"
+menu = "separator"
+label = { en = "De-couple excess", fr = "Surélévation casse-pression" }
+evidence = ["survey-reads"]
+
+[[entry]]
+circuits = ["ka"]
+message = "DeCoupleMaxTemp"
+kind = "setting"
+menu = "separator"
+label = { en = "De-couple maximum", fr = "Température maximale casse-pression" }
+evidence = ["survey-reads"]
+
+[[entry]]
+circuits = ["ka"]
+message = "PlateExchangerPrimaryTemp"
+kind = "live"
+menu = "separator"
+label = { en = "Plate exchanger primary B24", fr = "Échangeur à plaques, primaire B24" }
+evidence = ["survey-reads"]
+absent = -100.0
+
+[[entry]]
+circuits = ["ka"]
+message = "CalorifierExcessTemp"
+kind = "setting"
+menu = "buffer"
+label = { en = "Buffer excess", fr = "Surélévation stock tampon" }
+evidence = ["survey-reads"]
+
+[[entry]]
+circuits = ["ka"]
+message = "DHWSetbackTemp"
+kind = "setting"
+menu = "dhw"
+label = { en = "Reduced hot water setpoint", fr = "Consigne ECS réduite" }
+evidence = ["survey-reads"]
+
+[[entry]]
+circuits = ["ka"]
+message = "LegionellaStartTime"
+kind = "setting"
+menu = "dhw"
+label = { en = "Legionella start time (quarter hours)", fr = "Heure anti-légionelle (quarts d'heure)" }
+evidence = ["survey-reads"]
+
+[[entry]]
+circuits = ["ka"]
+message = "SummerTimeStartDay"
+kind = "setting"
+menu = "date"
+label = { en = "Summer time start, day", fr = "Début heure d'été, jour" }
+evidence = ["survey-reads"]
+
+[[entry]]
+circuits = ["ka"]
+message = "SummerTimeStartMonth"
+kind = "setting"
+menu = "date"
+label = { en = "Summer time start, month", fr = "Début heure d'été, mois" }
+evidence = ["survey-reads"]
+
+[[entry]]
+circuits = ["ka"]
+message = "SummerTimeEndDay"
+kind = "setting"
+menu = "date"
+label = { en = "Summer time end, day", fr = "Fin heure d'été, jour" }
+evidence = ["survey-reads"]
+
+[[entry]]
+circuits = ["ka"]
+message = "SummerTimeEndMonth"
+kind = "setting"
+menu = "date"
+label = { en = "Summer time end, month", fr = "Fin heure d'été, mois" }
+evidence = ["survey-reads"]
+
+[[entry]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "RoomSetpointTemp"
+kind = "live"
+menu = "info"
+label = { en = "Room setpoint in effect", fr = "Consigne d'ambiance en vigueur" }
+evidence = ["survey-reads"]
+
+[[entry]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "OutsideMixedTemp"
+kind = "live"
+menu = "info"
+label = { en = "Outside temperature, mixed", fr = "Température extérieure mélangée" }
+evidence = ["survey-reads"]
+absent = -100.0
+
+[[entry]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "HeatingCircuitType"
+kind = "setting"
+menu = "control"
+label = { en = "Heating circuit type", fr = "Type de circuit de chauffage" }
+evidence = ["survey-reads"]
 
 [[entry]]
 circuits = ["fs1", "fs2", "fs3"]
