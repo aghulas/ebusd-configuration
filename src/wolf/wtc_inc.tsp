@@ -960,6 +960,15 @@ enum _legionellaDay {
 @values(_legionellaDay)
 scalar legionellaDay extends UIN;
 
+enum _cascadeBoiler {
+  A: 0,
+  B: 1,
+}
+
+/** boiler of the cascade, by its letter */
+@values(_cascadeBoiler)
+scalar cascadeBoiler extends UIN;
+
 enum _holidayLevel {
   Antifreeze: 0,
   Setback: 1,
