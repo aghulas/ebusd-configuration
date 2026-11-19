@@ -1032,7 +1032,8 @@ family = "program"
 group_id = "dhw"
 group_label = { en = "Hot water program", fr = "Programme ECS" }
 fields = "slot"
-evidence = ["em1-clock-program"]
+evidence = ["em1-clock-program", "choice-date-program-writes"]
+write = { source = "31", risk = "comfort", proof = "family", proof_slot = "DHWProgramSun3" }
 
 [[entry]]
 circuits = ["em1"]
@@ -1045,7 +1046,8 @@ family = "program"
 group_id = "circulation"
 group_label = { en = "Circulation program", fr = "Programme de circulation ECS" }
 fields = "slot"
-evidence = ["em1-clock-program"]
+evidence = ["em1-clock-program", "choice-date-program-writes"]
+write = { source = "31", risk = "comfort", proof = "family", proof_slot = "CircProgramSun3" }
 
 # --- heating modules (51, 52) ----------------------------------------------------------------
 
@@ -1611,8 +1613,8 @@ fields = "slot"
 evidence = ["room-units-programs", "choice-date-program-writes"]
 write = { source = "31", risk = "comfort", proof = "family", proof_slot = "HCProgram3Sun3" }
 
-# Heating program 1 of room unit 3: Sunday slot 3 captured changed and read back on
-# 2026-11-19, the other 20 slots by the same rule; its programs 2 and 3 are read only.
+# The five programs of room unit 3: Sunday slot 3 of each captured changed and read back on
+# 2026-11-19, the other 20 slots by the same rule.
 [[entry]]
 circuits = ["fs3"]
 pattern = "HCProgram(?P<p>1)(?P<day>Mon|Tue|Wed|Thu|Fri|Sat|Sun)(?P<slot>[1-3])"
@@ -1629,8 +1631,8 @@ write = { source = "31", risk = "comfort", proof = "family", proof_slot = "HCPro
 
 [[entry]]
 circuits = ["fs3"]
-pattern = "HCProgram(?P<p>[23])(?P<day>Mon|Tue|Wed|Thu|Fri|Sat|Sun)(?P<slot>[1-3])"
-count = 42
+pattern = "HCProgram(?P<p>2)(?P<day>Mon|Tue|Wed|Thu|Fri|Sat|Sun)(?P<slot>[1-3])"
+count = 21
 kind = "program_slot"
 menu = "programs"
 label = { en = "Heating program {p}, {day} slot {slot}", fr = "Programme de chauffe {p}, {day}, plage horaire {slot}" }
@@ -1638,7 +1640,22 @@ family = "program"
 group_id = "heating{p}"
 group_label = { en = "Heating program {p}", fr = "Programme de chauffe {p}" }
 fields = "slot"
-evidence = ["room-units-programs"]
+evidence = ["room-units-programs", "choice-date-program-writes"]
+write = { source = "31", risk = "comfort", proof = "family", proof_slot = "HCProgram2Sun3" }
+
+[[entry]]
+circuits = ["fs3"]
+pattern = "HCProgram(?P<p>3)(?P<day>Mon|Tue|Wed|Thu|Fri|Sat|Sun)(?P<slot>[1-3])"
+count = 21
+kind = "program_slot"
+menu = "programs"
+label = { en = "Heating program {p}, {day} slot {slot}", fr = "Programme de chauffe {p}, {day}, plage horaire {slot}" }
+family = "program"
+group_id = "heating{p}"
+group_label = { en = "Heating program {p}", fr = "Programme de chauffe {p}" }
+fields = "slot"
+evidence = ["room-units-programs", "choice-date-program-writes"]
+write = { source = "31", risk = "comfort", proof = "family", proof_slot = "HCProgram3Sun3" }
 
 # Room unit 2 acknowledged a slot write and did not keep it: its programs are read only.
 [[entry]]
@@ -1672,7 +1689,21 @@ evidence = ["room-units-programs", "choice-date-program-writes"]
 write = { source = "31", risk = "comfort", proof = "family", proof_slot = "DHWProgramSun3" }
 
 [[entry]]
-circuits = ["fs2", "fs3"]
+circuits = ["fs3"]
+pattern = "DHWProgram(?P<day>Mon|Tue|Wed|Thu|Fri|Sat|Sun)(?P<slot>[1-3])"
+count = 21
+kind = "program_slot"
+menu = "programs"
+label = { en = "Stored hot water program, {day} slot {slot}", fr = "Programme ECS enregistré, {day}, plage horaire {slot}" }
+family = "program"
+group_id = "dhw_stored"
+group_label = { en = "Hot water program stored in the room unit", fr = "Programme ECS enregistré dans la commande à distance" }
+fields = "slot"
+evidence = ["room-units-programs", "choice-date-program-writes"]
+write = { source = "31", risk = "comfort", proof = "family", proof_slot = "DHWProgramSun3" }
+
+[[entry]]
+circuits = ["fs2"]
 pattern = "DHWProgram(?P<day>Mon|Tue|Wed|Thu|Fri|Sat|Sun)(?P<slot>[1-3])"
 count = 21
 kind = "program_slot"
@@ -1699,7 +1730,21 @@ evidence = ["room-units-programs", "choice-date-program-writes"]
 write = { source = "31", risk = "comfort", proof = "family", proof_slot = "CircProgramSun3" }
 
 [[entry]]
-circuits = ["fs2", "fs3"]
+circuits = ["fs3"]
+pattern = "CircProgram(?P<day>Mon|Tue|Wed|Thu|Fri|Sat|Sun)(?P<slot>[1-3])"
+count = 21
+kind = "program_slot"
+menu = "programs"
+label = { en = "Stored circulation program, {day} slot {slot}", fr = "Programme de circulation ECS enregistré, {day}, plage horaire {slot}" }
+family = "program"
+group_id = "circulation_stored"
+group_label = { en = "Circulation program stored in the room unit", fr = "Programme de circulation ECS enregistré dans la commande à distance" }
+fields = "slot"
+evidence = ["room-units-programs", "choice-date-program-writes"]
+write = { source = "31", risk = "comfort", proof = "family", proof_slot = "CircProgramSun3" }
+
+[[entry]]
+circuits = ["fs2"]
 pattern = "CircProgram(?P<day>Mon|Tue|Wed|Thu|Fri|Sat|Sun)(?P<slot>[1-3])"
 count = 21
 kind = "program_slot"
