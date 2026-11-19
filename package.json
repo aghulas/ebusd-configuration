@@ -27,11 +27,11 @@
   "homepage": "https://github.com/john30/ebusd-configuration#readme",
   "devDependencies": {
     "@types/node": "^25.1.0",
-    "@typespec/library-linter": "~0.81.0",
+    "@typespec/library-linter": "~0.87.0",
     "typescript": "^5.9.3"
   },
   "dependencies": {
-    "@ebusd/ebus-typespec": "~0.29.0",
-    "@typespec/compiler": "~1.12.0"
+    "@ebusd/ebus-typespec": "https://github.com/aghulas/ebus-typespec/releases/download/v0.31.0-weishaupt.1/ebusd-ebus-typespec-0.31.0-weishaupt.1.tgz",
+    "@typespec/compiler": "~1.17.0"
   }
 }
