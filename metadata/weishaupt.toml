@@ -298,12 +298,16 @@ operatinghours = { label = { en = "Operating hours", fr = "Heures de fonctionnem
 burnerhours = { label = { en = "Burner operating hours", fr = "Heures de fonctionnement du brûleur" } }
 burnerstarts = { label = { en = "Burner starts", fr = "Démarrages brûleur" } }
 
+# absent: the value a temperature reads when its sensor is not fitted. Boilers -40 (seen on the
+# outside, hot-water and separator registers and in RAM, evidence bc-info-values, bc-live-values);
+# system manager and heating modules -100.0 (seen on the outside temperature of the modules and on
+# calorifier registers of the system manager, evidence ka-reads, em-hcmode).
 [fields.temperatures]
 include = "memory"
-returntemp = { label = { en = "Return temperature", fr = "Température retour" } }
-fluegastemp = { label = { en = "Flue gas temperature", fr = "Température des fumées" } }
-supplytemp = { label = { en = "Flow temperature", fr = "Température de départ" } }
-outsidetemp = { label = { en = "Outside temperature", fr = "Température extérieure" } }
+returntemp = { label = { en = "Return temperature", fr = "Température retour" }, absent = -40 }
+fluegastemp = { label = { en = "Flue gas temperature", fr = "Température des fumées" }, absent = -40 }
+supplytemp = { label = { en = "Flow temperature", fr = "Température de départ" }, absent = -40 }
+outsidetemp = { label = { en = "Outside temperature", fr = "Température extérieure" }, absent = -40 }
 
 [fields.operation]
 include = "memory"
@@ -388,7 +392,7 @@ pump = { label = { en = "Pump", fr = "Pompe" } }
 valveclosing = { label = { en = "Mixer closing", fr = "Vanne mélangeuse, fermeture" } }
 valveopening = { label = { en = "Mixer opening", fr = "Vanne mélangeuse, ouverture" } }
 supplyhctemp = { label = { en = "Flow temperature", fr = "Température de départ" }, kind = "live" }
-outsidetemp = { label = { en = "Outside temperature", fr = "Température extérieure" }, kind = "live" }
+outsidetemp = { label = { en = "Outside temperature", fr = "Température extérieure" }, kind = "live", absent = -100.0 }
 boilermcboosttemp = { label = { en = "Boiler boost offset", fr = "Surélévation de température chaudière" }, kind = "setting" }
 supplyhcmaxtemp = { label = { en = "Maximum flow temperature", fr = "Température de départ maximale" }, kind = "setting" }
 supplyhcmintemp = { label = { en = "Minimum flow temperature", fr = "Température de départ minimale" }, kind = "setting" }
@@ -442,6 +446,7 @@ evidence = ["bc-info-values"]
 [[entry]]
 circuits = ["bc1", "bc2"]
 message = "OutsideTemp"
+absent = -40.0
 kind = "live"
 menu = "info_sensors"
 label = { en = "Outside temperature (i33)", fr = "Température extérieure (i33)" }
@@ -450,6 +455,7 @@ evidence = ["bc-info-values"]
 [[entry]]
 circuits = ["bc1", "bc2"]
 message = "DHWTemp"
+absent = -40.0
 kind = "live"
 menu = "info_sensors"
 label = { en = "Hot water temperature (i34)", fr = "Température ECS (i34)" }
@@ -458,6 +464,7 @@ evidence = ["bc-info-values"]
 [[entry]]
 circuits = ["bc1", "bc2"]
 message = "HydraulicSeparatorTemp"
+absent = -40.0
 kind = "live"
 menu = "info_sensors"
 label = { en = "Hydraulic separator temperature (i39)", fr = "Température de la bouteille casse-pression (i39)" }
@@ -610,6 +617,7 @@ evidence = ["ka-reads"]
 [[entry]]
 circuits = ["ka"]
 message = "OutsideTemp"
+absent = -100.0
 kind = "live"
 menu = "process"
 label = { en = "Outside temperature", fr = "Température extérieure" }
@@ -626,6 +634,7 @@ evidence = ["ka-reads"]
 [[entry]]
 circuits = ["ka"]
 message = "DeCoupleTemp"
+absent = -100.0
 kind = "live"
 menu = "process"
 label = { en = "De-couple sensor B22", fr = "Sonde de bouteille casse-pression B22" }
@@ -635,6 +644,7 @@ evidence = ["ka-reads"]
 [[entry]]
 circuits = ["ka"]
 message = "DHWTemp"
+absent = -100.0
 kind = "live"
 menu = "process"
 label = { en = "Hot water temperature", fr = "Température ECS" }
@@ -1117,6 +1127,7 @@ evidence = ["heating-modules-reads"]
 [[entry]]
 circuits = ["em2", "em3"]
 message = "SupplyHCTemp"
+absent = -100.0
 kind = "live"
 menu = "info"
 label = { en = "Flow temperature", fr = "Température de départ" }
