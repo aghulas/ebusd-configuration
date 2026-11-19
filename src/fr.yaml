@@ -165,7 +165,7 @@ heat demand of the cascade manager to the second boiler: demande de chaleur du m
 heat demand of the room unit to the cascade manager: demande de chaleur de la commande à distance au manager de cascade
 requested flow temperature: température de départ demandée
 modulation demand: demande de modulation
-"request state, values not established": "état de la demande, valeurs non établies"
+"request state: power requested (0x66, 0xee) or not (0x55, 0x00) from the cascade manager; 0xbb or 0x55 from a room unit": "état de la demande : puissance demandée (0x66, 0xee) ou non (0x55, 0x00) par le manager de cascade ; 0xbb ou 0x55 d'une commande à distance"
 "second byte, meaning not established": "deuxième octet, signification non établie"
 "fifth and sixth byte, meaning not established": "cinquième et sixième octets, signification non établie"
 "ninth byte, meaning not established": "neuvième octet, signification non établie"
