@@ -113,8 +113,9 @@ model BoilerMCBoostTemp is CrcRead<diff10>;
 
 // --- information-value registers of the boiler automat (PBSB 50 22), read side, see evidence ---
 // The WTC display shows these as "i" codes (menu Info). They share the generic register space
-// with the system manager (lot A); the sensor wired to a register differs by device. Shared by
-// both boilers; the "i" code is cited on the per-boiler read.
+// with the system manager and the room units: the outside temperature (i33) is the shared read
+// `OutsideTemp` of the room-unit section above. The sensor wired to a register differs by
+// device. Shared by both boilers; the "i" code is cited on the per-boiler read.
 
 /** flow temperature */
 @ext(0x28, 0x0d, 0x00)
