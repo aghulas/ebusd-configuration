@@ -61,6 +61,83 @@ model OutsideWeightedTemp is CrcRead<otemp10>;
 @ext(0xec, 0x11, 0x00)
 model RoomTemp is CrcRead<otemp10>;
 
+// Second group of survey reads (see evidence): software version, hot-water settings and fault
+// log of the room units, mixer parameter and version of the heating modules. Read only.
+
+/** software version, major part (327 for the room unit 327.26, 372 for the module 372.03) */
+@ext(0x45, 0x99, 0x01)
+model UnitVersionMajor is CrcRead<UIN>;
+
+/** software version, minor part */
+@ext(0xa1, 0x9a, 0x01)
+model UnitVersionMinor is CrcRead<UIN>;
+
+// Hot-water settings as the room unit stores them (parameters 133, 343 / 423, 601, 605, 609).
+// Where the system manager prepares the hot water, the values in use are the manager's.
+
+/** hot water loading with priority over the heating circuit, sliding or in parallel */
+@ext(0xd8, 0x23, 0x00)
+model UnitDHWLoadingPriority is CrcRead<DHWOperation>;
+
+/** reduced hot-water setpoint (parameter 133) */
+@ext(0x12, 0x8a, 0x02)
+model UnitDHWSetbackTemp is CrcRead<temp10>;
+
+/** maximum hot-water temperature (parameter 601) */
+@ext(0xad, 0x81, 0x01)
+model UnitDHWMaxTemp is CrcRead<temp10>;
+
+/** day of the legionella protection (parameter 605) */
+@ext(0x5d, 0x01, 0x01)
+model UnitDHWLegionellaDay is CrcRead<legionellaDay>;
+
+/** running time of the circulation pump during the legionella protection (parameter 609) */
+@ext(0x29, 0xb1, 0x09)
+model UnitLegionellaCirculationTime is CrcRead<seconds>;
+
+// Fault log of the room unit, the same registers as on the system manager's circuit: the
+// selector picks the entry (0 = most recent); the vendor tool's History tab writes it.
+
+/** selected fault-log entry (0 = most recent) */
+@ext(0xab, 0x9a, 0x0b)
+model UnitErrorId is CrcRead<UIN>;
+
+/** fault code of the selected entry */
+@ext(0xf7, 0x9b, 0x0b)
+model UnitErrorCode is CrcRead<UIN>;
+
+/** fault type of the selected entry */
+@ext(0x3f, 0x9c, 0x0b)
+model UnitErrorType is CrcRead<UIN>;
+
+/** device that raised the selected entry */
+@ext(0x63, 0x9d, 0x0b)
+model UnitErrorDevice is CrcRead<UIN>;
+
+/** fault minute */
+@ext(0xdb, 0x9f, 0x0b)
+model UnitErrorMinute is CrcRead<UIN>;
+
+/** fault hour */
+@ext(0xc7, 0xa0, 0x0b)
+model UnitErrorHour is CrcRead<UIN>;
+
+/** fault day of the month */
+@ext(0x9b, 0xa1, 0x0b)
+model UnitErrorDay is CrcRead<UIN>;
+
+/** fault month */
+@ext(0x7f, 0xa2, 0x0b)
+model UnitErrorMonth is CrcRead<month>;
+
+/** fault year */
+@ext(0x23, 0xa3, 0x0b)
+model UnitErrorYear is CrcRead<UIN>;
+
+/** mixer parameter of the heating module (parameter 365 / 425) */
+@ext(0x61, 0x8f, 0x01)
+model MixerParameter is CrcRead<diff10>;
+
 // Room-unit reads established by the register survey and the vendor service tool (see evidence).
 
 // Read 14.0 on a unit in setback (its setback setpoint) and 8.0 on another at the same time.
