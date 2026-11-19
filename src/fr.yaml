@@ -322,3 +322,23 @@ fault history slot 4: mémoire de défauts, emplacement 4
 fault history slot 5: mémoire de défauts, emplacement 5
 fault history slot 6: mémoire de défauts, emplacement 6
 # end of the patterned entries
+"boiler of the cascade, by its letter": "chaudière de la cascade, par sa lettre"
+"boiler sequence 1, first position": "ordre d'enclenchement des chaudières 1, première position"
+"boiler sequence 1, second position": "ordre d'enclenchement des chaudières 1, deuxième position"
+"boiler sequence 2, first position": "ordre d'enclenchement des chaudières 2, première position"
+"boiler sequence 2, second position": "ordre d'enclenchement des chaudières 2, deuxième position"
+"calorifier excess over the hot-water setpoint (parameter 561)": "surélévation du stock tampon par rapport à la consigne ECS (paramètre 561)"
+"day of the end of summer time (parameter 594)": "jour de la fin de l'heure d'été (paramètre 594)"
+"day of the start of summer time (parameter 593)": "jour du début de l'heure d'été (paramètre 593)"
+"de-couple excess over the system setpoint (parameter 551)": "surélévation de la bouteille casse-pression par rapport à la consigne du système (paramètre 551)"
+"de-couple maximum temperature (parameter 553)": "température maximale de la bouteille casse-pression (paramètre 553)"
+"heating circuit type": "type de circuit de chauffage"
+"heating circuit type, read only": "type de circuit de chauffage, en lecture seule"
+"modulation differential added to the system setpoint for the modulation limit (parameter 538)": "différentiel de modulation ajouté à la consigne du système pour la température limite de modulation (paramètre 538)"
+"month of the end of summer time (parameter 594)": "mois de la fin de l'heure d'été (paramètre 594)"
+"month of the start of summer time (parameter 593)": "mois du début de l'heure d'été (paramètre 593)"
+"outside temperature, mixed": "température extérieure mélangée"
+"primary sensor B24 of the plate exchanger; -100.0 when not fitted": "sonde primaire B24 de l'échangeur à plaques ; -100.0 lorsqu'elle n'est pas raccordée"
+"reduced hot-water setpoint (parameter 573)": "consigne ECS réduite (paramètre 573)"
+"room setpoint in effect": "consigne d'ambiance en vigueur"
+"start time of the legionella protection, in quarter hours (parameter 581)": "heure de démarrage de la fonction anti-légionelle, en quarts d'heure (paramètre 581)"
