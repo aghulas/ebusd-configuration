@@ -359,6 +359,13 @@ currentload = { label = { en = "Current burner load", fr = "Puissance actuelle d
 minload = { label = { en = "Minimum burner load", fr = "Puissance minimale du brûleur" } }
 maxload = { label = { en = "Maximum burner load", fr = "Puissance maximale du brûleur" } }
 
+[fields.powerdemand]
+status = { label = { en = "Request state", fr = "État de la demande" }, kind = "diagnostic" }
+"ukn\\d" = { skip = true }
+heatdemandtemp = { label = { en = "Requested flow temperature", fr = "Température de départ demandée" }, kind = "live" }
+modulation = { label = { en = "Modulation demand", fr = "Demande de modulation" }, kind = "live" }
+dhwsettemp = { label = { en = "Hot water setpoint", fr = "Consigne de température ECS" }, kind = "live" }
+
 [fields.hcmode]
 "ink\\d_\\d" = { skip = true }
 "opmode_\\d" = { skip = true }
@@ -388,6 +395,15 @@ totime = { label = { en = "End", fr = "Fin" } }
 toenabled = { label = { en = "End enabled", fr = "Fin activée" } }
 
 # --- boiler automats (08, 18) ----------------------------------------------------------------
+
+[[entry]]
+circuits = ["bc1", "bc2"]
+message = "PowerDemand"
+kind = "live"
+menu = "process"
+label = { en = "Heat demand of the cascade manager", fr = "Demande de chaleur du manager de cascade" }
+fields = "powerdemand"
+evidence = ["heat-demand"]
 
 [[entry]]
 circuits = ["bc1", "bc2"]
@@ -1214,6 +1230,15 @@ evidence = ["settings-writes", "heating-modules-reads"]
 write = { source = "31", risk = "regulation", proof = "change-observed", open = ["copy-in-use"] }
 
 # --- room units (35, 75, f5) -----------------------------------------------------------------
+
+[[entry]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "PowerDemand"
+kind = "live"
+menu = "info"
+label = { en = "Heat demand to the cascade manager", fr = "Demande de chaleur au manager de cascade" }
+fields = "powerdemand"
+evidence = ["heat-demand"]
 
 [[entry]]
 circuits = ["fs1", "fs2", "fs3"]
