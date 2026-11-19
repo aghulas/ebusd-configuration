@@ -44,6 +44,59 @@ namespace fs3 {
   /** heating circuit type, read only */
   model HeatingCircuitType is Wolf.HeatingCircuitType;
 
+  /** software version, major part */
+  model VersionMajor is Wolf.UnitVersionMajor;
+
+  /** software version, minor part */
+  model VersionMinor is Wolf.UnitVersionMinor;
+
+  // Hot-water settings as the room unit stores them, read only; the system manager prepares
+  // the hot water on this installation, its values are the ones in use.
+
+  /** priority of the hot water loading over the heating circuit */
+  model DHWLoadingPriority is Wolf.UnitDHWLoadingPriority;
+
+  /** reduced hot-water setpoint */
+  model DHWSetbackTemp is Wolf.UnitDHWSetbackTemp;
+
+  /** maximum hot-water temperature */
+  model DHWMaxTemp is Wolf.UnitDHWMaxTemp;
+
+  /** day of the legionella protection */
+  model DHWLegionellaDay is Wolf.UnitDHWLegionellaDay;
+
+  /** running time of the circulation pump during the legionella protection */
+  model LegionellaCirculationTime is Wolf.UnitLegionellaCirculationTime;
+
+  // Fault log, read side: the entry selector is written by the vendor tool's History tab.
+
+  /** selected fault-log entry (0 = most recent) */
+  model ErrorId is Wolf.UnitErrorId;
+
+  /** fault code of the selected entry */
+  model ErrorCode is Wolf.UnitErrorCode;
+
+  /** fault type of the selected entry */
+  model ErrorType is Wolf.UnitErrorType;
+
+  /** device that raised the selected entry */
+  model ErrorDevice is Wolf.UnitErrorDevice;
+
+  /** fault minute */
+  model ErrorMinute is Wolf.UnitErrorMinute;
+
+  /** fault hour */
+  model ErrorHour is Wolf.UnitErrorHour;
+
+  /** fault day of the month */
+  model ErrorDay is Wolf.UnitErrorDay;
+
+  /** fault month */
+  model ErrorMonth is Wolf.UnitErrorMonth;
+
+  /** fault year */
+  model ErrorYear is Wolf.UnitErrorYear;
+
   // Settings, read and written. The room unit acknowledges a write from any master but takes
   // the value only from source address 0xff (`write -s ff`).
 
