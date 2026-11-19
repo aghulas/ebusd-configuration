@@ -210,72 +210,95 @@ namespace fs3 {
     value: otemp10;
   }
 
-  // Weekly heating programs, read side only: three switch-time slots per weekday.
+  // Weekly heating programs: three switch-time slots per weekday. Heating program 1 is read
+  // and written (the room unit takes a slot from the address of ebusd); programs 2 and 3 are
+  // read only.
 
   // Heating program 1
 
   /** heating program 1, Monday slot 1 */
-  model HCProgram1Mon1 is Wolf.HCProgram1Mon1;
+  @wcrc(0x10, 0x14)
+  model HCProgram1Mon1 is Wolf.SwitchTimesSetting;
 
   /** heating program 1, Monday slot 2 */
-  model HCProgram1Mon2 is Wolf.HCProgram1Mon2;
+  @wcrc(0x11, 0x14)
+  model HCProgram1Mon2 is Wolf.SwitchTimesSetting;
 
   /** heating program 1, Monday slot 3 */
-  model HCProgram1Mon3 is Wolf.HCProgram1Mon3;
+  @wcrc(0x12, 0x14)
+  model HCProgram1Mon3 is Wolf.SwitchTimesSetting;
 
   /** heating program 1, Tuesday slot 1 */
-  model HCProgram1Tue1 is Wolf.HCProgram1Tue1;
+  @wcrc(0x20, 0x14)
+  model HCProgram1Tue1 is Wolf.SwitchTimesSetting;
 
   /** heating program 1, Tuesday slot 2 */
-  model HCProgram1Tue2 is Wolf.HCProgram1Tue2;
+  @wcrc(0x21, 0x14)
+  model HCProgram1Tue2 is Wolf.SwitchTimesSetting;
 
   /** heating program 1, Tuesday slot 3 */
-  model HCProgram1Tue3 is Wolf.HCProgram1Tue3;
+  @wcrc(0x22, 0x14)
+  model HCProgram1Tue3 is Wolf.SwitchTimesSetting;
 
   /** heating program 1, Wednesday slot 1 */
-  model HCProgram1Wed1 is Wolf.HCProgram1Wed1;
+  @wcrc(0x30, 0x14)
+  model HCProgram1Wed1 is Wolf.SwitchTimesSetting;
 
   /** heating program 1, Wednesday slot 2 */
-  model HCProgram1Wed2 is Wolf.HCProgram1Wed2;
+  @wcrc(0x31, 0x14)
+  model HCProgram1Wed2 is Wolf.SwitchTimesSetting;
 
   /** heating program 1, Wednesday slot 3 */
-  model HCProgram1Wed3 is Wolf.HCProgram1Wed3;
+  @wcrc(0x32, 0x14)
+  model HCProgram1Wed3 is Wolf.SwitchTimesSetting;
 
   /** heating program 1, Thursday slot 1 */
-  model HCProgram1Thu1 is Wolf.HCProgram1Thu1;
+  @wcrc(0x40, 0x14)
+  model HCProgram1Thu1 is Wolf.SwitchTimesSetting;
 
   /** heating program 1, Thursday slot 2 */
-  model HCProgram1Thu2 is Wolf.HCProgram1Thu2;
+  @wcrc(0x41, 0x14)
+  model HCProgram1Thu2 is Wolf.SwitchTimesSetting;
 
   /** heating program 1, Thursday slot 3 */
-  model HCProgram1Thu3 is Wolf.HCProgram1Thu3;
+  @wcrc(0x42, 0x14)
+  model HCProgram1Thu3 is Wolf.SwitchTimesSetting;
 
   /** heating program 1, Friday slot 1 */
-  model HCProgram1Fri1 is Wolf.HCProgram1Fri1;
+  @wcrc(0x50, 0x14)
+  model HCProgram1Fri1 is Wolf.SwitchTimesSetting;
 
   /** heating program 1, Friday slot 2 */
-  model HCProgram1Fri2 is Wolf.HCProgram1Fri2;
+  @wcrc(0x51, 0x14)
+  model HCProgram1Fri2 is Wolf.SwitchTimesSetting;
 
   /** heating program 1, Friday slot 3 */
-  model HCProgram1Fri3 is Wolf.HCProgram1Fri3;
+  @wcrc(0x52, 0x14)
+  model HCProgram1Fri3 is Wolf.SwitchTimesSetting;
 
   /** heating program 1, Saturday slot 1 */
-  model HCProgram1Sat1 is Wolf.HCProgram1Sat1;
+  @wcrc(0x60, 0x14)
+  model HCProgram1Sat1 is Wolf.SwitchTimesSetting;
 
   /** heating program 1, Saturday slot 2 */
-  model HCProgram1Sat2 is Wolf.HCProgram1Sat2;
+  @wcrc(0x61, 0x14)
+  model HCProgram1Sat2 is Wolf.SwitchTimesSetting;
 
   /** heating program 1, Saturday slot 3 */
-  model HCProgram1Sat3 is Wolf.HCProgram1Sat3;
+  @wcrc(0x62, 0x14)
+  model HCProgram1Sat3 is Wolf.SwitchTimesSetting;
 
   /** heating program 1, Sunday slot 1 */
-  model HCProgram1Sun1 is Wolf.HCProgram1Sun1;
+  @wcrc(0x70, 0x14)
+  model HCProgram1Sun1 is Wolf.SwitchTimesSetting;
 
   /** heating program 1, Sunday slot 2 */
-  model HCProgram1Sun2 is Wolf.HCProgram1Sun2;
+  @wcrc(0x71, 0x14)
+  model HCProgram1Sun2 is Wolf.SwitchTimesSetting;
 
   /** heating program 1, Sunday slot 3 */
-  model HCProgram1Sun3 is Wolf.HCProgram1Sun3;
+  @wcrc(0x72, 0x14)
+  model HCProgram1Sun3 is Wolf.SwitchTimesSetting;
 
   // Heating program 2
 
