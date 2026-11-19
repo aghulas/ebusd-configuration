@@ -68,6 +68,21 @@ namespace fs2 {
   /** running time of the circulation pump during the legionella protection */
   model LegionellaCirculationTime is Wolf.UnitLegionellaCirculationTime;
 
+  /** hot water setpoint of the legionella protection */
+  model LegionellaSetpoint is Wolf.UnitLegionellaSetpoint;
+
+  /** day of the start of summer time */
+  model SummerTimeStartDay is Wolf.UnitSummerTimeStartDay;
+
+  /** month of the start of summer time */
+  model SummerTimeStartMonth is Wolf.UnitSummerTimeStartMonth;
+
+  /** day of the end of summer time */
+  model SummerTimeEndDay is Wolf.UnitSummerTimeEndDay;
+
+  /** month of the end of summer time */
+  model SummerTimeEndMonth is Wolf.UnitSummerTimeEndMonth;
+
   // Fault log, read side: the entry selector is written by the vendor tool's History tab.
 
   /** selected fault-log entry (0 = most recent) */

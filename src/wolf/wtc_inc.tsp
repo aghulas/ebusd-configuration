@@ -134,6 +134,68 @@ model UnitErrorMonth is CrcRead<month>;
 @ext(0x23, 0xa3, 0x0b)
 model UnitErrorYear is CrcRead<UIN>;
 
+// Third group of survey reads (approved by the owner on 2026-11-19, see evidence).
+
+/**
+ * Event counters of the boiler automat, one memory read of EEPROM 0x01d8 to 0x01e5, the
+ * values the vendor tool's developer window shows with the firmware symbols EEA_HBRONTAG,
+ * EEA_NZUENDTAG, EEA_N_PON, EEA_N_KON, EEA_RES_CNT, EEA_SHUT_OFF.
+ */
+@inherit(memr)
+@ext(0xd4, 0x06, 0x01, 0xd2, 0xd8)
+model EventCounters {
+  // EEA_HBRONTAG and EEA_NZUENDTAG ("today"): the names rest on the symbols only; both read 0
+  // on both boilers, no change has been seen.
+  /** burner hours of the current day, by the firmware symbol */
+  @unit("h")
+  BurnerHoursToday: UCH;
+
+  /** ignitions of the current day, by the firmware symbol */
+  IgnitionsToday: UCH;
+
+  /** number of mains switch-ons */
+  PowerOnCount: U3N;
+
+  // EEA_N_KON, three bytes at EEPROM 0x01dd: 4 and 3 on the two boilers; what it counts is not
+  // established.
+  /** sixth to eighth byte, meaning not established */
+  Ukn6: U3N;
+
+  /** number of resets */
+  ResetCount: U3N;
+
+  /** number of shut-offs */
+  ShutOffCount: U3N;
+}
+
+/** day of the start of summer time (parameter 153) */
+@ext(0x09, 0xde, 0xfd)
+model UnitSummerTimeStartDay is CrcRead<UIN>;
+
+/** month of the start of summer time (parameter 153) */
+@ext(0x55, 0xdf, 0xfd)
+model UnitSummerTimeStartMonth is CrcRead<month>;
+
+/** day of the end of summer time (parameter 154) */
+@ext(0x49, 0xe0, 0xfd)
+model UnitSummerTimeEndDay is CrcRead<UIN>;
+
+/** month of the end of summer time (parameter 154) */
+@ext(0x15, 0xe1, 0xfd)
+model UnitSummerTimeEndMonth is CrcRead<month>;
+
+/** hot water setpoint of the legionella protection, as the room unit stores it (parameter 606) */
+@ext(0x3d, 0x87, 0x05)
+model UnitLegionellaSetpoint is CrcRead<temp10>;
+
+/** state of the mixer-circuit pump of the heating module, 1 = on */
+@ext(0x70, 0x52, 0x00)
+model MixerPump is CrcRead<UIN>;
+
+/** return temperature of the hot-water circulation below which its pump runs (parameter 610) */
+@ext(0xcc, 0xa9, 0x04)
+model CirculationReturnSetTemp is CrcRead<temp10>;
+
 /** mixer parameter of the heating module (parameter 365 / 425) */
 @ext(0x61, 0x8f, 0x01)
 model MixerParameter is CrcRead<diff10>;
