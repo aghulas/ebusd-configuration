@@ -9,6 +9,16 @@ namespace Wolf;
 
 // Register and memory reads addressed to the second boiler (ZZ 0x18 from the file name).
 namespace bc2 {
+  // Heat demand, passive: sent by the cascade manager (QQ 0x10, the master address of the
+  // system manager) to the master address of this boiler (ZZ 0x13). ebusd loads a file for a
+  // scanned slave address only, hence the message is here.
+
+  /** heat demand of the cascade manager to the second boiler */
+  @passive
+  @qq(0x10)
+  @zz(0x13)
+  model PowerDemand is Wolf.PowerDemand;
+
   /** burner hours since the last service (maintenance counter i46) */
   @ext(0x0a, 0xbc, 0x02)
   @inherit(crcr)
