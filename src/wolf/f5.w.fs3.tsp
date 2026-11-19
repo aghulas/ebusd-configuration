@@ -106,6 +106,61 @@ namespace fs3 {
     value: holidayLevel;
   }
 
+  // Holiday period: start and end date, three registers each, read and written from 0xff. Day
+  // and month are the calendar values. The third register of each date took 0 and 24 and read
+  // them back; what it holds is not established (the operator's log reports it set back to 0
+  // when the start written is the day of the write).
+
+  /** day of the month on which the holiday period starts */
+  @wcrc(0x1b, 0x01)
+  @inherit(crcr, crcw)
+  model HolidayStartDay {
+    @minValue(1)
+    @maxValue(31)
+    value: UIN;
+  }
+
+  /** month in which the holiday period starts */
+  @wcrc(0x1c, 0x01)
+  @inherit(crcr, crcw)
+  model HolidayStartMonth {
+    @minValue(1)
+    @maxValue(12)
+    value: UIN;
+  }
+
+  /** third register of the start date of the holiday period, meaning not established */
+  @wcrc(0x1d, 0x01)
+  @inherit(crcr, crcw)
+  model HolidayStartThird {
+    value: UIN;
+  }
+
+  /** day of the month on which the holiday period ends */
+  @wcrc(0x1e, 0x01)
+  @inherit(crcr, crcw)
+  model HolidayEndDay {
+    @minValue(1)
+    @maxValue(31)
+    value: UIN;
+  }
+
+  /** month in which the holiday period ends */
+  @wcrc(0x1f, 0x01)
+  @inherit(crcr, crcw)
+  model HolidayEndMonth {
+    @minValue(1)
+    @maxValue(12)
+    value: UIN;
+  }
+
+  /** third register of the end date of the holiday period, meaning not established */
+  @wcrc(0x20, 0x01)
+  @inherit(crcr, crcw)
+  model HolidayEndThird {
+    value: UIN;
+  }
+
   /** lead time of the optimised switch-on */
   @wcrc(0x10, 0x01)
   @inherit(crcr, crcw)
