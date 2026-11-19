@@ -1002,6 +1002,51 @@ model Power {
   MaxLoad: percent0;
 }
 
+// Signed sixteenths without the range of the shared template `temp`: the field carries what
+// the sender computes, not a value checked against the range of a setpoint.
+/** temperature */
+@unit("°C")
+scalar temp16 extends D2C;
+
+/**
+ * Heat demand (PBSB 05 07), sent about every 20 s without an answer: by each room unit to the
+ * cascade manager (ZZ 0xf1), and by the cascade manager to each boiler (ZZ 0x03, 0x13, the
+ * master addresses of the boilers). Incoming only, decoded passively. Bytes whose meaning no
+ * independent figure confirms are kept unnamed (see evidence).
+ */
+@ext(0x05, 0x07)
+model PowerDemand {
+  // From the cascade manager: 0xee or 0x66 while it asks the boiler for power (the burner
+  // starts within a minute and stops after the byte leaves 0xee), 0x00 and 0x55 without a
+  // request. From the room units: 0xbb and 0x55. No meaning per value is established.
+  /** request state, values not established */
+  Status: UCH;
+
+  /** second byte, meaning not established */
+  Ukn2: UCH;
+
+  // From a room unit, the heat demand of its heating circuit. From the cascade manager, its
+  // modulation limit temperature: system setpoint plus modulation differential plus the drop
+  // across the plate exchanger (B24 minus B22).
+  /** requested flow temperature */
+  HeatDemandTemp: temp16;
+
+  /** fifth and sixth byte, meaning not established */
+  @maxLength(2)
+  Ukn5: HEX;
+
+  // Equal to the setpoint the boiler automat holds in RAM 0x6e. Not available from a room unit.
+  /** modulation demand */
+  Modulation: percent1;
+
+  // Equal to the setpoint the boiler automat holds in RAM 0x6f. Not available from a room unit.
+  /** domestic hot water setpoint */
+  DHWSetTemp: temp1;
+
+  /** ninth byte, meaning not established */
+  Ukn9: UCH;
+}
+
 /**
  * Boiler status the WTC broadcasts (PBSB 50 0A). Incoming only: the boiler sends it on its
  * own, so ebusd decodes it passively. Field layout confirmed against a live broadcast frame
