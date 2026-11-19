@@ -762,6 +762,26 @@ label = { en = "Power controller, factor I", fr = "Régulateur de puissance, fac
 evidence = ["settings-writes", "register-write-crc"]
 write = { source = "ff", risk = "regulation", proof = "change-observed" }
 
+# Limits of the optimal operating range (P535, P536): each bound depends on the other register,
+# which the file cannot express yet (proposed write.below / write.above in the contract).
+[[entry]]
+circuits = ["ka"]
+message = "ModulationMax"
+kind = "setting"
+menu = "cascade"
+label = { en = "Optimal range, upper limit", fr = "Plage optimale, limite haute" }
+evidence = ["ka-modulation-limits"]
+write = { source = "ff", risk = "regulation", proof = "change-observed" }
+
+[[entry]]
+circuits = ["ka"]
+message = "ModulationMin"
+kind = "setting"
+menu = "cascade"
+label = { en = "Optimal range, lower limit", fr = "Plage optimale, limite basse" }
+evidence = ["ka-modulation-limits"]
+write = { source = "ff", risk = "regulation", proof = "change-observed" }
+
 [[entry]]
 circuits = ["ka"]
 message = "DeCoupleMinTemp"
@@ -1601,6 +1621,17 @@ menu = "settings"
 label = { en = "Holiday temperature level", fr = "Niveau de température pendant les vacances" }
 evidence = ["choice-date-program-writes"]
 write = { source = "ff", risk = "regulation", proof = "change-observed" }
+
+# Control variation (batch B, 2026-11-19): 1 in service, 0 written and read back; no value has
+# an established name, so the write conditions carry open = ["meaning"].
+[[entry]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "ControlVariation"
+kind = "setting"
+menu = "control"
+label = { en = "Control variation", fr = "Variante de régulation" }
+evidence = ["room-units-control-variation"]
+write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["meaning"] }
 
 # Holiday dates of the three room units (batch D, 2026-11-19): day and month written from ff.
 # The third register of each date was written and read back too (0 and 24), but what it holds
