@@ -1016,10 +1016,11 @@ scalar temp16 extends D2C;
  */
 @ext(0x05, 0x07)
 model PowerDemand {
-  // From the cascade manager: 0xee or 0x66 while it asks the boiler for power (the burner
-  // starts within a minute and stops after the byte leaves 0xee), 0x00 and 0x55 without a
-  // request. From the room units: 0xbb and 0x55. No meaning per value is established.
-  /** request state, values not established */
+  // From the cascade manager, over ten days of telegrams (2026-11-09 to 2026-11-19): 0x66 to
+  // the first boiler and 0xee to the second exactly while the modulation demand is above 0,
+  // 0x55 and 0x00 while it is 0. From the room units: 0xbb, and 0x55 mostly at night with a low
+  // requested flow temperature. A code, not a set of flags.
+  /** request state: power requested (0x66, 0xee) or not (0x55, 0x00) from the cascade manager; 0xbb or 0x55 from a room unit */
   Status: UCH;
 
   /** second byte, meaning not established */
