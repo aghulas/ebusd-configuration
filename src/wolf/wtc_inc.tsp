@@ -61,6 +61,23 @@ model OutsideWeightedTemp is CrcRead<otemp10>;
 @ext(0xec, 0x11, 0x00)
 model RoomTemp is CrcRead<otemp10>;
 
+// Room-unit reads established by the register survey and the vendor service tool (see evidence).
+
+// Read 14.0 on a unit in setback (its setback setpoint) and 8.0 on another at the same time.
+/** room setpoint in effect */
+@ext(0x08, 0x12, 0x00)
+model RoomSetpointTemp is CrcRead<otemp10>;
+
+/** outside temperature mixed with the room unit's own weighting; -100.0 when not available */
+@ext(0x5a, 0x1a, 0x0a)
+model OutsideMixedTemp is CrcRead<otemp10>;
+
+// Parameter 313 / 314 of the room unit; values 2 and 3 read, the others in the order of the
+// manual's list.
+/** heating circuit type */
+@ext(0x19, 0x73, 0x09)
+model HeatingCircuitType is CrcRead<circuitType>;
+
 /** normal room temperature setpoint */
 @ext(0x70, 0x05, 0x00)
 model RoomNormalTemp is CrcRead<temp10>;
@@ -959,6 +976,19 @@ enum _legionellaDay {
 /** day of the week, or off */
 @values(_legionellaDay)
 scalar legionellaDay extends UIN;
+
+enum _circuitType {
+  FloorBaseHeating: 0,
+  FloorHeating: 1,
+  Radiator60: 2,
+  Radiator70: 3,
+  Convector: 4,
+  Universal: 5,
+}
+
+/** heating circuit type */
+@values(_circuitType)
+scalar circuitType extends UIN;
 
 enum _cascadeBoiler {
   A: 0,
