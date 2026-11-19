@@ -779,7 +779,7 @@ circuits = ["ka"]
 message = "ModulationMax"
 kind = "setting"
 menu = "cascade"
-label = { en = "Optimal range, upper limit", fr = "Plage optimale, limite haute" }
+label = { en = "Maximum modulation (optimal range)", fr = "Modulation maximale (plage optimale)" }
 evidence = ["ka-modulation-limits"]
 write = { source = "ff", risk = "regulation", proof = "change-observed" }
 
@@ -788,7 +788,7 @@ circuits = ["ka"]
 message = "ModulationMin"
 kind = "setting"
 menu = "cascade"
-label = { en = "Optimal range, lower limit", fr = "Plage optimale, limite basse" }
+label = { en = "Minimum modulation (optimal range)", fr = "Modulation minimale (plage optimale)" }
 evidence = ["ka-modulation-limits"]
 write = { source = "ff", risk = "regulation", proof = "change-observed" }
 
