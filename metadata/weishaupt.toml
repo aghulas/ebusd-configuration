@@ -400,8 +400,9 @@ modulation = { skip = true }
 dhwsettemp = { skip = true }
 
 [fields.hcmode]
-"ink\\d_\\d" = { skip = true }
-"opmode_\\d" = { skip = true }
+# 0.6.0: the unknown bits were named ink1_n, ink2_n and opmode_4 to opmode_7 up to 0.5.15
+"ukn([12])_(\\d)" = { skip = true, renamed_from = "ink\\1_\\2" }
+"ukn3_(\\d)" = { skip = true, renamed_from = "opmode_\\1" }
 heating = { label = { en = "Heating", fr = "Chauffage" } }
 supplyhcsettemp = { label = { en = "Requested flow setpoint", fr = "Consigne de température départ demandée" }, kind = "live" }
 roomtemp = { label = { en = "Room temperature", fr = "Température ambiante" }, kind = "live" }
@@ -1429,7 +1430,7 @@ circuits = ["ka"]
 message = "LegionellaStartTime"
 kind = "setting"
 menu = "dhw"
-label = { en = "Legionella start time (quarter hours)", fr = "Heure anti-légionelle (quarts d'heure)" }
+label = { en = "Legionella start time", fr = "Heure anti-légionelle" }
 evidence = ["survey-reads"]
 
 [[entry]]
