@@ -591,6 +591,12 @@ scalar otemp10 extends SIN;
 @divisor(10)
 scalar diff10 extends SIN;
 
+// Unsigned: a difference that is never negative.
+/** temperature difference */
+@unit("K")
+@divisor(10)
+scalar excess10 extends UIN;
+
 /** seconds */
 @unit("s")
 scalar seconds extends UIN;

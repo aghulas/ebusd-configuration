@@ -114,9 +114,11 @@ namespace ka {
   @ext(0x48, 0x2c, 0x00)
   model ModulationStatus is CrcRead<percent>;
 
-  /** hot water exceed temperature */
+  // Read 10.0. A lead, one source: the KA manual's parameter 576 "hot water boost", the boiler
+  // flow temperature above the hot-water setpoint while loading, 10.0 to 30.0 K (83258404 p. 98).
+  /** hot water excess over its setpoint, as a temperature difference; which parameter it is is not established */
   @ext(0x14, 0x2d, 0x00)
-  model DHWExceeded is CrcRead<temp10>;
+  model DHWExcessTemp is CrcRead<excess10>;
 
   // Settings, read and written. The system manager acknowledges a write from any master but
   // takes the value only from source address 0xff (`write -s ff`).
