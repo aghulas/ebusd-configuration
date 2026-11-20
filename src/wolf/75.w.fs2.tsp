@@ -22,17 +22,18 @@ namespace fs2 {
     value: temp10;
   }
 
-  /** setback room temperature setpoint */
-  @wcrc(0x08, 0x00)
-  @inherit(crcr, crcw)
-  model RoomSetbackTemp {
-    // 10.0 to 21.5: no range here, a bound of an integer type cannot be fractional
-    value: temp10;
-  }
+  // Read only here: on the test installation this address answers the setback and the frost
+  // protection setpoints from the store of the room unit at 35 (one room unit addressed for
+  // circuits 1 and 2): a write to 35 was read here within 3 s with no telegram in between.
+  // Written through 35.w.fs1.
 
-  /** room temperature setpoint of the frost protection */
-  @wcrc(0x14, 0x0a)
-  @inherit(crcr, crcw)
+  /** setback room temperature setpoint, read only: seen to be the setpoint of room unit 1, written through 35.w.fs1 */
+  @ext(0x58, 0x08, 0x00)
+  model RoomSetbackTemp is CrcRead<temp10>;
+
+  /** room temperature setpoint of the frost protection, read only: seen to be the setpoint of room unit 1, written through 35.w.fs1 */
+  @ext(0x96, 0x14, 0x0a)
+  @inherit(crcr)
   model RoomFrostProtectionTemp {
     @minValue(4)
     @maxValue(16)
