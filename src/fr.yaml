@@ -71,7 +71,6 @@ priority of the hot water loading over the heating circuit: priorité de la char
 "hot water loading with priority over the heating circuit, in parallel with it, or sliding": "charge ECS prioritaire sur le circuit de chauffage, en parallèle, ou mobile"
 hot water switching differential, below the setpoint: différentiel de commutation ECS, sous la consigne
 maximum hot water loading time: temps de charge maximal pour l'ECS
-hot water exceed temperature: surélévation de température ECS
 hot water setpoint of the legionella protection: consigne de température anti-légionelle
 running time of the circulation pump during legionella protection: temps de fonctionnement de la pompe de circulation ECS en fonction anti-légionelle
 fault (F) or warning (W): défaut (F) ou alarme (W)
@@ -190,6 +189,7 @@ WCM-CPU software version (info value i44): version du logiciel WCM-CPU (valeur d
 WCM-CUI software version (info value i45): version du logiciel WCM-CUI (valeur d'information i45)
 "setback room temperature setpoint, read only: seen to be the setpoint of room unit 1, written through 35.w.fs1": "consigne de température ambiante réduite, en lecture seule : vue comme la consigne de la commande à distance 1, écrite via 35.w.fs1"
 "room temperature setpoint of the frost protection, read only: seen to be the setpoint of room unit 1, written through 35.w.fs1": "consigne de température ambiante hors-gel, en lecture seule : vue comme la consigne de la commande à distance 1, écrite via 35.w.fs1"
+"hot water excess over its setpoint, as a temperature difference; which parameter it is is not established": "surélévation de l'ECS au-dessus de sa consigne, en différence de température ; le paramètre correspondant n'est pas établi"
 
 # patterned entries, written by scripts/i18n-patterns.py of the workbench: do not edit
 "heating program 1, Monday slot 1, read only: seen to be the slot of room unit 1, written through 35.w.fs1": "programme de chauffe 1, lundi, plage horaire 1, en lecture seule : vue comme la plage de la commande à distance 1, écrite via 35.w.fs1"
