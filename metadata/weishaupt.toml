@@ -1819,23 +1819,29 @@ label = { en = "Normal room temperature", fr = "Température ambiante normale" }
 evidence = ["settings-writes", "room-units-reads"]
 write = { source = "ff", risk = "comfort", proof = "change-observed", open = ["copy-in-use"] }
 
+# Answered from the store of room unit 1: a write to fs1 was read at fs2 within 3 s, with no
+# telegram to fs2 in between (full telegram log). The write line of the CSV stays (the device
+# keeps a write); the value is written on fs1, so no write conditions here.
 [[entry]]
 circuits = ["fs2"]
 message = "RoomSetbackTemp"
 kind = "setting"
 menu = "settings"
 label = { en = "Setback room temperature", fr = "Température ambiante réduite" }
-evidence = ["settings-writes", "room-units-reads"]
-write = { source = "ff", risk = "comfort", proof = "change-observed", open = ["copy-in-use"], min = 10.0, max = 21.5, step = 0.5, range_source = "room unit user manual 83277702, p. 29, section 4.7.10; evidence settings-writes" }
+shared_with = "fs1/{name}"
+evidence = ["settings-writes", "room-units-reads", "room-units-shared-store"]
 
+# Answered from the store of room unit 1: a write to fs1 was read at fs2 within 3 s, with no
+# telegram to fs2 in between (full telegram log). The write line of the CSV stays (the device
+# keeps a write); the value is written on fs1, so no write conditions here.
 [[entry]]
 circuits = ["fs2"]
 message = "RoomFrostProtectionTemp"
 kind = "setting"
 menu = "settings"
 label = { en = "Frost protection room temperature", fr = "Température ambiante hors-gel" }
-evidence = ["settings-writes", "room-units-reads"]
-write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"] }
+shared_with = "fs1/{name}"
+evidence = ["settings-writes", "room-units-reads", "room-units-shared-store"]
 
 [[entry]]
 circuits = ["fs2"]
