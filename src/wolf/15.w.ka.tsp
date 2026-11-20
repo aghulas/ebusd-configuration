@@ -335,10 +335,14 @@ namespace ka {
   @ext(0x12, 0x8a, 0x02)
   model DHWSetbackTemp is CrcRead<temp10>;
 
-  // Quarter hours since midnight: 34 is 08:30.
-  /** start time of the legionella protection, in quarter hours (parameter 581) */
+  // Quarter hours since midnight in the low byte (34 is 08:30), the high byte 0: a time of day.
+  /** start time of the legionella protection (parameter 581) */
   @ext(0xd5, 0xf4, 0xfd)
-  model LegionellaStartTime is CrcRead<UIN>;
+  @inherit(crcr)
+  model LegionellaStartTime {
+    value: TTQ;
+    @maxLength(1) ign: IGN;
+  }
 
   /** primary sensor B24 of the plate exchanger; -100.0 when not fitted */
   @ext(0x72, 0x40, 0x0a)
