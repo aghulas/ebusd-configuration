@@ -69,9 +69,9 @@ domestic hot water setpoint: consigne de température ECS
 configured hot water setpoint: consigne de température ECS réglée
 priority of the hot water loading over the heating circuit: priorité de la charge ECS sur le circuit de chauffage
 "hot water loading with priority over the heating circuit, in parallel with it, or sliding": "charge ECS prioritaire sur le circuit de chauffage, en parallèle, ou mobile"
-hot water exceed temperature: surélévation de température ECS
 hot water switching differential, below the setpoint: différentiel de commutation ECS, sous la consigne
 maximum hot water loading time: temps de charge maximal pour l'ECS
+hot water exceed temperature: surélévation de température ECS
 hot water setpoint of the legionella protection: consigne de température anti-légionelle
 running time of the circulation pump during legionella protection: temps de fonctionnement de la pompe de circulation ECS en fonction anti-légionelle
 fault (F) or warning (W): défaut (F) ou alarme (W)
@@ -187,6 +187,8 @@ domestic hot water temperature (info value i34): température ECS (valeur d'info
 hydraulic separator temperature (info value i39): température de la bouteille casse-pression (valeur d'information i39)
 WCM-CPU software version (info value i44): version du logiciel WCM-CPU (valeur d'information i44)
 WCM-CUI software version (info value i45): version du logiciel WCM-CUI (valeur d'information i45)
+"setback room temperature setpoint, read only: seen to be the setpoint of room unit 1, written through 35.w.fs1": "consigne de température ambiante réduite, en lecture seule : vue comme la consigne de la commande à distance 1, écrite via 35.w.fs1"
+"room temperature setpoint of the frost protection, read only: seen to be the setpoint of room unit 1, written through 35.w.fs1": "consigne de température ambiante hors-gel, en lecture seule : vue comme la consigne de la commande à distance 1, écrite via 35.w.fs1"
 
 # patterned entries, written by scripts/i18n-patterns.py of the workbench: do not edit
 "heating program 1, Monday slot 1, read only: seen to be the slot of room unit 1, written through 35.w.fs1": "programme de chauffe 1, lundi, plage horaire 1, en lecture seule : vue comme la plage de la commande à distance 1, écrite via 35.w.fs1"
@@ -362,7 +364,7 @@ fault history slot 6: mémoire de défauts, emplacement 6
 "primary sensor B24 of the plate exchanger; -100.0 when not fitted": "sonde primaire B24 de l'échangeur à plaques ; -100.0 lorsqu'elle n'est pas raccordée"
 "reduced hot-water setpoint (parameter 573)": "consigne ECS réduite (paramètre 573)"
 "room setpoint in effect": "consigne d'ambiance en vigueur"
-"start time of the legionella protection, in quarter hours (parameter 581)": "heure de démarrage de la fonction anti-légionelle, en quarts d'heure (paramètre 581)"
+"start time of the legionella protection (parameter 581)": "heure de démarrage de la fonction anti-légionelle (paramètre 581)"
 "maximum hot-water temperature": "température ECS maximale"
 "mixer parameter": "paramètre de la vanne mélangeuse"
 "reduced hot-water setpoint": "consigne ECS réduite"
@@ -380,5 +382,5 @@ fault history slot 6: mémoire de défauts, emplacement 6
 "month of the start of summer time": "mois du début de l'heure d'été"
 "day of the end of summer time": "jour de la fin de l'heure d'été"
 "month of the end of summer time": "mois de la fin de l'heure d'été"
-"state of the mixer-circuit pump, 1 = on": "état de la pompe du circuit mélangé, 1 = marche"
+"state of the mixer-circuit pump": "état de la pompe du circuit mélangé"
 "circulation return temperature setpoint": "consigne de température de retour de la circulation ECS"
