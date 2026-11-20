@@ -100,7 +100,7 @@ namespace em3 {
   /** mixer parameter */
   model MixerParameter is Wolf.MixerParameter;
 
-  /** state of the mixer-circuit pump, 1 = on */
+  /** state of the mixer-circuit pump */
   model MixerPump is Wolf.MixerPump;
 
   /** circulation return temperature setpoint */

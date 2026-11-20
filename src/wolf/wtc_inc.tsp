@@ -188,9 +188,9 @@ model UnitSummerTimeEndMonth is CrcRead<month>;
 @ext(0x3d, 0x87, 0x05)
 model UnitLegionellaSetpoint is CrcRead<temp10>;
 
-/** state of the mixer-circuit pump of the heating module, 1 = on */
+/** state of the mixer-circuit pump of the heating module */
 @ext(0x70, 0x52, 0x00)
-model MixerPump is CrcRead<UIN>;
+model MixerPump is CrcRead<onoff16>;
 
 /** return temperature of the hot-water circulation below which its pump runs (parameter 610) */
 @ext(0xcc, 0xa9, 0x04)
