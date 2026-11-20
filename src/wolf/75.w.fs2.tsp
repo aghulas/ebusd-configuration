@@ -213,69 +213,72 @@ namespace fs2 {
 
   // Weekly heating programs, read side only: three switch-time slots per weekday.
 
-  // Heating program 1
+  // Heating program 1. On the test installation this address answers it from the store of the
+  // room unit at 35: a slot written there was read here within 3 s, both ways, with nothing on
+  // the bus between, and a slot written here was acknowledged and not kept. Written through
+  // 35.w.fs1.
 
-  /** heating program 1, Monday slot 1 */
+  /** heating program 1, Monday slot 1, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model HCProgram1Mon1 is Wolf.HCProgram1Mon1;
 
-  /** heating program 1, Monday slot 2 */
+  /** heating program 1, Monday slot 2, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model HCProgram1Mon2 is Wolf.HCProgram1Mon2;
 
-  /** heating program 1, Monday slot 3 */
+  /** heating program 1, Monday slot 3, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model HCProgram1Mon3 is Wolf.HCProgram1Mon3;
 
-  /** heating program 1, Tuesday slot 1 */
+  /** heating program 1, Tuesday slot 1, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model HCProgram1Tue1 is Wolf.HCProgram1Tue1;
 
-  /** heating program 1, Tuesday slot 2 */
+  /** heating program 1, Tuesday slot 2, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model HCProgram1Tue2 is Wolf.HCProgram1Tue2;
 
-  /** heating program 1, Tuesday slot 3 */
+  /** heating program 1, Tuesday slot 3, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model HCProgram1Tue3 is Wolf.HCProgram1Tue3;
 
-  /** heating program 1, Wednesday slot 1 */
+  /** heating program 1, Wednesday slot 1, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model HCProgram1Wed1 is Wolf.HCProgram1Wed1;
 
-  /** heating program 1, Wednesday slot 2 */
+  /** heating program 1, Wednesday slot 2, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model HCProgram1Wed2 is Wolf.HCProgram1Wed2;
 
-  /** heating program 1, Wednesday slot 3 */
+  /** heating program 1, Wednesday slot 3, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model HCProgram1Wed3 is Wolf.HCProgram1Wed3;
 
-  /** heating program 1, Thursday slot 1 */
+  /** heating program 1, Thursday slot 1, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model HCProgram1Thu1 is Wolf.HCProgram1Thu1;
 
-  /** heating program 1, Thursday slot 2 */
+  /** heating program 1, Thursday slot 2, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model HCProgram1Thu2 is Wolf.HCProgram1Thu2;
 
-  /** heating program 1, Thursday slot 3 */
+  /** heating program 1, Thursday slot 3, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model HCProgram1Thu3 is Wolf.HCProgram1Thu3;
 
-  /** heating program 1, Friday slot 1 */
+  /** heating program 1, Friday slot 1, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model HCProgram1Fri1 is Wolf.HCProgram1Fri1;
 
-  /** heating program 1, Friday slot 2 */
+  /** heating program 1, Friday slot 2, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model HCProgram1Fri2 is Wolf.HCProgram1Fri2;
 
-  /** heating program 1, Friday slot 3 */
+  /** heating program 1, Friday slot 3, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model HCProgram1Fri3 is Wolf.HCProgram1Fri3;
 
-  /** heating program 1, Saturday slot 1 */
+  /** heating program 1, Saturday slot 1, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model HCProgram1Sat1 is Wolf.HCProgram1Sat1;
 
-  /** heating program 1, Saturday slot 2 */
+  /** heating program 1, Saturday slot 2, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model HCProgram1Sat2 is Wolf.HCProgram1Sat2;
 
-  /** heating program 1, Saturday slot 3 */
+  /** heating program 1, Saturday slot 3, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model HCProgram1Sat3 is Wolf.HCProgram1Sat3;
 
-  /** heating program 1, Sunday slot 1 */
+  /** heating program 1, Sunday slot 1, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model HCProgram1Sun1 is Wolf.HCProgram1Sun1;
 
-  /** heating program 1, Sunday slot 2 */
+  /** heating program 1, Sunday slot 2, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model HCProgram1Sun2 is Wolf.HCProgram1Sun2;
 
-  /** heating program 1, Sunday slot 3 */
+  /** heating program 1, Sunday slot 3, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model HCProgram1Sun3 is Wolf.HCProgram1Sun3;
 
   // Heating program 2
