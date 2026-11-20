@@ -760,10 +760,11 @@ evidence = ["ka-reads"]
 
 [[entry]]
 circuits = ["ka"]
-message = "DHWExceeded"
+message = "DHWExcessTemp"
+renamed_from = "ka/DHWExceeded"
 kind = "setting"
 menu = "dhw"
-label = { en = "Hot water exceed temperature", fr = "Surélévation de température ECS" }
+label = { en = "Hot water excess", fr = "Surélévation de température ECS" }
 evidence = ["ka-reads"]
 
 [[entry]]
