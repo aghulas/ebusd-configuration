@@ -430,18 +430,20 @@ scalar otemp2 extends D2B;
 /**
  * Exchange between a room controller and its heating module (PBSB 50 14). Incoming only:
  * the room controller sends the first part, the module answers with the second; ebusd decodes
- * both passively. Field layout confirmed against a live frame (see evidence).
+ * both passively. Field layout confirmed against a live frame (see evidence). The bits whose
+ * meaning is not established are named Ukn<byte>_<bit>: bytes 1 and 2 are the two flag bytes
+ * the room controller sends, byte 3 the flag byte of the answer that holds Pump and the valves.
  */
 @ext(0x50, 0x14)
 model HcMode {
-  @out Ink1_1: BI0;
+  @out Ukn1_1: BI0;
   @out @values(_onoff) Heating: BI1;
-  @out Ink1_3: BI2;
-  @out Ink1_4: BI3;
-  @out Ink1_5: BI4;
-  @out Ink1_6: BI5;
-  @out Ink1_7: BI6;
-  @out Ink1_8: BI7;
+  @out Ukn1_3: BI2;
+  @out Ukn1_4: BI3;
+  @out Ukn1_5: BI4;
+  @out Ukn1_6: BI5;
+  @out Ukn1_7: BI6;
+  @out Ukn1_8: BI7;
 
   /** requested flow setpoint */
   @out SupplyHCSetTemp: temp2;
@@ -449,14 +451,14 @@ model HcMode {
   /** room temperature */
   @out RoomTemp: temp2;
 
-  @out Ink2_1: BI0;
-  @out Ink2_2: BI1;
-  @out Ink2_3: BI2;
+  @out Ukn2_1: BI0;
+  @out Ukn2_2: BI1;
+  @out Ukn2_3: BI2;
   @out @values(_onoff) DHW: BI3;
-  @out Ink2_5: BI4;
-  @out Ink2_6: BI5;
-  @out Ink2_7: BI6;
-  @out Ink2_8: BI7;
+  @out Ukn2_5: BI4;
+  @out Ukn2_6: BI5;
+  @out Ukn2_7: BI6;
+  @out Ukn2_8: BI7;
   @out @maxLength(1) ign: IGN;
 
   /** operating mode */
@@ -465,10 +467,10 @@ model HcMode {
   @in @values(_onoff) Pump: BI0;
   @in @values(_onoff) ValveClosing: BI1;
   @in @values(_onoff) ValveOpening: BI2;
-  @in Opmode_4: BI3;
-  @in Opmode_5: BI4;
-  @in Opmode_6: BI5;
-  @in Opmode_7: BI6;
+  @in Ukn3_4: BI3;
+  @in Ukn3_5: BI4;
+  @in Ukn3_6: BI5;
+  @in Ukn3_7: BI6;
 
   /** actual flow temperature */
   @in SupplyHCTemp: temp2;
