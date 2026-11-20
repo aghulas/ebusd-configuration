@@ -170,7 +170,8 @@ modulation demand: demande de modulation
 "fifth and sixth byte, meaning not established": "cinquième et sixième octets, signification non établie"
 "ninth byte, meaning not established": "neuvième octet, signification non établie"
 
-# provisional: at least one term of the comment has no vendor source yet
+# accepted by the owner later (2026-11-18 to 2026-11-20): at least one term has no vendor source;
+# none is provisional (evidence/terms.md of the workbench)
 "fault counters, numbers 57 to 51": "compteurs de défauts, numéros 57 à 51"
 "fault counters, numbers 49 to 45": "compteurs de défauts, numéros 49 à 45"
 "fault counters, numbers 44 to 38": "compteurs de défauts, numéros 44 à 38"
