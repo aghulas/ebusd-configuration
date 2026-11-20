@@ -75,7 +75,10 @@ Ignition = { en = "Ignition", fr = "Allumage" }
 BurnerInOperation = { en = "Burner in operation", fr = "Brûleur en service" }
 GasValveCheck = { en = "Gas valve check", fr = "Contrôle vannes gaz" }
 PostPurge = { en = "Post purge", fr = "Post-ventilation" }
-ForcedVenting = { en = "Forced venting", fr = "Ventilation forcée", provisional = true }
+# Phase 9: no manual lists it and no bus read showed it; the name and its label say nothing
+# established about its meaning. The wording of the label was accepted by the owner on
+# 2026-11-20 (evidence/terms.md); the meaning was not.
+ForcedVenting = { en = "Forced venting", fr = "Ventilation forcée" }
 # entry of a fault history
 fault = { en = "Fault", fr = "Défaut" }
 warning = { en = "Warning", fr = "Alarme" }
