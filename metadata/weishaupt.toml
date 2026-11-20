@@ -2177,11 +2177,28 @@ fields = "slot"
 evidence = ["room-units-programs", "choice-date-program-writes"]
 write = { source = "31", risk = "comfort", proof = "family", proof_slot = "HCProgram3Sun3" }
 
-# Room unit 2 acknowledged a slot write and did not keep it: its programs are read only.
+# Room unit 2 acknowledged slot writes and did not keep them: its programs are read only.
+# Heating program 1 is answered from the store of room unit 1 (a slot written to fs1 was read
+# at fs2 within 3 s, both ways): each slot names the slot of fs1 that keeps it. The other two
+# heating programs are equal on both units but no write showed the sharing: no marker.
 [[entry]]
 circuits = ["fs2"]
-pattern = "HCProgram(?P<p>[1-3])(?P<day>Mon|Tue|Wed|Thu|Fri|Sat|Sun)(?P<slot>[1-3])"
-count = 63
+pattern = "HCProgram(?P<p>1)(?P<day>Mon|Tue|Wed|Thu|Fri|Sat|Sun)(?P<slot>[1-3])"
+count = 21
+kind = "program_slot"
+menu = "programs"
+label = { en = "Heating program {p}, {day} slot {slot}", fr = "Programme de chauffe {p}, {day}, plage horaire {slot}" }
+family = "program"
+group_id = "heating{p}"
+group_label = { en = "Heating program {p}", fr = "Programme de chauffe {p}" }
+fields = "slot"
+shared_with = "fs1/{name}"
+evidence = ["room-units-programs", "room-units-shared-store"]
+
+[[entry]]
+circuits = ["fs2"]
+pattern = "HCProgram(?P<p>[23])(?P<day>Mon|Tue|Wed|Thu|Fri|Sat|Sun)(?P<slot>[1-3])"
+count = 42
 kind = "program_slot"
 menu = "programs"
 label = { en = "Heating program {p}, {day} slot {slot}", fr = "Programme de chauffe {p}, {day}, plage horaire {slot}" }
