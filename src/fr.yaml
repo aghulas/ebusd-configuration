@@ -89,6 +89,8 @@ day of the month on which the holiday period starts: jour du mois du début des 
 month in which the holiday period starts: mois du début des vacances
 "third register of the start date of the holiday period, meaning not established": "troisième registre de la date de début des vacances, signification non établie"
 "holiday start date, three registers read in one telegram, distributed to day/month/third": "date de début des vacances, trois registres lus en une seule trame, répartis vers day/month/third"
+"four boiler information values read in one telegram, distributed to their messages": "quatre valeurs d'information de la chaudière lues en une seule trame, réparties vers leurs messages"
+"four registers read together in one survey telegram (room temperature, heating-circuit type, weighted outside temperature, holiday level), each filling its own message": "quatre registres lus ensemble dans une trame de relevé (température ambiante, type de circuit de chauffage, température extérieure pondérée, niveau de vacances), chacun remplissant son propre message"
 day of the month on which the holiday period ends: jour du mois de la fin des vacances
 month in which the holiday period ends: mois de la fin des vacances
 "third register of the end date of the holiday period, meaning not established": "troisième registre de la date de fin des vacances, signification non établie"
