@@ -88,6 +88,7 @@ temperature level during a holiday period: niveau de température pendant les va
 day of the month on which the holiday period starts: jour du mois du début des vacances
 month in which the holiday period starts: mois du début des vacances
 "third register of the start date of the holiday period, meaning not established": "troisième registre de la date de début des vacances, signification non établie"
+"holiday start date, three registers read in one telegram, distributed to day/month/third": "date de début des vacances, trois registres lus en une seule trame, répartis vers day/month/third"
 day of the month on which the holiday period ends: jour du mois de la fin des vacances
 month in which the holiday period ends: mois de la fin des vacances
 "third register of the end date of the holiday period, meaning not established": "troisième registre de la date de fin des vacances, signification non établie"

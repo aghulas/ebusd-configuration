@@ -242,6 +242,26 @@ namespace fs1 {
     value: UIN;
   }
 
+  // Composite read (carrier): the three start-date registers read in one 50 22 telegram
+  // (id d9 1b01 1c01 1d01, grouped read recorded in evidence/grouped-reads.md). Each field
+  // fills its own single-register message, so day/month/third keep their names and MQTT topics.
+  // The carrier itself is not published. A stock ebusd ignores `fills` and reads the three
+  // registers one by one (unchanged behaviour).
+
+  /** holiday start date, three registers read in one telegram, distributed to day/month/third */
+  @wcrc(0x1b, 0x01, 0x1c, 0x01, 0x1d, 0x01)
+  @inherit(crcr)
+  model HolidayStart {
+    @fills(HolidayStartDay)
+    day: UIN;
+
+    @fills(HolidayStartMonth)
+    month: UIN;
+
+    @fills(HolidayStartThird)
+    third: UIN;
+  }
+
   /** day of the month on which the holiday period ends */
   @wcrc(0x1e, 0x01)
   @inherit(crcr, crcw)

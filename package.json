@@ -31,7 +31,7 @@
     "typescript": "^5.9.3"
   },
   "dependencies": {
-    "@ebusd/ebus-typespec": "https://github.com/aghulas/ebus-typespec/releases/download/v0.31.0-weishaupt.1/ebusd-ebus-typespec-0.31.0-weishaupt.1.tgz",
+    "@ebusd/ebus-typespec": "https://github.com/aghulas/ebus-typespec/releases/download/v0.31.0-weishaupt.2/ebusd-ebus-typespec-0.31.0-weishaupt.2.tgz",
     "@typespec/compiler": "~1.17.0"
   }
 }
