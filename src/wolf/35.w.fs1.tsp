@@ -35,6 +35,12 @@ namespace fs1 {
   /** room temperature */
   model RoomTemp is Wolf.RoomTemp;
 
+  /** floor-drying temperature, 0x8000 when no floor-drying sensor is connected */
+  model FloorDryingTemp is Wolf.FloorDryingTemp;
+
+  /** room-thermostat temperature, 0x8000 when no room thermostat is connected */
+  model RoomThermostatTemp is Wolf.RoomThermostatTemp;
+
   /** room setpoint in effect */
   model RoomSetpointTemp is Wolf.RoomSetpointTemp;
 

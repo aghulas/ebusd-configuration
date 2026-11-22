@@ -61,6 +61,14 @@ model OutsideWeightedTemp is CrcRead<otemp10>;
 @ext(0xec, 0x11, 0x00)
 model RoomTemp is CrcRead<otemp10>;
 
+/** floor-drying temperature, 0x8000 when no floor-drying sensor is connected */
+@ext(0x5e, 0x13, 0x0a)
+model FloorDryingTemp is CrcRead<otemp10>;
+
+/** room-thermostat temperature, 0x8000 when no room thermostat is connected */
+@ext(0x92, 0x1d, 0x0a)
+model RoomThermostatTemp is CrcRead<otemp10>;
+
 // Second group of survey reads (see evidence): software version, hot-water settings and fault
 // log of the room units, mixer parameter and version of the heating modules. Read only.
 

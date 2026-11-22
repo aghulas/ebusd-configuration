@@ -15,6 +15,8 @@ outside temperature, weighted over time: température extérieure pondérée
 "outside temperature, -100.0 when the module has no outside sensor": "température extérieure, -100.0 lorsque le module n'a pas de sonde extérieure"
 outside sensor B1: sonde extérieure B1
 room temperature: température ambiante
+"floor-drying temperature, 0x8000 when no floor-drying sensor is connected": "température de séchage de chape, 0x8000 lorsqu'aucune sonde de séchage de chape n'est raccordée"
+"room-thermostat temperature, 0x8000 when no room thermostat is connected": "température du thermostat d'ambiance, 0x8000 lorsqu'aucun thermostat d'ambiance n'est raccordé"
 normal room temperature setpoint: consigne de température ambiante normale
 setback room temperature setpoint: consigne de température ambiante réduite
 room temperature setpoint of the frost protection: consigne de température ambiante hors-gel

@@ -34,6 +34,12 @@ namespace em2 {
   /** state of the H1 digital input */
   model H1Status is Wolf.H1Status;
 
+  /** floor-drying temperature, 0x8000 when no floor-drying sensor is connected */
+  model FloorDryingTemp is Wolf.FloorDryingTemp;
+
+  /** room-thermostat temperature, 0x8000 when no room thermostat is connected */
+  model RoomThermostatTemp is Wolf.RoomThermostatTemp;
+
   /** circulation return temperature setpoint */
   model CirculationReturnSetTemp is Wolf.CirculationReturnSetTemp;
 

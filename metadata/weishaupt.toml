@@ -1825,6 +1825,25 @@ menu = "info"
 label = { en = "Room temperature", fr = "Température ambiante" }
 evidence = ["room-units-reads"]
 
+# Floor-drying and room-thermostat sensors (registers 13 0a / 1d 0a): read 0x8000 (no value, the
+# SIN not-connected sentinel) on both the room unit 35 and the heating module 51 on 2026-11-22;
+# re-typed 16-bit (otemp10) after the former #717 one-byte typing proved wrong. Read only.
+[[entry]]
+circuits = ["fs1", "em2"]
+message = "FloorDryingTemp"
+kind = "live"
+menu = "info"
+label = { en = "Floor-drying temperature", fr = "Température de séchage de chape" }
+evidence = ["room-thermostat-floor-drying"]
+
+[[entry]]
+circuits = ["fs1", "em2"]
+message = "RoomThermostatTemp"
+kind = "live"
+menu = "info"
+label = { en = "Room-thermostat temperature", fr = "Température du thermostat d'ambiance" }
+evidence = ["room-thermostat-floor-drying"]
+
 [[entry]]
 circuits = ["fs1"]
 message = "RoomNormalTemp"
