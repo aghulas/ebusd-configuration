@@ -47,6 +47,23 @@ namespace bc2 {
   /** hydraulic separator temperature (info value i39) */
   model HydraulicSeparatorTemp is Wolf.HydraulicSeparatorTemp;
 
+  // Composite read: three consecutive information temperatures read in one 50 22 telegram
+  // (7-byte ID, compatible with stock ebusd); each field fills its single-register message.
+
+  /** outside, flow and hot-water information temperatures, read in one telegram, distributed to their messages */
+  @crc(0x5c, 0x0c, 0x00, 0x0d, 0x00, 0x0e, 0x00)
+  @inherit(crcr)
+  model InfoTemperatures {
+    @fills(OutsideTemp)
+    outside: otemp10;
+
+    @fills(SupplyTemp)
+    supply: otemp10;
+
+    @fills(DHWTemp)
+    dhw: otemp10;
+  }
+
   /** WCM-CPU software version (info value i44) */
   model SoftwareVersionCPU is Wolf.SoftwareVersionCPU;
 

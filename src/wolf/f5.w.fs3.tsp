@@ -252,6 +252,20 @@ namespace fs3 {
     value: UIN;
   }
 
+  /** holiday start date, three registers read in one telegram, distributed to day/month/third */
+  @crc(0x5c, 0x1b, 0x01, 0x1c, 0x01, 0x1d, 0x01)
+  @inherit(crcr)
+  model HolidayStart {
+    @fills(HolidayStartDay)
+    day: UIN;
+
+    @fills(HolidayStartMonth)
+    month: UIN;
+
+    @fills(HolidayStartThird)
+    third: UIN;
+  }
+
   /** day of the month on which the holiday period ends */
   @wcrc(0x1e, 0x01)
   @inherit(crcr, crcw)
@@ -275,6 +289,20 @@ namespace fs3 {
   @inherit(crcr, crcw)
   model HolidayEndThird {
     value: UIN;
+  }
+
+  /** holiday end date, three registers read in one telegram, distributed to day/month/third */
+  @crc(0x5c, 0x1e, 0x01, 0x1f, 0x01, 0x20, 0x01)
+  @inherit(crcr)
+  model HolidayEnd {
+    @fills(HolidayEndDay)
+    day: UIN;
+
+    @fills(HolidayEndMonth)
+    month: UIN;
+
+    @fills(HolidayEndThird)
+    third: UIN;
   }
 
   /** lead time of the optimised switch-on */

@@ -591,6 +591,7 @@ menu = "faults"
 label = { en = "Fault history, slot {n}", fr = "Mémoire de défauts, emplacement {n}" }
 family = "fault_history"
 group_label = { en = "Fault history", fr = "Mémoire de défauts" }
+pointer = { message = "FaultHistoryPointer", field = "value", base = 513, step = 8 }
 fields = "faulthistory"
 compose = true
 poll = "on_demand"
@@ -806,8 +807,7 @@ label = { en = "Power controller, factor I", fr = "Régulateur de puissance, fac
 evidence = ["settings-writes", "register-write-crc"]
 write = { source = "ff", risk = "regulation", proof = "change-observed" }
 
-# Limits of the optimal operating range (P535, P536): each bound depends on the other register,
-# which the file cannot express yet (proposed write.below / write.above in the contract).
+# Limits of the optimal operating range (P535, P536): each bound depends on the other register.
 [[entry]]
 circuits = ["ka"]
 message = "ModulationMax"
@@ -815,7 +815,7 @@ kind = "setting"
 menu = "cascade"
 label = { en = "Maximum modulation (optimal range)", fr = "Modulation maximale (plage optimale)" }
 evidence = ["ka-modulation-limits"]
-write = { source = "ff", risk = "regulation", proof = "change-observed" }
+write = { source = "ff", risk = "regulation", proof = "change-observed", above = "ModulationMin" }
 
 [[entry]]
 circuits = ["ka"]
@@ -824,7 +824,7 @@ kind = "setting"
 menu = "cascade"
 label = { en = "Minimum modulation (optimal range)", fr = "Modulation minimale (plage optimale)" }
 evidence = ["ka-modulation-limits"]
-write = { source = "ff", risk = "regulation", proof = "change-observed" }
+write = { source = "ff", risk = "regulation", proof = "change-observed", below = "ModulationMax" }
 
 [[entry]]
 circuits = ["ka"]
@@ -917,7 +917,7 @@ menu = "settings"
 label = { en = "Normal room temperature", fr = "Température ambiante normale" }
 same_as = "ka/{name}"
 evidence = ["settings-writes", "heating-modules-reads"]
-write = { source = "ff", risk = "comfort", proof = "change-observed", open = ["copy-in-use"] }
+write = { source = "ff", risk = "comfort", proof = "change-observed", open = ["copy-in-use"], above = "RoomSetbackTemp" }
 
 [[entry]]
 circuits = ["em1"]
@@ -927,7 +927,7 @@ menu = "settings"
 label = { en = "Setback room temperature", fr = "Température ambiante réduite" }
 same_as = "ka/{name}"
 evidence = ["settings-writes", "heating-modules-reads"]
-write = { source = "ff", risk = "comfort", proof = "change-observed", open = ["copy-in-use"], min = 10.0, max = 21.5, step = 0.5, range_source = "room unit user manual 83277702, p. 29, section 4.7.10; evidence settings-writes" }
+write = { source = "ff", risk = "comfort", proof = "change-observed", open = ["copy-in-use"], min = 10.0, max = 21.5, step = 0.5, range_source = "room unit user manual 83277702, p. 29, section 4.7.10; evidence settings-writes", below = "RoomNormalTemp" }
 
 [[entry]]
 circuits = ["em1"]
@@ -964,7 +964,7 @@ menu = "flow"
 label = { en = "Maximum flow temperature", fr = "Température de départ maximale" }
 same_as = "ka/{name}"
 evidence = ["settings-writes", "heating-modules-reads"]
-write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"] }
+write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"], above = "SupplyMinTemp" }
 
 [[entry]]
 circuits = ["em1"]
@@ -973,7 +973,7 @@ kind = "setting"
 menu = "flow"
 label = { en = "Minimum flow temperature", fr = "Température de départ minimale" }
 evidence = ["settings-writes", "heating-modules-reads"]
-write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"] }
+write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"], below = "SupplyMaxTemp" }
 
 [[entry]]
 circuits = ["em1"]
@@ -1185,7 +1185,7 @@ kind = "setting"
 menu = "settings"
 label = { en = "Normal room temperature", fr = "Température ambiante normale" }
 evidence = ["settings-writes", "heating-modules-reads"]
-write = { source = "ff", risk = "comfort", proof = "change-observed", open = ["copy-in-use"] }
+write = { source = "ff", risk = "comfort", proof = "change-observed", open = ["copy-in-use"], above = "RoomSetbackTemp" }
 
 [[entry]]
 circuits = ["em2"]
@@ -1194,7 +1194,7 @@ kind = "setting"
 menu = "settings"
 label = { en = "Setback room temperature", fr = "Température ambiante réduite" }
 evidence = ["settings-writes", "heating-modules-reads"]
-write = { source = "ff", risk = "comfort", proof = "change-observed", open = ["copy-in-use"], min = 10.0, max = 21.5, step = 0.5, range_source = "room unit user manual 83277702, p. 29, section 4.7.10; evidence settings-writes" }
+write = { source = "ff", risk = "comfort", proof = "change-observed", open = ["copy-in-use"], min = 10.0, max = 21.5, step = 0.5, range_source = "room unit user manual 83277702, p. 29, section 4.7.10; evidence settings-writes", below = "RoomNormalTemp" }
 
 [[entry]]
 circuits = ["em2"]
@@ -1230,7 +1230,7 @@ kind = "setting"
 menu = "flow"
 label = { en = "Maximum flow temperature", fr = "Température de départ maximale" }
 evidence = ["settings-writes", "heating-modules-reads"]
-write = { source = "31", risk = "regulation", proof = "change-observed", open = ["copy-in-use"] }
+write = { source = "31", risk = "regulation", proof = "change-observed", open = ["copy-in-use"], above = "SupplyMinTemp" }
 
 [[entry]]
 circuits = ["em2"]
@@ -1239,7 +1239,7 @@ kind = "setting"
 menu = "flow"
 label = { en = "Minimum flow temperature", fr = "Température de départ minimale" }
 evidence = ["settings-writes", "heating-modules-reads"]
-write = { source = "31", risk = "regulation", proof = "change-observed", open = ["copy-in-use"] }
+write = { source = "31", risk = "regulation", proof = "change-observed", open = ["copy-in-use"], below = "SupplyMaxTemp" }
 
 [[entry]]
 circuits = ["em3"]
@@ -1248,7 +1248,7 @@ kind = "setting"
 menu = "settings"
 label = { en = "Normal room temperature", fr = "Température ambiante normale" }
 evidence = ["settings-writes", "heating-modules-reads"]
-write = { source = "ff", risk = "comfort", proof = "change-observed", open = ["copy-in-use"] }
+write = { source = "ff", risk = "comfort", proof = "change-observed", open = ["copy-in-use"], above = "RoomSetbackTemp" }
 
 [[entry]]
 circuits = ["em3"]
@@ -1257,7 +1257,7 @@ kind = "setting"
 menu = "settings"
 label = { en = "Setback room temperature", fr = "Température ambiante réduite" }
 evidence = ["settings-writes", "heating-modules-reads"]
-write = { source = "ff", risk = "comfort", proof = "change-observed", open = ["copy-in-use"], min = 10.0, max = 21.5, step = 0.5, range_source = "room unit user manual 83277702, p. 29, section 4.7.10; evidence settings-writes" }
+write = { source = "ff", risk = "comfort", proof = "change-observed", open = ["copy-in-use"], min = 10.0, max = 21.5, step = 0.5, range_source = "room unit user manual 83277702, p. 29, section 4.7.10; evidence settings-writes", below = "RoomNormalTemp" }
 
 [[entry]]
 circuits = ["em3"]
@@ -1293,7 +1293,7 @@ kind = "setting"
 menu = "flow"
 label = { en = "Maximum flow temperature", fr = "Température de départ maximale" }
 evidence = ["settings-writes", "heating-modules-reads"]
-write = { source = "31", risk = "regulation", proof = "change-observed", open = ["copy-in-use"] }
+write = { source = "31", risk = "regulation", proof = "change-observed", open = ["copy-in-use"], above = "SupplyMinTemp" }
 
 [[entry]]
 circuits = ["em3"]
@@ -1302,7 +1302,7 @@ kind = "setting"
 menu = "flow"
 label = { en = "Minimum flow temperature", fr = "Température de départ minimale" }
 evidence = ["settings-writes", "heating-modules-reads"]
-write = { source = "31", risk = "regulation", proof = "change-observed", open = ["copy-in-use"] }
+write = { source = "31", risk = "regulation", proof = "change-observed", open = ["copy-in-use"], below = "SupplyMaxTemp" }
 
 # --- room units (35, 75, f5) -----------------------------------------------------------------
 
@@ -1719,7 +1719,7 @@ kind = "setting"
 menu = "settings"
 label = { en = "Normal room temperature", fr = "Température ambiante normale" }
 evidence = ["settings-writes", "room-units-reads"]
-write = { source = "ff", risk = "comfort", proof = "change-observed", open = ["copy-in-use"] }
+write = { source = "ff", risk = "comfort", proof = "change-observed", open = ["copy-in-use"], above = "RoomSetbackTemp" }
 
 [[entry]]
 circuits = ["fs1"]
@@ -1728,7 +1728,7 @@ kind = "setting"
 menu = "settings"
 label = { en = "Setback room temperature", fr = "Température ambiante réduite" }
 evidence = ["settings-writes", "room-units-reads"]
-write = { source = "ff", risk = "comfort", proof = "change-observed", open = ["copy-in-use"], min = 10.0, max = 21.5, step = 0.5, range_source = "room unit user manual 83277702, p. 29, section 4.7.10; evidence settings-writes" }
+write = { source = "ff", risk = "comfort", proof = "change-observed", open = ["copy-in-use"], min = 10.0, max = 21.5, step = 0.5, range_source = "room unit user manual 83277702, p. 29, section 4.7.10; evidence settings-writes", below = "RoomNormalTemp" }
 
 [[entry]]
 circuits = ["fs1"]
@@ -1764,7 +1764,7 @@ kind = "setting"
 menu = "flow"
 label = { en = "Maximum flow temperature", fr = "Température de départ maximale" }
 evidence = ["settings-writes", "room-units-reads"]
-write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"] }
+write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"], above = "SupplyMinTemp" }
 
 [[entry]]
 circuits = ["fs1"]
@@ -1773,7 +1773,7 @@ kind = "setting"
 menu = "flow"
 label = { en = "Minimum flow temperature", fr = "Température de départ minimale" }
 evidence = ["settings-writes", "room-units-reads"]
-write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"] }
+write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"], below = "SupplyMaxTemp" }
 
 [[entry]]
 circuits = ["fs1"]
@@ -1822,7 +1822,7 @@ kind = "setting"
 menu = "settings"
 label = { en = "Normal room temperature", fr = "Température ambiante normale" }
 evidence = ["settings-writes", "room-units-reads"]
-write = { source = "ff", risk = "comfort", proof = "change-observed", open = ["copy-in-use"] }
+write = { source = "ff", risk = "comfort", proof = "change-observed", open = ["copy-in-use"], above = "RoomSetbackTemp" }
 
 # Answered from the store of room unit 1: a write to fs1 was read at fs2 within 3 s, with no
 # telegram to fs2 in between (full telegram log). The write line of the CSV stays (the device
@@ -1873,7 +1873,7 @@ kind = "setting"
 menu = "flow"
 label = { en = "Maximum flow temperature", fr = "Température de départ maximale" }
 evidence = ["settings-writes", "room-units-reads"]
-write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"] }
+write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"], above = "SupplyMinTemp" }
 
 [[entry]]
 circuits = ["fs2"]
@@ -1882,7 +1882,7 @@ kind = "setting"
 menu = "flow"
 label = { en = "Minimum flow temperature", fr = "Température de départ minimale" }
 evidence = ["settings-writes", "room-units-reads"]
-write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"] }
+write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"], below = "SupplyMaxTemp" }
 
 [[entry]]
 circuits = ["fs2"]
@@ -1929,7 +1929,7 @@ kind = "setting"
 menu = "settings"
 label = { en = "Normal room temperature", fr = "Température ambiante normale" }
 evidence = ["settings-writes", "room-units-reads"]
-write = { source = "ff", risk = "comfort", proof = "change-observed", open = ["copy-in-use"] }
+write = { source = "ff", risk = "comfort", proof = "change-observed", open = ["copy-in-use"], above = "RoomSetbackTemp" }
 
 [[entry]]
 circuits = ["fs3"]
@@ -1938,7 +1938,7 @@ kind = "setting"
 menu = "settings"
 label = { en = "Setback room temperature", fr = "Température ambiante réduite" }
 evidence = ["settings-writes", "room-units-reads"]
-write = { source = "ff", risk = "comfort", proof = "change-observed", open = ["copy-in-use"], min = 10.0, max = 21.5, step = 0.5, range_source = "room unit user manual 83277702, p. 29, section 4.7.10; evidence settings-writes" }
+write = { source = "ff", risk = "comfort", proof = "change-observed", open = ["copy-in-use"], min = 10.0, max = 21.5, step = 0.5, range_source = "room unit user manual 83277702, p. 29, section 4.7.10; evidence settings-writes", below = "RoomNormalTemp" }
 
 [[entry]]
 circuits = ["fs3"]
@@ -1974,7 +1974,7 @@ kind = "setting"
 menu = "flow"
 label = { en = "Maximum flow temperature", fr = "Température de départ maximale" }
 evidence = ["settings-writes", "room-units-reads"]
-write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"] }
+write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"], above = "SupplyMinTemp" }
 
 [[entry]]
 circuits = ["fs3"]
@@ -1983,7 +1983,7 @@ kind = "setting"
 menu = "flow"
 label = { en = "Minimum flow temperature", fr = "Température de départ minimale" }
 evidence = ["settings-writes", "room-units-reads"]
-write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"] }
+write = { source = "ff", risk = "regulation", proof = "change-observed", open = ["copy-in-use"], below = "SupplyMaxTemp" }
 
 [[entry]]
 circuits = ["fs3"]
@@ -2189,13 +2189,14 @@ evidence = ["room-units-programs", "choice-date-program-writes"]
 write = { source = "31", risk = "comfort", proof = "family", proof_slot = "HCProgram3Sun3" }
 
 # Room unit 2 acknowledged slot writes and did not keep them: its programs are read only.
-# Heating program 1 is answered from the store of room unit 1 (a slot written to fs1 was read
-# at fs2 within 3 s, both ways): each slot names the slot of fs1 that keeps it. The other two
-# heating programs are equal on both units but no write showed the sharing: no marker.
+# Heating programs 1 and 2, plus the stored hot-water and circulation programs, are answered
+# from the store of room unit 1 (a slot written to fs1 was read at fs2 within 3 s, both ways):
+# each slot names the slot of fs1 that keeps it. Heating program 3 is equal on both units but
+# no write showed the sharing: no marker.
 [[entry]]
 circuits = ["fs2"]
-pattern = "HCProgram(?P<p>1)(?P<day>Mon|Tue|Wed|Thu|Fri|Sat|Sun)(?P<slot>[1-3])"
-count = 21
+pattern = "HCProgram(?P<p>[12])(?P<day>Mon|Tue|Wed|Thu|Fri|Sat|Sun)(?P<slot>[1-3])"
+count = 42
 kind = "program_slot"
 menu = "programs"
 label = { en = "Heating program {p}, {day} slot {slot}", fr = "Programme de chauffe {p}, {day}, plage horaire {slot}" }
@@ -2208,8 +2209,8 @@ evidence = ["room-units-programs", "room-units-shared-store"]
 
 [[entry]]
 circuits = ["fs2"]
-pattern = "HCProgram(?P<p>[23])(?P<day>Mon|Tue|Wed|Thu|Fri|Sat|Sun)(?P<slot>[1-3])"
-count = 42
+pattern = "HCProgram(?P<p>3)(?P<day>Mon|Tue|Wed|Thu|Fri|Sat|Sun)(?P<slot>[1-3])"
+count = 21
 kind = "program_slot"
 menu = "programs"
 label = { en = "Heating program {p}, {day} slot {slot}", fr = "Programme de chauffe {p}, {day}, plage horaire {slot}" }
@@ -2232,6 +2233,7 @@ label = { en = "Stored hot water program, {day} slot {slot}", fr = "Programme EC
 family = "program"
 group_id = "dhw_stored"
 group_label = { en = "Hot water program stored in the room unit", fr = "Programme ECS enregistré dans la commande à distance" }
+stored_only = true
 fields = "slot"
 evidence = ["room-units-programs", "choice-date-program-writes"]
 write = { source = "31", risk = "comfort", proof = "family", proof_slot = "DHWProgramSun3" }
@@ -2246,6 +2248,7 @@ label = { en = "Stored hot water program, {day} slot {slot}", fr = "Programme EC
 family = "program"
 group_id = "dhw_stored"
 group_label = { en = "Hot water program stored in the room unit", fr = "Programme ECS enregistré dans la commande à distance" }
+stored_only = true
 fields = "slot"
 evidence = ["room-units-programs", "choice-date-program-writes"]
 write = { source = "31", risk = "comfort", proof = "family", proof_slot = "DHWProgramSun3" }
@@ -2260,8 +2263,10 @@ label = { en = "Stored hot water program, {day} slot {slot}", fr = "Programme EC
 family = "program"
 group_id = "dhw_stored"
 group_label = { en = "Hot water program stored in the room unit", fr = "Programme ECS enregistré dans la commande à distance" }
+stored_only = true
 fields = "slot"
-evidence = ["room-units-programs"]
+shared_with = "fs1/{name}"
+evidence = ["room-units-programs", "room-units-shared-store"]
 
 [[entry]]
 circuits = ["fs1"]
@@ -2273,6 +2278,7 @@ label = { en = "Stored circulation program, {day} slot {slot}", fr = "Programme 
 family = "program"
 group_id = "circulation_stored"
 group_label = { en = "Circulation program stored in the room unit", fr = "Programme de circulation ECS enregistré dans la commande à distance" }
+stored_only = true
 fields = "slot"
 evidence = ["room-units-programs", "choice-date-program-writes"]
 write = { source = "31", risk = "comfort", proof = "family", proof_slot = "CircProgramSun3" }
@@ -2287,6 +2293,7 @@ label = { en = "Stored circulation program, {day} slot {slot}", fr = "Programme 
 family = "program"
 group_id = "circulation_stored"
 group_label = { en = "Circulation program stored in the room unit", fr = "Programme de circulation ECS enregistré dans la commande à distance" }
+stored_only = true
 fields = "slot"
 evidence = ["room-units-programs", "choice-date-program-writes"]
 write = { source = "31", risk = "comfort", proof = "family", proof_slot = "CircProgramSun3" }
@@ -2301,8 +2308,10 @@ label = { en = "Stored circulation program, {day} slot {slot}", fr = "Programme 
 family = "program"
 group_id = "circulation_stored"
 group_label = { en = "Circulation program stored in the room unit", fr = "Programme de circulation ECS enregistré dans la commande à distance" }
+stored_only = true
 fields = "slot"
-evidence = ["room-units-programs"]
+shared_with = "fs1/{name}"
+evidence = ["room-units-programs", "room-units-shared-store"]
 
 # --- broadcast -------------------------------------------------------------------------------
 
