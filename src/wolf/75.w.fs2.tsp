@@ -395,72 +395,76 @@ namespace fs2 {
   /** heating program 1, Sunday slot 3, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model HCProgram1Sun3 is Wolf.HCProgram1Sun3;
 
-  // Heating program 2
+  // Heating program 2. Answered from the store of the room unit at 35, like heating program 1: a
+  // slot written to 35 was read here within 3 s, and a slot written here was acknowledged and not
+  // kept (evidence/room-units-shared-store.md, section 4). Read only here, written through
+  // 35.w.fs1.
 
-  /** heating program 2, Monday slot 1 */
+  /** heating program 2, Monday slot 1, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model HCProgram2Mon1 is Wolf.HCProgram2Mon1;
 
-  /** heating program 2, Monday slot 2 */
+  /** heating program 2, Monday slot 2, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model HCProgram2Mon2 is Wolf.HCProgram2Mon2;
 
-  /** heating program 2, Monday slot 3 */
+  /** heating program 2, Monday slot 3, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model HCProgram2Mon3 is Wolf.HCProgram2Mon3;
 
-  /** heating program 2, Tuesday slot 1 */
+  /** heating program 2, Tuesday slot 1, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model HCProgram2Tue1 is Wolf.HCProgram2Tue1;
 
-  /** heating program 2, Tuesday slot 2 */
+  /** heating program 2, Tuesday slot 2, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model HCProgram2Tue2 is Wolf.HCProgram2Tue2;
 
-  /** heating program 2, Tuesday slot 3 */
+  /** heating program 2, Tuesday slot 3, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model HCProgram2Tue3 is Wolf.HCProgram2Tue3;
 
-  /** heating program 2, Wednesday slot 1 */
+  /** heating program 2, Wednesday slot 1, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model HCProgram2Wed1 is Wolf.HCProgram2Wed1;
 
-  /** heating program 2, Wednesday slot 2 */
+  /** heating program 2, Wednesday slot 2, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model HCProgram2Wed2 is Wolf.HCProgram2Wed2;
 
-  /** heating program 2, Wednesday slot 3 */
+  /** heating program 2, Wednesday slot 3, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model HCProgram2Wed3 is Wolf.HCProgram2Wed3;
 
-  /** heating program 2, Thursday slot 1 */
+  /** heating program 2, Thursday slot 1, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model HCProgram2Thu1 is Wolf.HCProgram2Thu1;
 
-  /** heating program 2, Thursday slot 2 */
+  /** heating program 2, Thursday slot 2, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model HCProgram2Thu2 is Wolf.HCProgram2Thu2;
 
-  /** heating program 2, Thursday slot 3 */
+  /** heating program 2, Thursday slot 3, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model HCProgram2Thu3 is Wolf.HCProgram2Thu3;
 
-  /** heating program 2, Friday slot 1 */
+  /** heating program 2, Friday slot 1, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model HCProgram2Fri1 is Wolf.HCProgram2Fri1;
 
-  /** heating program 2, Friday slot 2 */
+  /** heating program 2, Friday slot 2, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model HCProgram2Fri2 is Wolf.HCProgram2Fri2;
 
-  /** heating program 2, Friday slot 3 */
+  /** heating program 2, Friday slot 3, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model HCProgram2Fri3 is Wolf.HCProgram2Fri3;
 
-  /** heating program 2, Saturday slot 1 */
+  /** heating program 2, Saturday slot 1, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model HCProgram2Sat1 is Wolf.HCProgram2Sat1;
 
-  /** heating program 2, Saturday slot 2 */
+  /** heating program 2, Saturday slot 2, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model HCProgram2Sat2 is Wolf.HCProgram2Sat2;
 
-  /** heating program 2, Saturday slot 3 */
+  /** heating program 2, Saturday slot 3, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model HCProgram2Sat3 is Wolf.HCProgram2Sat3;
 
-  /** heating program 2, Sunday slot 1 */
+  /** heating program 2, Sunday slot 1, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model HCProgram2Sun1 is Wolf.HCProgram2Sun1;
 
-  /** heating program 2, Sunday slot 2 */
+  /** heating program 2, Sunday slot 2, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model HCProgram2Sun2 is Wolf.HCProgram2Sun2;
 
-  /** heating program 2, Sunday slot 3 */
+  /** heating program 2, Sunday slot 3, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model HCProgram2Sun3 is Wolf.HCProgram2Sun3;
 
-  // Heating program 3
+  // Heating program 3. Equal on both units, but no write showed the sharing: read only here, with
+  // no shared marker (unlike programs 1 and 2).
 
   /** heating program 3, Monday slot 1 */
   model HCProgram3Mon1 is Wolf.HCProgram3Mon1;
@@ -525,136 +529,139 @@ namespace fs2 {
   /** heating program 3, Sunday slot 3 */
   model HCProgram3Sun3 is Wolf.HCProgram3Sun3;
 
-  // Weekly hot-water and circulation programs as stored by the room unit, read side only.
+  // Weekly hot-water and circulation programs as stored by the room unit, read side only. Both
+  // are answered from the store of the room unit at 35 (shown shared on 2026-11-20,
+  // evidence/room-units-shared-store.md, section 4): read only here, written through 35.w.fs1.
 
   // Hot-water program, as stored in the room unit. Where a system manager prepares the hot
   // water, the program of the manager is the one applied (see 50.w.em1), not this one.
 
-  /** hot-water program stored in the room unit, Monday slot 1 */
+  /** hot-water program stored in the room unit, Monday slot 1, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model DHWProgramMon1 is Wolf.DHWProgramMon1;
 
-  /** hot-water program stored in the room unit, Monday slot 2 */
+  /** hot-water program stored in the room unit, Monday slot 2, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model DHWProgramMon2 is Wolf.DHWProgramMon2;
 
-  /** hot-water program stored in the room unit, Monday slot 3 */
+  /** hot-water program stored in the room unit, Monday slot 3, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model DHWProgramMon3 is Wolf.DHWProgramMon3;
 
-  /** hot-water program stored in the room unit, Tuesday slot 1 */
+  /** hot-water program stored in the room unit, Tuesday slot 1, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model DHWProgramTue1 is Wolf.DHWProgramTue1;
 
-  /** hot-water program stored in the room unit, Tuesday slot 2 */
+  /** hot-water program stored in the room unit, Tuesday slot 2, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model DHWProgramTue2 is Wolf.DHWProgramTue2;
 
-  /** hot-water program stored in the room unit, Tuesday slot 3 */
+  /** hot-water program stored in the room unit, Tuesday slot 3, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model DHWProgramTue3 is Wolf.DHWProgramTue3;
 
-  /** hot-water program stored in the room unit, Wednesday slot 1 */
+  /** hot-water program stored in the room unit, Wednesday slot 1, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model DHWProgramWed1 is Wolf.DHWProgramWed1;
 
-  /** hot-water program stored in the room unit, Wednesday slot 2 */
+  /** hot-water program stored in the room unit, Wednesday slot 2, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model DHWProgramWed2 is Wolf.DHWProgramWed2;
 
-  /** hot-water program stored in the room unit, Wednesday slot 3 */
+  /** hot-water program stored in the room unit, Wednesday slot 3, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model DHWProgramWed3 is Wolf.DHWProgramWed3;
 
-  /** hot-water program stored in the room unit, Thursday slot 1 */
+  /** hot-water program stored in the room unit, Thursday slot 1, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model DHWProgramThu1 is Wolf.DHWProgramThu1;
 
-  /** hot-water program stored in the room unit, Thursday slot 2 */
+  /** hot-water program stored in the room unit, Thursday slot 2, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model DHWProgramThu2 is Wolf.DHWProgramThu2;
 
-  /** hot-water program stored in the room unit, Thursday slot 3 */
+  /** hot-water program stored in the room unit, Thursday slot 3, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model DHWProgramThu3 is Wolf.DHWProgramThu3;
 
-  /** hot-water program stored in the room unit, Friday slot 1 */
+  /** hot-water program stored in the room unit, Friday slot 1, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model DHWProgramFri1 is Wolf.DHWProgramFri1;
 
-  /** hot-water program stored in the room unit, Friday slot 2 */
+  /** hot-water program stored in the room unit, Friday slot 2, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model DHWProgramFri2 is Wolf.DHWProgramFri2;
 
-  /** hot-water program stored in the room unit, Friday slot 3 */
+  /** hot-water program stored in the room unit, Friday slot 3, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model DHWProgramFri3 is Wolf.DHWProgramFri3;
 
-  /** hot-water program stored in the room unit, Saturday slot 1 */
+  /** hot-water program stored in the room unit, Saturday slot 1, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model DHWProgramSat1 is Wolf.DHWProgramSat1;
 
-  /** hot-water program stored in the room unit, Saturday slot 2 */
+  /** hot-water program stored in the room unit, Saturday slot 2, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model DHWProgramSat2 is Wolf.DHWProgramSat2;
 
-  /** hot-water program stored in the room unit, Saturday slot 3 */
+  /** hot-water program stored in the room unit, Saturday slot 3, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model DHWProgramSat3 is Wolf.DHWProgramSat3;
 
-  /** hot-water program stored in the room unit, Sunday slot 1 */
+  /** hot-water program stored in the room unit, Sunday slot 1, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model DHWProgramSun1 is Wolf.DHWProgramSun1;
 
-  /** hot-water program stored in the room unit, Sunday slot 2 */
+  /** hot-water program stored in the room unit, Sunday slot 2, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model DHWProgramSun2 is Wolf.DHWProgramSun2;
 
-  /** hot-water program stored in the room unit, Sunday slot 3 */
+  /** hot-water program stored in the room unit, Sunday slot 3, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model DHWProgramSun3 is Wolf.DHWProgramSun3;
 
-  // Circulation program, as stored in the room unit; see the note on the hot-water program.
+  // Circulation program, as stored in the room unit; see the note on the hot-water program. Shared
+  // with 35 the same way: read only here, written through 35.w.fs1.
 
-  /** circulation program stored in the room unit, Monday slot 1 */
+  /** circulation program stored in the room unit, Monday slot 1, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model CircProgramMon1 is Wolf.CircProgramMon1;
 
-  /** circulation program stored in the room unit, Monday slot 2 */
+  /** circulation program stored in the room unit, Monday slot 2, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model CircProgramMon2 is Wolf.CircProgramMon2;
 
-  /** circulation program stored in the room unit, Monday slot 3 */
+  /** circulation program stored in the room unit, Monday slot 3, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model CircProgramMon3 is Wolf.CircProgramMon3;
 
-  /** circulation program stored in the room unit, Tuesday slot 1 */
+  /** circulation program stored in the room unit, Tuesday slot 1, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model CircProgramTue1 is Wolf.CircProgramTue1;
 
-  /** circulation program stored in the room unit, Tuesday slot 2 */
+  /** circulation program stored in the room unit, Tuesday slot 2, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model CircProgramTue2 is Wolf.CircProgramTue2;
 
-  /** circulation program stored in the room unit, Tuesday slot 3 */
+  /** circulation program stored in the room unit, Tuesday slot 3, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model CircProgramTue3 is Wolf.CircProgramTue3;
 
-  /** circulation program stored in the room unit, Wednesday slot 1 */
+  /** circulation program stored in the room unit, Wednesday slot 1, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model CircProgramWed1 is Wolf.CircProgramWed1;
 
-  /** circulation program stored in the room unit, Wednesday slot 2 */
+  /** circulation program stored in the room unit, Wednesday slot 2, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model CircProgramWed2 is Wolf.CircProgramWed2;
 
-  /** circulation program stored in the room unit, Wednesday slot 3 */
+  /** circulation program stored in the room unit, Wednesday slot 3, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model CircProgramWed3 is Wolf.CircProgramWed3;
 
-  /** circulation program stored in the room unit, Thursday slot 1 */
+  /** circulation program stored in the room unit, Thursday slot 1, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model CircProgramThu1 is Wolf.CircProgramThu1;
 
-  /** circulation program stored in the room unit, Thursday slot 2 */
+  /** circulation program stored in the room unit, Thursday slot 2, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model CircProgramThu2 is Wolf.CircProgramThu2;
 
-  /** circulation program stored in the room unit, Thursday slot 3 */
+  /** circulation program stored in the room unit, Thursday slot 3, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model CircProgramThu3 is Wolf.CircProgramThu3;
 
-  /** circulation program stored in the room unit, Friday slot 1 */
+  /** circulation program stored in the room unit, Friday slot 1, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model CircProgramFri1 is Wolf.CircProgramFri1;
 
-  /** circulation program stored in the room unit, Friday slot 2 */
+  /** circulation program stored in the room unit, Friday slot 2, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model CircProgramFri2 is Wolf.CircProgramFri2;
 
-  /** circulation program stored in the room unit, Friday slot 3 */
+  /** circulation program stored in the room unit, Friday slot 3, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model CircProgramFri3 is Wolf.CircProgramFri3;
 
-  /** circulation program stored in the room unit, Saturday slot 1 */
+  /** circulation program stored in the room unit, Saturday slot 1, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model CircProgramSat1 is Wolf.CircProgramSat1;
 
-  /** circulation program stored in the room unit, Saturday slot 2 */
+  /** circulation program stored in the room unit, Saturday slot 2, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model CircProgramSat2 is Wolf.CircProgramSat2;
 
-  /** circulation program stored in the room unit, Saturday slot 3 */
+  /** circulation program stored in the room unit, Saturday slot 3, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model CircProgramSat3 is Wolf.CircProgramSat3;
 
-  /** circulation program stored in the room unit, Sunday slot 1 */
+  /** circulation program stored in the room unit, Sunday slot 1, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model CircProgramSun1 is Wolf.CircProgramSun1;
 
-  /** circulation program stored in the room unit, Sunday slot 2 */
+  /** circulation program stored in the room unit, Sunday slot 2, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model CircProgramSun2 is Wolf.CircProgramSun2;
 
-  /** circulation program stored in the room unit, Sunday slot 3 */
+  /** circulation program stored in the room unit, Sunday slot 3, read only: seen to be the slot of room unit 1, written through 35.w.fs1 */
   model CircProgramSun3 is Wolf.CircProgramSun3;
 }
