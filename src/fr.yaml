@@ -47,6 +47,10 @@ current burner modulation: degré de modulation instantané du brûleur
 ionisation signal: signal d'ionisation
 set speed of the PWM pump: consigne de vitesse du circulateur PWM
 burner load, ionisation signal and pump speed: puissance du brûleur, signal d'ionisation et vitesse du circulateur
+set fan speed: vitesse de consigne du ventilateur
+actual fan speed: vitesse réelle du ventilateur
+fan PWM drive: commande PWM du ventilateur
+fan set speed, actual speed and PWM drive: vitesse de consigne, vitesse réelle et commande PWM du ventilateur
 operating phase: phase de fonctionnement
 burner operating phase: phase de fonctionnement du brûleur
 status of the first boiler: état de la première chaudière

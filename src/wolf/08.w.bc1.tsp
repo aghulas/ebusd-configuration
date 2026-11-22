@@ -82,6 +82,9 @@ namespace bc1 {
   /** burner load, ionisation signal and pump speed */
   model Operation is Wolf.Operation;
 
+  /** fan set speed, actual speed and PWM drive */
+  model FanOperation is Wolf.FanOperation;
+
   // --- Fault counters, EEPROM 0x0196 to 0x01d7 ---
 
   /** fault counters, numbers 57 to 51 */

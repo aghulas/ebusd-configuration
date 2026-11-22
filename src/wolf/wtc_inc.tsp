@@ -584,6 +584,24 @@ model Operation {
   PumpSpeed: percent0;
 }
 
+/**
+ * Fan of the boiler automat, read in one memory read of the XRAM byte 0xde and the RAM bytes
+ * 0x77 and 0x7e. The fan runs only while the burner is in ignition or operation; all three read
+ * zero when the burner is idle.
+ */
+@inherit(memr)
+@ext(0x56, 0x03, 0xde, 0x01, 0x77, 0x01, 0x7e)
+model FanOperation {
+  /** set fan speed */
+  FanSpeedSet: UCH;
+
+  /** actual fan speed */
+  FanSpeedActual: UCH;
+
+  /** fan PWM drive */
+  FanPWM: percent0;
+}
+
 // Signed tenths: outside sensors, and registers that answer -100.0 when no sensor is fitted.
 /** temperature */
 @unit("°C")

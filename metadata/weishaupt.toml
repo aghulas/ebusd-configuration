@@ -337,6 +337,12 @@ load = { label = { en = "Burner load", fr = "Puissance du brûleur" } }
 ionisation = { label = { en = "Ionisation signal", fr = "Signal d'ionisation" } }
 pumpspeed = { label = { en = "Pump speed", fr = "Vitesse du circulateur" } }
 
+[fields.fanoperation]
+include = "memory"
+fanspeedset = { label = { en = "Fan set speed", fr = "Vitesse de consigne du ventilateur" } }
+fanspeedactual = { label = { en = "Fan actual speed", fr = "Vitesse réelle du ventilateur" } }
+fanpwm = { label = { en = "Fan PWM drive", fr = "Commande PWM du ventilateur" } }
+
 [fields.faultcounters]
 include = "memory"
 "code(?P<n>\\d+)" = { label = { en = "Fault {n} counter", fr = "Compteur du défaut {n}" } }
@@ -538,6 +544,16 @@ label = { en = "Burner operation", fr = "Fonctionnement du brûleur" }
 fields = "operation"
 poll = "cyclic"
 evidence = ["bc-live-values"]
+
+[[entry]]
+circuits = ["bc1", "bc2"]
+message = "FanOperation"
+kind = "live"
+menu = "process"
+label = { en = "Fan", fr = "Ventilateur" }
+fields = "fanoperation"
+poll = "cyclic"
+evidence = ["boiler-firing-values"]
 
 [[entry]]
 circuits = ["bc1", "bc2"]
