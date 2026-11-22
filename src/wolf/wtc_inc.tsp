@@ -602,6 +602,141 @@ model FanOperation {
   FanPWM: percent0;
 }
 
+/*
+ * Parameters of the heating-specialist level of the boiler automat (P12 to P70 of the boiler
+ * manual), read only, with the five memory reads of EEPROM 0x1b to 0x51 the vendor tool sends
+ * for its "Heating specialist" tab. A byte is a field here when the tool displays its value as
+ * one parameter and names it in its developer window; the other bytes are skipped (controller
+ * parts, limits and option bits no parameter displays, and parameters that display 0).
+ */
+
+/** Heating-specialist parameters, EEPROM 0x1b to 0x26. */
+@inherit(memr)
+@ext(0xdf, 0xb2, 0x1b)
+model InstallerParameters1 {
+  /** maximum flow temperature (parameter P31) */
+  SupplyMaxTemp: temp0;
+
+  /** minimum flow temperature (parameter P30) */
+  SupplyMinTemp: temp0;
+
+  @maxLength(5)
+  ign1: IGN;
+
+  /** special level in heating operation (parameter P18) */
+  SpecialLevelTemp: temp0;
+
+  @maxLength(1)
+  ign2: IGN;
+
+  /** service interval, in burner hours (parameter P70) */
+  @unit("h")
+  @factor(100)
+  ServiceInterval: UCH;
+
+  @maxLength(1)
+  ign3: IGN;
+
+  /** ignition rating (parameter P35) */
+  IgnitionLoad: percent0;
+}
+
+/** Heating-specialist parameters, EEPROM 0x27 to 0x32. */
+@inherit(memr)
+@ext(0xe3, 0xb2, 0x27)
+model InstallerParameters2 {
+  @maxLength(2)
+  ign1: IGN;
+
+  /** flue gas temperature at which the burner is switched off (parameter P33) */
+  FlueGasSafetyTemp: temp0;
+
+  @maxLength(3)
+  ign2: IGN;
+
+  /** minimum boiler rating (parameter P36) */
+  LoadMin: percent0;
+
+  @maxLength(1)
+  ign3: IGN;
+
+  /** maximum rating in heating operation (parameter P37) */
+  LoadMaxHeating: percent0;
+
+  @maxLength(1)
+  ign4: IGN;
+
+  /** minimum pump rating in heating operation (parameter P44) */
+  PumpLoadMin: percent0;
+
+  /** maximum pump rating in heating operation (parameter P45) */
+  PumpLoadMax: percent0;
+}
+
+/** Heating-specialist parameters, EEPROM 0x33 to 0x3e. */
+@inherit(memr)
+@ext(0xf7, 0xb2, 0x33)
+model InstallerParameters3 {
+  @maxLength(2)
+  ign1: IGN;
+
+  /** flow to return temperature difference of the pump control (parameter P48) */
+  @unit("K")
+  FlowReturnDiffTemp: UCH;
+
+  @maxLength(2)
+  ign2: IGN;
+
+  /** pump run-on time after heating operation (parameter P41) */
+  @unit("min")
+  PumpRunOnHeating: UCH;
+
+  @maxLength(3)
+  ign3: IGN;
+
+  /** flow temperature excess while the hot water is loaded (parameter P50) */
+  @unit("K")
+  DHWBoostTemp: UCH;
+
+  @maxLength(2)
+  ign4: IGN;
+}
+
+/** Heating-specialist parameters, EEPROM 0x3f to 0x4a. */
+@inherit(memr)
+@ext(0xfb, 0xb2, 0x3f)
+model InstallerParameters4 {
+  /** maximum rating in hot-water operation (parameter P38) */
+  LoadMaxDHW: percent0;
+
+  /** pump rating in hot-water operation (parameter P46) */
+  PumpLoadDHW: percent0;
+
+  /** pump run-on time after hot-water operation (parameter P42) */
+  @unit("min")
+  PumpRunOnDHW: UCH;
+
+  @maxLength(9)
+  ign1: IGN;
+}
+
+/**
+ * Heating-specialist parameters, EEPROM 0x4b to 0x51 and the bytes 0x44 and 0x37, the last
+ * read of the vendor tool's tab.
+ */
+@inherit(memr)
+@ext(0xab, 0x62, 0x4b, 0x02, 0x44, 0x02, 0x37)
+model InstallerParameters5 {
+  @maxLength(1)
+  ign1: IGN;
+
+  /** address of the boiler in the cascade (parameter P12): 1 for boiler A, 2 for boiler B */
+  BoilerAddress: UCH;
+
+  @maxLength(7)
+  ign2: IGN;
+}
+
 // Signed tenths: outside sensors, and registers that answer -100.0 when no sensor is fitted.
 /** temperature */
 @unit("°C")

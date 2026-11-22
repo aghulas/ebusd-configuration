@@ -51,6 +51,28 @@ set fan speed: vitesse de consigne du ventilateur
 actual fan speed: vitesse réelle du ventilateur
 fan PWM drive: commande PWM du ventilateur
 fan set speed, actual speed and PWM drive: vitesse de consigne, vitesse réelle et commande PWM du ventilateur
+maximum flow temperature (parameter P31): température de départ maximale (paramètre P31)
+minimum flow temperature (parameter P30): température de départ minimale (paramètre P30)
+special level in heating operation (parameter P18): niveau spécial en mode chauffage (paramètre P18)
+"service interval, in burner hours (parameter P70)": "intervalle d'entretien, en heures brûleur (paramètre P70)"
+ignition rating (parameter P35): puissance d'allumage (paramètre P35)
+flue gas temperature at which the burner is switched off (parameter P33): température des fumées à laquelle le brûleur est coupé (paramètre P33)
+minimum boiler rating (parameter P36): puissance minimale de la chaudière (paramètre P36)
+maximum rating in heating operation (parameter P37): puissance maximale en mode chauffage (paramètre P37)
+minimum pump rating in heating operation (parameter P44): puissance minimale du circulateur en mode chauffage (paramètre P44)
+maximum pump rating in heating operation (parameter P45): puissance maximale du circulateur en mode chauffage (paramètre P45)
+flow to return temperature difference of the pump control (parameter P48): écart de température départ-retour de la régulation du circulateur (paramètre P48)
+pump run-on time after heating operation (parameter P41): durée de post-fonctionnement du circulateur après le mode chauffage (paramètre P41)
+flow temperature excess while the hot water is loaded (parameter P50): surélévation de la température de départ pendant la charge ECS (paramètre P50)
+maximum rating in hot-water operation (parameter P38): puissance maximale en mode ECS (paramètre P38)
+pump rating in hot-water operation (parameter P46): puissance du circulateur en mode ECS (paramètre P46)
+pump run-on time after hot-water operation (parameter P42): durée de post-fonctionnement du circulateur après le mode ECS (paramètre P42)
+"address of the boiler in the cascade (parameter P12): 1 for boiler A, 2 for boiler B": "adresse de la chaudière dans la cascade (paramètre P12) : 1 pour la chaudière A, 2 pour la chaudière B"
+"heating-specialist parameters: flow temperature limits, special level, service interval, ignition rating": "paramètres du niveau chauffagiste : limites de la température de départ, niveau spécial, intervalle d'entretien, puissance d'allumage"
+"heating-specialist parameters: flue gas switch-off temperature, boiler and pump rating limits in heating operation": "paramètres du niveau chauffagiste : température de coupure des fumées, limites de puissance de la chaudière et du circulateur en mode chauffage"
+"heating-specialist parameters: flow to return difference, pump run-on after heating, hot-water excess": "paramètres du niveau chauffagiste : écart départ-retour, post-fonctionnement du circulateur après chauffage, surélévation ECS"
+"heating-specialist parameters: boiler and pump rating and pump run-on in hot-water operation": "paramètres du niveau chauffagiste : puissance de la chaudière et du circulateur et post-fonctionnement du circulateur en mode ECS"
+"heating-specialist parameters: address of the boiler in the cascade": "paramètres du niveau chauffagiste : adresse de la chaudière dans la cascade"
 operating phase: phase de fonctionnement
 burner operating phase: phase de fonctionnement du brûleur
 status of the first boiler: état de la première chaudière

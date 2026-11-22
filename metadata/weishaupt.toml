@@ -191,6 +191,10 @@ source = "boiler manual 83251704, Info menu, values i42 to i46, p. 47"
 label = { en = "Process values", fr = "Valeurs instantanées" }
 source = "service tool, tab 'Process values WTC' and data logger"
 
+[menus.boiler.specialist]
+label = { en = "Heating specialist parameters", fr = "Paramètres chauffagiste" }
+source = "boiler manual 83251704, parameter list P10 to P71, p. 48-51; service tool, tab 'Heating specialist'"
+
 [menus.boiler.statistics]
 label = { en = "Statistics", fr = "Statistiques" }
 source = "service tool, tab 'Statistic'"
@@ -342,6 +346,38 @@ include = "memory"
 fanspeedset = { label = { en = "Fan set speed", fr = "Vitesse de consigne du ventilateur" } }
 fanspeedactual = { label = { en = "Fan actual speed", fr = "Vitesse réelle du ventilateur" } }
 fanpwm = { label = { en = "Fan PWM drive", fr = "Commande PWM du ventilateur" } }
+
+[fields.installerparameters1]
+include = "memory"
+supplymaxtemp = { label = { en = "Maximum flow temperature (P31)", fr = "Température de départ maximale (P31)" } }
+supplymintemp = { label = { en = "Minimum flow temperature (P30)", fr = "Température de départ minimale (P30)" } }
+specialleveltemp = { label = { en = "Special level, heating (P18)", fr = "Niveau spécial, chauffage (P18)" } }
+serviceinterval = { label = { en = "Service interval (P70)", fr = "Intervalle d'entretien (P70)" } }
+ignitionload = { label = { en = "Ignition rating (P35)", fr = "Puissance d'allumage (P35)" } }
+
+[fields.installerparameters2]
+include = "memory"
+fluegassafetytemp = { label = { en = "Flue gas switch-off temperature (P33)", fr = "Température de coupure des fumées (P33)" } }
+loadmin = { label = { en = "Minimum boiler rating (P36)", fr = "Puissance minimale chaudière (P36)" } }
+loadmaxheating = { label = { en = "Maximum rating, heating (P37)", fr = "Puissance maximale, chauffage (P37)" } }
+pumploadmin = { label = { en = "Minimum pump rating, heating (P44)", fr = "Puissance minimale circulateur, chauffage (P44)" } }
+pumploadmax = { label = { en = "Maximum pump rating, heating (P45)", fr = "Puissance maximale circulateur, chauffage (P45)" } }
+
+[fields.installerparameters3]
+include = "memory"
+flowreturndifftemp = { label = { en = "Flow to return difference (P48)", fr = "Écart départ-retour (P48)" } }
+pumprunonheating = { label = { en = "Pump run-on, heating (P41)", fr = "Post-fonctionnement circulateur, chauffage (P41)" } }
+dhwboosttemp = { label = { en = "Hot-water excess (P50)", fr = "Surélévation ECS (P50)" } }
+
+[fields.installerparameters4]
+include = "memory"
+loadmaxdhw = { label = { en = "Maximum rating, hot water (P38)", fr = "Puissance maximale, ECS (P38)" } }
+pumploaddhw = { label = { en = "Pump rating, hot water (P46)", fr = "Puissance circulateur, ECS (P46)" } }
+pumprunondhw = { label = { en = "Pump run-on, hot water (P42)", fr = "Post-fonctionnement circulateur, ECS (P42)" } }
+
+[fields.installerparameters5]
+include = "memory"
+boileraddress = { label = { en = "Boiler address (P12)", fr = "Adresse chaudière (P12)" } }
 
 [fields.faultcounters]
 include = "memory"
@@ -574,6 +610,56 @@ label = { en = "Event counters", fr = "Compteurs d'événements" }
 fields = "eventcounters"
 poll = "on_demand"
 evidence = ["survey-reads"]
+
+[[entry]]
+circuits = ["bc1", "bc2"]
+message = "InstallerParameters1"
+kind = "setting"
+menu = "specialist"
+label = { en = "Flow limits, special level, service, ignition", fr = "Limites de départ, niveau spécial, entretien, allumage" }
+fields = "installerparameters1"
+poll = "on_demand"
+evidence = ["bc-installer-parameters"]
+
+[[entry]]
+circuits = ["bc1", "bc2"]
+message = "InstallerParameters2"
+kind = "setting"
+menu = "specialist"
+label = { en = "Flue gas limit, ratings in heating", fr = "Limite fumées, puissances en chauffage" }
+fields = "installerparameters2"
+poll = "on_demand"
+evidence = ["bc-installer-parameters"]
+
+[[entry]]
+circuits = ["bc1", "bc2"]
+message = "InstallerParameters3"
+kind = "setting"
+menu = "specialist"
+label = { en = "Flow to return difference, run-on, hot-water excess", fr = "Écart départ-retour, post-fonctionnement, surélévation ECS" }
+fields = "installerparameters3"
+poll = "on_demand"
+evidence = ["bc-installer-parameters"]
+
+[[entry]]
+circuits = ["bc1", "bc2"]
+message = "InstallerParameters4"
+kind = "setting"
+menu = "specialist"
+label = { en = "Ratings and run-on in hot water", fr = "Puissances et post-fonctionnement en ECS" }
+fields = "installerparameters4"
+poll = "on_demand"
+evidence = ["bc-installer-parameters"]
+
+[[entry]]
+circuits = ["bc1", "bc2"]
+message = "InstallerParameters5"
+kind = "setting"
+menu = "specialist"
+label = { en = "Boiler address", fr = "Adresse chaudière" }
+fields = "installerparameters5"
+poll = "on_demand"
+evidence = ["bc-installer-parameters"]
 
 [[entry]]
 circuits = ["bc1", "bc2"]

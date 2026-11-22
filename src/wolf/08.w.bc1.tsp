@@ -85,6 +85,23 @@ namespace bc1 {
   /** fan set speed, actual speed and PWM drive */
   model FanOperation is Wolf.FanOperation;
 
+  // --- Heating-specialist parameters (P12 to P70), EEPROM 0x1b to 0x51, read only ---
+
+  /** heating-specialist parameters: flow temperature limits, special level, service interval, ignition rating */
+  model InstallerParameters1 is Wolf.InstallerParameters1;
+
+  /** heating-specialist parameters: flue gas switch-off temperature, boiler and pump rating limits in heating operation */
+  model InstallerParameters2 is Wolf.InstallerParameters2;
+
+  /** heating-specialist parameters: flow to return difference, pump run-on after heating, hot-water excess */
+  model InstallerParameters3 is Wolf.InstallerParameters3;
+
+  /** heating-specialist parameters: boiler and pump rating and pump run-on in hot-water operation */
+  model InstallerParameters4 is Wolf.InstallerParameters4;
+
+  /** heating-specialist parameters: address of the boiler in the cascade */
+  model InstallerParameters5 is Wolf.InstallerParameters5;
+
   // --- Fault counters, EEPROM 0x0196 to 0x01d7 ---
 
   /** fault counters, numbers 57 to 51 */
