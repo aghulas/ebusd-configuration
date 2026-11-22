@@ -2321,14 +2321,14 @@ evidence = ["room-units-programs", "choice-date-program-writes"]
 write = { source = "31", risk = "comfort", proof = "family", proof_slot = "HCProgram3Sun3" }
 
 # Room unit 2 acknowledged slot writes and did not keep them: its programs are read only.
-# Heating programs 1 and 2, plus the stored hot-water and circulation programs, are answered
+# Heating programs 1, 2 and 3, plus the stored hot-water and circulation programs, are answered
 # from the store of room unit 1 (a slot written to fs1 was read at fs2 within 3 s, both ways):
-# each slot names the slot of fs1 that keeps it. Heating program 3 is equal on both units but
-# no write showed the sharing: no marker.
+# each slot names the slot of fs1 that keeps it. Heating program 3 was shown shared the same way
+# on 2026-11-22 (it was the last one left without a write on fs1 followed by a read of fs2).
 [[entry]]
 circuits = ["fs2"]
-pattern = "HCProgram(?P<p>[12])(?P<day>Mon|Tue|Wed|Thu|Fri|Sat|Sun)(?P<slot>[1-3])"
-count = 42
+pattern = "HCProgram(?P<p>[123])(?P<day>Mon|Tue|Wed|Thu|Fri|Sat|Sun)(?P<slot>[1-3])"
+count = 63
 kind = "program_slot"
 menu = "programs"
 label = { en = "Heating program {p}, {day} slot {slot}", fr = "Programme de chauffe {p}, {day}, plage horaire {slot}" }
@@ -2338,19 +2338,6 @@ group_label = { en = "Heating program {p}", fr = "Programme de chauffe {p}" }
 fields = "slot"
 shared_with = "fs1/{name}"
 evidence = ["room-units-programs", "room-units-shared-store"]
-
-[[entry]]
-circuits = ["fs2"]
-pattern = "HCProgram(?P<p>3)(?P<day>Mon|Tue|Wed|Thu|Fri|Sat|Sun)(?P<slot>[1-3])"
-count = 21
-kind = "program_slot"
-menu = "programs"
-label = { en = "Heating program {p}, {day} slot {slot}", fr = "Programme de chauffe {p}, {day}, plage horaire {slot}" }
-family = "program"
-group_id = "heating{p}"
-group_label = { en = "Heating program {p}", fr = "Programme de chauffe {p}" }
-fields = "slot"
-evidence = ["room-units-programs"]
 
 # The room units answer hot-water and circulation programs that the installation does not
 # follow: the hot water follows the program of the system manager.
