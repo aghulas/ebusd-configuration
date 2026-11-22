@@ -452,4 +452,5 @@ fault history slot 6: mémoire de défauts, emplacement 6
 "day of the end of summer time": "jour de la fin de l'heure d'été"
 "month of the end of summer time": "mois de la fin de l'heure d'été"
 "state of the mixer-circuit pump": "état de la pompe du circuit mélangé"
+"state of the H1 digital input": "état de l'entrée numérique H1"
 "circulation return temperature setpoint": "consigne de température de retour de la circulation ECS"

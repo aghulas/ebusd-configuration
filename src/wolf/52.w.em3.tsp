@@ -103,6 +103,9 @@ namespace em3 {
   /** state of the mixer-circuit pump */
   model MixerPump is Wolf.MixerPump;
 
+  /** state of the H1 digital input */
+  model H1Status is Wolf.H1Status;
+
   /** circulation return temperature setpoint */
   model CirculationReturnSetTemp is Wolf.CirculationReturnSetTemp;
 

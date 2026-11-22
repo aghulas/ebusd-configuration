@@ -192,6 +192,10 @@ model UnitLegionellaSetpoint is CrcRead<temp10>;
 @ext(0x70, 0x52, 0x00)
 model MixerPump is CrcRead<onoff16>;
 
+/** state of the H1 digital input of the heating module */
+@ext(0x32, 0x29, 0x0a)
+model H1Status is CrcRead<onoff16>;
+
 /** return temperature of the hot-water circulation below which its pump runs (parameter 610) */
 @ext(0xcc, 0xa9, 0x04)
 model CirculationReturnSetTemp is CrcRead<temp10>;

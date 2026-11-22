@@ -1696,6 +1696,17 @@ menu = "info"
 label = { en = "Mixer circuit pump", fr = "Pompe du circuit mélangé" }
 evidence = ["survey-reads"]
 
+# Digital input H1 of the heating module (register 29 0a, 2601): read 1 on 51 and 0 on 52 in the
+# register survey; the vendor service tool labels 2601 "Input H1". The system manager's own H1
+# (28 0a, 2600) read only 0 and is left out.
+[[entry]]
+circuits = ["em2", "em3"]
+message = "H1Status"
+kind = "state"
+menu = "info"
+label = { en = "H1 input", fr = "Entrée H1" }
+evidence = ["register-survey-findings", "service-tool-ui-exploration"]
+
 [[entry]]
 circuits = ["em2", "em3"]
 message = "CirculationReturnSetTemp"
