@@ -2464,7 +2464,9 @@ write = { source = "31", risk = "regulation", proof = "change-observed" }
 # message, or on the field of a message that carries several numbered values, never both. One
 # code may sit on several messages. Source of every code: evidence record vendor-codes.
 # [[vendor_open]]: messages a manual menu covers whose code is not established yet
-# (circuit-pair: two numbers, one per heating circuit; manual: not read yet); no code on them.
+# (circuit-pair: two numbers, one per heating circuit; display: a candidate number only the
+# display can confirm; mismatch: the number the manual prints there means another setting;
+# manual: not read yet); no code on them.
 
 [vendor_schemes.wcm-ka-3]
 label = { en = "WCM-KA 3.0 system manager", fr = "Manager de cascade WCM-KA 3.0" }
@@ -3151,6 +3153,367 @@ scheme = "wtc-gb"
 source = "boiler manual 83251704, p. 48, menu Parameters"
 evidence = "vendor-codes"
 
+[[vendor_code]]
+circuits = ["ka"]
+message = "HeatDemandTemp"
+code = "602"
+scheme = "wcm-ka-3"
+source = "system manager manual 83258404, p. 67 and p. 109, menu System info"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["ka"]
+message = "OutsideTemp"
+code = "601"
+scheme = "wcm-ka-3"
+source = "system manager manual 83258404, p. 67 and p. 109, menu System info"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["ka"]
+message = "OutsideWeightedTemp"
+code = "601"
+scheme = "wcm-ka-3"
+source = "system manager manual 83258404, p. 67 and p. 109, menu System info"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["ka"]
+message = "ModulationStatus"
+code = "603"
+scheme = "wcm-ka-3"
+source = "system manager manual 83258404, p. 67 and p. 109, menu System info"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["ka"]
+message = "DeCoupleTemp"
+code = "604"
+scheme = "wcm-ka-3"
+source = "system manager manual 83258404, p. 67 and p. 109, menu System info"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["ka"]
+message = "PlateExchangerPrimaryTemp"
+code = "604"
+scheme = "wcm-ka-3"
+source = "system manager manual 83258404, p. 67 and p. 109, menu System info"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["ka"]
+message = "DHWTemp"
+code = "605"
+scheme = "wcm-ka-3"
+source = "system manager manual 83258404, p. 67 and p. 109, menu System info"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["ka"]
+message = "VersionMajor"
+code = "609"
+scheme = "wcm-ka-3"
+source = "system manager manual 83258404, p. 67 and p. 109, menu System info"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["ka"]
+message = "VersionMinor"
+code = "609"
+scheme = "wcm-ka-3"
+source = "system manager manual 83258404, p. 67 and p. 109, menu System info"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["ka"]
+message = "BoilerSequence1First"
+code = "533"
+scheme = "wcm-ka-3"
+source = "system manager manual 83258404, p. 65 and p. 82, menu Cascade"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["ka"]
+message = "BoilerSequence1Second"
+code = "533"
+scheme = "wcm-ka-3"
+source = "system manager manual 83258404, p. 65 and p. 82, menu Cascade"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["ka"]
+message = "BoilerSequence2First"
+code = "534"
+scheme = "wcm-ka-3"
+source = "system manager manual 83258404, p. 65 and p. 83, menu Cascade"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["ka"]
+message = "BoilerSequence2Second"
+code = "534"
+scheme = "wcm-ka-3"
+source = "system manager manual 83258404, p. 65 and p. 83, menu Cascade"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["ka", "em1"]
+message = "RoomNormalTemp"
+code = "112"
+scheme = "wcm-ka-3"
+source = "system manager manual 83258404, p. 37 and p. 39, menu Setting #1 of the direct circuit"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["ka", "em1"]
+message = "RoomSetbackTemp"
+code = "113"
+scheme = "wcm-ka-3"
+source = "system manager manual 83258404, p. 37 and p. 40, menu Setting #1 of the direct circuit"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["em1"]
+message = "GradientCurve"
+code = "116"
+scheme = "wcm-ka-3"
+source = "system manager manual 83258404, p. 37 and p. 44, menu Setting #1 of the direct circuit"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["em1"]
+message = "RoomFrostProtectionTemp"
+code = "117"
+scheme = "wcm-ka-3"
+source = "system manager manual 83258404, p. 37 and p. 45, menu Setting #1 of the direct circuit"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["em1"]
+message = "SummerWinterChangeOverTemp"
+code = "118"
+scheme = "wcm-ka-3"
+source = "system manager manual 83258404, p. 37 and p. 46, menu Setting #1 of the direct circuit"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["em1"]
+message = "SupplyMinTemp"
+code = "341"
+scheme = "wcm-ka-3"
+source = "system manager manual 83258404, p. 53 and p. 57, installer menu Direct circuit #1"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["ka", "em1"]
+message = "SupplyMaxTemp"
+code = "342"
+scheme = "wcm-ka-3"
+source = "system manager manual 83258404, p. 53 and p. 57, installer menu Direct circuit #1"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["em1"]
+message = "ErrorCode"
+code = "608"
+scheme = "wcm-ka-3"
+source = "system manager manual 83258404, p. 67 and p. 110, menu System info, fault history"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["em1"]
+message = "ErrorType"
+code = "608"
+scheme = "wcm-ka-3"
+source = "system manager manual 83258404, p. 67 and p. 110, menu System info, fault history"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["em1"]
+message = "ErrorDevice"
+code = "608"
+scheme = "wcm-ka-3"
+source = "system manager manual 83258404, p. 67 and p. 110, menu System info, fault history"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["em1"]
+message = "ErrorMinute"
+code = "608"
+scheme = "wcm-ka-3"
+source = "system manager manual 83258404, p. 67 and p. 110, menu System info, fault history"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["em1"]
+message = "ErrorHour"
+code = "608"
+scheme = "wcm-ka-3"
+source = "system manager manual 83258404, p. 67 and p. 110, menu System info, fault history"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["em1"]
+message = "ErrorDay"
+code = "608"
+scheme = "wcm-ka-3"
+source = "system manager manual 83258404, p. 67 and p. 110, menu System info, fault history"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["em1"]
+message = "ErrorMonth"
+code = "608"
+scheme = "wcm-ka-3"
+source = "system manager manual 83258404, p. 67 and p. 110, menu System info, fault history"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["em1"]
+message = "ErrorYear"
+code = "608"
+scheme = "wcm-ka-3"
+source = "system manager manual 83258404, p. 67 and p. 110, menu System info, fault history"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["bc1", "bc2"]
+message = "Operation"
+field = "pumpspeed"
+code = "i22"
+scheme = "wtc-gb"
+source = "boiler manual 83251704, p. 46, menu Info"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "OutsideTemp"
+code = "P331"
+scheme = "wcm-fs-2"
+source = "room unit and module manual 83277504, p. 36 and p. 52, installer menu System info"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "OutsideWeightedTemp"
+code = "P331"
+scheme = "wcm-fs-2"
+source = "room unit and module manual 83277504, p. 36 and p. 52, installer menu System info"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "OutsideMixedTemp"
+code = "P331"
+scheme = "wcm-fs-2"
+source = "room unit and module manual 83277504, p. 36 and p. 52, installer menu System info"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "VersionMajor"
+code = "P339"
+scheme = "wcm-fs-2"
+source = "room unit and module manual 83277504, p. 36 and p. 52, installer menu System info"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "VersionMinor"
+code = "P339"
+scheme = "wcm-fs-2"
+source = "room unit and module manual 83277504, p. 36 and p. 52, installer menu System info"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "RoomTemp"
+code = "P522"
+scheme = "wcm-fs-2"
+source = "room unit and module manual 83277504, p. 39, installer menu Heating circuit info"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "ErrorCode"
+code = "P338"
+scheme = "wcm-fs-2"
+source = "room unit and module manual 83277504, p. 36 and p. 52-53, installer menu System info, fault history"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "ErrorType"
+code = "P338"
+scheme = "wcm-fs-2"
+source = "room unit and module manual 83277504, p. 36 and p. 52-53, installer menu System info, fault history"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "ErrorDevice"
+code = "P338"
+scheme = "wcm-fs-2"
+source = "room unit and module manual 83277504, p. 36 and p. 52-53, installer menu System info, fault history"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "ErrorMinute"
+code = "P338"
+scheme = "wcm-fs-2"
+source = "room unit and module manual 83277504, p. 36 and p. 52-53, installer menu System info, fault history"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "ErrorHour"
+code = "P338"
+scheme = "wcm-fs-2"
+source = "room unit and module manual 83277504, p. 36 and p. 52-53, installer menu System info, fault history"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "ErrorDay"
+code = "P338"
+scheme = "wcm-fs-2"
+source = "room unit and module manual 83277504, p. 36 and p. 52-53, installer menu System info, fault history"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "ErrorMonth"
+code = "P338"
+scheme = "wcm-fs-2"
+source = "room unit and module manual 83277504, p. 36 and p. 52-53, installer menu System info, fault history"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "ErrorYear"
+code = "P338"
+scheme = "wcm-fs-2"
+source = "room unit and module manual 83277504, p. 36 and p. 52-53, installer menu System info, fault history"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["em2", "em3"]
+message = "VersionMajor"
+code = "P341"
+scheme = "wcm-fs-2"
+source = "room unit and module manual 83277504, p. 36 and p. 52, installer menu System info of the room unit"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["em2", "em3"]
+message = "VersionMinor"
+code = "P341"
+scheme = "wcm-fs-2"
+source = "room unit and module manual 83277504, p. 36 and p. 52, installer menu System info of the room unit"
+evidence = "vendor-codes"
+
 [[vendor_open]]
 circuits = ["fs1", "fs2", "fs3"]
 messages = ["HeatingCircuitType", "DHWLoadingPriority", "GradientCurve", "SummerWinterChangeOverTemp", "SupplyMaxTemp", "SupplyMinTemp", "BoilerMCBoostTemp"]
@@ -3170,43 +3533,37 @@ reason = "circuit-pair"
 note = "P315 or P316 (83277504 p. 36): fs2 is the second circuit of a unit for circuits 1 and 2"
 
 [[vendor_open]]
-circuits = ["bc1", "bc2"]
-messages = ["EventCounters", "FanOperation"]
-reason = "manual"
-note = "covered by a manual menu, code not established yet (lot 2 of docs/design-vendor-codes.md)"
+circuits = ["ka"]
+messages = ["ConfigStatus"]
+reason = "display"
+note = "candidate 513 (Conf WCM-KA, 83258404 p. 70), a view of the cascade configuration; the read value 76 is not compared with that view"
 
 [[vendor_open]]
 circuits = ["ka"]
-messages = ["ErrorStatus", "HeatDemandTemp", "DHWSetValue", "OutsideTemp", "DeCoupleTemp", "DHWTemp", "ConfigStatus", "OutsideWeightedTemp", "VersionMajor", "VersionMinor", "RoomNormalTemp", "RoomSetbackTemp", "DHWLoadingPriority", "ModulationStatus", "SupplyMaxTemp", "BoilerSequence1First", "BoilerSequence1Second", "BoilerSequence2First", "BoilerSequence2Second", "PlateExchangerPrimaryTemp"]
-reason = "manual"
-note = "covered by a manual menu, code not established yet (lot 2 of docs/design-vendor-codes.md)"
+messages = ["DHWLoadingPriority"]
+reason = "mismatch"
+note = "571 (Variante ECS, 83258404 p. 94) is the hydraulic position of the hot-water tank, another register in the service tool's form; the direct-circuit menus have no hot-water priority"
 
 [[vendor_open]]
-circuits = ["fs1"]
-messages = ["HeatDemandTemp", "SupplyHCSetTemp", "OutsideTemp", "OutsideWeightedTemp", "RoomTemp", "FloorDryingTemp", "RoomThermostatTemp", "RoomSetpointTemp", "OutsideMixedTemp", "VersionMajor", "VersionMinor", "ErrorCode", "ErrorType", "ErrorDevice", "ErrorMinute", "ErrorHour", "ErrorDay", "ErrorMonth", "ErrorYear"]
-reason = "manual"
-note = "covered by a manual menu, code not established yet (lot 2 of docs/design-vendor-codes.md)"
+circuits = ["bc1", "bc2"]
+messages = ["FanOperation"]
+reason = "display"
+note = "i23 (fan speed, 1/min x 10, 83251704 p. 46): which of the set and actual speeds it shows, and on which scale, is not compared at the display"
 
 [[vendor_open]]
-circuits = ["em1"]
-messages = ["RoomNormalTemp", "RoomSetbackTemp", "RoomFrostProtectionTemp", "GradientCurve", "SummerWinterChangeOverTemp", "SupplyMaxTemp", "SupplyMinTemp", "BoilerMCBoostTemp", "ErrorCode", "ErrorType", "ErrorDevice", "ErrorMinute", "ErrorHour", "ErrorDay", "ErrorMonth", "ErrorYear"]
-reason = "manual"
-note = "covered by a manual menu, code not established yet (lot 2 of docs/design-vendor-codes.md)"
+circuits = ["fs1", "fs2", "fs3"]
+messages = ["SupplyHCSetTemp"]
+reason = "circuit-pair"
+note = "P526 or P527 (Temp. Consigne of circuit 1 or 2, 83277504 p. 39), one per heating circuit of the unit"
 
 [[vendor_open]]
-circuits = ["em2"]
-messages = ["SupplyHCSetTemp", "SupplyHCTemp", "MixerPump", "H1Status", "FloorDryingTemp", "RoomThermostatTemp", "VersionMajor", "VersionMinor"]
-reason = "manual"
-note = "covered by a manual menu, code not established yet (lot 2 of docs/design-vendor-codes.md)"
+circuits = ["fs1", "fs2", "fs3"]
+messages = ["HeatDemandTemp"]
+reason = "display"
+note = "P337 (Temp Cons syst, 83277504 p. 36) or the system setpoint of P526 / P527 (p. 39); not compared at the display"
 
 [[vendor_open]]
-circuits = ["em3"]
-messages = ["SupplyHCSetTemp", "SupplyHCTemp", "MixerPump", "H1Status", "VersionMajor", "VersionMinor"]
-reason = "manual"
-note = "covered by a manual menu, code not established yet (lot 2 of docs/design-vendor-codes.md)"
-
-[[vendor_open]]
-circuits = ["fs2", "fs3"]
-messages = ["HeatDemandTemp", "SupplyHCSetTemp", "OutsideTemp", "OutsideWeightedTemp", "RoomTemp", "RoomSetpointTemp", "OutsideMixedTemp", "VersionMajor", "VersionMinor", "ErrorCode", "ErrorType", "ErrorDevice", "ErrorMinute", "ErrorHour", "ErrorDay", "ErrorMonth", "ErrorYear"]
-reason = "manual"
-note = "covered by a manual menu, code not established yet (lot 2 of docs/design-vendor-codes.md)"
+circuits = ["em2", "em3"]
+messages = ["SupplyHCSetTemp", "SupplyHCTemp"]
+reason = "display"
+note = "P526 / P527 and P523 (Départ#X, 83277504 p. 39 and p. 99) are listed without a description; not compared at the room unit display"
