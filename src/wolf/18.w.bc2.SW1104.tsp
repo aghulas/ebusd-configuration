@@ -7,16 +7,21 @@ using Ebus.Num;
 
 namespace Wolf;
 
-// Register and memory reads addressed to the first boiler (ZZ 0x08 from the file name).
-namespace bc1 {
+// Register and memory reads addressed to the second boiler (ZZ 0x18 from the file name).
+// Established on automats that answer the scan with software 1104 (WTC-GB, WCM-CPU): their
+// register set (50 22) and their memory layout (50 00, symbol table WH11928). An automat
+// with software 0315 (WTC 25-A) answers the same memory requests with other contents, and
+// the registers of other software are not established: SW1104 in the file name makes ebusd
+// load this file for that software only. The circuit name stays the part before it.
+namespace bc2 {
   // Heat demand, passive: sent by the cascade manager (QQ 0x10, the master address of the
-  // system manager) to the master address of this boiler (ZZ 0x03). ebusd loads a file for a
+  // system manager) to the master address of this boiler (ZZ 0x13). ebusd loads a file for a
   // scanned slave address only, hence the message is here.
 
-  /** heat demand of the cascade manager to the first boiler */
+  /** heat demand of the cascade manager to the second boiler */
   @passive
   @qq(0x10)
-  @zz(0x03)
+  @zz(0x13)
   model PowerDemand is Wolf.PowerDemand;
 
   /** burner hours since the last service (maintenance counter i46) */
