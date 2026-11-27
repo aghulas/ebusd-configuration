@@ -60,7 +60,7 @@ Sun = { en = "Sunday", fr = "dimanche" }
 
 # Labels of the value-list entries, by ebusd name: the text an interface shows in place of
 # the name. The lists themselves are in the CSV; the names stay the interface (a write and a
-# published value use the name, never the label). One entry per name of the seven value
+# published value use the name, never the label). One entry per name of the eight value
 # lists of the lot files; the names are distinct across the lists. The seven weekdays are
 # not repeated here: their labels come from [days], the French with a capital.
 # French from the vendor's manuals where they print the word, accepted by the owner of the
@@ -105,6 +105,14 @@ Radiator60 = { en = "Radiators 60 °C", fr = "Radiateurs 60" }
 Radiator70 = { en = "Radiators 70 °C", fr = "Radiateurs 70" }
 Convector = { en = "Convectors", fr = "Convecteurs" }
 Universal = { en = "Universal", fr = "Universel" }
+# operating mode of a heating circuit (gateway manual 83272304, p. 46)
+Standby = { en = "Standby", fr = "Standby" }
+HeatingOperation = { en = "Heating", fr = "Fonctionnement chauffage" }
+SetbackOperation = { en = "Setback", fr = "Fonctionnement réduit" }
+HolidaySummer = { en = "Holiday / summer", fr = "Vacances / Été" }
+HeatingProgram1 = { en = "Heating program 1", fr = "Programme de chauffage 1" }
+HeatingProgram2 = { en = "Heating program 2", fr = "Programme de chauffage 2" }
+HeatingProgram3 = { en = "Heating program 3", fr = "Programme de chauffage 3" }
 # switch time of a weekly program
 Enabled = { en = "Enabled", fr = "Activé" }
 Disabled = { en = "Disabled", fr = "Désactivé" }
@@ -1598,6 +1606,16 @@ kind = "setting"
 menu = "control"
 label = { en = "Heating circuit type", fr = "Type de circuit de chauffage" }
 evidence = ["survey-reads"]
+
+# Program selector 12 01 (register 274): read only; value list from the vendor's gateway manual,
+# its tie to this register shown for the value 11 only (evidence/operating-mode.md).
+[[entry]]
+circuits = ["fs1", "fs2", "fs3", "em2", "em3"]
+message = "OperatingMode"
+kind = "setting"
+menu = "settings"
+label = { en = "Operating mode", fr = "Mode de fonctionnement" }
+evidence = ["operating-mode", "modules-programs"]
 
 # Second group of survey reads (approved 2026-11-19): room units and heating modules.
 [[entry]]
@@ -3555,6 +3573,12 @@ circuits = ["fs1", "fs2", "fs3"]
 messages = ["SupplyHCSetTemp"]
 reason = "circuit-pair"
 note = "P526 or P527 (Temp. Consigne of circuit 1 or 2, 83277504 p. 39), one per heating circuit of the unit"
+
+[[vendor_open]]
+circuits = ["fs1", "fs2", "fs3", "em2", "em3"]
+messages = ["OperatingMode"]
+reason = "display"
+note = "candidate P111 (Mode Fct Chauf, 83277504 p. 32; Fct Chauffage#2 shows 111 too, p. 98): the tie of register 274 to that setting rests on the value 11; not compared at the display"
 
 [[vendor_open]]
 circuits = ["fs1", "fs2", "fs3"]

@@ -229,6 +229,16 @@ model OutsideMixedTemp is CrcRead<otemp10>;
 @ext(0x19, 0x73, 0x09)
 model HeatingCircuitType is CrcRead<circuitType>;
 
+// Register 274 of the vendor service tool ("type of operation"), read 11 on the three room units
+// and 12 on the two modules. The value list is the one the vendor's eBUS / Modbus gateway gives
+// for the operating mode of a room unit or a heating module (83272304 p. 46); its tie to this
+// register rests on the value 11, shown on the bus to select heating program 1 (see evidence).
+// A module reports the mode it would apply without a room unit; with one fitted, it follows
+// the room unit.
+/** operating mode */
+@ext(0x09, 0x12, 0x01)
+model OperatingMode is CrcRead<operatingMode>;
+
 /** normal room temperature setpoint */
 @ext(0x70, 0x05, 0x00)
 model RoomNormalTemp is CrcRead<temp10>;
@@ -1299,6 +1309,20 @@ enum _circuitType {
 /** heating circuit type */
 @values(_circuitType)
 scalar circuitType extends UIN;
+
+enum _operatingMode {
+  Standby: 1,
+  HeatingOperation: 3,
+  SetbackOperation: 4,
+  HolidaySummer: 5,
+  HeatingProgram1: 11,
+  HeatingProgram2: 12,
+  HeatingProgram3: 13,
+}
+
+/** operating mode of a heating circuit */
+@values(_operatingMode)
+scalar operatingMode extends UIN;
 
 enum _cascadeBoiler {
   A: 0,

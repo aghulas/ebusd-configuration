@@ -46,6 +46,9 @@ namespace fs2 {
   /** heating circuit type, read only */
   model HeatingCircuitType is Wolf.HeatingCircuitType;
 
+  /** operating mode */
+  model OperatingMode is Wolf.OperatingMode;
+
   /** software version, major part */
   model VersionMajor is Wolf.UnitVersionMajor;
 

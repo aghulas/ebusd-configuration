@@ -106,6 +106,9 @@ namespace em3 {
   /** state of the H1 digital input */
   model H1Status is Wolf.H1Status;
 
+  /** operating mode */
+  model OperatingMode is Wolf.OperatingMode;
+
   /** circulation return temperature setpoint */
   model CirculationReturnSetTemp is Wolf.CirculationReturnSetTemp;
 

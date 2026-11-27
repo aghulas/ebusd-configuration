@@ -34,6 +34,9 @@ namespace em2 {
   /** state of the H1 digital input */
   model H1Status is Wolf.H1Status;
 
+  /** operating mode */
+  model OperatingMode is Wolf.OperatingMode;
+
   /** floor-drying temperature, 0x8000 when no floor-drying sensor is connected */
   model FloorDryingTemp is Wolf.FloorDryingTemp;
 
