@@ -192,7 +192,7 @@ device that raised the selected entry: origine du défaut de l'entrée sélectio
 percent: pour cent
 heat demand of the cascade manager to the first boiler: demande de chaleur du manager de cascade à la première chaudière
 heat demand of the cascade manager to the second boiler: demande de chaleur du manager de cascade à la seconde chaudière
-heat demand of the room unit to the cascade manager: demande de chaleur de la commande à distance au manager de cascade
+heat demand of the room unit, sent to master 0xf1 (the cascade manager where one is fitted): demande de chaleur de la commande à distance, envoyée au maître 0xf1 (le manager de cascade s'il y en a un)
 requested flow temperature: température de départ demandée
 modulation demand: demande de modulation
 "request state: power requested (0x66, 0xee) or not (0x55, 0x00) from the cascade manager; 0xbb or 0x55 from a room unit": "état de la demande : puissance demandée (0x66, 0xee) ou non (0x55, 0x00) par le manager de cascade ; 0xbb ou 0x55 d'une commande à distance"

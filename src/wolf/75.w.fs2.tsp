@@ -9,10 +9,12 @@ namespace Wolf;
 
 @zz(0x75) // room unit of heating circuit #2 (FS)
 namespace fs2 {
-  // Heat demand, passive: sent by this room unit (QQ 0x70, its master address) to the cascade
-  // manager (ZZ 0xf1), whose slave address has no file of its own.
+  // Heat demand, passive: sent by this room unit (QQ 0x70, its master address) to master
+  // 0xf1, whose slave address has no file of its own. 0xf1 is the cascade manager on the
+  // installation this was established on; a single boiler without one is reported to have
+  // the same master.
 
-  /** heat demand of the room unit to the cascade manager */
+  /** heat demand of the room unit, sent to master 0xf1 (the cascade manager where one is fitted) */
   @passive
   @qq(0x70)
   @zz(0xf1)
