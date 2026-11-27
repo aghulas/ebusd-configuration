@@ -25,6 +25,9 @@
 #
 # [days] names the weekdays for the labels of the program slots and of the weekday value
 # list; [values] labels the entries of the other value lists.
+#
+# [vendor_schemes], [[vendor_code]] and [[vendor_open]] (at the end) give the number a vendor
+# document prints for a value: a code with its scheme (the document's numbering) and its source.
 
 schema = 1
 
@@ -2452,3 +2455,758 @@ label = { en = "Date and time", fr = "Date et heure" }
 fields = "datetime"
 evidence = ["choice-date-program-writes"]
 write = { source = "31", risk = "regulation", proof = "change-observed" }
+
+# --- vendor codes ----------------------------------------------------------------------------
+# The number a vendor manual prints for a value (parameter 535, P112, P31, i35), with the
+# numbering scheme it belongs to: the same number names other settings on other devices, so a
+# code is meaningful only with its scheme. Written as the manual's parameter table prints it,
+# without a space; `pattern` is that spelling, checked, not published. A code sits on the
+# message, or on the field of a message that carries several numbered values, never both. One
+# code may sit on several messages. Source of every code: evidence record vendor-codes.
+# [[vendor_open]]: messages a manual menu covers whose code is not established yet
+# (circuit-pair: two numbers, one per heating circuit; manual: not read yet); no code on them.
+
+[vendor_schemes.wcm-ka-3]
+label = { en = "WCM-KA 3.0 system manager", fr = "Manager de cascade WCM-KA 3.0" }
+document = "83258404"
+pattern = "[0-9]{3}"
+
+[vendor_schemes.wcm-fs-2]
+label = { en = "WCM-FS 2.0 room unit and WCM-EM 2.1 module", fr = "Commande à distance WCM-FS 2.0 et module WCM-EM 2.1" }
+document = "83277504"
+pattern = "P[0-9]{3}"
+
+[vendor_schemes.wtc-gb]
+label = { en = "WTC-GB boiler automat", fr = "Automate de la chaudière WTC-GB" }
+document = "83251704"
+pattern = "[Pi][0-9]{2}"
+
+[[vendor_code]]
+circuits = ["ka"]
+message = "ChangeOverTime"
+code = "532"
+scheme = "wcm-ka-3"
+source = "system manager manual 83258404, p. 65, menu Cascade; service tool form, register 65004"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["ka"]
+message = "ModulationMin"
+code = "535"
+scheme = "wcm-ka-3"
+source = "system manager manual 83258404, p. 65, menu Cascade; service tool form, register 65003"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["ka"]
+message = "ModulationMax"
+code = "536"
+scheme = "wcm-ka-3"
+source = "system manager manual 83258404, p. 65, menu Cascade; service tool form, register 65002"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["ka"]
+message = "BlockingTime"
+code = "537"
+scheme = "wcm-ka-3"
+source = "system manager manual 83258404, p. 65, menu Cascade; service tool form, register 37"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["ka"]
+message = "ModulationDiffTemp"
+code = "538"
+scheme = "wcm-ka-3"
+source = "system manager manual 83258404, p. 65, menu Cascade; service tool form, register 65001"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["ka"]
+message = "RegulationP"
+code = "539"
+scheme = "wcm-ka-3"
+source = "system manager manual 83258404, p. 65, menu Cascade; service tool form, register 671"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["ka"]
+message = "RegulationI"
+code = "540"
+scheme = "wcm-ka-3"
+source = "system manager manual 83258404, p. 65, menu Cascade; service tool form, register 670"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["ka"]
+message = "DeCoupleExcessTemp"
+code = "551"
+scheme = "wcm-ka-3"
+source = "system manager manual 83258404, p. 66, menu Hydraulic separator / exchanger; service tool form, register 65000"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["ka"]
+message = "DeCoupleMinTemp"
+code = "552"
+scheme = "wcm-ka-3"
+source = "system manager manual 83258404, p. 66, menu Hydraulic separator / exchanger; service tool form, register 64999"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["ka"]
+message = "DeCoupleMaxTemp"
+code = "553"
+scheme = "wcm-ka-3"
+source = "system manager manual 83258404, p. 66, menu Hydraulic separator / exchanger; service tool form, register 64998"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["ka"]
+message = "CalorifierExcessTemp"
+code = "561"
+scheme = "wcm-ka-3"
+source = "system manager manual 83258404, p. 66, menu Buffer; service tool form, register 64995"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["ka"]
+message = "CalorifierSwitchDiff"
+code = "562"
+scheme = "wcm-ka-3"
+source = "system manager manual 83258404, p. 66, menu Buffer; service tool form, register 64994"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["ka"]
+message = "DHWSetpoint"
+code = "572"
+scheme = "wcm-ka-3"
+source = "system manager manual 83258404, p. 66, menu Hot water; service tool form, register 19"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["ka"]
+message = "DHWSetbackTemp"
+code = "573"
+scheme = "wcm-ka-3"
+source = "system manager manual 83258404, p. 66, menu Hot water; service tool form, register 650"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["ka"]
+message = "DHWSwitchDiff"
+code = "575"
+scheme = "wcm-ka-3"
+source = "system manager manual 83258404, p. 66, menu Hot water; service tool form, register 320"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["ka"]
+message = "DHWExcessTemp"
+code = "576"
+scheme = "wcm-ka-3"
+source = "system manager manual 83258404, p. 66, menu Hot water; service tool form, register 45"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["ka"]
+message = "DHWLoadTime"
+code = "577"
+scheme = "wcm-ka-3"
+source = "system manager manual 83258404, p. 66, menu Hot water; service tool form, register 384"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["ka"]
+message = "DHWLegionellaDay"
+code = "579"
+scheme = "wcm-ka-3"
+source = "system manager manual 83258404, p. 66, menu Hot water; service tool form, register 257"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["ka"]
+message = "LegionellaSetpoint"
+code = "580"
+scheme = "wcm-ka-3"
+source = "system manager manual 83258404, p. 66, menu Hot water; service tool form, register 1415"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["ka"]
+message = "LegionellaStartTime"
+code = "581"
+scheme = "wcm-ka-3"
+source = "system manager manual 83258404, p. 66, menu Hot water; service tool form, register 65012"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["ka"]
+message = "CircWithLegionella"
+code = "582"
+scheme = "wcm-ka-3"
+source = "system manager manual 83258404, p. 66, menu Hot water; service tool form, register 5107"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["ka"]
+message = "LegionellaCirculationTime"
+code = "583"
+scheme = "wcm-ka-3"
+source = "system manager manual 83258404, p. 66, menu Hot water; service tool form, register 2481"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["ka"]
+message = "SummerTimeStartDay"
+code = "593"
+scheme = "wcm-ka-3"
+source = "system manager manual 83258404, p. 66, menu Date; service tool form, register 64990"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["ka"]
+message = "SummerTimeStartMonth"
+code = "593"
+scheme = "wcm-ka-3"
+source = "system manager manual 83258404, p. 66, menu Date; service tool form, register 64991"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["ka"]
+message = "SummerTimeEndDay"
+code = "594"
+scheme = "wcm-ka-3"
+source = "system manager manual 83258404, p. 66, menu Date; service tool form, register 64992"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["ka"]
+message = "SummerTimeEndMonth"
+code = "594"
+scheme = "wcm-ka-3"
+source = "system manager manual 83258404, p. 66, menu Date; service tool form, register 64993"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["fs1", "fs2", "fs3", "em2", "em3"]
+message = "RoomNormalTemp"
+code = "P112"
+scheme = "wcm-fs-2"
+source = "room unit and module manual 83277504, p. 32, menu Réglage#1; service tool form, register 5"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["fs1", "fs2", "fs3", "em2", "em3"]
+message = "RoomSetbackTemp"
+code = "P113"
+scheme = "wcm-fs-2"
+source = "room unit and module manual 83277504, p. 32, menu Réglage#1; service tool form, register 8"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["fs1", "fs2", "fs3", "em2", "em3"]
+message = "RoomFrostProtectionTemp"
+code = "P118"
+scheme = "wcm-fs-2"
+source = "room unit and module manual 83277504, p. 32, menu Réglage#1; service tool form, register 2580"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "DHWSetpoint"
+code = "P132"
+scheme = "wcm-fs-2"
+source = "room unit and module manual 83277504, p. 32, menu ECS; service tool form, register 19"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "DHWSetbackTemp"
+code = "P133"
+scheme = "wcm-fs-2"
+source = "room unit and module manual 83277504, p. 32, menu ECS; service tool form, register 650"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "HolidayStartDay"
+code = "P141"
+scheme = "wcm-fs-2"
+source = "room unit and module manual 83277504, p. 32, menu Vacances; service tool form, register 283"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "HolidayStartMonth"
+code = "P141"
+scheme = "wcm-fs-2"
+source = "room unit and module manual 83277504, p. 32, menu Vacances; service tool form, register 284"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "HolidayStartThird"
+code = "P141"
+scheme = "wcm-fs-2"
+source = "room unit and module manual 83277504, p. 32, menu Vacances; service tool form, register 285"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "HolidayEndDay"
+code = "P141"
+scheme = "wcm-fs-2"
+source = "room unit and module manual 83277504, p. 32, menu Vacances; service tool form, register 286"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "HolidayEndMonth"
+code = "P141"
+scheme = "wcm-fs-2"
+source = "room unit and module manual 83277504, p. 32, menu Vacances; service tool form, register 287"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "HolidayEndThird"
+code = "P141"
+scheme = "wcm-fs-2"
+source = "room unit and module manual 83277504, p. 32, menu Vacances; service tool form, register 288"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "HolidayTempLevel"
+code = "P142"
+scheme = "wcm-fs-2"
+source = "room unit and module manual 83277504, p. 32, menu Vacances; service tool form, register 317"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "SummerTimeStartDay"
+code = "P153"
+scheme = "wcm-fs-2"
+source = "room unit and module manual 83277504, p. 32, menu Date; service tool form, register 64990"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "SummerTimeStartMonth"
+code = "P153"
+scheme = "wcm-fs-2"
+source = "room unit and module manual 83277504, p. 32, menu Date; service tool form, register 64991"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "SummerTimeEndDay"
+code = "P154"
+scheme = "wcm-fs-2"
+source = "room unit and module manual 83277504, p. 32, menu Date; service tool form, register 64992"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "SummerTimeEndMonth"
+code = "P154"
+scheme = "wcm-fs-2"
+source = "room unit and module manual 83277504, p. 32, menu Date; service tool form, register 64993"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["fs1", "fs3"]
+message = "ControlVariation"
+code = "P315"
+scheme = "wcm-fs-2"
+source = "room unit and module manual 83277504, p. 36, menu Mise en service; service tool form, register 321"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "FrostProtectionLimitTemp"
+code = "P502"
+scheme = "wcm-fs-2"
+source = "room unit and module manual 83277504, p. 38, menu Comport. régul; service tool form, register 702"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "SwitchOnRuntime"
+code = "P503"
+scheme = "wcm-fs-2"
+source = "room unit and module manual 83277504, p. 38, menu Comport. régul; service tool form, register 272"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "DHWMaxTemp"
+code = "P601"
+scheme = "wcm-fs-2"
+source = "room unit and module manual 83277504, p. 39, menu ECS; service tool form, register 385"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "DHWLegionellaDay"
+code = "P605"
+scheme = "wcm-fs-2"
+source = "room unit and module manual 83277504, p. 39, menu ECS; service tool form, register 257"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "LegionellaSetpoint"
+code = "P606"
+scheme = "wcm-fs-2"
+source = "room unit and module manual 83277504, p. 39, menu ECS; service tool form, register 1415"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["fs1", "fs2", "fs3"]
+message = "LegionellaCirculationTime"
+code = "P609"
+scheme = "wcm-fs-2"
+source = "room unit and module manual 83277504, p. 39, menu ECS; service tool form, register 2481"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["em2", "em3"]
+message = "CirculationReturnSetTemp"
+code = "P610"
+scheme = "wcm-fs-2"
+source = "room unit and module manual 83277504, p. 39, menu ECS; service tool form, register 1193"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["bc1", "bc2"]
+message = "SupplyTemp"
+code = "i35"
+scheme = "wtc-gb"
+source = "boiler manual 83251704, p. 46, menu Info"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["bc1", "bc2"]
+message = "ReturnTemp"
+code = "i37"
+scheme = "wtc-gb"
+source = "boiler manual 83251704, p. 47, menu Info"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["bc1", "bc2"]
+message = "FlueGasTemp"
+code = "i31"
+scheme = "wtc-gb"
+source = "boiler manual 83251704, p. 46, menu Info"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["bc1", "bc2"]
+message = "OutsideTemp"
+code = "i33"
+scheme = "wtc-gb"
+source = "boiler manual 83251704, p. 46, menu Info"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["bc1", "bc2"]
+message = "DHWTemp"
+code = "i34"
+scheme = "wtc-gb"
+source = "boiler manual 83251704, p. 46, menu Info"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["bc1", "bc2"]
+message = "HydraulicSeparatorTemp"
+code = "i39"
+scheme = "wtc-gb"
+source = "boiler manual 83251704, p. 47, menu Info"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["bc1", "bc2"]
+message = "SoftwareVersionCPU"
+code = "i44"
+scheme = "wtc-gb"
+source = "boiler manual 83251704, p. 47, menu Info"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["bc1", "bc2"]
+message = "SoftwareVersionCUI"
+code = "i45"
+scheme = "wtc-gb"
+source = "boiler manual 83251704, p. 47, menu Info"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["bc1", "bc2"]
+message = "BurnerServiceHours"
+code = "i46"
+scheme = "wtc-gb"
+source = "boiler manual 83251704, p. 47, menu Info"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["bc1", "bc2"]
+message = "Counters"
+field = "burnerstarts"
+code = "i42"
+scheme = "wtc-gb"
+source = "boiler manual 83251704, p. 47, menu Info; service tool form, memory read (I42)"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["bc1", "bc2"]
+message = "Counters"
+field = "burnerhours"
+code = "i43"
+scheme = "wtc-gb"
+source = "boiler manual 83251704, p. 47, menu Info; service tool form, memory read (I43)"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["bc1", "bc2"]
+message = "Operation"
+field = "load"
+code = "i11"
+scheme = "wtc-gb"
+source = "boiler manual 83251704, p. 46, menu Info; service tool form, memory read (I11)"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["bc1", "bc2"]
+message = "Operation"
+field = "ionisation"
+code = "i32"
+scheme = "wtc-gb"
+source = "boiler manual 83251704, p. 46, menu Info; service tool form, memory read (I32)"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["bc1", "bc2"]
+message = "Temperatures"
+field = "fluegastemp"
+code = "i31"
+scheme = "wtc-gb"
+source = "boiler manual 83251704, p. 46, menu Info; service tool form, memory read (I31)"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["bc1", "bc2"]
+message = "InstallerParameters1"
+field = "supplymaxtemp"
+code = "P31"
+scheme = "wtc-gb"
+source = "boiler manual 83251704, p. 49, menu Parameters"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["bc1", "bc2"]
+message = "InstallerParameters1"
+field = "supplymintemp"
+code = "P30"
+scheme = "wtc-gb"
+source = "boiler manual 83251704, p. 49, menu Parameters"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["bc1", "bc2"]
+message = "InstallerParameters1"
+field = "specialleveltemp"
+code = "P18"
+scheme = "wtc-gb"
+source = "boiler manual 83251704, p. 49, menu Parameters"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["bc1", "bc2"]
+message = "InstallerParameters1"
+field = "serviceinterval"
+code = "P70"
+scheme = "wtc-gb"
+source = "boiler manual 83251704, p. 51, menu Parameters"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["bc1", "bc2"]
+message = "InstallerParameters1"
+field = "ignitionload"
+code = "P35"
+scheme = "wtc-gb"
+source = "boiler manual 83251704, p. 49, menu Parameters"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["bc1", "bc2"]
+message = "InstallerParameters2"
+field = "fluegassafetytemp"
+code = "P33"
+scheme = "wtc-gb"
+source = "boiler manual 83251704, p. 49, menu Parameters"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["bc1", "bc2"]
+message = "InstallerParameters2"
+field = "loadmin"
+code = "P36"
+scheme = "wtc-gb"
+source = "boiler manual 83251704, p. 50, menu Parameters"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["bc1", "bc2"]
+message = "InstallerParameters2"
+field = "loadmaxheating"
+code = "P37"
+scheme = "wtc-gb"
+source = "boiler manual 83251704, p. 50, menu Parameters"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["bc1", "bc2"]
+message = "InstallerParameters2"
+field = "pumploadmin"
+code = "P44"
+scheme = "wtc-gb"
+source = "boiler manual 83251704, p. 50, menu Parameters"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["bc1", "bc2"]
+message = "InstallerParameters2"
+field = "pumploadmax"
+code = "P45"
+scheme = "wtc-gb"
+source = "boiler manual 83251704, p. 50, menu Parameters"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["bc1", "bc2"]
+message = "InstallerParameters3"
+field = "flowreturndifftemp"
+code = "P48"
+scheme = "wtc-gb"
+source = "boiler manual 83251704, p. 51, menu Parameters"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["bc1", "bc2"]
+message = "InstallerParameters3"
+field = "pumprunonheating"
+code = "P41"
+scheme = "wtc-gb"
+source = "boiler manual 83251704, p. 50, menu Parameters"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["bc1", "bc2"]
+message = "InstallerParameters3"
+field = "dhwboosttemp"
+code = "P50"
+scheme = "wtc-gb"
+source = "boiler manual 83251704, p. 51, menu Parameters"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["bc1", "bc2"]
+message = "InstallerParameters4"
+field = "loadmaxdhw"
+code = "P38"
+scheme = "wtc-gb"
+source = "boiler manual 83251704, p. 50, menu Parameters"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["bc1", "bc2"]
+message = "InstallerParameters4"
+field = "pumploaddhw"
+code = "P46"
+scheme = "wtc-gb"
+source = "boiler manual 83251704, p. 50, menu Parameters"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["bc1", "bc2"]
+message = "InstallerParameters4"
+field = "pumprunondhw"
+code = "P42"
+scheme = "wtc-gb"
+source = "boiler manual 83251704, p. 50, menu Parameters"
+evidence = "vendor-codes"
+
+[[vendor_code]]
+circuits = ["bc1", "bc2"]
+message = "InstallerParameters5"
+field = "boileraddress"
+code = "P12"
+scheme = "wtc-gb"
+source = "boiler manual 83251704, p. 48, menu Parameters"
+evidence = "vendor-codes"
+
+[[vendor_open]]
+circuits = ["fs1", "fs2", "fs3"]
+messages = ["HeatingCircuitType", "DHWLoadingPriority", "GradientCurve", "SummerWinterChangeOverTemp", "SupplyMaxTemp", "SupplyMinTemp", "BoilerMCBoostTemp"]
+reason = "circuit-pair"
+note = "two numbers in the form and the manual, one per heating circuit (83277504 p. 36-38); which one a unit for circuits 1 and 2 shows is not checked at its display"
+
+[[vendor_open]]
+circuits = ["em2", "em3"]
+messages = ["BoilerMCBoostTemp", "MixerParameter", "GradientCurve", "SummerWinterChangeOverTemp", "SupplyMaxTemp", "SupplyMinTemp"]
+reason = "circuit-pair"
+note = "two numbers in the form and the manual, one per heating circuit (83277504 p. 37-38); which one applies is not checked at the room unit display"
+
+[[vendor_open]]
+circuits = ["fs2"]
+messages = ["ControlVariation"]
+reason = "circuit-pair"
+note = "P315 or P316 (83277504 p. 36): fs2 is the second circuit of a unit for circuits 1 and 2"
+
+[[vendor_open]]
+circuits = ["bc1", "bc2"]
+messages = ["EventCounters", "FanOperation"]
+reason = "manual"
+note = "covered by a manual menu, code not established yet (lot 2 of docs/design-vendor-codes.md)"
+
+[[vendor_open]]
+circuits = ["ka"]
+messages = ["ErrorStatus", "HeatDemandTemp", "DHWSetValue", "OutsideTemp", "DeCoupleTemp", "DHWTemp", "ConfigStatus", "OutsideWeightedTemp", "VersionMajor", "VersionMinor", "RoomNormalTemp", "RoomSetbackTemp", "DHWLoadingPriority", "ModulationStatus", "SupplyMaxTemp", "BoilerSequence1First", "BoilerSequence1Second", "BoilerSequence2First", "BoilerSequence2Second", "PlateExchangerPrimaryTemp"]
+reason = "manual"
+note = "covered by a manual menu, code not established yet (lot 2 of docs/design-vendor-codes.md)"
+
+[[vendor_open]]
+circuits = ["fs1"]
+messages = ["HeatDemandTemp", "SupplyHCSetTemp", "OutsideTemp", "OutsideWeightedTemp", "RoomTemp", "FloorDryingTemp", "RoomThermostatTemp", "RoomSetpointTemp", "OutsideMixedTemp", "VersionMajor", "VersionMinor", "ErrorCode", "ErrorType", "ErrorDevice", "ErrorMinute", "ErrorHour", "ErrorDay", "ErrorMonth", "ErrorYear"]
+reason = "manual"
+note = "covered by a manual menu, code not established yet (lot 2 of docs/design-vendor-codes.md)"
+
+[[vendor_open]]
+circuits = ["em1"]
+messages = ["RoomNormalTemp", "RoomSetbackTemp", "RoomFrostProtectionTemp", "GradientCurve", "SummerWinterChangeOverTemp", "SupplyMaxTemp", "SupplyMinTemp", "BoilerMCBoostTemp", "ErrorCode", "ErrorType", "ErrorDevice", "ErrorMinute", "ErrorHour", "ErrorDay", "ErrorMonth", "ErrorYear"]
+reason = "manual"
+note = "covered by a manual menu, code not established yet (lot 2 of docs/design-vendor-codes.md)"
+
+[[vendor_open]]
+circuits = ["em2"]
+messages = ["SupplyHCSetTemp", "SupplyHCTemp", "MixerPump", "H1Status", "FloorDryingTemp", "RoomThermostatTemp", "VersionMajor", "VersionMinor"]
+reason = "manual"
+note = "covered by a manual menu, code not established yet (lot 2 of docs/design-vendor-codes.md)"
+
+[[vendor_open]]
+circuits = ["em3"]
+messages = ["SupplyHCSetTemp", "SupplyHCTemp", "MixerPump", "H1Status", "VersionMajor", "VersionMinor"]
+reason = "manual"
+note = "covered by a manual menu, code not established yet (lot 2 of docs/design-vendor-codes.md)"
+
+[[vendor_open]]
+circuits = ["fs2", "fs3"]
+messages = ["HeatDemandTemp", "SupplyHCSetTemp", "OutsideTemp", "OutsideWeightedTemp", "RoomTemp", "RoomSetpointTemp", "OutsideMixedTemp", "VersionMajor", "VersionMinor", "ErrorCode", "ErrorType", "ErrorDevice", "ErrorMinute", "ErrorHour", "ErrorDay", "ErrorMonth", "ErrorYear"]
+reason = "manual"
+note = "covered by a manual menu, code not established yet (lot 2 of docs/design-vendor-codes.md)"
