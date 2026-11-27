@@ -1342,6 +1342,8 @@ enum _holidayLevel {
 @values(_holidayLevel)
 scalar holidayLevel extends UIN;
 
+// Phases 0 to 8 as the WTC-GB manual (83251704 p. 44) and the vendor's gateway (83272304 p. 45)
+// list them; the gateway gives fault codes from 11 in the same value (see evidence).
 enum _operatingPhase {
   BurnerOff: 0x00,
   StandbyCheckFan: 0x01,
@@ -1352,6 +1354,9 @@ enum _operatingPhase {
   BurnerInOperation: 0x06,
   GasValveCheck: 0x07,
   PostPurge: 0x08,
+
+  // Phase 9 is forced ventilation on the oil boiler WTC-OB only (83314005 p. 45): the WTC-GB
+  // lists 0 to 8 (83251704 p. 44), the WTC 15-A to 32-A uses 9 for its post-purge.
   ForcedVenting: 0x09,
 }
 
