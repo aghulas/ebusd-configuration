@@ -28,6 +28,8 @@
 #
 # [vendor_schemes], [[vendor_code]] and [[vendor_open]] (at the end) give the number a vendor
 # document prints for a value: a code with its scheme (the document's numbering) and its source.
+# [vendor_code_lists] and [[vendor_code_list_use]] (after them) give the fault codes a field
+# carries: raw value -> the codes the manual prints for it, with a label.
 
 schema = 1
 
@@ -2500,7 +2502,12 @@ pattern = "P[0-9]{3}"
 [vendor_schemes.wtc-gb]
 label = { en = "WTC-GB boiler automat", fr = "Automate de la chaudière WTC-GB" }
 document = "83251704"
-pattern = "[Pi][0-9]{2}"
+pattern = "[PiWF][0-9]{2}"
+
+[vendor_schemes.wcm]
+label = { en = "WCM controllers: system manager, room unit, heating module", fr = "Régulations WCM : manager de cascade, commande à distance, module d'extension" }
+document = "83277504"
+pattern = "[0-9]{3}"
 
 [[vendor_code]]
 circuits = ["ka"]
@@ -3592,3 +3599,128 @@ circuits = ["em2", "em3"]
 messages = ["SupplyHCSetTemp", "SupplyHCTemp"]
 reason = "display"
 note = "P526 / P527 and P523 (Départ#X, 83277504 p. 39 and p. 99) are listed without a description; not compared at the room unit display"
+
+# --- Code lists (fault codes, from 1.6.0) ------------------------------------------------------
+# The fault codes a field carries: raw value -> the codes the manual prints for it and a label.
+# Two disjoint number spaces: the boiler's W / F 11-89 and the WCM devices' 130-202, so a code of
+# a fault log is looked up in both and lands in one at most. 0 (end of a fault, none pending) is
+# in neither. The labels are proposed to the owner (status); evidence/vendor-codes.md, lot 3.
+
+[vendor_code_lists.wtc-gb-faults]
+scheme = "wtc-gb"
+label = { en = "WTC-GB boiler warning and fault codes", fr = "Codes d'alarme et de défaut de la chaudière WTC-GB" }
+source = "boiler manual 83251704 (1/2025-01), pp. 84-85 (warnings W), pp. 86-87 (faults F)"
+evidence = "vendor-codes"
+status = "proposed"
+
+[vendor_code_lists.wtc-gb-faults.entries]
+11 = { codes = ["F11"], label = { en = "Safety limiter above 105 °C", fr = "Limiteur de sécurité au-dessus de 105 °C" } }
+12 = { codes = ["W12"], label = { en = "Limiter, flow or return above 95 °C", fr = "Limiteur, départ ou retour au-dessus de 95 °C" } }
+14 = { codes = ["W14"], label = { en = "Limiter temperature rising too fast", fr = "Température du limiteur en hausse trop rapide" } }
+15 = { codes = ["W15", "F15"], label = { en = "Flow/return difference too large", fr = "Écart départ/retour trop élevé" } }
+16 = { codes = ["W16"], label = { en = "Flue gas temperature too high", fr = "Température des fumées trop élevée" } }
+18 = { codes = ["W18", "F18"], label = { en = "Limiter/flow difference too large", fr = "Écart limiteur/départ trop élevé" } }
+21 = { codes = ["W21", "F21"], label = { en = "No flame at burner start", fr = "Pas de flamme au démarrage du brûleur" } }
+22 = { codes = ["W22"], label = { en = "Flame lost in operation", fr = "Perte de flamme en fonctionnement" } }
+23 = { codes = ["F23"], label = { en = "Flame signal without a flame", fr = "Flamme parasite" } }
+24 = { codes = ["W24"], label = { en = "Input H2 closed, burner lockout", fr = "Entrée H2 fermée, verrouillage du brûleur" } }
+30 = { codes = ["F30"], label = { en = "Safety limiter sensor fault", fr = "Défaut de la sonde du limiteur de sécurité" } }
+31 = { codes = ["F31"], label = { en = "Flue gas sensor fault", fr = "Défaut de la sonde fumées" } }
+32 = { codes = ["F32"], label = { en = "Air pressure switch not at rest", fr = "Pressostat d'air pas en position de repos" } }
+33 = { codes = ["W33"], label = { en = "Outside sensor fault", fr = "Défaut de la sonde extérieure" } }
+34 = { codes = ["W34"], label = { en = "Hot-water sensor fault", fr = "Défaut de la sonde ECS" } }
+35 = { codes = ["F35"], label = { en = "Flow sensor fault", fr = "Défaut de la sonde de départ" } }
+36 = { codes = ["F36"], label = { en = "System water pressure too low", fr = "Pression de l'installation trop faible" } }
+37 = { codes = ["F37"], label = { en = "Return sensor fault", fr = "Défaut de la sonde de retour" } }
+38 = { codes = ["F38"], label = { en = "Flue gas pressure switch does not switch at fan check", fr = "Pressostat fumées sans commutation au contrôle du ventilateur" } }
+39 = { codes = ["W39"], label = { en = "Hydraulic separator sensor fault", fr = "Défaut de la sonde de bouteille de découplage" } }
+41 = { codes = ["F41"], label = { en = "Gas valve leaking", fr = "Multibloc gaz non étanche" } }
+43 = { codes = ["F43"], label = { en = "Fan speed not reached", fr = "Vitesse du ventilateur non atteinte" } }
+44 = { codes = ["F44"], label = { en = "Fan rest position faulty", fr = "Position de repos du ventilateur défectueuse" } }
+45 = { codes = ["F45"], label = { en = "Air pressure switch does not switch on", fr = "Pressostat d'air ne s'enclenche pas" } }
+46 = { codes = ["F46"], label = { en = "Flue gas side pressure too high", fr = "Pression trop élevée côté fumées" } }
+47 = { codes = ["W47"], label = { en = "Gas pressure too low", fr = "Pression gaz trop faible" } }
+48 = { codes = ["W48", "F48"], label = { en = "Flue gas damper run time exceeded", fr = "Durée d'enclenchement du clapet de fumées dépassée" } }
+49 = { codes = ["F49"], label = { en = "Input H2 closed, condensate lifting unit", fr = "Entrée H2 fermée, relevage des condensats" } }
+51 = { codes = ["F51"], label = { en = "Boiler data error", fr = "Erreur de données de la chaudière" } }
+52 = { codes = ["F52"], label = { en = "Burner data error", fr = "Erreur de données du brûleur" } }
+53 = { codes = ["F53"], label = { en = "Supply voltage out of tolerance", fr = "Alimentation électrique hors tolérances" } }
+54 = { codes = ["F54"], label = { en = "Electronic fault", fr = "Défaut électronique" } }
+55 = { codes = ["F55"], label = { en = "Reset too often", fr = "Déverrouillages trop fréquents" } }
+57 = { codes = ["W57", "F57"], label = { en = "Automat/control panel communication", fr = "Communication automate/tableau de commande" } }
+80 = { codes = ["W80"], label = { en = "No communication with the system manager", fr = "Pas de communication avec le manager de cascade" } }
+81 = { codes = ["W81"], label = { en = "No communication with the room unit", fr = "Pas de communication avec la commande à distance" } }
+82 = { codes = ["W82"], label = { en = "No communication with module EM#2", fr = "Pas de communication avec le module EM#2" } }
+83 = { codes = ["W83"], label = { en = "No communication with module EM#3", fr = "Pas de communication avec le module EM#3" } }
+84 = { codes = ["W84"], label = { en = "No communication with module EM#4", fr = "Pas de communication avec le module EM#4" } }
+85 = { codes = ["W85"], label = { en = "No communication with module EM#5", fr = "Pas de communication avec le module EM#5" } }
+86 = { codes = ["W86"], label = { en = "No communication with module EM#6", fr = "Pas de communication avec le module EM#6" } }
+87 = { codes = ["W87"], label = { en = "No communication with module EM#7", fr = "Pas de communication avec le module EM#7" } }
+88 = { codes = ["W88"], label = { en = "No communication with module EM#8", fr = "Pas de communication avec le module EM#8" } }
+89 = { codes = ["W89"], label = { en = "Remote setpoint (input N1) failed", fr = "Consigne à distance (entrée N1) défaillante" } }
+
+[vendor_code_lists.wcm-faults]
+scheme = "wcm"
+label = { en = "WCM controller fault codes", fr = "Codes défauts des régulations WCM" }
+source = "system manager manual 83258404, p. 119; room unit and module manual 83277504, pp. 106-108"
+evidence = "vendor-codes"
+status = "proposed"
+
+[vendor_code_lists.wcm-faults.entries]
+130 = { codes = ["130"], label = { en = "Flow sensor fault", fr = "Défaut de la sonde de départ" } }
+131 = { codes = ["131"], label = { en = "Plate exchanger primary sensor fault", fr = "Défaut de la sonde primaire de l'échangeur à plaques" } }
+132 = { codes = ["132"], label = { en = "Hydraulic separator sensor fault", fr = "Défaut de la sonde de bouteille casse-pression" } }
+133 = { codes = ["133"], label = { en = "Outside sensor fault", fr = "Défaut de la sonde extérieure" } }
+134 = { codes = ["134"], label = { en = "Hot-water sensor fault", fr = "Défaut de la sonde ECS" } }
+135 = { codes = ["135"], label = { en = "Hot-water circulation sensor fault", fr = "Défaut de la sonde de circulation ECS" } }
+136 = { codes = ["136"], label = { en = "External room sensor fault", fr = "Défaut de la sonde d'ambiance externe" } }
+137 = { codes = ["137"], label = { en = "Internal room sensor fault", fr = "Défaut de la sonde d'ambiance interne" } }
+138 = { codes = ["138"], label = { en = "Buffer sensor top fault", fr = "Défaut de la sonde haute du tampon" } }
+139 = { codes = ["139"], label = { en = "Buffer sensor bottom fault", fr = "Défaut de la sonde basse du tampon" } }
+142 = { codes = ["142"], label = { en = "PWM pump fault", fr = "Défaut de la pompe PWM" } }
+149 = { codes = ["149"], label = { en = "Condensate lifting unit safety switch (input H1)", fr = "Sécurité du relevage des condensats (entrée H1)" } }
+154 = { codes = ["154"], label = { en = "Internal EEPROM fault", fr = "Défaut interne EEPROM" } }
+180 = { codes = ["180"], label = { en = "No communication with the system manager", fr = "Pas de communication avec le manager de cascade" } }
+181 = { codes = ["181"], label = { en = "No communication with a room unit", fr = "Pas de communication avec une commande à distance" } }
+182 = { codes = ["182"], label = { en = "No communication with a room unit", fr = "Pas de communication avec une commande à distance" } }
+183 = { codes = ["183"], label = { en = "No communication with a room unit", fr = "Pas de communication avec une commande à distance" } }
+184 = { codes = ["184"], label = { en = "No communication with a room unit", fr = "Pas de communication avec une commande à distance" } }
+185 = { codes = ["185"], label = { en = "No communication with a room unit", fr = "Pas de communication avec une commande à distance" } }
+186 = { codes = ["186"], label = { en = "No communication with a room unit", fr = "Pas de communication avec une commande à distance" } }
+187 = { codes = ["187"], label = { en = "No communication with a room unit", fr = "Pas de communication avec une commande à distance" } }
+188 = { codes = ["188"], label = { en = "No communication with a room unit", fr = "Pas de communication avec une commande à distance" } }
+189 = { codes = ["189"], label = { en = "Input N1 fault", fr = "Défaut de l'entrée N1" } }
+190 = { codes = ["190"], label = { en = "No communication with a heating module", fr = "Pas de communication avec un module d'extension" } }
+191 = { codes = ["191"], label = { en = "No communication with a boiler automat", fr = "Pas de communication avec un automate de chaudière" } }
+192 = { codes = ["192"], label = { en = "No communication with a boiler automat", fr = "Pas de communication avec un automate de chaudière" } }
+193 = { codes = ["193"], label = { en = "No communication with a boiler automat", fr = "Pas de communication avec un automate de chaudière" } }
+194 = { codes = ["194"], label = { en = "No communication with a boiler automat", fr = "Pas de communication avec un automate de chaudière" } }
+195 = { codes = ["195"], label = { en = "No communication with a boiler automat", fr = "Pas de communication avec un automate de chaudière" } }
+196 = { codes = ["196"], label = { en = "No communication with a boiler automat", fr = "Pas de communication avec un automate de chaudière" } }
+197 = { codes = ["197"], label = { en = "No communication with a boiler automat", fr = "Pas de communication avec un automate de chaudière" } }
+198 = { codes = ["198"], label = { en = "No communication with a boiler automat", fr = "Pas de communication avec un automate de chaudière" } }
+199 = { codes = ["199"], label = { en = "No communication with a boiler automat", fr = "Pas de communication avec un automate de chaudière" } }
+200 = { codes = ["200"], label = { en = "Bus address already taken", fr = "Adresse eBUS déjà occupée" } }
+201 = { codes = ["201"], label = { en = "Device address inside the cascade system", fr = "Adresse de l'appareil dans le système de cascade" } }
+202 = { codes = ["202"], label = { en = "Room unit address assigned to a hot-water loading circuit", fr = "Adresse de commande à distance affectée à un circuit de charge ECS" } }
+
+[[vendor_code_list_use]]
+circuits = ["bc1", "bc2"]
+messages = ["FaultHistorySlot1", "FaultHistorySlot2", "FaultHistorySlot3", "FaultHistorySlot4", "FaultHistorySlot5", "FaultHistorySlot6"]
+field = "number"
+lists = ["wtc-gb-faults"]
+evidence = "vendor-codes"
+
+[[vendor_code_list_use]]
+circuits = ["em1", "fs1", "fs2", "fs3"]
+messages = ["ErrorCode"]
+field = "value"
+lists = ["wtc-gb-faults", "wcm-faults"]
+evidence = "vendor-codes"
+
+[[vendor_code_list_use]]
+circuits = ["ka"]
+messages = ["ErrorStatus"]
+field = "value"
+lists = ["wtc-gb-faults", "wcm-faults"]
+evidence = "vendor-codes"
