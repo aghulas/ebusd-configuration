@@ -3604,14 +3604,15 @@ note = "P526 / P527 and P523 (Départ#X, 83277504 p. 39 and p. 99) are listed wi
 # The fault codes a field carries: raw value -> the codes the manual prints for it and a label.
 # Two disjoint number spaces: the boiler's W / F 11-89 and the WCM devices' 130-202, so a code of
 # a fault log is looked up in both and lands in one at most. 0 (end of a fault, none pending) is
-# in neither. The labels are proposed to the owner (status); evidence/vendor-codes.md, lot 3.
+# in neither. The labels were accepted by the owner on 2026-11-28 (status);
+# evidence/vendor-codes.md, lot 3.
 
 [vendor_code_lists.wtc-gb-faults]
 scheme = "wtc-gb"
 label = { en = "WTC-GB boiler warning and fault codes", fr = "Codes d'alarme et de défaut de la chaudière WTC-GB" }
 source = "boiler manual 83251704 (1/2025-01), pp. 84-85 (warnings W), pp. 86-87 (faults F)"
 evidence = "vendor-codes"
-status = "proposed"
+status = "accepted"
 
 [vendor_code_lists.wtc-gb-faults.entries]
 11 = { codes = ["F11"], label = { en = "Safety limiter above 105 °C", fr = "Limiteur de sécurité au-dessus de 105 °C" } }
@@ -3664,7 +3665,7 @@ scheme = "wcm"
 label = { en = "WCM controller fault codes", fr = "Codes défauts des régulations WCM" }
 source = "system manager manual 83258404, p. 119; room unit and module manual 83277504, pp. 106-108"
 evidence = "vendor-codes"
-status = "proposed"
+status = "accepted"
 
 [vendor_code_lists.wcm-faults.entries]
 130 = { codes = ["130"], label = { en = "Flow sensor fault", fr = "Défaut de la sonde de départ" } }
